@@ -1,0 +1,369 @@
+{
+  "id": "resp_06e180dae30b71610069eed80e00a88197b772a71b157b4a76",
+  "created_at": 1777260558.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.5-2026-04-23",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_06e180dae30b71610069eed80eb7f48197b4ec8290c83eca29",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed80f7a6c81979b56c1d6f3918602",
+      "action": {
+        "query": "Eli Lilly LLY March 31 2026 stock rises April 1 2026 news",
+        "type": "search",
+        "queries": [
+          "Eli Lilly LLY March 31 2026 stock rises April 1 2026 news",
+          "Eli Lilly April 1 2026 stock price up news obesity drug 2026",
+          "LLY shares rose March 31 2026 April 1 2026 why",
+          "Eli Lilly March 30 2026 news FDA approval analyst upgrade"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed8123c688197b94e4daa2077b3d4",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed812a4488197a5fa8b5d32f26a04",
+      "action": {
+        "query": "site:investor.lilly.com April 1 2026 Foundayo FDA approved Lilly oral GLP-1 press release",
+        "type": "search",
+        "queries": [
+          "site:investor.lilly.com April 1 2026 Foundayo FDA approved Lilly oral GLP-1 press release",
+          "site:fda.gov Foundayo orforglipron April 1 2026 approval",
+          "CNBC April 1 2026 Eli Lilly Foundayo FDA approved oral obesity pill",
+          "Reuters April 1 2026 Eli Lilly FDA approves oral GLP-1 orforglipron Foundayo"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed8177f008197907984aed74486ba",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed81790e881978ac8ae2a649bf505",
+      "action": {
+        "query": "April 1 2026 S&P 500 rose end of war hopes SPY rockets Reuters",
+        "type": "search",
+        "queries": [
+          "April 1 2026 S&P 500 rose end of war hopes SPY rockets Reuters",
+          "stock market April 1 2026 S&P 500 up end of war hopes Reuters",
+          "April 1 2026 markets S&P 500 rise Ukraine war peace hopes Bloomberg Reuters",
+          "Wall Street April 1 2026 S&P 500 healthcare stocks up"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed819c5c081978be36e5928a9ef8a",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed81b0f1c819795438ab3214da377",
+      "action": {
+        "query": "April 1 2026 XPH SPDR S&P Pharmaceuticals ETF up healthcare stocks gaining 1.16 Eli Lilly Benzinga",
+        "type": "search",
+        "queries": [
+          "April 1 2026 XPH SPDR S&P Pharmaceuticals ETF up healthcare stocks gaining 1.16 Eli Lilly Benzinga",
+          "Benzinga Why Is Eli Lilly Stock Gaining Today April 1 2026 healthcare stocks gaining 1.16",
+          "April 1 2026 pharmaceutical stocks up XPH LLY Foundayo approval",
+          "Eli Lilly stock gained today April 1 2026 Benzinga Foundayo broader markets healthcare stocks"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed820c1748197a66fa26089edc686",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed820e2408197b00f15fbc6087361",
+      "action": {
+        "query": "Eli Lilly March 30 2026 stock rose Foundayo FDA approval expected April 10 prelaunch inventory $1.5 billion",
+        "type": "search",
+        "queries": [
+          "Eli Lilly March 30 2026 stock rose Foundayo FDA approval expected April 10 prelaunch inventory $1.5 billion",
+          "Eli Lilly March 31 2026 shares rise oral GLP-1 FDA decision prelaunch inventory",
+          "March 31 2026 Eli Lilly stock up 3.74 why",
+          "Eli Lilly March 30 2026 April 1 2026 Centessa acquisition stock rally"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed82747408197b59b1a50499769b8",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed8275f048197b43bef79fc2d9b67",
+      "action": {
+        "query": "Eli Lilly acquire Centessa March 31 2026 $6.3 billion press release",
+        "type": "search",
+        "queries": [
+          "Eli Lilly acquire Centessa March 31 2026 $6.3 billion press release",
+          "site:investor.lilly.com Centessa March 31 2026 Lilly acquisition sleep disorder"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed82e0a6c8197b36dcd8905efe445",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed82e23c08197b6c46f8a60513098",
+      "action": {
+        "query": "Eli Lilly Insilico Medicine March 30 2026 $2.75 billion AI drug discovery CNBC",
+        "type": "search",
+        "queries": [
+          "Eli Lilly Insilico Medicine March 30 2026 $2.75 billion AI drug discovery CNBC",
+          "Eli Lilly Insilico Medicine March 30 2026 press release global partnership"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed8344c5c819792123e078f60a496",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed83471d48197a48b94331975d9bc",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.financecharts.com/stocks/LLY/summary/price"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed83561c48197bb5c371dc3976619",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed836ec3c819788825f9b15dc3e8f",
+      "action": {
+        "query": "SPY historical price April 1 2026 March 31 2026 % change",
+        "type": "search",
+        "queries": [
+          "SPY historical price April 1 2026 March 31 2026 % change",
+          "SPY April 1 2026 close 0.7%"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed839fd888197a8fb1959d208f765",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed83a535881979f295cc114cf80f7",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.financecharts.com/etfs/XPH/summary/price"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed83bff40819786fadf43cc91d18c",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed83c55a48197899e0cd57f80add1",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.financecharts.com/etfs/SPY/summary/price"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed83e5bf08197a7adf25596bd105c",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed83f3758819783a81cea30802ba3",
+      "action": {
+        "type": "open_page",
+        "url": "https://investor.lilly.com/news-releases/news-release-details/fda-approves-lillys-foundayotm-orforglipron-only-glp-1-pill"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed84399448197b206dd15d96d923b",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06e180dae30b71610069eed84413f08197a265befe2dab47c2",
+      "action": {
+        "type": "open_page",
+        "url": "https://apnews.com/article/80a8391c0729872ae2a486526dbc8abd"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06e180dae30b71610069eed84804808197b8ef1fe7e9c48703",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "msg_06e180dae30b71610069eed859ef908197aee8d69c2c40ccb4",
+      "content": [
+        {
+          "annotations": [],
+          "text": "LLY’s +7.66% move from March 30 to April 1 looks like one coherent, firm-specific rally rather than a selloff/reversal: the stock rose all three days—+0.96% to $886.63 on March 30, +3.74% to $919.77 on March 31, and +3.78% to $954.52 on April 1—with the full rolling signal anchored exactly to that up-leg [1]. The dominant catalyst was Lilly-specific obesity-drug news: on April 1, the FDA approved Foundayo/orforglipron, Lilly’s once-daily oral GLP-1 pill for chronic weight management, under an expedited priority-voucher pathway [4]. Lilly said the drug can be taken any time of day without food or water restrictions and reported 12.4% average weight loss at the highest dose in ATTAIN-1, reinforcing the market’s view that an oral product could expand Lilly’s already large GLP-1 franchise [5]. AP’s market wrap explicitly tied Lilly’s 3.8% April 1 rally to U.S. regulators approving its GLP-1 weight-loss pill [6].\n\nThe earlier part of the window also had Lilly-specific pipeline optionality, even if the direct causal evidence is less precise than on April 1. On March 29/30, Insilico announced a Lilly collaboration using AI-driven drug discovery, including an exclusive worldwide license and up to about $2.75 billion of potential deal value [2]. On March 31, Lilly announced a definitive agreement to acquire Centessa, adding an orexin-receptor agonist sleep-wake disorder pipeline for $6.3 billion upfront plus potential contingent value rights [3]. Those announcements are not as clearly linked to LLY’s share price as the Foundayo approval, but they fit the regression’s high firm-specific attribution: the three-day gain clustered around company-specific GLP-1, R&D, and pipeline-expansion news rather than a generic pharma tape move.\n\nIndustry and macro were supportive, not the whole story. The pharma proxy XPH rose +5.32% on March 31 and +1.17% on April 1, consistent with a meaningful industry contribution during the same window [7]. Broader risk appetite also helped: AP reported that stocks rallied worldwide on April 1 as oil eased and investors hoped the Iran war could end soon; the S&P 500 rose 0.7%, the Nasdaq rose 1.2%, and AP noted three-fifths of S&P 500 stocks advanced [6]. Benzinga also reported intraday that broader markets and healthcare were up while Lilly outperformed the sector after the approval [8]. Overall, the web evidence supports the attribution directionally—mostly firm-specific, with industry and market tailwinds—though the regression fit is flagged as poor and the industry leg is less directly documented than the Foundayo approval.\n\n```json\n{\n  \"headline\": \"Lilly rallied as FDA approval of oral GLP-1 Foundayo capped a firm-specific pipeline news cluster.\",\n  \"evidence_quality\": \"SUPPORTED\",\n  \"sources\": [\n    {\"title\": \"Eli Lilly and Co Stock Price History Charts\", \"url\": \"https://www.financecharts.com/stocks/LLY/summary/price\", \"publisher\": \"FinanceCharts\", \"date\": \"2026-04-24\"},\n    {\"title\": \"Insilico Medicine Announces Global R&D Collaboration with Lilly\", \"url\": \"https://www.biospace.com/press-releases/insilico-medicine-announces-global-r-d-collaboration-with-lilly\", \"publisher\": \"BioSpace\", \"date\": \"2026-03-30\"},\n    {\"title\": \"Lilly to acquire Centessa Pharmaceuticals to advance treatments for sleep-wake disorders\", \"url\": \"https://investor.lilly.com/news-releases/news-release-details/lilly-acquire-centessa-pharmaceuticals-advance-treatments-sleep\", \"publisher\": \"Eli Lilly and Company\", \"date\": \"2026-03-31\"},\n    {\"title\": \"FDA Approves First New Molecular Entity Under National Priority Voucher Program\", \"url\": \"https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program\", \"publisher\": \"U.S. Food and Drug Administration\", \"date\": \"2026-04-01\"},\n    {\"title\": \"FDA approves Lilly's Foundayo™ (orforglipron), the only GLP-1 pill for weight loss that can be taken any time of day without food or water restrictions\", \"url\": \"https://investor.lilly.com/news-releases/news-release-details/fda-approves-lillys-foundayotm-orforglipron-only-glp-1-pill\", \"publisher\": \"Eli Lilly and Company\", \"date\": \"2026-04-01\"},\n    {\"title\": \"Stocks rally worldwide as oil prices ease on hopes for a possible end to the Iran war\", \"url\": \"https://apnews.com/article/80a8391c0729872ae2a486526dbc8abd\", \"publisher\": \"AP News\", \"date\": \"2026-04-01\"},\n    {\"title\": \"SPDR® S&P Pharmaceuticals ETF (XPH) Stock Price History Charts\", \"url\": \"https://www.financecharts.com/etfs/XPH/summary/price\", \"publisher\": \"FinanceCharts\", \"date\": \"2026-04-24\"},\n    {\"title\": \"Why Is Eli Lilly Stock Gaining Today?\", \"url\": \"https://www.benzinga.com/markets/equities/26/04/51607074/why-is-eli-lilly-stock-gaining-today\", \"publisher\": \"Benzinga\", \"date\": \"2026-04-01\"}\n  ]\n}\n```",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "type": "web_search",
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+        "city": null,
+        "country": "US",
+        "region": null,
+        "timezone": null,
+        "type": "approximate"
+      }
+    }
+  ],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1777260650.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "effort": "medium",
+    "generate_summary": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 80507,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 3606,
+    "output_tokens_details": {
+      "reasoning_tokens": 2374
+    },
+    "total_tokens": 84113
+  },
+  "user": null,
+  "billing": {
+    "payer": "developer"
+  },
+  "frequency_penalty": 0.0,
+  "moderation": null,
+  "presence_penalty": 0.0,
+  "store": true,
+  "_provider_name": "openai"
+}

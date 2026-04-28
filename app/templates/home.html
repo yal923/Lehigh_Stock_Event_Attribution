@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% block title %}SA41 · Event Attribution{% endblock %}
+
+{% block content %}
+<div class="rt-container rt-container--wide">
+
+    <section class="rt-hero" style="text-align: center;">
+        <h1 class="rt-hero__title" style="font-size: 32px;">Stock Event Attribution</h1>
+        <div class="rt-hero__subtitle" style="max-width: 640px; margin: 12px auto 0;">
+            Interpretability support for research and review. Not a standalone trading signal.
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div style="max-width: 640px; margin: 16px auto 0; padding: 10px 14px; border-radius: var(--rt-r-md); background: var(--rt-info-bg); border: 1px solid var(--rt-info-br); color: var(--rt-text-secondary); font-size: 13px;">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <div style="max-width: 420px; margin: 24px auto 0; position: relative;">
+            <input
+                type="text"
+                id="company-search"
+                name="q"
+                class="rt-input"
+                placeholder="Search companies by name or ticker…"
+                autocomplete="off"
+                style="font-size: 14px;"
+            />
+            <div
+                id="company-search-dropdown"
+                role="listbox"
+                style="position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--rt-surface); border: 1px solid var(--rt-border); border-radius: var(--rt-r-md); box-shadow: var(--rt-shadow-lg); max-height: 320px; overflow-y: auto; display: none; z-index: 100; text-align: left;"
+            ></div>
+        </div>
+    </section>
+
+    <hr class="rt-divider">
+
+    <section>
+        <div class="rt-flex-between" style="margin-bottom: 16px;">
+            <div>
+                <div class="rt-section-title">Markets · Top 20 S&P 500</div>
+                <div class="rt-caption">Ranked by market capitalization</div>
+            </div>
+        </div>
+
+        <div class="rt-grid-auto">
+            {% for company in companies %}
+            <a
+                href="{{ url_for('routes.company_detail', ticker=company.ticker) }}"
+                class="rt-card rt-card--hover"
+                data-ticker="{{ company.ticker }}"
+                data-company-name="{{ company.name }}"
+                style="display: block; color: inherit; text-decoration: none;"
+            >
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                    <div
+                        data-logo-fallback
+                        class="rt-mono"
+                        style="width: 36px; height: 36px; flex: 0 0 36px; border-radius: var(--rt-r-sm); border: 1px solid var(--rt-border); background: var(--rt-surface-2); display: flex; align-items: center; justify-content: center; color: var(--rt-text-muted); font-size: 11px; font-weight: 700; overflow: hidden;"
+                    >
+                        {{ company.ticker[:2] }}
+                    </div>
+                    <img
+                        data-logo-img
+                        alt="{{ company.name }} logo"
+                        style="width: 36px; height: 36px; flex: 0 0 36px; border-radius: var(--rt-r-sm); border: 1px solid var(--rt-border); background: var(--rt-surface-2); object-fit: contain; padding: 5px; display: none;"
+                    />
+                    <div style="min-width: 0; flex: 1;">
+                        <div class="rt-flex-between" style="align-items: flex-start; gap: 10px;">
+                            <div style="min-width: 0;">
+                                <div style="font-size: 14px; font-weight: 600; color: var(--rt-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                    {{ company.name }}
+                                </div>
+                                {% if company.gics_sector %}
+                                <div class="rt-caption" style="margin-top: 3px;">{{ company.gics_sector }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="rt-mono" style="font-size: 12px; font-weight: 600; color: var(--rt-text-muted); padding: 3px 8px; border: 1px solid var(--rt-border); border-radius: var(--rt-r-sm); background: var(--rt-surface-2);">
+                                {{ company.ticker }}
+                            </div>
+                        </div>
+                        <div style="margin-top: 12px; min-height: 21px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;">
+                            <span data-price class="rt-mono" style="font-size: 15px; font-weight: 700; color: var(--rt-text);"></span>
+                            <span data-change class="rt-mono" style="font-size: 12px; font-weight: 600;"></span>
+                        </div>
+                        <div data-updated class="rt-caption" style="margin-top: 4px;"></div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const searchInput = document.getElementById('company-search');
+const dropdown = document.getElementById('company-search-dropdown');
+let activeIndex = -1;
+let currentResults = [];
+let debounceTimer = null;
+
+function closeDropdown() {
+    dropdown.style.display = 'none';
+    dropdown.innerHTML = '';
+    activeIndex = -1;
+    currentResults = [];
+}
+
+function renderDropdown(results) {
+    dropdown.innerHTML = '';
+    if (!results.length) { closeDropdown(); return; }
+    results.forEach((item, idx) => {
+        const option = document.createElement('div');
+        option.setAttribute('role', 'option');
+        option.dataset.index = String(idx);
+        option.dataset.url = item.url;
+        option.style.cssText = 'padding: 10px 14px; cursor: pointer; border-bottom: 1px solid var(--rt-border); font-size: 13px; display: flex; gap: 10px; align-items: center;';
+        option.innerHTML = `
+            <span class="rt-mono" style="color: var(--rt-text); font-weight: 600; min-width: 54px;">${item.ticker}</span>
+            <span style="color: var(--rt-text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item.name}</span>
+        `;
+        option.addEventListener('mouseenter', () => { activeIndex = idx; highlightOption(activeIndex); });
+        option.addEventListener('mousedown', (e) => { e.preventDefault(); window.location.href = item.url; });
+        dropdown.appendChild(option);
+    });
+    dropdown.style.display = 'block';
+}
+
+function highlightOption(index) {
+    const options = dropdown.querySelectorAll('[role="option"]');
+    options.forEach((opt, i) => {
+        opt.style.background = i === index ? 'var(--rt-surface-hover)' : 'transparent';
+    });
+}
+
+function handleKeyDown(e) {
+    if (!currentResults.length) return;
+    if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        activeIndex = (activeIndex + 1) % currentResults.length;
+        highlightOption(activeIndex);
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        activeIndex = (activeIndex - 1 + currentResults.length) % currentResults.length;
+        highlightOption(activeIndex);
+    } else if (e.key === 'Enter') {
+        if (activeIndex >= 0 && currentResults[activeIndex]) {
+            window.location.href = currentResults[activeIndex].url;
+        }
+    } else if (e.key === 'Escape') {
+        closeDropdown();
+    }
+}
+
+async function fetchResults(query) {
+    const resp = await fetch(`/api/companies/autocomplete?q=${encodeURIComponent(query)}`);
+    const payload = await resp.json();
+    currentResults = payload.results || [];
+    activeIndex = -1;
+    renderDropdown(currentResults);
+}
+
+function formatPrice(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n) || n <= 0) return '';
+    return `$${n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+
+function formatChange(value, pct) {
+    const d = Number(value);
+    const dp = Number(pct);
+    if (!Number.isFinite(d) && !Number.isFinite(dp)) return '';
+    const sign = d > 0 || dp > 0 ? '+' : '';
+    const parts = [];
+    if (Number.isFinite(d)) parts.push(`${sign}${d.toFixed(2)}`);
+    if (Number.isFinite(dp)) parts.push(`${sign}${dp.toFixed(2)}%`);
+    return parts.length ? parts.join(' · ') : '';
+}
+
+function formatUpdated(value) {
+    if (!value) return '';
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return '';
+    return `Finnhub · ${d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+}
+
+function setLogo(card, asset) {
+    const img = card.querySelector('[data-logo-img]');
+    const fallback = card.querySelector('[data-logo-fallback]');
+    const logoUrl = asset && asset.logo_url;
+    if (!img || !fallback || !logoUrl) return;
+    img.onload = () => {
+        fallback.style.display = 'none';
+        img.style.display = 'block';
+    };
+    img.onerror = () => {
+        img.style.display = 'none';
+        fallback.style.display = 'flex';
+    };
+    img.src = logoUrl;
+}
+
+function renderMarketCards(cards) {
+    (cards || []).forEach((item) => {
+        const card = document.querySelector(`[data-ticker="${CSS.escape(item.ticker)}"]`);
+        if (!card) return;
+        setLogo(card, item.asset || {});
+
+        const quote = item.quote || {};
+        const priceEl = card.querySelector('[data-price]');
+        const changeEl = card.querySelector('[data-change]');
+        const updatedEl = card.querySelector('[data-updated]');
+        const priceText = formatPrice(quote.current);
+        const changeText = formatChange(quote.change, quote.change_percent);
+        if (priceEl) priceEl.textContent = priceText;
+        if (changeEl) {
+            changeEl.textContent = changeText;
+            const pct = Number(quote.change_percent);
+            changeEl.style.color = Number.isFinite(pct)
+                ? (pct >= 0 ? 'var(--rt-success)' : 'var(--rt-danger)')
+                : 'var(--rt-text-muted)';
+        }
+        if (updatedEl) updatedEl.textContent = priceText ? formatUpdated(quote.updated_at) : '';
+    });
+}
+
+async function refreshMarketCards() {
+    try {
+        const resp = await fetch('/api/home/market_cards', {
+            headers: { 'Accept': 'application/json' },
+        });
+        if (!resp.ok) return;
+        const payload = await resp.json();
+        renderMarketCards(payload.cards || []);
+    } catch {
+        // Optional enrichment only. Homepage remains usable without it.
+    }
+}
+
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    clearTimeout(debounceTimer);
+    if (!query) { closeDropdown(); return; }
+    debounceTimer = setTimeout(() => fetchResults(query), 150);
+});
+searchInput.addEventListener('keydown', handleKeyDown);
+document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target) && e.target !== searchInput) closeDropdown();
+});
+refreshMarketCards();
+setInterval(refreshMarketCards, 180000);
+</script>
+{% endblock %}

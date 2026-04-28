@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+{% block title %}{{ company.ticker }} · Event Attribution{% endblock %}
+
+{% block content %}
+<div class="rt-container rt-container--wide">
+
+    <section class="rt-hero">
+        <div class="rt-hero__eyebrow">Company · {{ company.ticker }}</div>
+        <h1 class="rt-hero__title">{{ company.name }}</h1>
+        <div class="rt-hero__meta">
+            {% if company.gics_sector %}
+            <span>{{ company.gics_sector }}</span>
+            {% if company.gics_sub_industry %}
+            <span class="rt-hero__meta-dot"></span>
+            <span>{{ company.gics_sub_industry }}</span>
+            {% endif %}
+            {% elif company.gics_sub_industry %}
+            <span>{{ company.gics_sub_industry }}</span>
+            {% endif %}
+        </div>
+    </section>
+
+    <div class="rt-stack">
+
+    <section class="rt-card">
+        <div class="rt-card__header">
+            <div>
+                <h2 class="rt-card__title">Price Chart</h2>
+                <div class="rt-card__subtitle">Interactive daily candlestick · episode markers</div>
+            </div>
+            <div class="rt-flex" style="gap: 8px; align-items: center; flex-wrap: wrap;">
+                <button type="button" class="rt-btn rt-btn--primary rt-btn--sm" data-chart-range="1y">1Y</button>
+                <button type="button" class="rt-btn rt-btn--ghost rt-btn--sm" data-chart-range="3y">3Y</button>
+                <button type="button" class="rt-btn rt-btn--ghost rt-btn--sm" data-chart-range="5y">5Y</button>
+                <button type="button" class="rt-btn rt-btn--ghost rt-btn--sm" data-chart-range="10y">10Y</button>
+                <button type="button" class="rt-btn rt-btn--ghost rt-btn--sm" data-chart-range="max">Max</button>
+                <button type="button" class="rt-btn rt-btn--ghost rt-btn--sm" data-fit-chart>Fit</button>
+                <span class="rt-badge rt-badge--plain rt-mono">{{ company.ticker }}</span>
+            </div>
+        </div>
+        <div id="kline" style="height: 440px; width: 100%;"></div>
+        <div id="kline-legend" class="rt-caption" style="margin-top: 10px; min-height: 18px;"></div>
+    </section>
+
+    <section class="rt-card">
+        <div class="rt-card__header">
+            <div>
+                <h2 class="rt-card__title">Episodes · Significant Moves</h2>
+                <div class="rt-card__subtitle">Detected within the last year</div>
+            </div>
+        </div>
+
+        {% if episode_params %}
+        <form method="get" action="{{ url_for('routes.company_detail', ticker=company.ticker) }}"
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; align-items: end;">
+            <label class="rt-input-label">
+                Horizon (days)
+                <input class="rt-input" name="horizon_n" type="number" min="1" max="60" value="{{ episode_params.horizon_n }}">
+            </label>
+            <label class="rt-input-label">
+                Threshold
+                <input class="rt-input" name="threshold" type="number" min="0.01" max="0.30" step="0.01" value="{{ episode_params.threshold }}">
+            </label>
+            <label class="rt-input-label">
+                Merge Gap (days)
+                <input class="rt-input" name="merge_gap_days" type="number" min="0" max="10" value="{{ episode_params.merge_gap_days }}">
+            </label>
+            <label class="rt-input-label">
+                Lookback (days)
+                <input class="rt-input" name="lookback_days" type="number" min="30" max="1260" value="{{ episode_params.lookback_days }}">
+            </label>
+            <button class="rt-btn rt-btn--primary" type="submit">Apply</button>
+        </form>
+        {% endif %}
+
+        {% if episodes %}
+        <div class="rt-grid-auto">
+            {% for e in episodes %}
+            {% set m = (episode_metrics_map or {}).get(e.id, {}) %}
+            {% set peak_pct = m.get('peak_pct', e.pct_move) or 0 %}
+            {% set cum_val = m.get('cumulative_pct') %}
+            {% set is_up = (e.direction == 'up') %}
+            <a
+                href="{{ url_for('routes.episode_analysis_loading', ticker=company.ticker, episode_id=e.id, source='pipeline', redirect_to='ai') }}"
+                class="rt-card rt-card--hover episode-card"
+                data-episode-id="{{ e.id }}"
+                data-direction="{{ e.direction }}"
+                data-pct-move="{{ e.pct_move }}"
+                data-peak="{{ e.peak_date }}"
+                style="display: block; color: inherit; text-decoration: none; padding: 16px;"
+            >
+                <div class="rt-flex-between" style="align-items: flex-start; margin-bottom: 10px;">
+                    <div>
+                        <div class="rt-caption">Episode · {{ e.id }}</div>
+                        <div style="font-size: 14px; font-weight: 600; color: var(--rt-text); margin-top: 3px;">
+                            Peak {{ m.get('peak') or e.peak_date or '?' }}
+                        </div>
+                    </div>
+                    <span class="rt-direction rt-direction--{{ 'up' if is_up else 'down' }}">
+                        {{ '▲' if is_up else '▼' }} {{ "%.2f"|format(peak_pct) }}%
+                    </span>
+                </div>
+
+                <div style="font-size: 12px; color: var(--rt-text-secondary); line-height: 1.6;">
+                    <div class="rt-flex-between">
+                        <span class="rt-text-muted">Start</span>
+                        <span class="rt-mono">{{ m.get('start') or (e.window_start.isoformat() if e.window_start else '—') }}</span>
+                    </div>
+                    <div class="rt-flex-between">
+                        <span class="rt-text-muted">End</span>
+                        <span class="rt-mono">{{ m.get('end') or (e.window_end.isoformat() if e.window_end else '—') }}</span>
+                    </div>
+                    <div class="rt-flex-between">
+                        <span class="rt-text-muted">Cumulative</span>
+                        <span class="rt-mono" style="color: {% if cum_val is not none and cum_val >= 0 %}var(--rt-success){% elif cum_val is not none %}var(--rt-danger){% else %}var(--rt-text-muted){% endif %}; font-weight: 600;">
+                            {% if cum_val is not none %}{{ '+' if cum_val >= 0 else '' }}{{ "%.2f"|format(cum_val) }}%{% else %}—{% endif %}
+                        </span>
+                    </div>
+                    <div class="rt-flex-between">
+                        <span class="rt-text-muted">Signals</span>
+                        <span class="rt-mono">{{ m.get('signal_count', 0) }}</span>
+                    </div>
+                </div>
+
+                {% set daily = m.get('daily_pct', []) %}
+                {% if daily %}
+                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rt-border); display: flex; flex-wrap: wrap; gap: 4px;">
+                    {% for d in daily[:5] %}
+                    <span class="rt-mono" style="font-size: 11px; padding: 2px 6px; border-radius: var(--rt-r-sm); background: var(--rt-surface-2); color: {% if d.pct is not none and d.pct >= 0 %}var(--rt-success){% elif d.pct is not none %}var(--rt-danger){% else %}var(--rt-text-muted){% endif %};">
+                        {{ d.date[-5:] }} {% if d.pct is not none %}{{ '+' if d.pct >= 0 else '' }}{{ "%.1f"|format(d.pct) }}%{% else %}—{% endif %}
+                    </span>
+                    {% endfor %}
+                    {% if daily|length > 5 %}
+                    <span class="rt-mono rt-text-muted" style="font-size: 11px; padding: 2px 6px;">+{{ daily|length - 5 }}</span>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="rt-text-muted" style="font-size: 13px;">No significant price movement episodes detected in the last year.</div>
+        {% endif %}
+    </section>
+
+    </div>{# /rt-stack #}
+
+</div>{# /rt-container #}
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+<script>
+const ticker = "{{ company.ticker }}";
+const episodesData = {{ episodes_json|tojson }};
+let chartApi = null;
+let candleSeries = null;
+let candleData = [];
+let markerApi = null;
+let chartResizeObserver = null;
+let activeChartRange = '1y';
+
+async function loadChart(range = activeChartRange) {
+    activeChartRange = range || '1y';
+    setChartRangeLoading(true);
+    try {
+        const resp = await fetch(`/api/company/${ticker}/prices?range=${encodeURIComponent(activeChartRange)}`);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const priceData = await resp.json();
+        drawKline(priceData, episodesData);
+        updateChartRangeButtons();
+    } catch (err) {
+        console.error("Failed to load chart:", err);
+        document.getElementById("kline").innerHTML =
+            '<div style="color: var(--rt-danger); font-size: 13px; padding: 20px;">Failed to load price data.</div>';
+    } finally {
+        setChartRangeLoading(false);
+    }
+}
+
+function drawKline(priceData, episodes) {
+    const div = document.getElementById("kline");
+    if (chartResizeObserver) {
+        chartResizeObserver.disconnect();
+        chartResizeObserver = null;
+    }
+    if (chartApi && chartApi.remove) {
+        chartApi.remove();
+        chartApi = null;
+    }
+
+    if (!priceData || !priceData.dates || priceData.dates.length === 0) {
+        div.innerHTML = '<div style="color: var(--rt-text-muted); font-size: 13px; padding: 20px;">No price data available.</div>';
+        return;
+    }
+
+    if (!window.LightweightCharts) {
+        div.innerHTML = '<div style="color: var(--rt-danger); font-size: 13px; padding: 20px;">Chart library failed to load.</div>';
+        return;
+    }
+
+    div.innerHTML = '';
+    const isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    const upColor   = isLight ? '#2f8f5c' : '#4caf7d';
+    const downColor = isLight ? '#c4423f' : '#e06060';
+    const gridColor = isLight ? 'rgba(0, 0, 0, 0.06)'      : 'rgba(255, 255, 255, 0.05)';
+    const lineColor = isLight ? 'rgba(0, 0, 0, 0.12)'      : 'rgba(255, 255, 255, 0.08)';
+    const fontColor = isLight ? '#4a5260'                  : '#a0a4ab';
+
+    candleData = priceData.dates.map((date, idx) => ({
+        time: date,
+        open: Number(priceData.opens[idx]),
+        high: Number(priceData.highs[idx]),
+        low: Number(priceData.lows[idx]),
+        close: Number(priceData.closes[idx]),
+    })).filter(row => Number.isFinite(row.open) && Number.isFinite(row.high) && Number.isFinite(row.low) && Number.isFinite(row.close));
+
+    const LW = window.LightweightCharts;
+    chartApi = LW.createChart(div, {
+        width: div.clientWidth,
+        height: 440,
+        layout: {
+            background: { type: 'solid', color: 'transparent' },
+            textColor: fontColor,
+            fontFamily: 'Inter, sans-serif',
+            fontSize: 11,
+        },
+        grid: {
+            vertLines: { color: gridColor },
+            horzLines: { color: gridColor },
+        },
+        crosshair: {
+            mode: LW.CrosshairMode ? LW.CrosshairMode.Normal : 0,
+        },
+        rightPriceScale: {
+            borderColor: lineColor,
+            scaleMargins: { top: 0.08, bottom: 0.12 },
+        },
+        timeScale: {
+            borderColor: lineColor,
+            timeVisible: false,
+            secondsVisible: false,
+            rightOffset: 8,
+            barSpacing: 7,
+        },
+        handleScroll: {
+            mouseWheel: true,
+            pressedMouseMove: true,
+            horzTouchDrag: true,
+            vertTouchDrag: false,
+        },
+        handleScale: {
+            axisPressedMouseMove: true,
+            mouseWheel: true,
+            pinch: true,
+        },
+    });
+
+    const seriesOptions = {
+        upColor,
+        downColor,
+        wickUpColor: upColor,
+        wickDownColor: downColor,
+        borderVisible: false,
+    };
+    if (LW.CandlestickSeries && chartApi.addSeries) {
+        candleSeries = chartApi.addSeries(LW.CandlestickSeries, seriesOptions);
+    } else {
+        candleSeries = chartApi.addCandlestickSeries(seriesOptions);
+    }
+    candleSeries.setData(candleData);
+
+    const markers = buildEpisodeMarkers(episodes || [], candleData, upColor, downColor);
+    if (LW.createSeriesMarkers) {
+        markerApi = LW.createSeriesMarkers(candleSeries, markers);
+    } else if (candleSeries.setMarkers) {
+        candleSeries.setMarkers(markers);
+    }
+
+    chartApi.timeScale().fitContent();
+    updateLegend(null);
+    chartApi.subscribeCrosshairMove((param) => {
+        const row = param && param.time ? findCandle(param.time) : null;
+        updateLegend(row);
+    });
+
+    chartResizeObserver = new ResizeObserver(() => {
+        if (chartApi && chartApi.resize) chartApi.resize(div.clientWidth, 440);
+    });
+    chartResizeObserver.observe(div);
+}
+
+function buildEpisodeMarkers(episodes, candles, upColor, downColor) {
+    const dateSet = new Set(candles.map(row => row.time));
+    return episodes
+        .filter(e => e.peak_date && dateSet.has(e.peak_date))
+        .map(e => {
+            const isUp = e.direction === 'up';
+            const move = Number(e.pct_move);
+            const pct = Number.isFinite(move) ? `${move.toFixed(1)}%` : '';
+            return {
+                time: e.peak_date,
+                position: isUp ? 'belowBar' : 'aboveBar',
+                color: isUp ? upColor : downColor,
+                shape: isUp ? 'arrowUp' : 'arrowDown',
+                text: `E${e.id} ${pct}`,
+            };
+        });
+}
+
+function findCandle(time) {
+    const key = typeof time === 'string'
+        ? time
+        : `${time.year}-${String(time.month).padStart(2, '0')}-${String(time.day).padStart(2, '0')}`;
+    return candleData.find(row => row.time === key) || null;
+}
+
+function updateLegend(row) {
+    const legend = document.getElementById('kline-legend');
+    if (!legend) return;
+    if (!row) {
+        const last = candleData[candleData.length - 1];
+        if (!last) {
+            legend.textContent = '';
+            return;
+        }
+        row = last;
+    }
+    const change = row.close - row.open;
+    const pct = row.open ? (change / row.open) * 100 : 0;
+    const color = change >= 0 ? 'var(--rt-success)' : 'var(--rt-danger)';
+    legend.innerHTML = `
+        <span class="rt-mono">${ticker}</span>
+        <span class="rt-mono">${row.time}</span>
+        <span>O <span class="rt-mono">${row.open.toFixed(2)}</span></span>
+        <span>H <span class="rt-mono">${row.high.toFixed(2)}</span></span>
+        <span>L <span class="rt-mono">${row.low.toFixed(2)}</span></span>
+        <span>C <span class="rt-mono">${row.close.toFixed(2)}</span></span>
+        <span class="rt-mono" style="color: ${color}; font-weight: 600;">${change >= 0 ? '+' : ''}${pct.toFixed(2)}%</span>
+    `;
+}
+
+function updateChartRangeButtons() {
+    document.querySelectorAll('[data-chart-range]').forEach((btn) => {
+        const isActive = btn.dataset.chartRange === activeChartRange;
+        btn.classList.toggle('rt-btn--primary', isActive);
+        btn.classList.toggle('rt-btn--ghost', !isActive);
+    });
+}
+
+function setChartRangeLoading(isLoading) {
+    document.querySelectorAll('[data-chart-range]').forEach((btn) => {
+        btn.disabled = isLoading;
+    });
+}
+
+document.querySelectorAll('[data-chart-range]').forEach((btn) => {
+    btn.addEventListener('click', () => loadChart(btn.dataset.chartRange || '1y'));
+});
+document.querySelector('[data-fit-chart]')?.addEventListener('click', () => {
+    if (chartApi) chartApi.timeScale().fitContent();
+});
+
+loadChart();
+
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+    loadChart(activeChartRange);
+});
+</script>
+{% endblock %}

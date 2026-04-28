@@ -1,0 +1,63 @@
+# =========================
+# OS
+# =========================
+.DS_Store
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# =========================
+# Virtual Environment
+# =========================
+.venv/
+.env
+.env/
+.env.*
+!.env.example
+.envrc
+
+# =========================
+# Flask / App runtime
+# =========================
+instance/
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+
+# =========================
+# Logs / Cache
+# =========================
+*.log
+app/_episode_cache/
+app/_profile_cache/
+
+# =========================
+# Local agent / development notes
+# =========================
+AGENTS.md
+CLAUDE.md
+bootstrap_shared_vds.sh
+docs/*
+!docs/demo_cache/
+!docs/demo_cache/**
+!docs/verification_event_match_2026.json
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Secrets / Local config (未来重构用)
+# =========================
+config_local.py
+.mcp.json

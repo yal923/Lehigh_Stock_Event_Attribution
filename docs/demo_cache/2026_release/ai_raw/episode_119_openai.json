@@ -1,0 +1,241 @@
+{
+  "id": "resp_06ce5d754ac883c00069eed38fbbe88196a7d8baf8cfa2266d",
+  "created_at": 1777259407.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.5-2026-04-23",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_06ce5d754ac883c00069eed3907ac88196a7e95f8ffc0295f9",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06ce5d754ac883c00069eed39177608196accc33685162dc5b",
+      "action": {
+        "query": "ExxonMobil XOM April 8 2026 stock down oil prices tariff OPEC news April 9 2026",
+        "type": "search",
+        "queries": [
+          "ExxonMobil XOM April 8 2026 stock down oil prices tariff OPEC news April 9 2026",
+          "XOM stock April 9 2026 ExxonMobil shares fell April 8 2026",
+          "April 8 2026 energy stocks XLE down oil prices ExxonMobil"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06ce5d754ac883c00069eed39401ac819683ba02205cb7a0c6",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06ce5d754ac883c00069eed3956a14819685a9b8e59b2e2fb0",
+      "action": {
+        "query": "Reuters April 8 2026 oil prices plunge Iran ceasefire Trump WTI Brent",
+        "type": "search",
+        "queries": [
+          "Reuters April 8 2026 oil prices plunge Iran ceasefire Trump WTI Brent",
+          "April 8 2026 oil prices plunge Iran ceasefire Reuters energy shares XLE",
+          "CNBC April 8 2026 oil prices Trump Iran ceasefire energy stocks XLE"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06ce5d754ac883c00069eed399362c8196928d18e8c5fbea2e",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06ce5d754ac883c00069eed39955fc819682c229055075922e",
+      "action": {
+        "query": "site:investor.exxonmobil.com/sec-filings 2026 April 8 8-K ExxonMobil preliminary earnings timing effects $3.5 billion $4.9 billion",
+        "type": "search",
+        "queries": [
+          "site:investor.exxonmobil.com/sec-filings 2026 April 8 8-K ExxonMobil preliminary earnings timing effects $3.5 billion $4.9 billion",
+          "Exxon Mobil April 8 2026 8-K estimated negative timing effects Q1 2026 $3.5 $4.9 billion",
+          "ExxonMobil 8-K April 8 2026 negative timing effects Q1 2026"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06ce5d754ac883c00069eed39d5d988196a29542f1bd4cc146",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06ce5d754ac883c00069eed39d765881969bad98c5d2d37b4a",
+      "action": {
+        "query": "XLE stock price April 8 2026 down 4.7% April 9 2026 history",
+        "type": "search",
+        "queries": [
+          "XLE stock price April 8 2026 down 4.7% April 9 2026 history",
+          "SPY historical data April 8 2026 April 9 2026 stockanalysis",
+          "Energy Select Sector SPDR Fund XLE historical price Apr 8 2026"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06ce5d754ac883c00069eed3a1e1c0819695cbeedba30d7762",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06ce5d754ac883c00069eed3a1fe7c81969c966aa6258d66b3",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.investing.com/news/stock-market-news/global-energy-stocks-plunge-as-usiran-ceasefire-hits-oil-4603399"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06ce5d754ac883c00069eed3a50cb0819688c4f7b7684d71ab",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06ce5d754ac883c00069eed3a57e6481969787606047e4ce92",
+      "action": {
+        "type": "open_page",
+        "url": "https://investor.exxonmobil.com/sec-filings/all-sec-filings/content/0000034088-26-000056/0000034088-26-000056.pdf"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06ce5d754ac883c00069eed3a76b008196bb9afc5f88d43600",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_06ce5d754ac883c00069eed3b29d8881968553ae0e70ce2bb1",
+      "action": {
+        "type": "open_page",
+        "url": "https://stockanalysis.com/etf/spy/history/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_06ce5d754ac883c00069eed3b4afbc8196b8de9fa3648f88bb",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "msg_06ce5d754ac883c00069eed3cc49ec8196be0969ff61ef35c9",
+      "content": [
+        {
+          "annotations": [],
+          "text": "ExxonMobil’s April 7–9 move looks like one coherent energy-sector selloff, not a reversal episode: XOM rose slightly on April 7, then fell 4.69% on April 8 and another 0.76% on April 9, taking the rolling April 7–9 signal to -5.41% from $163.91 to $155.04 [1]. The dominant catalyst was the sudden collapse in crude’s Middle East war premium after the U.S.–Iran two-week ceasefire announcement; Reuters reported on April 8 that energy stocks slid as the ceasefire punctured the premium embedded in oil prices from fears around the Strait of Hormuz, with oil falling below $100 per barrel and Brent hitting its lowest level in nearly a month [2].\n\nThat industry channel matches the factor attribution: XLE, the stated industry proxy, fell 3.51% on April 8 and another 1.24% on April 9, a -4.70% close-to-close decline from April 7 to April 9, while XOM’s -5.41% was directionally and temporally aligned with the sector drawdown [3]. The broader equity market actually moved the other way on the main selloff day: AP reported that the S&P 500 jumped 2.5% on April 8 after the ceasefire announcement, and SPY’s historical data show +2.55% on April 8 and +0.58% on April 9 [4][5]. So the public evidence supports a “risk-on, oil-down” macro shock that hurt energy specifically; it does not neatly support a conventional broad-market selloff explanation, despite the regression assigning a material market component.\n\nThere was also firm-specific negative news, but it appears secondary rather than the core cause. Before the market opened on April 8, ExxonMobil filed 1Q26 earnings considerations estimating a $3.5 billion–$4.9 billion unfavorable timing-effect headwind, about $0.93 per share at the midpoint, and said Middle East disruptions were expected to cut global oil-equivalent production by about 6% versus 4Q25 and Energy Products throughput by about 2% [6]. That filing likely added to pressure at the margin, but because Reuters described a simultaneous global energy-equity selloff and XLE’s path closely tracked XOM’s decline, the evidence is more consistent with the internal model’s high industry attribution than with an idiosyncratic Exxon-only event [2][3][6].\n\n```json\n{\n  \"headline\": \"Exxon fell with energy shares after the U.S.–Iran ceasefire crushed crude’s war premium.\",\n  \"evidence_quality\": \"SUPPORTED\",\n  \"sources\": [\n    {\"title\": \"Exxon Mobil (XOM) Stock Price History 1968-2026\", \"url\": \"https://stockanalysis.com/stocks/xom/history/\", \"publisher\": \"StockAnalysis.com\", \"date\": \"\"},\n    {\"title\": \"Global energy stocks plunge as US-Iran ceasefire hits oil\", \"url\": \"https://www.investing.com/news/stock-market-news/global-energy-stocks-plunge-as-usiran-ceasefire-hits-oil-4603399\", \"publisher\": \"Reuters via Investing.com\", \"date\": \"2026-04-08\"},\n    {\"title\": \"XLE Historical Stock Price Data\", \"url\": \"https://stockanalysis.com/etf/xle/history/\", \"publisher\": \"StockAnalysis.com\", \"date\": \"\"},\n    {\"title\": \"How major US stock indexes fared Wednesday 4/8/2026\", \"url\": \"https://apnews.com/article/wall-street-stocks-dow-nasdaq-3f0934159bba1db24af9eeb899851049\", \"publisher\": \"Associated Press\", \"date\": \"2026-04-08\"},\n    {\"title\": \"SPY Historical Stock Price Data\", \"url\": \"https://stockanalysis.com/etf/spy/history/\", \"publisher\": \"StockAnalysis.com\", \"date\": \"\"},\n    {\"title\": \"8-K - 04/08/2026 - Exxon Mobil Corporation\", \"url\": \"https://investor.exxonmobil.com/sec-filings/all-sec-filings/content/0000034088-26-000056/0000034088-26-000056.pdf\", \"publisher\": \"ExxonMobil\", \"date\": \"2026-04-08\"}\n  ]\n}\n```",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "type": "web_search",
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+        "city": null,
+        "country": "US",
+        "region": null,
+        "timezone": null,
+        "type": "approximate"
+      }
+    }
+  ],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1777259478.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "effort": "medium",
+    "generate_summary": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 44637,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 3804,
+    "output_tokens_details": {
+      "reasoning_tokens": 2865
+    },
+    "total_tokens": 48441
+  },
+  "user": null,
+  "billing": {
+    "payer": "openai"
+  },
+  "frequency_penalty": 0.0,
+  "moderation": null,
+  "presence_penalty": 0.0,
+  "store": true,
+  "_provider_name": "openai"
+}

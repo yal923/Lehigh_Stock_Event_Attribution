@@ -1,0 +1,285 @@
+{
+  "id": "resp_0106d979ecbd287c0069eed89538f88194b0cf24d76b078af8",
+  "created_at": 1777260693.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.5-2026-04-23",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0106d979ecbd287c0069eed89600cc8194a4c76eb112531969",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed8969acc8194b850a301e94a0d0e",
+      "action": {
+        "query": "Airbnb ABNB February 12 2026 February 17 2026 stock earnings guidance stock rises",
+        "type": "search",
+        "queries": [
+          "Airbnb ABNB February 12 2026 February 17 2026 stock earnings guidance stock rises",
+          "Airbnb Q4 2025 results February 2026 ABNB shares rise",
+          "ABNB stock February 13 2026 Airbnb earnings 2026",
+          "Airbnb announces fourth quarter full year 2025 results February 2026"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed89a0e6c8194b984c6d02bbc78a0",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed89a2bcc8194af384509cd0231d8",
+      "action": {
+        "query": "February 13 2026 stock market SPY down February 17 2026 inflation retail sales Fed",
+        "type": "search",
+        "queries": [
+          "February 13 2026 stock market SPY down February 17 2026 inflation retail sales Fed",
+          "February 17 2026 stock market S&P 500 down why",
+          "February 12 2026 stock market selloff Nasdaq S&P 500 CPI PPI",
+          "February 2026 consumer discretionary XLY performance February 12 17 2026"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed89e2dc88194bb7e0099b800e4b9",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed89e43bc8194a6acdef32ea2a5d9",
+      "action": {
+        "query": "ABNB price target February 13 2026 Airbnb analyst raised after earnings",
+        "type": "search",
+        "queries": [
+          "ABNB price target February 13 2026 Airbnb analyst raised after earnings",
+          "Airbnb shares Feb 13 2026 analyst price target Q4 2025 bookings",
+          "ABNB February 17 2026 stock Airbnb price target upgrade",
+          "Airbnb stock rises most in 10 months February 13 2026 analysts"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed8a1d4608194a626cbe2503b2677",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed8a21ac881949565a1452a2c7ec5",
+      "action": {
+        "query": "SPY historical data February 12 2026 February 17 2026 close",
+        "type": "search",
+        "queries": [
+          "SPY historical data February 12 2026 February 17 2026 close",
+          "XLY historical data February 12 2026 February 17 2026 close",
+          "ABNB historical data February 12 2026 February 17 2026 close"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed8a7d67c8194a28f4168b764cc3d",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed8a7e85c819495c2449647536a69",
+      "action": {
+        "type": "open_page",
+        "url": "https://news.airbnb.com/airbnb-q4-2025-financial-results/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed8a95a3881948f9724b3d94ec06f",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed8a99090819480822ea862befc5e",
+      "action": {
+        "type": "open_page",
+        "url": "https://stockanalysis.com/etf/spy/history/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed8abdecc8194b47cd6db9ff7d896",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed8ac42d48194aaac5d6a45afdcc9",
+      "action": {
+        "pattern": "VIX",
+        "type": "find_in_page",
+        "url": "https://www.kiplinger.com/investing/stocks/stocks-make-more-big-up-and-down-moves-stock-market-today"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed8ae51f081949fa114f354759f17",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed8aeea6881948c53bf2a1b0941ee",
+      "action": {
+        "query": "CNBC Airbnb ABNB Q4 2025 earnings February 13 2026 revenue booking stock",
+        "type": "search",
+        "queries": [
+          "CNBC Airbnb ABNB Q4 2025 earnings February 13 2026 revenue booking stock",
+          "Reuters Airbnb Q4 2025 earnings February 13 2026 ABNB stock"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed8b4200481948b9d069f8593f7c8",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0106d979ecbd287c0069eed8c4036c81949851da31fc21edcf",
+      "action": {
+        "pattern": "free cash flow",
+        "type": "find_in_page",
+        "url": "https://s26.q4cdn.com/656283129/files/doc_financials/2025/q4/Airbnb_Q4-2025-Shareholder-Letter.pdf"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0106d979ecbd287c0069eed8c786388194b118b2b0cbd3c361",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "msg_0106d979ecbd287c0069eed8d07ac48194a3ee6b0ecb955b02",
+      "content": [
+        {
+          "annotations": [],
+          "text": "ABNB’s episode looks like a **selloff/reversal**, not a one-direction rally: the stock fell 3.00% to $115.96 on February 12, then rebounded 4.65% to $121.35 on February 13 and another 2.37% to $124.23 on February 17, producing the cited +7.13% rolling move from the February 12 close to the February 17 close [1]. The main firm-specific catalyst was Airbnb’s February 12 Q4/FY25 report: revenue rose 12% year over year, gross booking value rose 16%—its fastest GBV growth in more than two years—and nights and seats booked rose 10%, while management guided Q1 revenue to $2.59–$2.63 billion and said full-year 2026 revenue growth should accelerate to at least low double digits [2]. Bloomberg’s contemporaneous coverage directly tied the share move to strong Q4 bookings, an upbeat revenue outlook, “healthy” travel demand, and adoption of flexible payment/booking features [3].\n\nThat firm-specific strength explains why the factor model assigns more than 100% of the episode return to company factors: investors were repricing a reacceleration story after a weak February 12 close. But the reaction was not purely clean or uniformly bullish. Airbnb’s adjusted EBITDA margin fell to 28% in Q4 2025 from 31% a year earlier, and net income declined to $341 million from $461 million, even as the company generated $521 million of quarterly free cash flow and repurchased $1.1 billion of stock [2]. Post-print analyst signals were also mixed: several February 13 targets clustered near or below the stock price, while D.A. Davidson maintained Buy but lowered its target to $150 on February 17 [4]. Those offsets are consistent with the model’s negative residual/alpha component rather than contradicting the earnings-driven rally.\n\nThe industry and macro pieces look smaller and partly offsetting. The consumer-discretionary proxy XLY was down 1.38% on February 12, then nearly flat on February 13 and February 17, which fits the model’s small positive industry contribution over the rolling window [5]. The macro backdrop was a headwind at the start: on February 12, the S&P 500 fell 1.6%, the Nasdaq lost 2.0%, and AP attributed the selloff to pressure on companies viewed as AI-disruption losers and pre-CPI caution [6]. SPY’s closes then stabilized—down 1.54% on February 12, up 0.07% on February 13, and up 0.16% on February 17—while Kiplinger described February 17 as a volatile, AI-driven market with modest index gains and elevated VIX [7][8]. Net-net, ABNB’s positive move was mainly an earnings-and-guidance reversal that overcame a shaky market tape, with only modest help from its broader consumer-discretionary group.\n\n```json\n{\n  \"headline\": \"Airbnb rallied after strong Q4 bookings and upbeat 2026 guidance reversed a broad-market February 12 selloff.\",\n  \"evidence_quality\": \"SUPPORTED\",\n  \"sources\": [\n    {\"title\": \"Airbnb (ABNB) Stock Price History 2020-2026\", \"url\": \"https://stockanalysis.com/stocks/abnb/history/\", \"publisher\": \"StockAnalysis\", \"date\": \"\"},\n    {\"title\": \"Airbnb Q4 2025 Shareholder Letter\", \"url\": \"https://s26.q4cdn.com/656283129/files/doc_financials/2025/q4/Airbnb_Q4-2025-Shareholder-Letter.pdf\", \"publisher\": \"Airbnb Investor Relations\", \"date\": \"2026-02-12\"},\n    {\"title\": \"Airbnb Gains as ‘Healthy’ Demand Fuels Faster Growth in 2026\", \"url\": \"https://www.bloomberg.com/news/articles/2026-02-12/airbnb-sees-healthy-demand-fueling-faster-growth-in-2026\", \"publisher\": \"Bloomberg\", \"date\": \"2026-02-13\"},\n    {\"title\": \"Airbnb Target Price (ABNB)\", \"url\": \"https://stockcircle.com/stocks/abnb/target-price\", \"publisher\": \"StockCircle\", \"date\": \"\"},\n    {\"title\": \"XLY Historical Stock Price Data\", \"url\": \"https://stockanalysis.com/etf/xly/history/\", \"publisher\": \"StockAnalysis\", \"date\": \"\"},\n    {\"title\": \"How major US stock indexes fared Thursday, 2/12/2026\", \"url\": \"https://apnews.com/article/wall-street-stocks-dow-nasdaq-220441c8c229d1b7e1beeacd502988fe\", \"publisher\": \"Associated Press\", \"date\": \"2026-02-12\"},\n    {\"title\": \"SPY Historical Stock Price Data\", \"url\": \"https://stockanalysis.com/etf/spy/history/\", \"publisher\": \"StockAnalysis\", \"date\": \"\"},\n    {\"title\": \"Stocks Make More Big Up and Down Moves: Stock Market Today\", \"url\": \"https://www.kiplinger.com/investing/stocks/stocks-make-more-big-up-and-down-moves-stock-market-today\", \"publisher\": \"Kiplinger\", \"date\": \"2026-02-17\"}\n  ]\n}\n```",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "type": "web_search",
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+        "city": null,
+        "country": "US",
+        "region": null,
+        "timezone": null,
+        "type": "approximate"
+      }
+    }
+  ],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1777260764.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "effort": "medium",
+    "generate_summary": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 65102,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 3696,
+    "output_tokens_details": {
+      "reasoning_tokens": 2542
+    },
+    "total_tokens": 68798
+  },
+  "user": null,
+  "billing": {
+    "payer": "developer"
+  },
+  "frequency_penalty": 0.0,
+  "moderation": null,
+  "presence_penalty": 0.0,
+  "store": true,
+  "_provider_name": "openai"
+}

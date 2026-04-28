@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-28T20:54:19.640058+00:00",
+  "source_artifact": "docs/demo_cache/2026_release/release_verification.json",
+  "review_type": "first-pass manual event-match review",
+  "labels": {
+    "yes": "AI explanation clearly matches the pre-selected event theme.",
+    "partial": "AI mentions the theme but relies on other drivers too.",
+    "no": "AI does not match the theme and does not provide a convincing alternative.",
+    "better-alt": "AI identifies a more plausible driver than the selection hypothesis.",
+    "unreviewed": "No curated label has been recorded yet."
+  },
+  "summary": {
+    "total": 10,
+    "counts": {
+      "yes": 8,
+      "partial": 2
+    }
+  },
+  "results": [
+    {
+      "ticker": "XOM",
+      "episode_id": 119,
+      "key": "XOM#119",
+      "event_theme": "US-Iran / oil shock relief",
+      "event_match": "yes",
+      "rationale": "AI centers the explanation on the U.S.-Iran ceasefire, lower crude war premium, and energy-sector selloff.",
+      "ai_headline": "Exxon fell with energy shares after the U.S.–Iran ceasefire crushed crude’s war premium.",
+      "ai_excerpt": "ExxonMobil’s April 7–9 move looks like one coherent energy-sector selloff, not a reversal episode: XOM rose slightly on April 7, then fell 4.69% on April 8 and another 0.76% on April 9, taking the rolling April 7–9 signal to -5.41% from $163.91 to $155.04 [1]. The dominant catalyst was the sudden collapse in crude’s Middle East war premium after the U.S.–Iran two-week ceasefire announcement; Reuters reported on April 8 that energy stocks slid as the ceasefire punctured the premium embedded in oil prices from fears around the Strait of Hormuz, with oil falling below $100 per barrel and Brent hitting its lowest level in nearly a month [2].\n\nThat industry channel matches the factor attribution: XLE, the stated industry proxy, fell 3.51% on April 8 and another 1.24% on April 9, a -4.70% close-to-close decline from April 7 to April 9, while XOM’s -5.41% was directionally and temporally aligne",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_119_openai.json"
+    },
+    {
+      "ticker": "NVDA",
+      "episode_id": 10,
+      "key": "NVDA#10",
+      "event_theme": "US-Iran relief + AI/product momentum",
+      "event_match": "yes",
+      "rationale": "AI matches both parts of the hypothesis: U.S.-Iran risk-on/oil relief and NVIDIA AI/product news.",
+      "ai_headline": "Nvidia rose with a broad risk-on market rally, helped by quantum-AI platform news, despite unclear industry-factor evidence.",
+      "ai_excerpt": "NVDA’s +5.05% episode was a fairly coherent risk-on advance, not a selloff/reversal: the stock rose +0.36% on Apr. 13, +3.80% on Apr. 14, and +1.20% on Apr. 15, closing at $198.87, with the rolling Apr. 13→Apr. 15 signal matching the full-window gain [1]. The largest daily leg lined up with a broad market rally: on Apr. 14, AP reported the S&P 500 rose 1.2% and the Nasdaq climbed 2.0% as hopes for renewed U.S.-Iran talks pushed oil lower, and on Apr. 15 the S&P 500 rose another 0.8% to a record while the Nasdaq gained 1.6% as ceasefire-extension hopes remained high [2], [3]. That fits the attribution’s very large market contribution: this was mostly a high-beta AI/mega-cap move in a sharply improving tape, with NVDA adding some company-specific upside.\n\nThe firm-specific component was plausibly helped by Nvidia’s Apr. 14 announcement of “NVIDIA Ising,” an open-source family of quantum-AI",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_10_openai.json"
+    },
+    {
+      "ticker": "ORCL",
+      "episode_id": 481,
+      "key": "ORCL#481",
+      "event_theme": "AI cloud earnings positive",
+      "event_match": "yes",
+      "rationale": "AI ties the rally to Oracle AI-cloud backlog, earnings, and FY2027 guidance.",
+      "ai_headline": "Oracle rallied on a Q3 AI-cloud backlog and FY2027 guidance beat, despite software-sector and macro headwinds.",
+      "ai_excerpt": "Oracle’s four-day move looks like an earnings-driven reversal inside a hostile market tape, not a clean uptrend. The stock fell on March 9 and March 10, then jumped 9.18% on March 11 after Oracle reported fiscal Q3 results on March 10 showing revenue of $17.2 billion, non-GAAP EPS of $1.79, cloud revenue of $8.9 billion, cloud infrastructure revenue up 84%, and remaining performance obligations of $553 billion, up 325% year over year [1]. The key firm-specific surprise was that the AI-infrastructure backlog looked both larger and more financeable: Oracle said much of the AI-contract RPO was supported by customer prepayments or customer-supplied GPUs, while Reuters reported that the results helped ease concerns about whether Oracle’s costly AI data-center push would generate profits quickly enough [1], [2]. Reuters also reported that Oracle raised FY2027 revenue guidance to $90 billion ve",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_481_openai.json"
+    },
+    {
+      "ticker": "AMZN",
+      "episode_id": 69,
+      "key": "AMZN#69",
+      "event_theme": "Big Tech AI capex fear",
+      "event_match": "yes",
+      "rationale": "AI identifies investor concern over Amazon AI capex and free-cash-flow pressure after earnings.",
+      "ai_headline": "Amazon sold off as investors repriced its $200 billion AI capex plan and weaker free-cash-flow outlook.",
+      "ai_excerpt": "AMZN’s Feb. 3–6 move looks like a coherent AI-capex repricing rather than a random four-day drift: the stock fell each session, from $238.62 on Feb. 3 to $210.32 on Feb. 6, with the largest daily leg on Feb. 6 after earnings and the two internal rolling signals both pointing down (-6.68% for Feb. 3–5 and -9.73% for Feb. 4–6) [1]. The pre-earnings weakness was already visible on Feb. 5, when AMZN closed down 4.42% at $222.69 amid a broader tech/AI selloff and investor focus on AWS growth, AI capex, and guidance ahead of results [2]. The post-close earnings release then supplied the firm-specific catalyst: Amazon reported strong headline growth—Q4 net sales up 14% to $213.4 billion and AWS sales up 24%—but also said free cash flow fell to $11.2 billion from $38.2 billion, mainly due to higher property and equipment spending tied to AI, and guided to about $200 billion of 2026 capex [3].\n\nT",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_69_openai.json"
+    },
+    {
+      "ticker": "MSFT",
+      "episode_id": 31,
+      "key": "MSFT#31",
+      "event_theme": "AI capex + cloud growth concern",
+      "event_match": "yes",
+      "rationale": "AI explains the selloff through AI capex, Azure growth concerns, and software-sector derating.",
+      "ai_headline": "Microsoft sold off after strong earnings as AI capex, Azure deceleration fears, and software-sector derating overwhelmed headline beats.",
+      "ai_excerpt": "Microsoft’s Jan. 27–30 move looks like one coherent post-earnings repricing, not a set of unrelated daily events: the stock rose modestly on Jan. 27 and Jan. 28, then most of the damage occurred on Jan. 29 after Microsoft reported fiscal Q2 results after the Jan. 28 close, with a further smaller follow-through decline on Jan. 30. The headline numbers were not weak—Microsoft reported $81.3 billion of revenue, up 17%, non-GAAP EPS of $4.14, up 24%, Microsoft Cloud revenue of $51.5 billion, up 26%, and Azure/other cloud revenue growth of 39% reported / 38% constant currency [1]. The selloff instead centered on the “quality” and cost of AI growth: management disclosed $37.5 billion of quarterly capex, with roughly two-thirds spent on short-lived GPUs/CPUs, said demand still exceeded supply, and guided Q3 operating margins down slightly year over year with Microsoft Cloud gross margin around ",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_31_openai.json"
+    },
+    {
+      "ticker": "ADBE",
+      "episode_id": 379,
+      "key": "ADBE#379",
+      "event_theme": "AI disruption hits software",
+      "event_match": "partial",
+      "rationale": "AI includes AI strategy/disruption pressure, but treats CEO-transition and earnings-package uncertainty as major co-drivers.",
+      "ai_headline": "Adobe sold off after a surprise CEO transition amplified AI-monetization worries despite solid Q1 results.",
+      "ai_excerpt": "ADBE’s 2026-03-11 to 2026-03-13 move looks like one coherent, company-specific selloff centered on Adobe’s post-close March 12 earnings/CEO-transition package, rather than three unrelated daily moves: the stock slipped 0.52% on March 11 to $273.71, fell 1.43% on March 12 to $269.78, then dropped 7.58% on March 13 to $249.32, matching the -8.91% rolling signal from March 11 to March 13 [1]. The fundamental print itself was not weak—Adobe reported record Q1 FY2026 revenue of $6.40 billion, 12% year-over-year growth, non-GAAP EPS of $6.06, subscription revenue growth of 13%, and Q2 revenue guidance of $6.43 billion to $6.48 billion while reaffirming FY2026 targets [2]. The problem was that the same release announced CEO Shantanu Narayen would transition out after a successor is named, while remaining chair, which introduced succession uncertainty at the same time investors were already deba",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_379_openai.json"
+    },
+    {
+      "ticker": "AAPL",
+      "episode_id": 1,
+      "key": "AAPL#1",
+      "event_theme": "Apple AI delay / mega-cap regulatory risk",
+      "event_match": "yes",
+      "rationale": "AI connects the decline to Siri/Apple Intelligence delay concerns plus regulatory pressure.",
+      "ai_headline": "Apple fell as Siri AI delay concerns and an FTC warning hit amid a broader AI-led tech selloff.",
+      "ai_excerpt": "Apple’s -7.16% rolling move from February 11 to February 13 looks like one coherent selloff rather than a reversal: AAPL was at a $275.50 prior close before a roughly 5% drop on February 12, then continued lower on February 13 from a $261.73 prior close to about $255.78, down another 2.3% [1][2]. The dominant catalyst was firm-specific: after the February 11 close, Bloomberg reported that Apple’s long-planned Siri upgrade had hit internal-testing snags and that features expected for iOS 26.4 could slip into later releases such as iOS 26.5 or iOS 27 [3]. That directly challenged the Apple Intelligence/Siri product-timing narrative; Evercore ISI reportedly expected Apple Intelligence 2.0 to be delayed from March, even while keeping an Outperform rating and $330 target [4].\n\nA second Apple-specific overhang arrived on February 12, when the FTC announced that Chairman Andrew Ferguson had sen",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_1_openai.json"
+    },
+    {
+      "ticker": "LLY",
+      "episode_id": 44,
+      "key": "LLY#44",
+      "event_theme": "New drug / FDA approval",
+      "event_match": "yes",
+      "rationale": "AI identifies a firm-specific FDA approval / oral GLP-1 product catalyst.",
+      "ai_headline": "Lilly rallied as FDA approval of oral GLP-1 Foundayo capped a firm-specific pipeline news cluster.",
+      "ai_excerpt": "LLY’s +7.66% move from March 30 to April 1 looks like one coherent, firm-specific rally rather than a selloff/reversal: the stock rose all three days—+0.96% to $886.63 on March 30, +3.74% to $919.77 on March 31, and +3.78% to $954.52 on April 1—with the full rolling signal anchored exactly to that up-leg [1]. The dominant catalyst was Lilly-specific obesity-drug news: on April 1, the FDA approved Foundayo/orforglipron, Lilly’s once-daily oral GLP-1 pill for chronic weight management, under an expedited priority-voucher pathway [4]. Lilly said the drug can be taken any time of day without food or water restrictions and reported 12.4% average weight loss at the highest dose in ATTAIN-1, reinforcing the market’s view that an oral product could expand Lilly’s already large GLP-1 franchise [5]. AP’s market wrap explicitly tied Lilly’s 3.8% April 1 rally to U.S. regulators approving its GLP-1 ",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_44_openai.json"
+    },
+    {
+      "ticker": "ABNB",
+      "episode_id": 209,
+      "key": "ABNB#209",
+      "event_theme": "Earnings / travel demand",
+      "event_match": "yes",
+      "rationale": "AI ties the rally to strong bookings, earnings, guidance, and travel-demand expectations.",
+      "ai_headline": "Airbnb rallied after strong Q4 bookings and upbeat 2026 guidance reversed a broad-market February 12 selloff.",
+      "ai_excerpt": "ABNB’s episode looks like a **selloff/reversal**, not a one-direction rally: the stock fell 3.00% to $115.96 on February 12, then rebounded 4.65% to $121.35 on February 13 and another 2.37% to $124.23 on February 17, producing the cited +7.13% rolling move from the February 12 close to the February 17 close [1]. The main firm-specific catalyst was Airbnb’s February 12 Q4/FY25 report: revenue rose 12% year over year, gross booking value rose 16%—its fastest GBV growth in more than two years—and nights and seats booked rose 10%, while management guided Q1 revenue to $2.59–$2.63 billion and said full-year 2026 revenue growth should accelerate to at least low double digits [2]. Bloomberg’s contemporaneous coverage directly tied the share move to strong Q4 bookings, an upbeat revenue outlook, “healthy” travel demand, and adoption of flexible payment/booking features [3].\n\nThat firm-specific s",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_209_openai.json"
+    },
+    {
+      "ticker": "TSLA",
+      "episode_id": 80,
+      "key": "TSLA#80",
+      "event_theme": "Tesla robotaxi / AI narrative",
+      "event_match": "partial",
+      "rationale": "AI supports the broader Tesla AI narrative, but emphasizes UBS upgrade, AI-chip/custom-silicon optimism, and risk-on growth rally more than robotaxi specifically.",
+      "ai_headline": "Tesla rallied on UBS upgrade and AI-chip optimism, amplified by a broad growth-stock relief rally.",
+      "ai_excerpt": "Tesla’s April 13–16 move looks like a **coherent upside episode concentrated on April 14–15**, not a selloff/reversal: TSLA rose +0.99% to $352.42 on April 13, +3.34% to $364.20 on April 14, then +7.62% to $391.95 on April 15 on 113.8 million shares, before a modest -0.78% pullback to $388.90 on April 16 [1]. That path matches the two positive rolling signals: the strongest move was the April 13–15 +11.22% run, while the April 14–16 +6.78% signal shows the move largely held despite the final-day fade [1].\n\nThe firm-specific catalyst mix was strongest. UBS upgraded Tesla on April 14 from Sell to Neutral, saying the post-pullback valuation created a more balanced risk/reward while still flagging weak EV demand, higher investment needs, and slow progress in robotaxi/Optimus [2]. The setup also came after Tesla’s April 2 delivery report, where Q1 production of 408,386 vehicles exceeded deliv",
+      "ai_raw_response_path": "docs/demo_cache/2026_release/ai_raw/episode_80_openai.json"
+    }
+  ]
+}

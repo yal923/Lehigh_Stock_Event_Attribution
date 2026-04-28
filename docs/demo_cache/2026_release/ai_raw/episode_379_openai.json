@@ -1,0 +1,393 @@
+{
+  "id": "resp_0ac83d1ff98edd330069eed727a2e881908d6c77dab959e3b0",
+  "created_at": 1777260327.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.5-2026-04-23",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0ac83d1ff98edd330069eed7287f448190b8fddaa6bd729553",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed728f92481908c2d517a937a86ff",
+      "action": {
+        "query": "Adobe ADBE stock March 13 2026 fell earnings guidance March 12 2026",
+        "type": "search",
+        "queries": [
+          "Adobe ADBE stock March 13 2026 fell earnings guidance March 12 2026",
+          "Adobe Q1 2026 earnings March 12 2026 stock fell guidance AI",
+          "ADBE March 13 2026 stock drop 7.6% Adobe"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed72b1bd08190a368fb7f7720e339",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed72c29b08190a1d6b36d1f3a09ed",
+      "action": {
+        "query": "site:news.adobe.com 2026 March 12 Adobe CEO Shantanu Narayen step down",
+        "type": "search",
+        "queries": [
+          "site:news.adobe.com 2026 March 12 Adobe CEO Shantanu Narayen step down",
+          "site:adobe.com investor relations March 12 2026 Adobe CEO Shantanu Narayen successor",
+          "Adobe March 12 2026 Shantanu Narayen step down successor"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed730afc48190ab0272772be82e19",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed730bd4081908d6d785a12ecce03",
+      "action": {
+        "type": "open_page",
+        "url": "https://fortune.com/company-assets/768/quartr/earnings-release-8-k-db7d5-2026-03-12.pdf"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed732d85081909d6f1ce0fa2327bf",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed7334af48190ba45b71f03f9d53e",
+      "action": {
+        "query": "CNBC Adobe stock March 13 2026 CEO step down stock fell 7% after hours earnings",
+        "type": "search",
+        "queries": [
+          "CNBC Adobe stock March 13 2026 CEO step down stock fell 7% after hours earnings",
+          "Reuters Adobe March 13 2026 shares fall CEO step down earnings forecast AI concerns",
+          "Bloomberg Adobe CEO step down lackluster forecast shares fell March 13 2026"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed738ff1481909647abbb8d2541e2",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed7392ae08190a7dc412840475bcb",
+      "action": {
+        "query": "March 13 2026 software stocks sell off IGV Adobe ServiceNow Salesforce AI concerns",
+        "type": "search",
+        "queries": [
+          "March 13 2026 software stocks sell off IGV Adobe ServiceNow Salesforce AI concerns",
+          "March 13 2026 technology stocks market selloff Nasdaq inflation oil Adobe software stocks",
+          "week ending March 13 2026 market selloff tech software AI fears IGV"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed73f20ec8190b80d1d957e70dd13",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed73f45fc8190b432d8c6e120e842",
+      "action": {
+        "query": "ADBE historical data March 13 2026 close 249.32",
+        "type": "search",
+        "queries": [
+          "ADBE historical data March 13 2026 close 249.32",
+          "ADBE historical prices March 11 2026 273.71 March 12 269.78 March 13 249.32",
+          "ADBE stock historical data Mar 13 2026 close"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed74301388190bd580446ae53e8c9",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed74351e481909b068ba4d02e3955",
+      "action": {
+        "query": "Adobe $150 million settlement March 13 2026 cancellation fees FTC DOJ official",
+        "type": "search",
+        "queries": [
+          "Adobe $150 million settlement March 13 2026 cancellation fees FTC DOJ official",
+          "site:ftc.gov Adobe settlement March 2026 cancellation fees",
+          "site:justice.gov Adobe settlement March 13 2026 150 million"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed74986508190bcc5cb95e6be0685",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed74998a48190886eca5d0a3e88e9",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.justice.gov/civil/consumer-protection-branch-press-releases"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed74a30dc8190a3e17216363815a6",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.justice.gov/opa/pr/adobe-agrees-150-million-settlement-and-injunction-resolve-alleged-violations-restore-online"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed74bd71481908086a6d30bf4081c",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed74c7da48190a92d84079cde0b8a",
+      "action": {
+        "query": "Adobe ADBE analyst downgrade March 13 2026 Barclays price target CEO transition",
+        "type": "search",
+        "queries": [
+          "Adobe ADBE analyst downgrade March 13 2026 Barclays price target CEO transition",
+          "ADBE March 13 2026 analyst downgrade CEO transition AI concerns price target",
+          "Adobe shares drop March 13 2026 analyst cut target CEO exit"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed7543da48190907cfbfcf720214d",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed75469f0819084442daf043f7578",
+      "action": {
+        "type": "open_page",
+        "url": "https://apnews.com/article/fbaf44c8ea236a7e966bfcddef305ac3"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed755190c8190aaadde8ac08a921d",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed755ffc8819083e44c3acc7cb0cd",
+      "action": {
+        "query": "IGV historical price March 13 2026 close March 12 2026",
+        "type": "search",
+        "queries": [
+          "IGV historical price March 13 2026 close March 12 2026",
+          "iShares Expanded Tech-Software Sector ETF historical data Mar 13 2026 IGV",
+          "IGV Mar 13 2026 historical close"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed75ca62081909dfd6b5e98cb0a9d",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed75cb9b081909f0686ccba1d26c4",
+      "action": {
+        "type": "open_page",
+        "url": "https://stockanalysis.com/etf/igv/history/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed75eccac819094663da0ddafbd66",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed75f247c8190ab77e5266885a411",
+      "action": {
+        "type": "open_page",
+        "url": "https://stockanalysis.com/stocks/adbe/history/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed76197bc8190aebf3e7525ca534c",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0ac83d1ff98edd330069eed76c5db88190a12d354959d2f1dd",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/21306202/ay45th643t5y46.pdf"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0ac83d1ff98edd330069eed76fdbcc8190af9cabb5a0d6256b",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "msg_0ac83d1ff98edd330069eed77cd4008190ae126b93f79e8d21",
+      "content": [
+        {
+          "annotations": [],
+          "text": "ADBE’s 2026-03-11 to 2026-03-13 move looks like one coherent, company-specific selloff centered on Adobe’s post-close March 12 earnings/CEO-transition package, rather than three unrelated daily moves: the stock slipped 0.52% on March 11 to $273.71, fell 1.43% on March 12 to $269.78, then dropped 7.58% on March 13 to $249.32, matching the -8.91% rolling signal from March 11 to March 13 [1]. The fundamental print itself was not weak—Adobe reported record Q1 FY2026 revenue of $6.40 billion, 12% year-over-year growth, non-GAAP EPS of $6.06, subscription revenue growth of 13%, and Q2 revenue guidance of $6.43 billion to $6.48 billion while reaffirming FY2026 targets [2]. The problem was that the same release announced CEO Shantanu Narayen would transition out after a successor is named, while remaining chair, which introduced succession uncertainty at the same time investors were already debating Adobe’s AI strategy [2].\n\nThat firm-specific interpretation is well supported by contemporaneous coverage and analyst reaction. Reuters reported that Adobe shares fell more than 7% in extended trading after the CEO transition news, tying the move to renewed concern about Adobe’s strategy amid AI disruption and noting competitive pressure from AI-enabled design tools from rivals such as Canva and Figma [3]. Barclays then downgraded Adobe to Equal Weight from Overweight and cut its price target to $275 from $335, citing near-term revenue-growth concerns, leadership transition risk, weaker net-new ARR versus estimates, and generative-AI pressure on Adobe Stock sales as users create images with text prompts rather than buying stock images [4]. A same-day DOJ action added another company-specific overhang: on March 13 the Justice Department announced a proposed stipulated order requiring $75 million in civil penalties and $75 million in free services to resolve alleged violations of online-subscription disclosure and cancellation rules [5]. Because ADBE opened March 13 at $249.00 versus the prior $269.78 close, most of the decline had already occurred before the DOJ news flow could be fully digested, so the settlement looks like an incremental reputational/regulatory weight rather than the dominant trigger [1][5].\n\nThe industry and macro evidence is present but secondary, which broadly fits the attribution’s emphasis on firm-specific drivers. The software tape was soft—IGV fell 0.87% on March 12 and 0.94% on March 13, from $85.74 on March 11 to $84.19 on March 13—and Reuters’ Adobe story explicitly framed the stock reaction against investor worries about AI disruption in design software [3][6]. However, the provided factor model says the industry contribution was -15% of the negative episode return, i.e., an offset rather than a drag, which does not neatly line up with IGV’s modest decline; that discrepancy should be treated as a regression-specific exposure/sign issue rather than a clean public-news narrative [6]. Macro was a modest additional headwind: AP reported that on March 13 the S&P 500 fell 0.6%, the Nasdaq dropped 0.9%, and oil moved back above $100 as Iran-war fallout raised inflation pressure, consistent with a smaller market drag versus the much larger Adobe-specific shock [7].\n\n```json\n{\n  \"headline\": \"Adobe sold off after a surprise CEO transition amplified AI-monetization worries despite solid Q1 results.\",\n  \"evidence_quality\": \"SUPPORTED\",\n  \"sources\": [\n    {\"title\": \"Adobe (ADBE) Stock Price History 1987-2026\", \"url\": \"https://stockanalysis.com/stocks/adbe/history/\", \"publisher\": \"StockAnalysis.com\", \"date\": \"2026-04-24\"},\n    {\"title\": \"Adobe Delivers Record Q1 Results\", \"url\": \"https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/21306202/ay45th643t5y46.pdf\", \"publisher\": \"Adobe\", \"date\": \"2026-03-12\"},\n    {\"title\": \"Adobe’s longtime CEO to exit role amid AI disruption, shares fall\", \"url\": \"https://www.investing.com/news/stock-market-news/adobe-announces-ceo-transition-shares-fall-4558224\", \"publisher\": \"Reuters via Investing.com\", \"date\": \"2026-03-12\"},\n    {\"title\": \"Barclays cuts Adobe stock rating on AI impact and CEO transition\", \"url\": \"https://www.investing.com/news/analyst-ratings/barclays-cuts-adobe-stock-rating-on-ai-impact-and-ceo-transition-93CH-4559132\", \"publisher\": \"Investing.com\", \"date\": \"2026-03-13\"},\n    {\"title\": \"Adobe Agrees to $150 Million Settlement and Injunction to Resolve Alleged Violations of the Restore Online Shoppers’ Confidence Act\", \"url\": \"https://www.justice.gov/opa/pr/adobe-agrees-150-million-settlement-and-injunction-resolve-alleged-violations-restore-online\", \"publisher\": \"U.S. Department of Justice\", \"date\": \"2026-03-13\"},\n    {\"title\": \"IGV Historical Stock Price Data\", \"url\": \"https://stockanalysis.com/etf/igv/history/\", \"publisher\": \"StockAnalysis.com\", \"date\": \"2026-04-24\"},\n    {\"title\": \"How major US stock indexes fared Friday 3/13/2026\", \"url\": \"https://apnews.com/article/stocks-oil-iran-dow-jones-fbaf44c8ea236a7e966bfcddef305ac3\", \"publisher\": \"Associated Press\", \"date\": \"2026-03-13\"}\n  ]\n}\n```",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "type": "web_search",
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+        "city": null,
+        "country": "US",
+        "region": null,
+        "timezone": null,
+        "type": "approximate"
+      }
+    }
+  ],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1777260426.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "effort": "medium",
+    "generate_summary": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 80513,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 4057,
+    "output_tokens_details": {
+      "reasoning_tokens": 2801
+    },
+    "total_tokens": 84570
+  },
+  "user": null,
+  "billing": {
+    "payer": "developer"
+  },
+  "frequency_penalty": 0.0,
+  "moderation": null,
+  "presence_penalty": 0.0,
+  "store": true,
+  "_provider_name": "openai"
+}

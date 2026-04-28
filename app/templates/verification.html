@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}SA41 · Test Episodes{% endblock %}
+
+{% macro badge(value) -%}
+    {%- set label = value or 'n/a' -%}
+    {%- set norm = label|string|lower -%}
+    {%- if label in ['SUPPORTED', 'PASS'] or norm == 'yes' -%}
+        <span class="rt-badge rt-badge--success">{{ label }}</span>
+    {%- elif label in ['LIMITED', 'LIMITED_EVIDENCE', 'CAUTION'] or norm in ['partial', 'better-alt'] -%}
+        <span class="rt-badge rt-badge--warning">{{ label }}</span>
+    {%- elif label in ['NO_EVIDENCE', 'FAIL'] or norm == 'no' -%}
+        <span class="rt-badge rt-badge--danger">{{ label }}</span>
+    {%- else -%}
+        <span class="rt-badge rt-badge--neutral">{{ label }}</span>
+    {%- endif -%}
+{%- endmacro %}
+
+{% block content %}
+<div class="rt-container rt-container--wide">
+    <section class="rt-hero">
+        <div class="rt-flex-between" style="align-items: flex-end; flex-wrap: wrap;">
+            <div>
+                <h1 class="rt-hero__title">Test Episodes</h1>
+                <div class="rt-hero__subtitle">
+                    Simple shortcut table for the cached 10-episode trial set.
+                </div>
+            </div>
+            <a class="rt-btn rt-btn--ghost" href="{{ url_for('routes.home') }}">Back to home</a>
+        </div>
+    </section>
+
+    {% if not summary.available %}
+    <div class="rt-card">
+        No verification artifact found in
+        <span class="rt-mono">instance/verification/release_verification_*.json</span>.
+    </div>
+    {% else %}
+    <div class="rt-caption" style="margin-bottom: 12px;">
+        Source: <span class="rt-mono">{{ summary.artifact_name }}</span>
+        {% if summary.artifact_source %} · {{ summary.artifact_source }}{% endif %}
+        {% if summary.run_at %} · {{ summary.run_at }}{% endif %}
+    </div>
+
+    <div class="rt-card" style="padding: 0; overflow-x: auto;">
+        <table class="rt-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Episode</th>
+                    <th>Event theme</th>
+                    <th>V2</th>
+                    <th>Routing</th>
+                    <th>AI</th>
+                    <th>Event match</th>
+                    <th>Review note</th>
+                    <th>Sources</th>
+                    <th>Cost</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in results %}
+                {% set pipe = item.pipeline or {} %}
+                {% set ai = item.ai or {} %}
+                {% set review = item.event_review or {} %}
+                <tr>
+                    <td class="rt-num">{{ loop.index }}</td>
+                    <td class="rt-mono">{{ item.ticker }} #{{ item.episode_id }}</td>
+                    <td>{{ item.theme }}</td>
+                    <td>{{ badge(pipe.outward_status) }}</td>
+                    <td class="rt-mono">{{ pipe.routing_mode or 'n/a' }}</td>
+                    <td>{{ badge(ai.evidence_quality) }}</td>
+                    <td>{{ badge(review.event_match) }}</td>
+                    <td>{{ review.rationale or '' }}</td>
+                    <td class="rt-num">{{ ai.source_count or 0 }}</td>
+                    <td class="rt-num">
+                        {% if ai.cost_estimate_usd is not none %}
+                            ${{ "%.4f"|format(ai.cost_estimate_usd) }}
+                        {% else %}
+                            n/a
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a class="rt-btn rt-btn--primary rt-btn--sm" href="{{ url_for('routes.episode_analysis', ticker=item.ticker, episode_id=item.episode_id) }}">Open</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

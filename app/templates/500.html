@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}500 · Server Error{% endblock %}
+
+{% block content %}
+<div class="rt-container rt-container--narrow" style="min-height: calc(100vh - 52px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <div class="rt-hero__eyebrow" style="color: var(--rt-danger);">Error · 500</div>
+    <h1 class="rt-hero__title" style="font-size: 28px; margin-top: 8px;">Something went wrong</h1>
+    <p style="margin-top: 12px; max-width: 520px; font-size: 13px; color: var(--rt-text-secondary); line-height: 1.6;">
+        An internal error occurred while processing your request. If this keeps happening, please note which ticker or episode you were viewing so the team can reproduce the issue.
+    </p>
+    <a href="{{ url_for('routes.home') }}" class="rt-btn rt-btn--primary" style="margin-top: 20px;">
+        ← Back to Markets
+    </a>
+</div>
+{% endblock %}

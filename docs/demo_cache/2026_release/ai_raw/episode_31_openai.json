@@ -1,0 +1,267 @@
+{
+  "id": "resp_0284c1025aebf06d0069eed6c84c188194838d646f197c069c",
+  "created_at": 1777260232.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.5-2026-04-23",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0284c1025aebf06d0069eed6c8f29c81948695b6a2ccd70830",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0284c1025aebf06d0069eed6c9f57481948a01c680ce9a7ada",
+      "action": {
+        "query": "Microsoft stock falls January 29 2026 earnings Azure guidance AI capex",
+        "type": "search",
+        "queries": [
+          "Microsoft stock falls January 29 2026 earnings Azure guidance AI capex",
+          "MSFT shares drop Jan 29 2026 Microsoft earnings Azure cloud growth forecast",
+          "Microsoft fiscal second quarter 2026 results January 28 2026 Azure stock drop",
+          "Microsoft 2026 January 30 stock down software sector selloff IGV"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0284c1025aebf06d0069eed6cc59248194852ed1040034f82a",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0284c1025aebf06d0069eed6ccce608194a3757173aaf72023",
+      "action": {
+        "query": "January 29 2026 software stocks selloff Microsoft ServiceNow IBM Meta earnings IGV",
+        "type": "search",
+        "queries": [
+          "January 29 2026 software stocks selloff Microsoft ServiceNow IBM Meta earnings IGV",
+          "Jan 29 2026 technology stocks fall software sector Microsoft earnings Nasdaq",
+          "IGV ETF January 29 2026 Microsoft earnings software stocks selloff",
+          "January 30 2026 software stocks fell AI capex Azure Microsoft"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0284c1025aebf06d0069eed6cfc4688194adb7fcb004eca6cb",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0284c1025aebf06d0069eed6cfd6508194a0d30593b3e18fb6",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q2/press-release-webcast"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0284c1025aebf06d0069eed6d1b0a48194af95fce1e6c68ed0",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0284c1025aebf06d0069eed6d218448194b94d295da60970bd",
+      "action": {
+        "query": "Reuters January 29 2026 Microsoft shares fall AI spending Azure growth software stocks",
+        "type": "search",
+        "queries": [
+          "Reuters January 29 2026 Microsoft shares fall AI spending Azure growth software stocks",
+          "CNBC January 29 2026 Microsoft stock falls Azure growth AI spending IGV software ETF",
+          "Bloomberg January 29 2026 Microsoft shares fall AI spending Azure growth software sector",
+          "Wall Street Journal January 29 2026 Microsoft stock falls Azure growth AI spending"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0284c1025aebf06d0069eed6d5a96c819488fa1f68af0951dc",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0284c1025aebf06d0069eed6d5b5e4819489a88b44f6cdfa4c",
+      "action": {
+        "query": "site:cnbc.com/2026/01/29 software stocks enter bear market AI disruption fear Microsoft IGV",
+        "type": "search",
+        "queries": [
+          "site:cnbc.com/2026/01/29 software stocks enter bear market AI disruption fear Microsoft IGV",
+          "site:cnbc.com Microsoft shares drop January 29 2026 Azure capex",
+          "site:cnbc.com/2026/01/29 Microsoft stock drops AI capital expenditures Azure growth"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0284c1025aebf06d0069eed6d871288194a79f76893adc5990",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0284c1025aebf06d0069eed6d8dabc819492afbe3eda78050c",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.investing.com/news/stock-market-news/microsoft-edges-past-cloud-growth-expectations-4471218"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0284c1025aebf06d0069eed6dd4bc08194a05be25b8be0a39e",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0284c1025aebf06d0069eed6de00648194a94f52d1203ce099",
+      "action": {
+        "query": "January 30 2026 Microsoft stock continued fall AI spending Azure Reuters",
+        "type": "search",
+        "queries": [
+          "January 30 2026 Microsoft stock continued fall AI spending Azure Reuters",
+          "Jan 30 2026 Microsoft shares fall stock market AI spending AP",
+          "MSFT January 30 2026 stock down why Azure spending"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0284c1025aebf06d0069eed6e4fe78819492f584005af3a5d4",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_0284c1025aebf06d0069eed6e5168881948fc02d8ece722bb7",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_0284c1025aebf06d0069eed6e651d88194908458632c009f61",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "msg_0284c1025aebf06d0069eed6f80f888194b824478090dc9a15",
+      "content": [
+        {
+          "annotations": [],
+          "text": "Microsoft’s Jan. 27–30 move looks like one coherent post-earnings repricing, not a set of unrelated daily events: the stock rose modestly on Jan. 27 and Jan. 28, then most of the damage occurred on Jan. 29 after Microsoft reported fiscal Q2 results after the Jan. 28 close, with a further smaller follow-through decline on Jan. 30. The headline numbers were not weak—Microsoft reported $81.3 billion of revenue, up 17%, non-GAAP EPS of $4.14, up 24%, Microsoft Cloud revenue of $51.5 billion, up 26%, and Azure/other cloud revenue growth of 39% reported / 38% constant currency [1]. The selloff instead centered on the “quality” and cost of AI growth: management disclosed $37.5 billion of quarterly capex, with roughly two-thirds spent on short-lived GPUs/CPUs, said demand still exceeded supply, and guided Q3 operating margins down slightly year over year with Microsoft Cloud gross margin around 65%, down year over year due to AI investment [2]. Reuters framed the market reaction similarly: shares fell in after-hours trading as record AI spending and slower cloud growth raised doubts about the payoff from Microsoft’s OpenAI-linked AI buildout; it also noted capex was up nearly 66% year over year and above Visible Alpha estimates, while Azure growth only narrowly exceeded consensus [3].\n\nThat firm-specific disappointment explains a meaningful part of the drop, but the attribution’s larger industry component is also consistent with the tape. Software broadly sold off on Jan. 29: ETF.com reported that the iShares Expanded Tech-Software Sector ETF fell 5.6%, Microsoft was its largest holding at about 10%, and ServiceNow also dropped roughly 13% after earnings [4]. The sector move reflected a broader investor debate over whether AI will help software vendors or compress their long-term cash flows; Axios reported on Jan. 30 that software sentiment was “negative” and that some investors viewed AI as a potential replacement for software, making Microsoft’s heavy AI spending and uncertain return timeline a valuation risk [5]. In that context, MSFT’s -9.99% Jan. 29 close-to-close move and the two rolling signals of -9.80% and -10.66% fit a software/AI-capex reset amplified by Microsoft-specific disclosures.\n\nThe macro/market contribution appears small, matching the regression. On Jan. 29, the S&P 500 slipped only 0.1%, the Dow rose 0.1%, and the Nasdaq fell 0.7%; AP also noted Microsoft was the heaviest market weight, while Meta’s 10.4% gain helped offset the drag [6]. I did not find a distinct Jan. 30 company catalyst strong enough to explain the separate -0.74% move; the evidence supports follow-through from the Jan. 29 post-earnings repricing rather than a new macro shock or unrelated Microsoft event.\n\n```json\n{\n  \"headline\": \"Microsoft sold off after strong earnings as AI capex, Azure deceleration fears, and software-sector derating overwhelmed headline beats.\",\n  \"evidence_quality\": \"SUPPORTED\",\n  \"sources\": [\n    {\"title\": \"FY26 Q2 - Press Releases - Investor Relations - Microsoft\", \"url\": \"https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q2/press-release-webcast\", \"publisher\": \"Microsoft\", \"date\": \"2026-01-28\"},\n    {\"title\": \"Microsoft Fiscal Year 2026 Second Quarter Earnings Conference Call\", \"url\": \"https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2\", \"publisher\": \"Microsoft\", \"date\": \"2026-01-28\"},\n    {\"title\": \"Microsoft capital spending jumps, cloud revenue fails to impress, shares drop after hours\", \"url\": \"https://www.investing.com/news/stock-market-news/microsoft-edges-past-cloud-growth-expectations-4471218\", \"publisher\": \"Reuters via Investing.com\", \"date\": \"2026-01-28\"},\n    {\"title\": \"Software ETFs Plunge Amid AI Disruption Fears\", \"url\": \"https://www.etf.com/sections/advisor-center/software-etfs-plunge-amid-ai-disruption-fears\", \"publisher\": \"ETF.com\", \"date\": \"2026-01-29\"},\n    {\"title\": \"The new math defining AI winners and losers\", \"url\": \"https://www.axios.com/2026/01/30/ai-meta-microsoft-investments\", \"publisher\": \"Axios\", \"date\": \"2026-01-30\"},\n    {\"title\": \"After a day of sharp swings, Wall Street ends nearly where it began\", \"url\": \"https://apnews.com/article/stock-markets-dollar-gold-fed-2a3715ff96ba5c10b97c49e04ad9f8ec\", \"publisher\": \"Associated Press\", \"date\": \"2026-01-29\"}\n  ]\n}\n```",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "type": "web_search",
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+        "city": null,
+        "country": "US",
+        "region": null,
+        "timezone": null,
+        "type": "approximate"
+      }
+    }
+  ],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1777260292.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "effort": "medium",
+    "generate_summary": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 51902,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 2955,
+    "output_tokens_details": {
+      "reasoning_tokens": 1879
+    },
+    "total_tokens": 54857
+  },
+  "user": null,
+  "billing": {
+    "payer": "developer"
+  },
+  "frequency_penalty": 0.0,
+  "moderation": null,
+  "presence_penalty": 0.0,
+  "store": true,
+  "_provider_name": "openai"
+}

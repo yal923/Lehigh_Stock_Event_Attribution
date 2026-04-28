@@ -1,0 +1,445 @@
+{
+  "id": "resp_08db176e28d0f2610069eed53c1c0881978020dd3d4105cc23",
+  "created_at": 1777259836.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.5-2026-04-23",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_08db176e28d0f2610069eed53cd0b081979509d87e9beff90b",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed53ddae48197a99ed133bf7c4711",
+      "action": {
+        "query": "Nvidia stock April 15 2026 rose 5% April 13 2026 April 15 2026 news",
+        "type": "search",
+        "queries": [
+          "Nvidia stock April 15 2026 rose 5% April 13 2026 April 15 2026 news",
+          "NVDA April 15 2026 stock market Nvidia news April 14 2026",
+          "Nvidia shares April 14 2026 AI chip news analyst April 15 2026"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed540d2948197a98db92cf51a5f84",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed541a0b88197b33d0c20166b1bcd",
+      "action": {
+        "query": "site:reuters.com Nvidia April 15 2026 shares rose market rally",
+        "type": "search",
+        "queries": [
+          "site:reuters.com Nvidia April 15 2026 shares rose market rally",
+          "site:barrons.com Nvidia stock April 14 2026 denied report acquisition",
+          "site:marketwatch.com Nvidia stock April 15 2026"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed54329e0819788415571781f0e1b",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed543d08c81979c7492cd3c6b3af6",
+      "action": {
+        "query": "stock market today April 14 2026 Nasdaq S&P 500 rally",
+        "type": "search",
+        "queries": [
+          "stock market today April 14 2026 Nasdaq S&P 500 rally",
+          "stock market today April 15 2026 Nasdaq S&P 500 rally Nvidia",
+          "April 15 2026 stocks rally technology semiconductors"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed5478258819789783cb6f8a5c397",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed54798c8819785c466ed23502de4",
+      "action": {
+        "query": "NVIDIA Ising open source quantum AI models April 14 2026",
+        "type": "search",
+        "queries": [
+          "NVIDIA Ising open source quantum AI models April 14 2026",
+          "Nvidia announced open source quantum AI models April 2026 Ising",
+          "NVIDIA April 14 2026 Ising quantum AI models stock"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed54b9bf48197abdfdaedc293818c",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed54ba80c8197bf9dd3f03dbc9090",
+      "action": {
+        "query": "Nvidia denied report in talks to buy PC-and-server company April 14 2026",
+        "type": "search",
+        "queries": [
+          "Nvidia denied report in talks to buy PC-and-server company April 14 2026",
+          "\"Nvidia\" \"denied\" \"PC-and-server\" \"April 14, 2026\"",
+          "\"Nvidia stock was climbing\" \"denied a report\" \"PC-and-server company\""
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed550e9608197aa8d41e4bdf443ee",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed55128ac8197a209cc09cbb77378",
+      "action": {
+        "query": "finance: NVDA",
+        "type": "search",
+        "queries": [
+          "finance: NVDA"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed55402048197baf621f8b6d8f49e",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed55705b48197955b1ca9aec2053f",
+      "action": {
+        "query": "NVDA historical data Apr 15 2026 close 198.87 Apr 14 2026 196.51",
+        "type": "search",
+        "queries": [
+          "NVDA historical data Apr 15 2026 close 198.87 Apr 14 2026 196.51",
+          "NVDA historical prices April 15 2026 198.87",
+          "NVIDIA historical data Apr 13 2026 189.31"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed55b75c88197bb6c7ace0514b776",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed55b85d08197a1182d2105505f3f",
+      "action": {
+        "type": "open_page",
+        "url": "https://stockanalysis.com/stocks/nvda/history/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed55c3ecc819780d958ae5140752d",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed55ca104819799a8fae99a2569db",
+      "action": {
+        "query": "SPY historical data Apr 15 2026 close April 14 2026 StockAnalysis",
+        "type": "search",
+        "queries": [
+          "SPY historical data Apr 15 2026 close April 14 2026 StockAnalysis",
+          "SMH historical data Apr 15 2026 close April 14 2026 StockAnalysis"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed560a2748197ab80dab59e283942",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed560b5048197b08e2827e8ef5a92",
+      "action": {
+        "type": "open_page",
+        "url": "https://stockanalysis.com/etf/spy/history/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed56369188197857cacece2c4edb4",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed567299c8197bc36c65bd0fa4a3b",
+      "action": {
+        "query": "April 15 2026 semiconductor stocks lagged rally Nvidia SMH",
+        "type": "search",
+        "queries": [
+          "April 15 2026 semiconductor stocks lagged rally Nvidia SMH",
+          "April 15 2026 chip stocks underperform market Nvidia 1.2 SMH 0.22",
+          "semiconductor stocks April 15 2026 SMH Nvidia market rally"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed56e4d8c8197960c13077358cb68",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed56e76548197840211e5e59121c4",
+      "action": {
+        "type": "open_page",
+        "url": "https://apnews.com/article/9690717f561076a0909f7a5e820f02d6"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed570283c8197a3ec93df49cf34db",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed570550881979a7e8c485112ceaa",
+      "action": {
+        "type": "open_page",
+        "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Ising-the-Worlds-First-Open-AI-Models-to-Accelerate-the-Path-to-Useful-Quantum-Computers/default.aspx"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed571ff7c819795ea68a9928d7629",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed57255f08197aeb44c92b2d0e92d",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.tomshardware.com/tech-industry/big-tech/nvidia-squashes-rumor-its-planning-to-purchase-a-major-pc-manufacturer-says-that-its-not-engaged-in-discussions-to-acquire-any-pc-maker"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed574c38081978faa2ffaea9f07c3",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed575059c8197a2a488d876446bf1",
+      "action": {
+        "pattern": "The semiconductor sector is on fire",
+        "type": "find_in_page",
+        "url": "https://www.marketbeat.com/originals/the-semiconductor-sector-is-hitting-all-time-highs-2-stocks-leading-the-charge/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed57706008197b20e6624a3963211",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed57766e88197b511c09c2eeb729c",
+      "action": {
+        "query": "Nvidia analyst note April 15 2026 price target NVDA",
+        "type": "search",
+        "queries": [
+          "Nvidia analyst note April 15 2026 price target NVDA",
+          "NVDA stock April 15 2026 analyst raised price target Nvidia",
+          "Nvidia April 15 2026 Jefferies New Street best idea list"
+        ],
+        "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed58241b881978cdccf550481e55a",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "ws_08db176e28d0f2610069eed582507c81979cf1592cc588c575",
+      "action": {
+        "type": "open_page",
+        "url": "https://www.marketbeat.com/stocks/NASDAQ/NVDA/forecast/"
+      },
+      "status": "completed",
+      "type": "web_search_call"
+    },
+    {
+      "id": "rs_08db176e28d0f2610069eed58300fc8197be94b4f217f7a544",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    {
+      "id": "msg_08db176e28d0f2610069eed595645481979d88bc05338dcb97",
+      "content": [
+        {
+          "annotations": [],
+          "text": "NVDA’s +5.05% episode was a fairly coherent risk-on advance, not a selloff/reversal: the stock rose +0.36% on Apr. 13, +3.80% on Apr. 14, and +1.20% on Apr. 15, closing at $198.87, with the rolling Apr. 13→Apr. 15 signal matching the full-window gain [1]. The largest daily leg lined up with a broad market rally: on Apr. 14, AP reported the S&P 500 rose 1.2% and the Nasdaq climbed 2.0% as hopes for renewed U.S.-Iran talks pushed oil lower, and on Apr. 15 the S&P 500 rose another 0.8% to a record while the Nasdaq gained 1.6% as ceasefire-extension hopes remained high [2], [3]. That fits the attribution’s very large market contribution: this was mostly a high-beta AI/mega-cap move in a sharply improving tape, with NVDA adding some company-specific upside.\n\nThe firm-specific component was plausibly helped by Nvidia’s Apr. 14 announcement of “NVIDIA Ising,” an open-source family of quantum-AI models for calibration and error correction, including claims of up to 2.5x faster and 3x more accurate decoding versus traditional approaches [4]. That is not a near-term earnings event, but it reinforced the market’s “Nvidia as AI infrastructure platform” narrative during a tape that was already rewarding growth. A second firm-specific headline was more ambiguous: Nvidia denied reports that it was in talks to buy a PC maker after rumors had lifted Dell and HP shares; the denial reduced M&A-overhang risk, but the evidence does not show that this was a primary positive catalyst for NVDA itself [5].\n\nThe industry signal is the least clean part of the story. Public data and commentary point to semiconductors being strong, not weak: MarketBeat wrote on Apr. 14 that SMH was up almost 23% year-to-date and near all-time highs, driven by accelerating AI infrastructure spending [6], while StockAnalysis shows SMH itself rose +1.48%, +1.95%, and +0.22% over Apr. 13–15 [7]. That conflicts with the regression’s negative industry attribution, so I would interpret the -39% industry contribution as a model/orthogonalized factor result—possibly semiconductor beta lagging the broader Nasdaq/SPY move or being netted against market exposure—rather than evidence of an observable chip-sector selloff. Overall evidence supports a market-led rally with Nvidia-specific AI-platform news as a secondary contributor, while the industry-drag attribution is only partially supported by public news.\n\n```json\n{\n  \"headline\": \"Nvidia rose with a broad risk-on market rally, helped by quantum-AI platform news, despite unclear industry-factor evidence.\",\n  \"evidence_quality\": \"LIMITED\",\n  \"sources\": [\n    {\"title\": \"NVIDIA (NVDA) Stock Price History 1999-2026\", \"url\": \"https://stockanalysis.com/stocks/nvda/history/\", \"publisher\": \"StockAnalysis.com\", \"date\": \"2026-04-24\"},\n    {\"title\": \"Wall Street rallies to the edge of its all-time high as oil prices ease\", \"url\": \"https://apnews.com/article/oil-prices-stock-markets-trump-iran-ceasefire-9690717f561076a0909f7a5e820f02d6\", \"publisher\": \"Associated Press\", \"date\": \"2026-04-14\"},\n    {\"title\": \"How major US stock indexes fared Wednesday 4/15/2026\", \"url\": \"https://apnews.com/article/wall-street-stock-dow-nasdaq-b8818e64043e32c2e5bae57213d1a7ee\", \"publisher\": \"Associated Press\", \"date\": \"2026-04-15\"},\n    {\"title\": \"NVIDIA Launches Ising, the World’s First Open AI Models to Accelerate the Path to Useful Quantum Computers\", \"url\": \"https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Ising-the-Worlds-First-Open-AI-Models-to-Accelerate-the-Path-to-Useful-Quantum-Computers/default.aspx\", \"publisher\": \"NVIDIA Investor Relations\", \"date\": \"2026-04-14\"},\n    {\"title\": \"Nvidia quashes rumor it’s planning to purchase a major PC manufacturer\", \"url\": \"https://www.tomshardware.com/tech-industry/big-tech/nvidia-squashes-rumor-its-planning-to-purchase-a-major-pc-manufacturer-says-that-its-not-engaged-in-discussions-to-acquire-any-pc-maker\", \"publisher\": \"Tom's Hardware\", \"date\": \"2026-04-14\"},\n    {\"title\": \"The Semiconductor Sector Is Hitting All-Time Highs: 2 Stocks Leading the Charge\", \"url\": \"https://www.marketbeat.com/originals/the-semiconductor-sector-is-hitting-all-time-highs-2-stocks-leading-the-charge/\", \"publisher\": \"MarketBeat\", \"date\": \"2026-04-14\"},\n    {\"title\": \"SMH Historical Stock Price Data\", \"url\": \"https://stockanalysis.com/etf/smh/history/\", \"publisher\": \"StockAnalysis.com\", \"date\": \"2026-04-24\"}\n  ]\n}\n```",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "type": "web_search",
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+        "city": null,
+        "country": "US",
+        "region": null,
+        "timezone": null,
+        "type": "approximate"
+      }
+    }
+  ],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1777259938.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "effort": "medium",
+    "generate_summary": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 89131,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 4117,
+    "output_tokens_details": {
+      "reasoning_tokens": 2952
+    },
+    "total_tokens": 93248
+  },
+  "user": null,
+  "billing": {
+    "payer": "developer"
+  },
+  "frequency_penalty": 0.0,
+  "moderation": null,
+  "presence_penalty": 0.0,
+  "store": true,
+  "_provider_name": "openai"
+}

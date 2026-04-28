@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Preparing Episode · {{ company.ticker }}{% endblock %}
+
+{% block content %}
+<div class="rt-container rt-container--narrow" style="min-height: calc(100vh - 52px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+
+    <div class="rt-hero__eyebrow">Episode · {{ episode.id }} · {{ company.ticker }}</div>
+    {% if explanation_source == 'ai' %}
+    <h1 class="rt-hero__title" style="font-size: 24px; margin-top: 8px;">Generating AI Explanation</h1>
+    <p style="margin-top: 16px; max-width: 540px; font-size: 13px; color: var(--rt-text-secondary); line-height: 1.6;">
+        Calling the selected AI model with web search to retrieve, synthesize,
+        and write the causal explanation for this episode. This typically takes
+        15–45 seconds.
+    </p>
+    {% else %}
+    <h1 class="rt-hero__title" style="font-size: 24px; margin-top: 8px;">Preparing episode analysis</h1>
+    <p style="margin-top: 16px; max-width: 540px; font-size: 13px; color: var(--rt-text-secondary); line-height: 1.6;">
+        {% if force_recompute %}
+        Forcing a fresh recompute of prices, retrieval, evidence bundles, and the v2 explanation. This may take up to a minute.
+        {% else %}
+        Retrieving candidate articles, building evidence bundles, and assembling the v2 explanation. This may take up to a minute.
+        {% endif %}
+    </p>
+    {% endif %}
+
+    <div class="rt-flex" style="margin-top: 24px; justify-content: center; padding: 10px 18px; border-radius: var(--rt-r-full); background: var(--rt-surface); border: 1px solid var(--rt-border);">
+        <span class="rt-spinner"></span>
+        <span id="progress-msg" style="font-size: 13px; color: var(--rt-text-secondary);">Running…</span>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const runUrl = "{{ run_url }}";
+const redirectUrl = "{{ redirect_url }}";
+const forceRecompute = {{ "true" if force_recompute else "false" }};
+const explanationSource = "{{ explanation_source or 'pipeline' }}";
+const aiProviderFromUrl = {{ (ai_provider or "")|tojson }};
+const aiModelFromUrl = {{ (ai_model or "")|tojson }};
+const messages = explanationSource === "ai" ? [
+    "Asking the selected AI model to research this episode…",
+    "Web-searching for relevant news coverage…",
+    "Reading and synthesizing sources…",
+    "Drafting the causal explanation…",
+    "Validating citations…",
+    "Almost done…",
+] : [
+    "Fetching news and prices…",
+    "Reranking candidate articles…",
+    "Extracting grounded claims…",
+    "Consolidating evidence bundles…",
+    "Building the bounded explanation…",
+    "Finalizing v2 analysis…",
+];
+let idx = 0;
+const msgEl = document.getElementById("progress-msg");
+setInterval(() => {
+    idx = (idx + 1) % messages.length;
+    msgEl.textContent = messages[idx];
+}, 1500);
+
+async function runPipeline() {
+    try {
+        const body = { force_recompute: forceRecompute };
+        if (explanationSource === "ai") {
+            let provider = aiProviderFromUrl;
+            let model = aiModelFromUrl;
+            try {
+                provider = provider || localStorage.getItem("sa41.aiProvider") || "";
+                model = model || localStorage.getItem("sa41.aiModel") || "";
+            } catch {
+                // Local storage can fail in private contexts; URL params still work.
+            }
+            if (provider) body.provider_name = provider;
+            if (model) body.model_name = model;
+        }
+        const resp = await fetch(runUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+        });
+        const data = await resp.json();
+        if (data.ok) {
+            window.location.replace(redirectUrl);
+        } else {
+            msgEl.textContent = data.error || "Failed to run pipeline.";
+        }
+    } catch (e) {
+        msgEl.textContent = "Network error while running pipeline.";
+        console.error(e);
+    }
+}
+runPipeline();
+</script>
+{% endblock %}

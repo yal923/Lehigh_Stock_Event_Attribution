@@ -1,0 +1,1621 @@
+{% extends "base.html" %}
+{% block title %}Episode {{ episode.id }} · {{ company.ticker }}{% endblock %}
+
+{% block content %}
+{% set analysis = analysis or {} %}
+{% set metrics = episode_metrics or {} %}
+{% set branch_plan = branch_plan or {} %}
+
+{% set routing_mode = analysis.get('routing_mode') or branch_plan.get('routing_mode') %}
+{% set outward = analysis.get('outward') or {} %}
+{% set explanation = analysis.get('explanation') or {} %}
+{% set aggregate_outward = analysis.get('aggregate_outward') or {} %}
+{% set aggregate_explanation = analysis.get('aggregate_explanation') or {} %}
+{% set attr = analysis.get('attribution_summary') or {} %}
+{% set bundles = analysis.get('evidence_bundles') or [] %}
+{% set articles = analysis.get('supporting_articles') or [] %}
+{% set mixed_branch_analyses = analysis.get('branch_analyses') or [] %}
+{% set quality = attr.get('quality_status', '') %}
+{% set outward_status = outward.get('outward_status', '') %}
+{% set degraded_codes = outward.get('degraded_reason_codes') or [] %}
+
+{# DEC-203: which qualitative path is currently rendered. Quantitative half
+   (§1, §2, §3 LEFT, §4 framework) is identical across both. #}
+{% set view_mode = explanation_source or 'pipeline' %}
+{% set ai = ai_explanation or {} %}
+{% set ai_has_payload = ai.get('full_explanation') is not none and ai.get('full_explanation') != '' %}
+
+{% macro quality_badge(status, size='') -%}
+  {%- if status == 'OOS' -%}
+    <span class="rt-badge rt-badge--warning{% if size %} rt-badge--{{ size }}{% endif %}">Data Unavailable</span>
+  {%- elif status == 'POOR_FIT' -%}
+    <span class="rt-badge rt-badge--danger{% if size %} rt-badge--{{ size }}{% endif %}">Poor Model Fit</span>
+  {%- elif status == 'CAUTION' -%}
+    <span class="rt-badge rt-badge--info{% if size %} rt-badge--{{ size }}{% endif %}">Limited Fit</span>
+  {%- elif status == 'PASS' -%}
+    <span class="rt-badge rt-badge--success{% if size %} rt-badge--{{ size }}{% endif %}">Good Fit</span>
+  {%- else -%}
+    <span class="rt-badge rt-badge--neutral{% if size %} rt-badge--{{ size }}{% endif %}">{{ status or 'N/A' }}</span>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro evidence_badge(status, codes, size='') -%}
+  {%- if status == 'NO_EVIDENCE' -%}
+    <span class="rt-badge rt-badge--neutral{% if size %} rt-badge--{{ size }}{% endif %}">No Evidence</span>
+  {%- elif status == 'LIMITED_EVIDENCE' -%}
+    {%- if 'only_weak_support' in codes -%}
+      <span class="rt-badge rt-badge--warning{% if size %} rt-badge--{{ size }}{% endif %}">Weak Evidence</span>
+    {%- elif 'attribution_data_unavailable' in codes -%}
+      <span class="rt-badge rt-badge--info{% if size %} rt-badge--{{ size }}{% endif %}">Partial Evidence</span>
+    {%- else -%}
+      <span class="rt-badge rt-badge--success{% if size %} rt-badge--{{ size }}{% endif %}">Evidence Found</span>
+    {%- endif -%}
+  {%- elif status == 'SUPPORTED' -%}
+    <span class="rt-badge rt-badge--success{% if size %} rt-badge--{{ size }}{% endif %}">Evidence Found</span>
+  {%- else -%}
+    <span class="rt-badge rt-badge--neutral{% if size %} rt-badge--{{ size }}{% endif %}">{{ status or 'N/A' }}</span>
+  {%- endif -%}
+{%- endmacro %}
+
+<div class="rt-container rt-container--wide">
+
+    {# ========================================================================
+       Hero
+       ======================================================================== #}
+    {% set hero_cum = metrics.get('cumulative_pct') if metrics.get('cumulative_pct') is not none else episode.pct_move %}
+    {% set hero_pos = (hero_cum is not none and hero_cum >= 0) %}
+    <section class="rt-hero" style="position: relative;">
+        {% if routing_mode %}
+        {% set _mode_variant = {'dominant': 'success', 'mixed': 'info', 'degraded': 'warning'}.get(routing_mode, 'neutral') %}
+        <div style="position: absolute; top: 32px; right: 0; text-align: right;">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.3px; color: var(--rt-text-muted); margin-bottom: 6px;">
+                Routing Mode
+            </div>
+            <span
+                class="rt-badge rt-badge--{{ _mode_variant }}"
+                style="padding: 10px 22px; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; border-radius: var(--rt-r-md); border-width: 1.5px;"
+            >
+                {{ routing_mode|capitalize }}
+            </span>
+        </div>
+        {% endif %}
+        <div class="rt-hero__eyebrow">Episode · {{ episode.id }}</div>
+        <h1 class="rt-hero__title">{{ company.name }} <span class="rt-text-muted">({{ company.ticker }})</span></h1>
+        <div class="rt-hero__meta">
+            <span class="rt-mono">
+                {{ metrics.get('start') or (episode.window_start.isoformat() if episode.window_start else 'N/A') }}
+                →
+                {{ metrics.get('end') or (episode.window_end.isoformat() if episode.window_end else 'N/A') }}
+            </span>
+            <span class="rt-hero__meta-dot"></span>
+            {% if hero_cum is not none %}
+            <span class="rt-direction rt-direction--{{ 'up' if hero_pos else 'down' }}">
+                {{ '▲' if hero_pos else '▼' }} {{ '+' if hero_pos else '' }}{{ "%.2f"|format(hero_cum) }}%
+            </span>
+            {% endif %}
+            <span class="rt-hero__meta-dot"></span>
+            <span>{{ metrics.get('signal_count', 0) }} signals</span>
+        </div>
+        {# DEC-203: path switch (AI Explanation ↔ Pipeline Analysis) +
+           path-specific Recompute control. The two views share this whole
+           hero section; only the active tab + Recompute target differ. #}
+        <div style="margin-top: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <div class="rt-path-switch" role="tablist" aria-label="Explanation source">
+                <a
+                    href="{{ url_for('routes.episode_analysis', ticker=company.ticker, episode_id=episode.id) }}"
+                    class="rt-path-switch__tab{% if view_mode == 'ai' %} is-active{% endif %}"
+                    role="tab"
+                    aria-selected="{{ 'true' if view_mode == 'ai' else 'false' }}"
+                >
+                    ✦ AI Explanation
+                </a>
+                <a
+                    href="{{ url_for('routes.episode_analysis_pipeline', ticker=company.ticker, episode_id=episode.id) }}"
+                    class="rt-path-switch__tab{% if view_mode == 'pipeline' %} is-active{% endif %}"
+                    role="tab"
+                    aria-selected="{{ 'true' if view_mode == 'pipeline' else 'false' }}"
+                >
+                    ⚙ Pipeline Analysis
+                </a>
+            </div>
+
+            {% if view_mode == 'ai' %}
+                {% if ai_has_payload %}
+                {# Cached AI payload exists — Recompute is paid; require modal confirm. #}
+                <button
+                    type="button"
+                    class="rt-btn rt-btn--ghost rt-btn--sm"
+                    data-ai-recompute-trigger
+                    data-ai-requires-model
+                    data-ai-cache-age-seconds="{{ ai_cache_age_seconds or 0 }}"
+                    data-ai-cost-estimate="{{ '%.2f'|format(ai.get('cost_estimate_usd') or 0) }}"
+                    data-ai-loading-url="{{ url_for('routes.episode_analysis_loading', ticker=company.ticker, episode_id=episode.id, source='ai', force_recompute=1) }}"
+                >
+                    ↻ Recompute AI Explanation
+                </button>
+                {% else %}
+                {# No cache yet — first-time generation; no modal needed. #}
+                <a
+                    href="{{ url_for('routes.episode_analysis_loading', ticker=company.ticker, episode_id=episode.id, source='ai') }}"
+                    class="rt-btn rt-btn--primary rt-btn--sm"
+                    data-ai-run-link
+                    data-ai-requires-model
+                >
+                    ✦ Generate AI Explanation
+                </a>
+                {% endif %}
+                <div data-ai-model-controls style="display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                    <select
+                        class="rt-btn rt-btn--ghost rt-btn--sm"
+                        data-ai-provider-select
+                        aria-label="AI provider"
+                        style="height: 31px; padding-right: 28px;"
+                    >
+                        <option value="">AI provider</option>
+                    </select>
+                    <select
+                        class="rt-btn rt-btn--ghost rt-btn--sm"
+                        data-ai-model-select
+                        aria-label="AI model"
+                        style="height: 31px; padding-right: 28px;"
+                        disabled
+                    >
+                        <option value="">AI model</option>
+                    </select>
+                </div>
+            {% else %}
+                <a
+                    href="{{ url_for('routes.episode_analysis_loading', ticker=company.ticker, episode_id=episode.id, source='pipeline', force_recompute=1) }}"
+                    class="rt-btn rt-btn--ghost rt-btn--sm"
+                >
+                    ↻ Recompute Pipeline
+                </a>
+            {% endif %}
+        </div>
+    </section>
+
+    <div class="rt-stack">
+
+    {# ========================================================================
+       Episode Metrics — window, peak, cumulative, signals, daily returns
+       ======================================================================== #}
+    <section class="rt-card">
+        <div class="rt-card__header">
+            <div>
+                <h2 class="rt-card__title">Episode Snapshot</h2>
+            </div>
+        </div>
+
+        {% set cum_val  = metrics.get('cumulative_pct') %}
+        {% set cum_pos  = (cum_val is not none and cum_val >= 0) %}
+
+        <div class="rt-stat-grid">
+            <div class="rt-stat">
+                <div class="rt-stat__label">Start</div>
+                <div class="rt-stat__value">{{ metrics.get('start') or (episode.window_start.isoformat() if episode.window_start else 'N/A') }}</div>
+            </div>
+            <div class="rt-stat">
+                <div class="rt-stat__label">End</div>
+                <div class="rt-stat__value">{{ metrics.get('end') or (episode.window_end.isoformat() if episode.window_end else 'N/A') }}</div>
+            </div>
+            <div class="rt-stat">
+                <div class="rt-stat__label">Cumulative</div>
+                <div class="rt-stat__value {% if cum_val is not none %}{{ 'rt-stat__value--up' if cum_pos else 'rt-stat__value--down' }}{% endif %}">
+                    {% if cum_val is not none %}{{ '+' if cum_pos else '' }}{{ "%.2f"|format(cum_val) }}%{% else %}N/A{% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% set daily = metrics.get('daily_pct', []) %}
+        {% set signal_anchors = metrics.get('signal_anchors', []) %}
+        <details class="rt-details" style="margin-top: 16px;">
+            <summary>Daily returns within episode window</summary>
+            <div class="rt-details__body">
+                {% if daily %}
+                {# Locate the single day with the largest absolute daily move (peak row). #}
+                {% set peak_ns = namespace(max_abs=-1.0, date=None) %}
+                {% for row in daily %}
+                    {% if row.pct is not none and (row.pct|abs) > peak_ns.max_abs %}
+                        {% set peak_ns.max_abs = row.pct|abs %}
+                        {% set peak_ns.date = row.date %}
+                    {% endif %}
+                {% endfor %}
+
+                {# Map each trading date → 1-based grid column for the signal timeline. #}
+                {% set _col = namespace(map={}) %}
+                {% for row in daily %}
+                    {% set _ = _col.map.update({row.date: loop.index}) %}
+                {% endfor %}
+
+                {% if signal_anchors %}
+                <div class="rt-signal-timeline">
+                    <div class="rt-signal-timeline__legend">
+                        {{ signal_anchors|length }} signal{{ 's' if signal_anchors|length != 1 else '' }} triggered · each bar spans the rolling window that produced it · dot marks the anchor day
+                    </div>
+                    <div class="rt-signal-timeline__grid" style="grid-template-columns: repeat({{ daily|length }}, minmax(44px, 1fr));">
+                        {% for row in daily %}
+                        <div class="rt-signal-timeline__day{% if row.date == peak_ns.date %} rt-signal-timeline__day--peak{% endif %}">
+                            {{ row.date[5:] }}
+                        </div>
+                        {% endfor %}
+                        {% for sig in signal_anchors %}
+                        {# Clamp to visible grid: baseline may be before window_start due to
+                           data-source differences between episode_definition and the UI
+                           service's historical fetch. Anchor is always within window by filter. #}
+                        {% set _raw_start = _col.map.get(sig.baseline_date) %}
+                        {% set _raw_end   = _col.map.get(sig.anchor_date) %}
+                        {% set start_col  = _raw_start if _raw_start else 1 %}
+                        {% set end_col    = _raw_end if _raw_end else daily|length %}
+                        {% set _clipped_left = (_raw_start is none) %}
+                        {% if end_col %}
+                        <div
+                            class="rt-signal-timeline__bar rt-signal-timeline__bar--{{ sig.direction }}{% if _clipped_left %} rt-signal-timeline__bar--clipped-left{% endif %}"
+                            style="grid-column: {{ start_col }} / {{ end_col + 1 }}; grid-row: {{ loop.index + 1 }};"
+                            title="Signal {{ loop.index }}: {{ sig.baseline_date }} → {{ sig.anchor_date }} ({{ '%+.2f'|format(sig.ret_pct) }}%){% if _clipped_left %} · baseline before window{% endif %}"
+                        >
+                            <span class="rt-signal-timeline__bar-label">S{{ loop.index }} · {{ '%+.2f'|format(sig.ret_pct) }}%</span>
+                            <span class="rt-signal-timeline__anchor"></span>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <div style="overflow-x: auto; margin-top: {{ '14px' if signal_anchors else '0' }};">
+                    <table class="rt-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Close</th>
+                                <th style="text-align: right;">Daily %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in daily %}
+                            <tr{% if row.date == peak_ns.date %} class="rt-table__row--peak"{% endif %}>
+                                <td class="rt-mono">{{ row.date }}</td>
+                                <td class="rt-mono">{% if row.close is not none %}{{ "%.2f"|format(row.close) }}{% else %}—{% endif %}</td>
+                                <td class="rt-mono" style="text-align: right; color: {% if row.pct is not none and row.pct >= 0 %}var(--rt-success){% elif row.pct is not none %}var(--rt-danger){% else %}var(--rt-text-muted){% endif %};">
+                                    {% if row.pct is not none %}{{ '+' if row.pct >= 0 else '' }}{{ "%.2f"|format(row.pct) }}%{% else %}—{% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="rt-text-muted" style="font-size: 13px;">No daily return data in this window.</div>
+                {% endif %}
+            </div>
+        </details>
+    </section>
+
+    {# ========================================================================
+       §3 Episode Diagnosis — unified two-column (Quantitative Check +
+       Qualitative Check). The two checks are INDEPENDENT: good regression
+       fit does not imply news evidence, and strong evidence does not require
+       fit.
+
+       Per-mode data routing for the Qualitative Check (the Quantitative side
+       always reads top-level `attr`):
+         · mixed     → aggregate_outward / aggregate_explanation
+         · dominant  → outward / explanation (primary branch)
+         · degraded  → outward / explanation (news-only, attribution OOS)
+       ======================================================================== #}
+    {% set verdict_outward     = aggregate_outward     if routing_mode == 'mixed' else outward %}
+    {% set verdict_explanation = aggregate_explanation if routing_mode == 'mixed' else explanation %}
+    {% set verdict_evidence_status = verdict_outward.get('outward_status', '') %}
+    {% set verdict_degraded_codes  = verdict_outward.get('degraded_reason_codes') or [] %}
+
+    {# Diagnostic-folder gates — hoisted out of the grid so each side's
+       <details> block can be rendered inside its own column. The two
+       folders are now scoped to their respective check columns rather
+       than sitting full-width below the grid; this keeps the proxy /
+       fit / ratio metrics next to the Quantitative verdict and the
+       reason codes / outward notes next to the Qualitative verdict. #}
+    {% set _has_quant_diag = (
+        attr.get('industry_proxy_ticker')
+        or attr.get('adj_r2') is not none
+        or attr.get('beta_mkt_t_stat') is not none
+        or attr.get('beta_ind_t_stat') is not none
+        or attr.get('f_stat') is not none
+        or attr.get('f_pvalue') is not none
+        or attr.get('vix_estimation_p50') is not none
+    ) %}
+    {% set _has_fit_metrics = (
+        attr.get('adj_r2') is not none
+        or attr.get('beta_mkt_t_stat') is not none
+        or attr.get('beta_ind_t_stat') is not none
+        or attr.get('f_stat') is not none
+        or attr.get('f_pvalue') is not none
+    ) %}
+    {% set _has_qual_diag = verdict_degraded_codes or verdict_outward.get('outward_notes') %}
+
+    <section class="rt-card">
+        <div class="rt-card__header">
+            <div>
+                <h2 class="rt-card__title">Episode Diagnosis</h2>
+            </div>
+        </div>
+
+        {# Two-row grid: row 1 = verdict content (LEFT + RIGHT), row 2 =
+           diagnostics folders (LEFT + RIGHT). The 4 cells are placed in
+           source order: LEFT-verdict, RIGHT-verdict, LEFT-details,
+           RIGHT-details. Row 1 height = max(LEFT-verdict, RIGHT-verdict)
+           because grid rows size to their tallest item. Row 2 starts at
+           the bottom of row 1, so both diagnostics' separator lines and
+           summaries align horizontally — independent of how much verdict
+           content sits above. When one diagnostics is opened, only its
+           own cell expands (the other stays put, since each cell sizes to
+           its own content within its row). #}
+        <div class="rt-grid-2" style="gap: 0; grid-template-rows: auto auto;">
+            {# LEFT · Quantitative Check — regression quality + factor shares.
+               Header is centered + bumped vs the default .rt-section-title so
+               it reads as a column header rather than a small meta label. #}
+            <div style="grid-column: 1; grid-row: 1; padding-right: 24px;">
+                <div style="text-align: center; font-size: 18px; font-weight: 600; color: var(--rt-text); margin-bottom: 12px;">Quantitative Check</div>
+                <div style="text-align: center;">{{ quality_badge(quality, 'lg') }}</div>
+                {# One-line quality descriptor — concise overrides of the long
+                   `attr.fit_quality_note` (which other consumers still get).
+                   POOR_FIT is collapsed: the 3 backend sub-variants (one-β-sig
+                   / no-β-sig / no-adj_r2) are merged into one short line; the
+                   nuance lives in Technical Diagnostics below. #}
+                <div style="margin-top: 12px; font-size: 13px; color: var(--rt-text-secondary); line-height: 1.55; text-align: center;">
+                    {% set _r2 = attr.get('adj_r2') %}
+                    {% if quality == 'OOS' %}
+                    Data unavailable — regression did not run.
+                    {% elif quality == 'POOR_FIT' %}
+                        {% if _r2 is none %}
+                        Quality metrics unavailable — ratios are unreliable.
+                        {% else %}
+                        Low explanatory power (adj.&nbsp;R²&nbsp;=&nbsp;{{ '%.3f'|format(_r2) }}) — ratios unreliable.
+                        {% endif %}
+                    {% elif quality == 'CAUTION' %}
+                    Limited explanatory power (adj.&nbsp;R²&nbsp;=&nbsp;{{ '%.3f'|format(_r2 or 0) }}) — interpret with caution.
+                    {% elif quality == 'PASS' %}
+                    Reliable regression fit (adj.&nbsp;R²&nbsp;=&nbsp;{{ '%.3f'|format(_r2 or 0) }}).
+                    {% endif %}
+                </div>
+
+                {% if quality not in ('OOS', '') %}
+                {% set near_zero = attr.get('near_zero_episode_return') %}
+                {% set has_shares = (not near_zero) and (attr.get('firm_share') is not none) %}
+                {% if attr.get('macro_shock_suspected') %}
+                <div style="margin-top: 10px; padding: 8px 12px; border-radius: var(--rt-r-md); background: var(--rt-warning-bg); border: 1px solid var(--rt-warning-br); font-size: 12px; line-height: 1.45; color: var(--rt-text);">
+                    <strong style="color: var(--rt-warning);">Macro shock suspected</strong> — VIX was elevated vs the training regime during this episode, so cross-asset correlation likely exceeded what the betas can explain. Attribution confidence is reduced; consider discounting the firm residual.
+                    {% if attr.get('vix_episode_avg') is not none and attr.get('vix_estimation_p50') %}
+                    <span style="color: var(--rt-text-muted); font-family: var(--rt-font-mono); margin-left: 4px;">(ep avg {{ '%.1f'|format(attr.get('vix_episode_avg')) }} vs train p50 {{ '%.1f'|format(attr.get('vix_estimation_p50')) }}{% if attr.get('vix_episode_max') is not none and attr.get('vix_estimation_p95') %}, ep max {{ '%.1f'|format(attr.get('vix_episode_max')) }} vs train p95 {{ '%.1f'|format(attr.get('vix_estimation_p95')) }}{% endif %})</span>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="rt-attribution-bar" style="margin-top: 12px;">
+                    {% if has_shares %}
+                    {% set firm_share_pct  = (attr.get('firm_share')     or 0) * 100 %}
+                    {% set ind_share_pct   = (attr.get('industry_share') or 0) * 100 %}
+                    {% set mkt_share_pct   = (attr.get('market_share')   or 0) * 100 %}
+                    {% set alpha_share_pct = (attr.get('alpha_share')    or 0) * 100 %}
+                    <div style="font-size: 11px; color: var(--rt-text-muted); margin-bottom: 8px; line-height: 1.4;">
+                        Each factor's share of the episode's total return. Center = 0%; left of center = pushed against the move, right of center = pushed with it.
+                    </div>
+                    {# Bidirectional bar (signed-share branch only). Each row's
+                       track has a center divider; fill anchors at left:50%
+                       (positive) or right:50% (negative). Inline width is
+                       |val|*0.5% so the value's magnitude maps to half-track. #}
+                    <div class="rt-attribution-row">
+                        <div class="rt-attribution-row__label">Firm</div>
+                        <div class="rt-attribution-row__track rt-attribution-row__track--bidir">
+                            <div class="rt-attribution-row__fill rt-attribution-row__fill--firm rt-attribution-row__fill--{{ 'pos' if firm_share_pct >= 0 else 'neg' }}" style="width: {{ '%.1f'|format([firm_share_pct|abs, 100]|min * 0.5) }}%;"></div>
+                        </div>
+                        <div class="rt-attribution-row__value">{{ '%+.0f'|format(firm_share_pct) }}%</div>
+                    </div>
+                    <div class="rt-attribution-row">
+                        <div class="rt-attribution-row__label">Industry</div>
+                        <div class="rt-attribution-row__track rt-attribution-row__track--bidir">
+                            <div class="rt-attribution-row__fill rt-attribution-row__fill--industry rt-attribution-row__fill--{{ 'pos' if ind_share_pct >= 0 else 'neg' }}" style="width: {{ '%.1f'|format([ind_share_pct|abs, 100]|min * 0.5) }}%;"></div>
+                        </div>
+                        <div class="rt-attribution-row__value">{{ '%+.0f'|format(ind_share_pct) }}%</div>
+                    </div>
+                    <div class="rt-attribution-row">
+                        <div class="rt-attribution-row__label">Market</div>
+                        <div class="rt-attribution-row__track rt-attribution-row__track--bidir">
+                            <div class="rt-attribution-row__fill rt-attribution-row__fill--market rt-attribution-row__fill--{{ 'pos' if mkt_share_pct >= 0 else 'neg' }}" style="width: {{ '%.1f'|format([mkt_share_pct|abs, 100]|min * 0.5) }}%;"></div>
+                        </div>
+                        <div class="rt-attribution-row__value">{{ '%+.0f'|format(mkt_share_pct) }}%</div>
+                    </div>
+                    {# Alpha = regression intercept share. Closes the bar to
+                       100% (firm + industry + market + alpha = 1.0 exactly).
+                       Neutral-gray fill so it reads as "residual baseline",
+                       not a 4th factor exposure. #}
+                    <div class="rt-attribution-row" title="Regression intercept — average daily drift not explained by market or industry factors. Often called alpha in finance.">
+                        <div class="rt-attribution-row__label">Alpha</div>
+                        <div class="rt-attribution-row__track rt-attribution-row__track--bidir">
+                            <div class="rt-attribution-row__fill rt-attribution-row__fill--alpha rt-attribution-row__fill--{{ 'pos' if alpha_share_pct >= 0 else 'neg' }}" style="width: {{ '%.1f'|format([alpha_share_pct|abs, 100]|min * 0.5) }}%;"></div>
+                        </div>
+                        <div class="rt-attribution-row__value">{{ '%+.0f'|format(alpha_share_pct) }}%</div>
+                    </div>
+                    {% else %}
+                    {% set firm_pct  = ((attr.get('firm_ratio',     0) or 0) * 100) %}
+                    {% set ind_pct   = ((attr.get('industry_ratio', 0) or 0) * 100) %}
+                    {% set mkt_pct   = ((attr.get('market_ratio',   0) or 0) * 100) %}
+                    {# alpha_ratio is not exposed in the payload, but the four
+                       *_ratio shares share the same denominator (sum of |abs|
+                       contributions including alpha), so alpha closes the gap
+                       to 100% by construction. Clamp to [0,100] for safety. #}
+                    {% set alpha_pct = [[100 - firm_pct - ind_pct - mkt_pct, 0]|max, 100]|min %}
+                    {% if near_zero %}
+                    <div style="font-size: 11px; color: var(--rt-text-muted); margin-bottom: 8px; line-height: 1.4;">
+                        Episode total return is near-zero; net-contribution shares are numerically unstable. Showing absolute-magnitude ratios instead.
+                    </div>
+                    {% endif %}
+                    <div class="rt-attribution-row">
+                        <div class="rt-attribution-row__label">Firm</div>
+                        <div class="rt-attribution-row__track">
+                            <div class="rt-attribution-row__fill rt-attribution-row__fill--firm" style="width: {{ '%.1f'|format(firm_pct if firm_pct > 0 else 0) }}%;"></div>
+                        </div>
+                        <div class="rt-attribution-row__value">{{ "%.0f"|format(firm_pct) }}%</div>
+                    </div>
+                    <div class="rt-attribution-row">
+                        <div class="rt-attribution-row__label">Industry</div>
+                        <div class="rt-attribution-row__track">
+                            <div class="rt-attribution-row__fill rt-attribution-row__fill--industry" style="width: {{ '%.1f'|format(ind_pct if ind_pct > 0 else 0) }}%;"></div>
+                        </div>
+                        <div class="rt-attribution-row__value">{{ "%.0f"|format(ind_pct) }}%</div>
+                    </div>
+                    <div class="rt-attribution-row">
+                        <div class="rt-attribution-row__label">Market</div>
+                        <div class="rt-attribution-row__track">
+                            <div class="rt-attribution-row__fill rt-attribution-row__fill--market" style="width: {{ '%.1f'|format(mkt_pct if mkt_pct > 0 else 0) }}%;"></div>
+                        </div>
+                        <div class="rt-attribution-row__value">{{ "%.0f"|format(mkt_pct) }}%</div>
+                    </div>
+                    <div class="rt-attribution-row" title="Regression intercept — average daily drift not explained by market or industry factors. Often called alpha in finance.">
+                        <div class="rt-attribution-row__label">Alpha</div>
+                        <div class="rt-attribution-row__track">
+                            <div class="rt-attribution-row__fill rt-attribution-row__fill--alpha" style="width: {{ '%.1f'|format(alpha_pct) }}%;"></div>
+                        </div>
+                        <div class="rt-attribution-row__value">{{ "%.0f"|format(alpha_pct) }}%</div>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+
+            {# LEFT row-2 cell: Quantitative diagnostics. Explicit
+               `grid-column` / `grid-row` placement — source order alone
+               would put this in (r1c2) under default row-major auto-flow,
+               but we want it in (r2c1) so the diagnostics row sits below
+               the verdict row. #}
+            <div style="grid-column: 1; grid-row: 2; padding-right: 24px;">
+                {% if _has_quant_diag %}
+                <details class="rt-details" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rt-border);">
+                    <summary>Quantitative diagnostics</summary>
+                    <div class="rt-details__body">
+                        {# Section 1: Proxies — top row, flex with two
+                           equal-width cards (`flex: 1` on each), so the
+                           regression's market and industry benchmarks are
+                           the first thing the reader sees. Market proxy is
+                           the hardcoded `SPY` constant from
+                           `app/domain/attribution.py::DEFAULT_MARKET_PROXY`
+                           (DEC-202: switched from `^GSPC` for total-return
+                           parity with the SPDR industry proxies); update
+                           this string in lockstep if the constant ever
+                           changes. Absolute-magnitude `*_ratio` cards from
+                           the prior version are intentionally removed —
+                           they duplicated the signed shares already shown
+                           in the §3 attribution bar above and added
+                           confusion without information. #}
+                        <div class="rt-section-title">Proxies</div>
+                        <div style="display: flex; gap: 12px;">
+                            <div class="rt-stat" style="flex: 1;">
+                                <div class="rt-stat__label">Market proxy</div>
+                                <div class="rt-stat__value" style="font-size: 14px;">
+                                    SPY
+                                    <span style="color: var(--rt-text-muted); font-size: 11px; font-weight: 400;">
+                                        (S&amp;P 500 ETF)
+                                    </span>
+                                </div>
+                            </div>
+                            {% if attr.get('industry_proxy_ticker') %}
+                            <div class="rt-stat" style="flex: 1;">
+                                <div class="rt-stat__label">Industry proxy</div>
+                                <div class="rt-stat__value" style="font-size: 14px;">
+                                    {{ attr.get('industry_proxy_ticker') }}
+                                    <span style="color: var(--rt-text-muted); font-size: 11px; font-weight: 400;">
+                                        ({{ 'sub-industry' if attr.get('industry_proxy_source') == 'sub_industry' else 'GICS sector' }})
+                                    </span>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        {# Section 2: Regression fit — model-quality
+                           metrics. Auto-fit grid wraps as needed. #}
+                        {% if _has_fit_metrics %}
+                        <div class="rt-section-title" style="margin-top: 18px;">Regression fit</div>
+                        <div class="rt-stat-grid">
+                            {% if attr.get('adj_r2') is not none %}
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">Adj. R²</div>
+                                <div class="rt-stat__value">{{ "%.3f"|format(attr.get('adj_r2') or 0) }}</div>
+                            </div>
+                            {% endif %}
+                            {% if attr.get('beta_mkt_t_stat') is not none %}
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">Market β t-stat</div>
+                                <div class="rt-stat__value">{{ "%.2f"|format(attr.get('beta_mkt_t_stat') or 0) }}</div>
+                            </div>
+                            {% endif %}
+                            {% if attr.get('beta_ind_t_stat') is not none %}
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">Industry β t-stat</div>
+                                <div class="rt-stat__value">{{ "%.2f"|format(attr.get('beta_ind_t_stat') or 0) }}</div>
+                            </div>
+                            {% endif %}
+                            {% if attr.get('f_stat') is not none %}
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">F-stat</div>
+                                <div class="rt-stat__value">{{ "%.2f"|format(attr.get('f_stat') or 0) }}</div>
+                            </div>
+                            {% endif %}
+                            {% if attr.get('f_pvalue') is not none %}
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">F p-value</div>
+                                <div class="rt-stat__value">{{ "%.4f"|format(attr.get('f_pvalue') or 0) }}</div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+
+                        {# Section 3: VIX — environment / regime check.
+                           Four separate cards (train p50, train p95,
+                           episode avg, episode max) instead of the prior
+                           "p50 / p95" combined value, so each metric is
+                           individually scannable. Supports the "macro
+                           shock suspected" caution shown in the §3 left
+                           column when ep_max > train p95. #}
+                        {% if attr.get('vix_estimation_p50') is not none %}
+                        <div class="rt-section-title" style="margin-top: 18px;">VIX</div>
+                        <div class="rt-stat-grid">
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">VIX train p50</div>
+                                <div class="rt-stat__value">{{ '%.1f'|format(attr.get('vix_estimation_p50')) }}</div>
+                            </div>
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">VIX train p95</div>
+                                <div class="rt-stat__value">{{ '%.1f'|format(attr.get('vix_estimation_p95') or 0) }}</div>
+                            </div>
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">VIX episode avg</div>
+                                <div class="rt-stat__value">{{ '%.1f'|format(attr.get('vix_episode_avg') or 0) }}</div>
+                            </div>
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">VIX episode max</div>
+                                <div class="rt-stat__value">{{ '%.1f'|format(attr.get('vix_episode_max') or 0) }}</div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </details>
+                {% endif %}
+            </div>
+
+            {# RIGHT · explanation column — content depends on `view_mode`.
+               Pipeline view = V2 evidence badge + headline; AI view = configured LLM
+               headline + full prose + sources (DEC-203). #}
+            <div style="grid-column: 2; grid-row: 1; padding-left: 24px; border-left: 1px solid var(--rt-border);">
+                <div style="text-align: center; font-size: 18px; font-weight: 600; color: var(--rt-text); margin-bottom: 12px;">
+                    {{ 'AI Explanation' if view_mode == 'ai' else 'Qualitative Check' }}
+                </div>
+
+                {% if view_mode == 'ai' %}
+                    {# AI Explanation view — DEC-203 #}
+                    {% if ai_has_payload %}
+                        {% set ai_quality = ai.get('evidence_quality') or 'LIMITED' %}
+                        {% set _ai_badge_variant = {'SUPPORTED': 'success', 'LIMITED': 'info', 'NONE': 'neutral'}.get(ai_quality, 'neutral') %}
+                        {% set _ai_badge_label = {'SUPPORTED': 'Evidence Found', 'LIMITED': 'Partial Evidence', 'NONE': 'No Evidence'}.get(ai_quality, ai_quality) %}
+                        <div style="text-align: center;">
+                            <span class="rt-badge rt-badge--{{ _ai_badge_variant }} rt-badge--lg">{{ _ai_badge_label }}</span>
+                        </div>
+                        {% if ai.get('headline_explanation') %}
+                        <div style="margin-top: 14px; padding: 12px 14px; border-radius: var(--rt-r-md); background: var(--rt-surface-2); border: 1px solid var(--rt-border); font-size: 13px; line-height: 1.6; color: var(--rt-text); font-weight: 500;">
+                            {{ ai.get('headline_explanation') }}
+                        </div>
+                        {% endif %}
+                        <div class="rt-ai-prose" style="margin-top: 14px; font-size: 13px; line-height: 1.7; color: var(--rt-text); white-space: pre-wrap;">{{ ai.get('full_explanation') }}</div>
+                        {% if ai.get('sources') %}
+                        <div style="margin-top: 16px;">
+                            <div class="rt-section-title">Sources</div>
+                            <ol style="margin: 6px 0 0 0; padding-left: 20px; font-size: 12px; line-height: 1.55; color: var(--rt-text-secondary);">
+                                {% for src in ai.get('sources') %}
+                                <li style="margin-bottom: 6px;">
+                                    {% if src.get('url') %}
+                                    <a href="{{ src.get('url') }}" target="_blank" rel="noopener noreferrer" style="color: var(--rt-text); text-decoration: underline;">{{ src.get('title') or src.get('url') }}</a>
+                                    {% else %}
+                                    {{ src.get('title') or '(untitled)' }}
+                                    {% endif %}
+                                    {% if src.get('publisher') or src.get('date') %}
+                                    <span style="color: var(--rt-text-muted);">
+                                        — {% if src.get('publisher') %}{{ src.get('publisher') }}{% endif %}{% if src.get('publisher') and src.get('date') %}, {% endif %}{% if src.get('date') %}{{ src.get('date') }}{% endif %}
+                                    </span>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                        {% endif %}
+                        <div style="margin-top: 16px; font-size: 11px; color: var(--rt-text-muted); line-height: 1.5;">
+                            Generated by {{ ai.get('provider_name') or 'openai' }} / {{ ai.get('model_name') or 'gpt-5.5' }} with web search.
+                            {% if ai.get('computed_at') %}<span class="rt-mono">{{ ai.get('computed_at')[:19] }}Z</span>{% endif %}
+                            {% if ai.get('cost_estimate_usd') is not none %}· est. cost ${{ '%.3f'|format(ai.get('cost_estimate_usd')) }}{% endif %}
+                        </div>
+                    {% else %}
+                        {# AI cache empty — empty-state with CTA. #}
+                        <div style="text-align: center; padding: 24px 8px;">
+                            <div style="font-size: 13px; color: var(--rt-text-secondary); line-height: 1.6; margin-bottom: 16px;">
+                                No AI Explanation has been generated for this episode yet. Click below to call the configured AI model with web search.
+                            </div>
+                            <a
+                                href="{{ url_for('routes.episode_analysis_loading', ticker=company.ticker, episode_id=episode.id, source='ai') }}"
+                                class="rt-btn rt-btn--primary rt-btn--sm"
+                                data-ai-run-link
+                                data-ai-requires-model
+                            >
+                                ✦ Generate AI Explanation
+                            </a>
+                            <div style="margin-top: 10px; font-size: 11px; color: var(--rt-text-muted);">
+                                ~15–45s · provider cost may apply
+                            </div>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    {# Pipeline (V2) view — original evidence badge + headline. #}
+                    <div style="text-align: center;">{{ evidence_badge(verdict_evidence_status, verdict_degraded_codes, 'lg') }}</div>
+                    <div style="margin-top: 12px; font-size: 13px; color: var(--rt-text-secondary); line-height: 1.55; text-align: center;">
+                        {% if verdict_evidence_status == 'NO_EVIDENCE' %}
+                        No explanation-eligible news bundles were found for this episode.
+                        {% elif verdict_evidence_status == 'LIMITED_EVIDENCE' %}
+                            {% if 'only_weak_support' in verdict_degraded_codes %}
+                            News bundles were found but all carry low confidence scores.
+                            {% elif 'attribution_data_unavailable' in verdict_degraded_codes %}
+                            News evidence was found but cannot be fully contextualized — attribution data was unavailable.
+                            {% else %}
+                            News evidence was found and is consistent with the episode.
+                            {% endif %}
+                        {% elif verdict_evidence_status == 'SUPPORTED' %}
+                        Strong news evidence supports the identified episode driver.
+                        {% endif %}
+                    </div>
+
+                    {% set headline_text = verdict_explanation.get('headline_explanation') %}
+                    {% if headline_text %}
+                    <div style="margin-top: 14px; padding: 12px 14px; border-radius: var(--rt-r-md); background: var(--rt-surface-2); border: 1px solid var(--rt-border); font-size: 13px; line-height: 1.6; color: var(--rt-text);">
+                        {{ headline_text }}
+                    </div>
+                    {% endif %}
+
+                    {% if verdict_outward.get('manual_review') %}
+                    <div style="margin-top: 12px;">
+                        <span class="rt-badge rt-badge--warning">Manual review recommended</span>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            {# RIGHT row-2 cell: Qualitative diagnostics. Mirrors the LEFT
+               row-2 cell. Explicit `grid-column: 2; grid-row: 2` so it
+               lands in the bottom-right cell regardless of source order.
+               Same `padding-left` + `border-left` styling so the column
+               divider runs continuously through both rows. #}
+            <div style="grid-column: 2; grid-row: 2; padding-left: 24px; border-left: 1px solid var(--rt-border);">
+                {# Qualitative diagnostics are V2-specific (degraded reason codes
+                   come from news_v2_05_explanations). Suppressed entirely on the
+                   AI Explanation path. #}
+                {% if view_mode != 'ai' and _has_qual_diag %}
+                <details class="rt-details" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rt-border);">
+                    <summary>Qualitative diagnostics · reason codes, outward notes</summary>
+                    <div class="rt-details__body">
+                        {% if verdict_degraded_codes %}
+                        <div>
+                            <div class="rt-section-title">Degraded reason codes</div>
+                            <div class="rt-flex" style="flex-wrap: wrap; gap: 6px;">
+                                {% for code in verdict_degraded_codes %}
+                                <span class="rt-badge rt-badge--plain">{{ code }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {% if verdict_outward.get('outward_notes') %}
+                        <div style="margin-top: {{ '14px' if verdict_degraded_codes else '0' }};">
+                            <div class="rt-section-title">Notes</div>
+                            <ul style="margin: 0; padding-left: 18px; color: var(--rt-text-secondary); font-size: 13px; line-height: 1.6;">
+                                {% for note in verdict_outward.get('outward_notes', []) %}
+                                <li>{{ note }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </details>
+                {% endif %}
+            </div>
+        </div>
+
+        {# Capability boundary notice — system-level disclaimer from
+           news_v2_05_explanations. Shown as a subtle footnote so readers know
+           the pipeline recognized a known coverage gap. #}
+        {% if verdict_outward.get('capability_boundary_notice') %}
+        <div style="margin-top: 12px; font-size: 12px; color: var(--rt-text-muted); line-height: 1.5;">
+            <strong style="color: var(--rt-text-secondary);">Boundary notice:</strong> {{ verdict_outward.get('capability_boundary_notice') }}
+        </div>
+        {% endif %}
+    </section>
+
+    {% if view_mode != 'ai' %}
+    {# ========================================================================
+       §4 Branch Explanations — unified 3-card layout.
+
+       Every routing mode renders the same 3 cards (firm / industry / market);
+       only the per-card STATE differs:
+         · mixed     → all 3 pre-rendered from branch_analyses
+         · dominant  → primary card pre-rendered from top-level analysis;
+                       secondaries are lazy skeletons, fetched on click
+         · degraded  → all 3 in unavailable state (no per-branch allocation)
+
+       Component share % comes from the SAME factor shares rendered in §3
+       Layer 1, so the viewer sees which branch is doing what work without
+       any duplication of prose content.
+       ======================================================================== #}
+    {% set _branch_order = ['firm', 'industry', 'market'] %}
+    {% set _share_map = {
+        'firm':     attr.get('firm_share'),
+        'industry': attr.get('industry_share'),
+        'market':   attr.get('market_share'),
+    } %}
+    {% set _ratio_map = {
+        'firm':     attr.get('firm_ratio'),
+        'industry': attr.get('industry_ratio'),
+        'market':   attr.get('market_ratio'),
+    } %}
+    {% set _near_zero = attr.get('near_zero_episode_return') %}
+    {% set _mixed_map = namespace(data={}) %}
+    {% if routing_mode == 'mixed' %}
+        {% for branch in mixed_branch_analyses %}
+            {% set _ = _mixed_map.data.update({branch.get('branch_mode'): branch.get('analysis') or {}}) %}
+        {% endfor %}
+    {% endif %}
+    {% set _primary_mode = branch_plan.get('primary_mode') %}
+    {% set _lazy_modes   = branch_plan.get('lazy_modes') or [] %}
+
+    <section class="rt-card">
+        <div class="rt-card__header">
+            <div>
+                <h2 class="rt-card__title">Branch Explanations</h2>
+                <div class="rt-card__subtitle">
+                    {% if view_mode == 'ai' %}
+                        Component shares from the quantitative attribution. The AI Explanation above synthesizes all three forces in one narrative — these cards are informational only.
+                    {% elif routing_mode == 'mixed' %}All three branches contributed meaningfully. Click any card to reveal its evidence detail.
+                    {% elif routing_mode == 'dominant' %}Primary ({{ _primary_mode or 'dominant' }}) branch is pre-loaded. Click a secondary card to fetch its evidence on demand.
+                    {% elif routing_mode == 'degraded' %}Per-branch allocation could not be computed for this episode.
+                    {% else %}Firm / industry / market breakdown.
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="rt-branch-row">
+            {% for mode in _branch_order %}
+            {# Resolve per-mode analysis reference and the card state tag.
+               In AI view, all cards collapse to an `info` state (no V2 outward
+               evidence to bind, no lazy fetch — the AI prose in §3 RIGHT
+               already covers all three forces in one narrative). #}
+            {% set _this_analysis = none %}
+            {% set _state = 'unavailable' %}
+            {% if view_mode == 'ai' %}
+                {% set _state = 'info' %}
+            {% elif routing_mode == 'mixed' %}
+                {% set _this_analysis = _mixed_map.data.get(mode) %}
+                {% set _state = 'ready' if _this_analysis else 'unavailable' %}
+            {% elif routing_mode == 'dominant' %}
+                {% if mode == _primary_mode %}
+                    {% set _this_analysis = analysis %}
+                    {% set _state = 'ready' %}
+                {% elif mode in _lazy_modes %}
+                    {% set _state = 'lazy' %}
+                {% endif %}
+            {% endif %}
+
+            {% set _this_outward     = (_this_analysis or {}).get('outward') or {} %}
+            {% set _this_explanation = (_this_analysis or {}).get('explanation') or {} %}
+
+            {# Component share text + sign tag (drives the colored value styling).
+               Signed % when shares are reliable; fall back to absolute-magnitude
+               ratio for near-zero episodes; em-dash when attribution is OOS. #}
+            {% set _share_val = _share_map.get(mode) %}
+            {% set _ratio_val = _ratio_map.get(mode) %}
+            {% set _share_text = '—' %}
+            {% set _share_sign = 'na' %}
+            {% if _share_val is not none and not _near_zero %}
+                {% set _share_text = '%+.0f%%'|format(_share_val * 100) %}
+                {% set _share_sign = 'up' if _share_val >= 0 else 'down' %}
+            {% elif _ratio_val is not none %}
+                {% set _share_text = '%.0f%%'|format((_ratio_val or 0) * 100) %}
+                {% set _share_sign = 'mag' %}
+            {% endif %}
+
+            {# Primary highlight applies ONLY in dominant routing for the primary
+               branch — mixed cards stay visually equal. #}
+            {% set _is_primary = (routing_mode == 'dominant' and mode == _primary_mode) %}
+
+            <div
+                class="rt-branch-card rt-branch-card--{{ mode }} rt-branch-card--{{ _state }}{% if _is_primary %} rt-branch-card--primary{% endif %}"
+                data-branch-mode="{{ mode }}"
+                data-branch-state="{{ _state }}"
+                {% if _state == 'lazy' %}data-branch-url="{{ url_for('routes.api_episode_analysis_branch', ticker=company.ticker, episode_id=episode.id) }}?mode={{ mode }}"{% endif %}
+                role="button"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="branch-drawer-{{ mode }}"
+            >
+                <div class="rt-branch-card__head">
+                    <div class="rt-flex" style="gap: 8px;">
+                        <div class="rt-branch-card__name">{{ mode|capitalize }}</div>
+                        {% if _is_primary %}
+                        <span class="rt-branch-card__primary-pill" title="Primary branch — pre-loaded">PRIMARY</span>
+                        {% endif %}
+                    </div>
+                    <div class="rt-flex" style="gap: 8px;">
+                        <span class="rt-branch-card__share rt-branch-card__share--{{ _share_sign }}" title="Component share of episode return (same factor share shown in §3 Layer 1)">{{ _share_text }}</span>
+                        {% if _state == 'ready' %}
+                        {{ evidence_badge(_this_outward.get('outward_status', ''), _this_outward.get('degraded_reason_codes') or []) }}
+                        {% elif _state == 'lazy' %}
+                        <span class="rt-badge rt-badge--neutral" data-card-status>Lazy</span>
+                        {% elif _state == 'info' %}
+                        {# AI view — no per-branch evidence badge; the AI prose covers all 3. #}
+                        {% else %}
+                        <span class="rt-badge rt-badge--neutral">Unavailable</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {# Body: only show CTA for lazy (pre-click), unavailable message
+                   when no attribution. Ready cards have NO body line — the
+                   driver_hypothesis field is just a routing-taxonomy tag like
+                   "firm_dominant" / "industry_branch" and would duplicate the
+                   card name + routing badge. The drawer holds the real prose. #}
+                {% if _state == 'lazy' %}
+                <div class="rt-branch-card__driver" data-card-driver>
+                    {# Default state (CTA). JS swaps to a loader on click. #}
+                    <div class="rt-branch-card__cta" data-card-cta>
+                        <span class="rt-text-muted">Click to load this branch's evidence.</span>
+                    </div>
+                    <div class="rt-branch-card__loader" data-card-loader hidden>
+                        <div class="rt-branch-card__loader-label">Loading {{ mode }} branch…</div>
+                        <div class="rt-branch-card__loader-bar">
+                            <div class="rt-branch-card__loader-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                {% elif _state == 'unavailable' %}
+                <div class="rt-branch-card__driver">
+                    <span class="rt-text-muted">Attribution unavailable — per-branch explanation cannot be produced.</span>
+                </div>
+                {% elif _state == 'info' %}
+                <div class="rt-branch-card__driver">
+                    <span class="rt-text-muted">See the AI Explanation above for this branch's narrative.</span>
+                </div>
+                {% endif %}
+                <div class="rt-branch-card__foot">
+                    <span data-card-foot>
+                        {% if _state == 'ready' %}
+                            {{ 'Manual review required' if _this_outward.get('manual_review') else 'Confidence: ' ~ (_this_explanation.get('explanation_confidence', 'N/A')) }}
+                        {% elif _state == 'lazy' %}
+                            On-demand branch
+                        {% elif _state == 'info' %}
+                            Component share only
+                        {% else %}
+                            —
+                        {% endif %}
+                    </span>
+                    {% if _state == 'ready' or _state == 'lazy' %}
+                    <span class="rt-branch-card__chev">▾</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="rt-branch-drawers">
+            {# AI view skips drawer rendering entirely — cards are info-only. #}
+            {% if view_mode != 'ai' %}
+            {% for mode in _branch_order %}
+            {% set _this_analysis = none %}
+            {% set _state = 'unavailable' %}
+            {% if routing_mode == 'mixed' %}
+                {% set _this_analysis = _mixed_map.data.get(mode) %}
+                {% set _state = 'ready' if _this_analysis else 'unavailable' %}
+            {% elif routing_mode == 'dominant' %}
+                {% if mode == _primary_mode %}
+                    {% set _this_analysis = analysis %}
+                    {% set _state = 'ready' %}
+                {% elif mode in _lazy_modes %}
+                    {% set _state = 'lazy' %}
+                {% endif %}
+            {% endif %}
+
+            {% if _state != 'unavailable' %}
+            <div
+                id="branch-drawer-{{ mode }}"
+                class="rt-branch-drawer rt-branch-drawer--{{ mode }}"
+                data-branch-mode="{{ mode }}"
+                data-branch-state="{{ _state }}"
+                aria-hidden="true"
+            >
+                <div class="rt-branch-drawer__inner" data-branch-content>
+                    {% if _state == 'ready' %}
+                        {% set _this_outward     = (_this_analysis or {}).get('outward') or {} %}
+                        {% set _this_explanation = (_this_analysis or {}).get('explanation') or {} %}
+                        {% set _this_bundles     = (_this_analysis or {}).get('evidence_bundles') or [] %}
+                        {% set _this_articles    = (_this_analysis or {}).get('supporting_articles') or [] %}
+
+                        <div class="rt-branch-drawer__title rt-branch-drawer__stage rt-branch-drawer__stage--t1">
+                            <span>{{ mode|capitalize }} branch detail</span>
+                            {{ evidence_badge(_this_outward.get('outward_status', ''), _this_outward.get('degraded_reason_codes') or []) }}
+                        </div>
+
+                        <div class="rt-stat-grid rt-branch-drawer__stage rt-branch-drawer__stage--t1">
+                            <div class="rt-stat" style="grid-column: span 2;">
+                                <div class="rt-stat__label">Driver hypothesis</div>
+                                <div class="rt-stat__value rt-stat__value--prose">{{ _this_explanation.get('driver_hypothesis', 'N/A') }}</div>
+                            </div>
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">Confidence</div>
+                                <div class="rt-stat__value rt-stat__value--prose">{{ _this_explanation.get('explanation_confidence', 'N/A') }}</div>
+                            </div>
+                            <div class="rt-stat">
+                                <div class="rt-stat__label">Manual review</div>
+                                <div class="rt-stat__value rt-stat__value--prose">{{ 'Required' if _this_outward.get('manual_review') else 'Not Required' }}</div>
+                            </div>
+                        </div>
+
+                        {% if _this_explanation.get('headline_explanation') %}
+                        <div class="rt-branch-drawer__stage rt-branch-drawer__stage--t2" style="margin-top: 14px; padding: 12px 14px; border-radius: var(--rt-r-md); background: var(--rt-surface-2); border: 1px solid var(--rt-border); font-size: 13px; line-height: 1.6;">
+                            {{ _this_explanation.get('headline_explanation') }}
+                        </div>
+                        {% endif %}
+
+                        {% if _this_explanation.get('key_event_summaries') %}
+                        <div class="rt-stack-sm rt-branch-drawer__stage rt-branch-drawer__stage--t2" style="margin-top: 14px;">
+                            {% for item in _this_explanation.get('key_event_summaries', []) %}
+                            <div class="rt-evidence">
+                                <div class="rt-evidence__meta">
+                                    <span>{{ item.role }}</span>
+                                    <span class="rt-evidence__meta-dot"></span>
+                                    <span>{{ item.event_type }}</span>
+                                </div>
+                                <div class="rt-evidence__headline">{{ item.summary }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <div class="rt-grid-2 rt-branch-drawer__stage rt-branch-drawer__stage--t3" style="margin-top: 14px;">
+                            <div>
+                                <div class="rt-section-title">Evidence bundles</div>
+                                {% if _this_bundles %}
+                                <div class="rt-stack-sm">
+                                    {% for bundle in _this_bundles[:5] %}
+                                    <div class="rt-bundle">
+                                        <div>
+                                            <div class="rt-bundle__event">{{ bundle.canonical_event_type }}</div>
+                                            <div class="rt-bundle__meta">
+                                                {{ bundle.bundle_status }}
+                                                {% if bundle.supporting_article_ids %} · {{ bundle.supporting_article_ids|length }} articles{% endif %}
+                                                {% if bundle.supporting_claim_ids %} · {{ bundle.supporting_claim_ids|length }} claims{% endif %}
+                                            </div>
+                                        </div>
+                                        <div></div>
+                                        <div class="rt-bundle__score">{{ "%.2f"|format(bundle.bundle_score or 0) }}</div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                <div class="rt-text-muted" style="font-size: 13px;">No evidence bundles.</div>
+                                {% endif %}
+                            </div>
+                            <div>
+                                <div class="rt-section-title">Supporting articles</div>
+                                {% if _this_articles %}
+                                <div class="rt-stack-sm">
+                                    {% for article in _this_articles[:5] %}
+                                    <div class="rt-evidence">
+                                        <div class="rt-evidence__meta">
+                                            <span>{{ article.publisher or article.provider or 'Unknown source' }}</span>
+                                            {% if article.published_at %}
+                                            <span class="rt-evidence__meta-dot"></span>
+                                            <span class="rt-mono">{{ article.published_at }}</span>
+                                            {% endif %}
+                                        </div>
+                                        <div class="rt-evidence__headline">
+                                            {% if article.url %}
+                                            <a href="{{ article.url }}" target="_blank" rel="noopener">{{ article.headline or 'Untitled' }}</a>
+                                            {% else %}
+                                            {{ article.headline or 'Untitled' }}
+                                            {% endif %}
+                                        </div>
+                                        {% if article.summary_or_snippet %}
+                                        <div class="rt-evidence__snippet">{{ article.summary_or_snippet }}</div>
+                                        {% endif %}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                <div class="rt-text-muted" style="font-size: 13px;">No supporting articles.</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        {# Lazy state — JS replaces inner content after first click. #}
+                        <div class="rt-branch-drawer__lazy-placeholder" style="padding: 8px 0; font-size: 13px; color: var(--rt-text-muted);">
+                            <span class="rt-spinner" style="display: none;" data-lazy-spinner></span>
+                            <span data-lazy-label>Branch evidence will load on first click.</span>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}{# /view_mode != 'ai' #}
+        </div>
+    </section>
+    {% endif %}
+
+    </div>{# /rt-stack #}
+
+</div>{# /rt-container #}
+
+{# DEC-203: Recompute confirmation modal — only rendered on the AI path
+   when a cache row already exists. Triggered by the [data-ai-recompute-trigger]
+   button in the hero. #}
+{% if view_mode == 'ai' and ai_has_payload %}
+<div class="rt-modal" id="ai-recompute-modal" hidden>
+    <div class="rt-modal__backdrop" data-ai-modal-dismiss></div>
+    <div class="rt-modal__panel" role="dialog" aria-modal="true" aria-labelledby="ai-recompute-title">
+        <h3 id="ai-recompute-title" style="margin: 0 0 12px 0; font-size: 18px;">Recompute AI Explanation?</h3>
+        <p style="margin: 0 0 12px 0; font-size: 13px; color: var(--rt-text-secondary); line-height: 1.6;">
+            This will discard the cached payload and call the configured AI model with web search again. The previous explanation will be overwritten.
+        </p>
+        <div style="margin: 14px 0; padding: 12px 14px; background: var(--rt-surface-2); border: 1px solid var(--rt-border); border-radius: var(--rt-r-md); font-size: 12px; line-height: 1.7; color: var(--rt-text);">
+            <div><strong>Cached:</strong> <span data-ai-cache-age-display>—</span></div>
+            <div><strong>Previous run cost:</strong> est. $<span data-ai-cost-display>—</span></div>
+            <div><strong>This call:</strong> provider cost may apply · 15–45s</div>
+        </div>
+        <div class="rt-flex" style="justify-content: flex-end; gap: 10px; margin-top: 14px;">
+            <button type="button" class="rt-btn rt-btn--ghost rt-btn--sm" data-ai-modal-dismiss>Cancel</button>
+            <a href="#" class="rt-btn rt-btn--primary rt-btn--sm" data-ai-modal-confirm>↻ Recompute</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{# ---------- Unified branch-card drawer + lazy-load handler ---------------
+    Drives every .rt-branch-card regardless of routing mode:
+      · data-branch-state="ready"        → just toggle the drawer
+      · data-branch-state="lazy"         → fetch on first click, then toggle
+      · data-branch-state="unavailable"  → no-op (no handler attached)
+--------------------------------------------------------------------------- #}
+<script>
+    (() => {
+        const cards = document.querySelectorAll('.rt-branch-card[data-branch-mode]');
+        if (!cards.length) return;
+
+        const drawerFor = (mode) =>
+            document.querySelector(`.rt-branch-drawer[data-branch-mode="${mode}"]`);
+
+        function escapeHtml(v) {
+            return String(v ?? '')
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function evidenceBadge(status, codes) {
+            const c = codes || [];
+            if (status === 'NO_EVIDENCE')      return '<span class="rt-badge rt-badge--neutral">No Evidence</span>';
+            if (status === 'SUPPORTED')        return '<span class="rt-badge rt-badge--success">Evidence Found</span>';
+            if (status === 'LIMITED_EVIDENCE') {
+                if (c.includes('only_weak_support'))            return '<span class="rt-badge rt-badge--warning">Weak Evidence</span>';
+                if (c.includes('attribution_data_unavailable')) return '<span class="rt-badge rt-badge--info">Partial Evidence</span>';
+                return '<span class="rt-badge rt-badge--success">Evidence Found</span>';
+            }
+            return `<span class="rt-badge rt-badge--neutral">${escapeHtml(status || 'N/A')}</span>`;
+        }
+
+        function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+        /** Render the same drawer layout that the Jinja template renders for
+         *  "ready" branches, but from a JSON payload (used for lazy loads). */
+        function renderDrawerInner(mode, payload) {
+            const analysis  = payload.analysis || {};
+            const outward   = analysis.outward || {};
+            const explain   = analysis.explanation || {};
+            const summaries = explain.key_event_summaries || [];
+            const bundles   = analysis.evidence_bundles || [];
+            const articles  = analysis.supporting_articles || [];
+            const degraded  = outward.degraded_reason_codes || [];
+
+            const summariesHtml = summaries.length
+                ? summaries.map((it) => `
+                    <div class="rt-evidence">
+                        <div class="rt-evidence__meta">
+                            <span>${escapeHtml(it.role)}</span>
+                            <span class="rt-evidence__meta-dot"></span>
+                            <span>${escapeHtml(it.event_type)}</span>
+                        </div>
+                        <div class="rt-evidence__headline">${escapeHtml(it.summary)}</div>
+                    </div>`).join('')
+                : '';
+
+            const bundlesHtml = bundles.length
+                ? bundles.slice(0, 5).map((b) => {
+                    const artCount    = (b.supporting_article_ids || []).length;
+                    const claimCount  = (b.supporting_claim_ids   || []).length;
+                    const metaBits    = [escapeHtml(b.bundle_status || '')];
+                    if (artCount)   metaBits.push(`${artCount} articles`);
+                    if (claimCount) metaBits.push(`${claimCount} claims`);
+                    return `
+                        <div class="rt-bundle">
+                            <div>
+                                <div class="rt-bundle__event">${escapeHtml(b.canonical_event_type || '')}</div>
+                                <div class="rt-bundle__meta">${metaBits.join(' · ')}</div>
+                            </div>
+                            <div></div>
+                            <div class="rt-bundle__score">${(b.bundle_score || 0).toFixed(2)}</div>
+                        </div>`;
+                }).join('')
+                : '<div class="rt-text-muted" style="font-size: 13px;">No evidence bundles.</div>';
+
+            const articlesHtml = articles.length
+                ? articles.slice(0, 5).map((a) => {
+                    const linkInner = a.url
+                        ? `<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.headline || 'Untitled')}</a>`
+                        : escapeHtml(a.headline || 'Untitled');
+                    const metaRight = a.published_at
+                        ? `<span class="rt-evidence__meta-dot"></span><span class="rt-mono">${escapeHtml(a.published_at)}</span>`
+                        : '';
+                    const snippet = a.summary_or_snippet
+                        ? `<div class="rt-evidence__snippet">${escapeHtml(a.summary_or_snippet)}</div>`
+                        : '';
+                    return `
+                        <div class="rt-evidence">
+                            <div class="rt-evidence__meta">
+                                <span>${escapeHtml(a.publisher || a.provider || 'Unknown source')}</span>
+                                ${metaRight}
+                            </div>
+                            <div class="rt-evidence__headline">${linkInner}</div>
+                            ${snippet}
+                        </div>`;
+                }).join('')
+                : '<div class="rt-text-muted" style="font-size: 13px;">No supporting articles.</div>';
+
+            const headlineBlock = explain.headline_explanation
+                ? `<div class="rt-branch-drawer__stage rt-branch-drawer__stage--t2" style="margin-top: 14px; padding: 12px 14px; border-radius: var(--rt-r-md); background: var(--rt-surface-2); border: 1px solid var(--rt-border); font-size: 13px; line-height: 1.6;">
+                       ${escapeHtml(explain.headline_explanation)}
+                   </div>`
+                : '';
+
+            const summariesBlock = summariesHtml
+                ? `<div class="rt-stack-sm rt-branch-drawer__stage rt-branch-drawer__stage--t2" style="margin-top: 14px;">${summariesHtml}</div>`
+                : '';
+
+            return `
+                <div class="rt-branch-drawer__title rt-branch-drawer__stage rt-branch-drawer__stage--t1">
+                    <span>${cap(mode)} branch detail</span>
+                    ${evidenceBadge(outward.outward_status, degraded)}
+                </div>
+                <div class="rt-stat-grid rt-branch-drawer__stage rt-branch-drawer__stage--t1">
+                    <div class="rt-stat" style="grid-column: span 2;">
+                        <div class="rt-stat__label">Driver hypothesis</div>
+                        <div class="rt-stat__value rt-stat__value--prose">${escapeHtml(explain.driver_hypothesis || 'N/A')}</div>
+                    </div>
+                    <div class="rt-stat">
+                        <div class="rt-stat__label">Confidence</div>
+                        <div class="rt-stat__value rt-stat__value--prose">${escapeHtml(explain.explanation_confidence || 'N/A')}</div>
+                    </div>
+                    <div class="rt-stat">
+                        <div class="rt-stat__label">Manual review</div>
+                        <div class="rt-stat__value rt-stat__value--prose">${outward.manual_review ? 'Required' : 'Not Required'}</div>
+                    </div>
+                </div>
+                ${headlineBlock}
+                ${summariesBlock}
+                <div class="rt-grid-2 rt-branch-drawer__stage rt-branch-drawer__stage--t3" style="margin-top: 14px;">
+                    <div>
+                        <div class="rt-section-title">Evidence bundles</div>
+                        <div class="rt-stack-sm">${bundlesHtml}</div>
+                    </div>
+                    <div>
+                        <div class="rt-section-title">Supporting articles</div>
+                        <div class="rt-stack-sm">${articlesHtml}</div>
+                    </div>
+                </div>`;
+        }
+
+        /** Show the in-card loading state (animated bar, hides the CTA).
+         *  Always restores the loader's original markup so retries after a
+         *  failed fetch get a fresh spinner instead of the stale error text. */
+        function showCardLoader(card) {
+            const cta    = card.querySelector('[data-card-cta]');
+            const loader = card.querySelector('[data-card-loader]');
+            if (cta)    cta.hidden = true;
+            if (loader) {
+                const mode = card.dataset.branchMode || '';
+                loader.innerHTML =
+                    `<div class="rt-branch-card__loader-label">Loading ${escapeHtml(mode)} branch…</div>` +
+                    `<div class="rt-branch-card__loader-bar"><div class="rt-branch-card__loader-bar-fill"></div></div>`;
+                loader.hidden = false;
+            }
+        }
+
+        /** Ensure the drawer body is populated for this card.
+         *  Returns true if the drawer is renderable (or already was). */
+        async function ensureLoaded(card) {
+            if (card.dataset.branchState !== 'lazy') return true;
+            if (card.dataset.branchLoaded === '1')   return true;
+            const mode   = card.dataset.branchMode;
+            const url    = card.dataset.branchUrl;
+            const drawer = drawerFor(mode);
+            if (!mode || !url || !drawer) return false;
+
+            const content = drawer.querySelector('[data-branch-content]');
+            const spinner = drawer.querySelector('[data-lazy-spinner]');
+            const label   = drawer.querySelector('[data-lazy-label]');
+            if (spinner) spinner.style.display = 'inline-block';
+            if (label)   label.textContent = ` Loading ${mode} branch…`;
+
+            try {
+                const res = await fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+                const payload = await res.json();
+                if (!res.ok) throw new Error(payload.error || 'Failed to load branch.');
+                if (content) content.innerHTML = renderDrawerInner(mode, payload);
+                card.dataset.branchLoaded = '1';
+
+                // Sync the card header/driver so the user sees real data after load.
+                const outward = (payload.analysis && payload.analysis.outward) || {};
+                const explain = (payload.analysis && payload.analysis.explanation) || {};
+
+                // Replace the "Lazy" badge with the real evidence badge.
+                const statusEl = card.querySelector('[data-card-status]');
+                if (statusEl) {
+                    statusEl.outerHTML = evidenceBadge(
+                        outward.outward_status,
+                        outward.degraded_reason_codes || [],
+                    );
+                }
+                // Loaded cards have no body — drop the CTA/loader block entirely
+                // so the card matches the "ready" layout in the rest of the row.
+                const driverEl = card.querySelector('.rt-branch-card__driver');
+                if (driverEl) driverEl.remove();
+
+                // Update the foot label from "On-demand branch" to the real
+                // confidence / manual-review string.
+                const footEl = card.querySelector('[data-card-foot]');
+                if (footEl) {
+                    footEl.textContent = outward.manual_review
+                        ? 'Manual review required'
+                        : `Confidence: ${explain.explanation_confidence || 'N/A'}`;
+                }
+                return true;
+            } catch (err) {
+                if (content) {
+                    content.innerHTML = `<div style="color: var(--rt-danger); font-size: 13px; padding: 8px 0;">${escapeHtml(err.message || 'Failed to load branch.')}</div>`;
+                }
+                // Surface the error inside the card too so the user isn't
+                // staring at a perpetually-spinning bar.
+                const loader = card.querySelector('[data-card-loader]');
+                if (loader) {
+                    loader.innerHTML = `<div class="rt-branch-card__loader-label" style="color: var(--rt-danger);">Failed to load — click to retry.</div>`;
+                }
+                // Reset so the next click can retry from a clean state.
+                const cta = card.querySelector('[data-card-cta]');
+                if (cta) cta.hidden = true;
+                return false;
+            }
+        }
+
+        function openDrawer(drawer) {
+            const target = drawer.querySelector('.rt-branch-drawer__inner');
+            if (!target) return;
+            // Reset so we can re-measure after a lazy load grew the inner.
+            drawer.style.maxHeight = '0px';
+            // eslint-disable-next-line no-unused-expressions
+            drawer.offsetHeight;
+            const measured = target.getBoundingClientRect().height;
+            drawer.style.maxHeight = measured + 'px';
+            drawer.style.marginTop = '0px';
+            requestAnimationFrame(() => drawer.classList.add('is-open'));
+            drawer.setAttribute('aria-hidden', 'false');
+
+            const clear = (ev) => {
+                if (ev.propertyName !== 'max-height') return;
+                if (drawer.classList.contains('is-open')) {
+                    drawer.style.maxHeight = 'none';
+                }
+                drawer.removeEventListener('transitionend', clear);
+            };
+            drawer.addEventListener('transitionend', clear);
+        }
+
+        function closeDrawer(drawer) {
+            const target = drawer.querySelector('.rt-branch-drawer__inner');
+            if (!target) return;
+            const current = target.getBoundingClientRect().height;
+            drawer.style.maxHeight = current + 'px';
+            // eslint-disable-next-line no-unused-expressions
+            drawer.offsetHeight;
+            drawer.classList.remove('is-open');
+            drawer.style.maxHeight = '0px';
+            drawer.setAttribute('aria-hidden', 'true');
+        }
+
+        async function toggle(card) {
+            if (card.dataset.branchState === 'unavailable' || card.dataset.branchState === 'info') return;
+            const drawer = drawerFor(card.dataset.branchMode);
+            if (!drawer) return;
+
+            const isOpen = card.classList.contains('is-active');
+            if (isOpen) {
+                card.classList.remove('is-active');
+                card.setAttribute('aria-expanded', 'false');
+                closeDrawer(drawer);
+                return;
+            }
+
+            // For lazy cards, swap the in-card CTA for an animated loader so
+            // the user sees immediate feedback while we fetch. Skip when the
+            // branch was already loaded once (no fetch will happen).
+            if (card.dataset.branchState === 'lazy' && card.dataset.branchLoaded !== '1') {
+                showCardLoader(card);
+            }
+
+            // For lazy cards, fetch before opening so the measured height is
+            // accurate. For ready cards this is a no-op.
+            await ensureLoaded(card);
+
+            card.classList.add('is-active');
+            card.setAttribute('aria-expanded', 'true');
+            openDrawer(drawer);
+        }
+
+        cards.forEach((card) => {
+            if (card.dataset.branchState === 'unavailable' || card.dataset.branchState === 'info') return;
+            card.addEventListener('click', () => void toggle(card));
+            card.addEventListener('keydown', (ev) => {
+                if (ev.key === 'Enter' || ev.key === ' ') {
+                    ev.preventDefault();
+                    void toggle(card);
+                }
+            });
+        });
+    })();
+</script>
+
+{# DEC-203: AI Recompute confirmation modal — wires the hero button to the
+   modal, populates cache age + last cost, and on confirm navigates to the
+   AI loading flow with force_recompute=1. #}
+<script>
+    (() => {
+        const controls = document.querySelector('[data-ai-model-controls]');
+        const providerSelect = document.querySelector('[data-ai-provider-select]');
+        const modelSelect = document.querySelector('[data-ai-model-select]');
+        const guardedRuns = Array.from(document.querySelectorAll('[data-ai-requires-model]'));
+        const trigger = document.querySelector('[data-ai-recompute-trigger]');
+        const modal   = document.getElementById('ai-recompute-modal');
+
+        const storageProviderKey = 'sa41.aiProvider';
+        const storageModelKey = 'sa41.aiModel';
+        let providerCatalog = {};
+
+        function readPref() {
+            try {
+                return {
+                    provider: localStorage.getItem(storageProviderKey) || '',
+                    model: localStorage.getItem(storageModelKey) || '',
+                };
+            } catch {
+                return { provider: '', model: '' };
+            }
+        }
+
+        function writePref(provider, model) {
+            try {
+                if (provider) localStorage.setItem(storageProviderKey, provider);
+                else localStorage.removeItem(storageProviderKey);
+                if (model) localStorage.setItem(storageModelKey, model);
+                else localStorage.removeItem(storageModelKey);
+            } catch {
+                // Ignore private-mode storage failures; the current selection still works.
+            }
+        }
+
+        function selectedProvider() {
+            return providerSelect ? providerSelect.value : '';
+        }
+
+        function selectedModel() {
+            return modelSelect ? modelSelect.value : '';
+        }
+
+        function hasCompleteSelection() {
+            return Boolean(selectedProvider() && selectedModel());
+        }
+
+        function appendSelection(url) {
+            const out = new URL(url, window.location.origin);
+            out.searchParams.set('provider', selectedProvider());
+            out.searchParams.set('model', selectedModel());
+            return out.pathname + out.search + out.hash;
+        }
+
+        function updateRunTargets() {
+            const ready = hasCompleteSelection();
+            guardedRuns.forEach((el) => {
+                if (el.tagName === 'BUTTON') {
+                    el.disabled = !ready;
+                } else {
+                    el.setAttribute('aria-disabled', ready ? 'false' : 'true');
+                    el.style.pointerEvents = ready ? '' : 'none';
+                    el.style.opacity = ready ? '' : '0.5';
+                }
+                if (el.dataset.aiLoadingUrlBase === undefined && el.dataset.aiLoadingUrl) {
+                    el.dataset.aiLoadingUrlBase = el.dataset.aiLoadingUrl;
+                }
+                if (el.dataset.aiHrefBase === undefined && el.getAttribute('href')) {
+                    el.dataset.aiHrefBase = el.getAttribute('href');
+                }
+                if (!ready) return;
+                if (el.dataset.aiLoadingUrlBase) {
+                    el.dataset.aiLoadingUrl = appendSelection(el.dataset.aiLoadingUrlBase);
+                }
+                if (el.dataset.aiHrefBase) {
+                    el.setAttribute('href', appendSelection(el.dataset.aiHrefBase));
+                }
+            });
+        }
+
+        function setModelOptions(provider, selected) {
+            if (!modelSelect) return;
+            modelSelect.innerHTML = '<option value="">AI model</option>';
+            const options = (providerCatalog[provider] || {}).models || [];
+            options.forEach((model) => {
+                const option = document.createElement('option');
+                option.value = model.id;
+                option.textContent = model.label;
+                modelSelect.appendChild(option);
+            });
+            modelSelect.disabled = options.length === 0;
+            if (selected && options.some((model) => model.id === selected)) {
+                modelSelect.value = selected;
+            }
+        }
+
+        async function loadProviderCapabilities() {
+            if (!controls || !providerSelect || !modelSelect) return;
+            providerSelect.innerHTML = '<option value="">Loading providers...</option>';
+            modelSelect.innerHTML = '<option value="">AI model</option>';
+            providerSelect.disabled = true;
+            modelSelect.disabled = true;
+            updateRunTargets();
+
+            let providers = [];
+            try {
+                const response = await fetch("{{ url_for('routes.api_config_capabilities') }}", {
+                    headers: { "Accept": "application/json" },
+                });
+                const payload = await response.json();
+                providers = (payload.ai_providers || []).filter((provider) => provider.available);
+            } catch {
+                providers = [];
+            }
+
+            providerCatalog = {};
+            providerSelect.innerHTML = '<option value="">AI provider</option>';
+            providers.forEach((provider) => {
+                providerCatalog[provider.id] = provider;
+                const option = document.createElement('option');
+                option.value = provider.id;
+                option.textContent = provider.label;
+                providerSelect.appendChild(option);
+            });
+            if (providers.length === 0) {
+                providerSelect.innerHTML = '<option value="">No AI provider configured</option>';
+                providerSelect.disabled = true;
+                modelSelect.disabled = true;
+                writePref('', '');
+                updateRunTargets();
+                return;
+            }
+            providerSelect.disabled = false;
+
+            const pref = readPref();
+            if (providerCatalog[pref.provider]) {
+                providerSelect.value = pref.provider;
+                setModelOptions(pref.provider, pref.model);
+            } else {
+                writePref('', '');
+            }
+            updateRunTargets();
+        }
+
+        if (controls && providerSelect && modelSelect) {
+            void loadProviderCapabilities();
+            providerSelect.addEventListener('change', () => {
+                const provider = selectedProvider();
+                setModelOptions(provider, '');
+                writePref(provider, '');
+                updateRunTargets();
+                if (provider) modelSelect.focus();
+            });
+            modelSelect.addEventListener('change', () => {
+                writePref(selectedProvider(), selectedModel());
+                updateRunTargets();
+            });
+
+            document.querySelectorAll('[data-ai-run-link]').forEach((link) => {
+                link.addEventListener('click', (ev) => {
+                    if (hasCompleteSelection()) return;
+                    ev.preventDefault();
+                    (selectedProvider() ? modelSelect : providerSelect).focus();
+                });
+            });
+        }
+
+        if (!trigger || !modal) return;
+
+        const ageDisplay  = modal.querySelector('[data-ai-cache-age-display]');
+        const costDisplay = modal.querySelector('[data-ai-cost-display]');
+        const confirmBtn  = modal.querySelector('[data-ai-modal-confirm]');
+
+        function fmtAge(seconds) {
+            seconds = Number(seconds || 0);
+            if (seconds <= 0) return 'just now';
+            const d = Math.floor(seconds / 86400);
+            const h = Math.floor((seconds % 86400) / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            if (d > 0) return `${d}d ${h}h ago`;
+            if (h > 0) return `${h}h ${m}m ago`;
+            if (m > 0) return `${m}m ago`;
+            return `${Math.floor(seconds)}s ago`;
+        }
+
+        function open() {
+            if (!hasCompleteSelection()) {
+                (selectedProvider() ? modelSelect : providerSelect).focus();
+                return;
+            }
+            const ageS = trigger.dataset.aiCacheAgeSeconds;
+            const cost = trigger.dataset.aiCostEstimate;
+            const url  = trigger.dataset.aiLoadingUrl;
+            if (ageDisplay)  ageDisplay.textContent  = fmtAge(ageS);
+            if (costDisplay) costDisplay.textContent = (cost && Number(cost) > 0) ? Number(cost).toFixed(3) : '—';
+            if (confirmBtn && url) confirmBtn.setAttribute('href', url);
+            modal.hidden = false;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+            modal.hidden = true;
+            document.body.style.overflow = '';
+        }
+
+        trigger.addEventListener('click', (ev) => { ev.preventDefault(); open(); });
+        modal.querySelectorAll('[data-ai-modal-dismiss]').forEach((el) => {
+            el.addEventListener('click', (ev) => { ev.preventDefault(); close(); });
+        });
+        document.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Escape' && !modal.hidden) close();
+        });
+    })();
+</script>
+{% endblock %}
