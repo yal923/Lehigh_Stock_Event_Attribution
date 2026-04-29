@@ -1,0 +1,481 @@
+{
+  "attribution_bundle": {
+    "ticker": "ABNB",
+    "market_ratio": 0.17150948806499217,
+    "industry_ratio": 0.015094004704779573,
+    "firm_ratio": 0.7239858776060428,
+    "alpha_total": -0.0075142056692615675,
+    "market_total": -0.014413918937458277,
+    "industry_total": 0.0012685231744955273,
+    "firm_total": 0.06084487726838559,
+    "episode_return_total": 0.04018527583616127,
+    "adj_r2": 0.25342936559849216,
+    "recon_error_bps": 0.0,
+    "quality_status": "PASS",
+    "reason": null,
+    "reason_code": "pass",
+    "beta_mkt_t_stat": 13.796277805565818,
+    "beta_ind_t_stat": 8.24338869399279,
+    "f_stat": 129.1453905431531,
+    "f_pvalue": 0.0,
+    "fit_quality_note": null,
+    "market_share": -0.358686574560917,
+    "industry_share": 0.03156686493001572,
+    "firm_share": 1.5141087376494624,
+    "alpha_share": -0.18698902801856113,
+    "near_zero_episode_return": false,
+    "industry_proxy_ticker": "XLY",
+    "industry_proxy_source": "sector",
+    "vix_estimation_p50": 16.324999809265137,
+    "vix_estimation_p95": 24.105000019073486,
+    "vix_episode_max": 20.81999969482422,
+    "vix_episode_avg": 20.570000330607098,
+    "macro_shock_suspected": false
+  },
+  "analysis_v2_bundle": {
+    "episode_id": 209,
+    "analysis": {
+      "outward": {
+        "outward_status": "SUPPORTED",
+        "manual_review": false,
+        "capability_boundary_notice": null,
+        "degraded_reason_codes": [],
+        "outward_notes": [
+          "A primary evidence-backed explanation is available.",
+          "The explanation is within the current bounded system scope."
+        ]
+      },
+      "explanation": {
+        "driver_hypothesis": "firm_dominant",
+        "headline_explanation": "This episode appears primarily company-specific, with the strongest evidence pointing to earnings results.",
+        "key_event_summaries": [
+          {
+            "role": "primary",
+            "bundle_id": "bundle-22370cb6c8",
+            "event_type": "earnings_result",
+            "summary": "Earnings results is the primary evidence-backed driver, supported by 3 claim(s) across 3 publisher(s) (bundle status: strong)."
+          },
+          {
+            "role": "supporting",
+            "bundle_id": "bundle-b7c7a89472",
+            "event_type": "earnings_result",
+            "summary": "Earnings results provides supporting context, supported by 2 claim(s) across 2 publisher(s) (bundle status: moderate)."
+          }
+        ],
+        "explanation_confidence": "high",
+        "manual_review": false,
+        "degraded_reason_codes": [],
+        "llm_enrichment_text": "The episode is primarily attributed to earnings results, with both primary and supporting coverage indicating this as the main driver. Firm-level factors account for the bulk of the move, consistent with a company-specific reaction."
+      },
+      "attribution_summary": {
+        "driver_hypothesis": "firm_dominant",
+        "firm_ratio": 0.7239858776060428,
+        "industry_ratio": 0.015094004704779573,
+        "market_ratio": 0.17150948806499217,
+        "quality_status": "PASS",
+        "reason": null,
+        "reason_code": "pass",
+        "adj_r2": 0.25342936559849216,
+        "beta_mkt_t_stat": 13.796277805565818,
+        "beta_ind_t_stat": 8.24338869399279,
+        "f_stat": 129.1453905431531,
+        "f_pvalue": 0.0,
+        "fit_quality_note": null,
+        "market_share": -0.358686574560917,
+        "industry_share": 0.03156686493001572,
+        "firm_share": 1.5141087376494624,
+        "alpha_share": -0.18698902801856113,
+        "near_zero_episode_return": false,
+        "episode_return_total": 0.04018527583616127,
+        "industry_proxy_ticker": "XLY",
+        "industry_proxy_source": "sector",
+        "vix_estimation_p50": 16.324999809265137,
+        "vix_estimation_p95": 24.105000019073486,
+        "vix_episode_max": 20.81999969482422,
+        "vix_episode_avg": 20.570000330607098,
+        "macro_shock_suspected": false
+      },
+      "evidence_bundles": [
+        {
+          "bundle_id": "bundle-22370cb6c8",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "strong",
+          "bundle_score": 0.78,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "1af0e3c5e558ca1e570a27c2df587de1-claim-026325a8-event-3c7be10c",
+            "9637f69220b2c174cef96d2685e17853-claim-993e6738-event-b280d79c",
+            "a4b7b04a88e92c2baa482d27d5c5afa6-claim-b36edd00-event-2b9b8526"
+          ],
+          "supporting_claim_ids": [
+            "1af0e3c5e558ca1e570a27c2df587de1-claim-026325a8",
+            "9637f69220b2c174cef96d2685e17853-claim-993e6738",
+            "a4b7b04a88e92c2baa482d27d5c5afa6-claim-b36edd00"
+          ],
+          "supporting_article_ids": [
+            "1af0e3c5e558ca1e570a27c2df587de1",
+            "9637f69220b2c174cef96d2685e17853",
+            "a4b7b04a88e92c2baa482d27d5c5afa6"
+          ],
+          "score_breakdown": {
+            "corroboration": 1.0,
+            "source_diversity": 1.0,
+            "time_alignment": 0.5,
+            "source_quality": 0.4,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-b7c7a89472",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.6867,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "3ea3ab0a4d19945c029164abd6ab633f-claim-5d3cd8f0-event-dcbf02e0",
+            "5434d27d01cc69c2ce25e0785769dc23-claim-9754bc70-event-6f69725b"
+          ],
+          "supporting_claim_ids": [
+            "3ea3ab0a4d19945c029164abd6ab633f-claim-5d3cd8f0",
+            "5434d27d01cc69c2ce25e0785769dc23-claim-9754bc70"
+          ],
+          "supporting_article_ids": [
+            "3ea3ab0a4d19945c029164abd6ab633f",
+            "5434d27d01cc69c2ce25e0785769dc23"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.6667,
+            "source_diversity": 0.6667,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-65fcee8ef4",
+          "canonical_event_type": "capital_raise_or_balance_sheet_action",
+          "bundle_status": "moderate",
+          "bundle_score": 0.6533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "5434d27d01cc69c2ce25e0785769dc23-claim-1bab15ad-event-bcb66b0c"
+          ],
+          "supporting_claim_ids": [
+            "5434d27d01cc69c2ce25e0785769dc23-claim-1bab15ad"
+          ],
+          "supporting_article_ids": [
+            "5434d27d01cc69c2ce25e0785769dc23"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 1.0,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-ca2406e5c5",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5667,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "1bf0c7038906ef08a677354c341a6d07-claim-24ee4cab-event-6d2a38a1",
+            "684c52b082d244dd8f5157d5affeaca4-claim-0334afd3-event-bb66f36e"
+          ],
+          "supporting_claim_ids": [
+            "1bf0c7038906ef08a677354c341a6d07-claim-24ee4cab",
+            "684c52b082d244dd8f5157d5affeaca4-claim-0334afd3"
+          ],
+          "supporting_article_ids": [
+            "1bf0c7038906ef08a677354c341a6d07",
+            "684c52b082d244dd8f5157d5affeaca4"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.6667,
+            "source_diversity": 0.6667,
+            "time_alignment": 0.5,
+            "source_quality": 0.3,
+            "episode_relevance": 0.7
+          }
+        },
+        {
+          "bundle_id": "bundle-29dff6009c",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "8fc21d01ee9c70d3f062831d73fb4a87-claim-40aaa75a-event-1b72c785"
+          ],
+          "supporting_claim_ids": [
+            "8fc21d01ee9c70d3f062831d73fb4a87-claim-40aaa75a"
+          ],
+          "supporting_article_ids": [
+            "8fc21d01ee9c70d3f062831d73fb4a87"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-ec5746ccc9",
+          "canonical_event_type": "mna_or_strategic_transaction",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "5434d27d01cc69c2ce25e0785769dc23-claim-4de244db-event-4d3ee457"
+          ],
+          "supporting_claim_ids": [
+            "5434d27d01cc69c2ce25e0785769dc23-claim-4de244db"
+          ],
+          "supporting_article_ids": [
+            "5434d27d01cc69c2ce25e0785769dc23"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-4801bd9727",
+          "canonical_event_type": "other",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5533,
+          "eligible_for_explanation": false,
+          "supporting_event_ids": [
+            "8fc21d01ee9c70d3f062831d73fb4a87-claim-766b4897-event-22e87fc7"
+          ],
+          "supporting_claim_ids": [
+            "8fc21d01ee9c70d3f062831d73fb4a87-claim-766b4897"
+          ],
+          "supporting_article_ids": [
+            "8fc21d01ee9c70d3f062831d73fb4a87"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-b1e1a34406",
+          "canonical_event_type": "guidance_update",
+          "bundle_status": "weak",
+          "bundle_score": 0.4933,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "a4b7b04a88e92c2baa482d27d5c5afa6-claim-99a9c9fc-event-9338b110"
+          ],
+          "supporting_claim_ids": [
+            "a4b7b04a88e92c2baa482d27d5c5afa6-claim-99a9c9fc"
+          ],
+          "supporting_article_ids": [
+            "a4b7b04a88e92c2baa482d27d5c5afa6"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.7
+          }
+        }
+      ],
+      "supporting_articles": [
+        {
+          "article_id": "5434d27d01cc69c2ce25e0785769dc23",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Stronger Q4 Revenue And Big Buybacks Might Change The Case For Investing In Airbnb (ABNB)",
+          "summary_or_snippet": "Airbnb reported its fourth-quarter and full-year 2025 results on 12 February 2026, with Q4 revenue rising to US$2.78 billion from US$2.48 billion a year earlier, while quarterly net income eased to US$341 million and full-year net income edged down to US$2.51 billion. Alongside the earnings, Airbnb completed roughly US$6.47 billion of share repurchases across two buyback programs and filed a US$2.32 billion shelf registration for ESOP-related Class A shares, underscoring management’s focus...",
+          "url": "https://finnhub.io/api/news?id=0b07b5b28bcdfbde9acddecdd0a7a1a8889ceaabeedf5e243eba1e732973e62f",
+          "published_at": "2026-02-15",
+          "rank_score": 0.6536282896995544,
+          "rank_position": 1,
+          "supporting_bundle_ids": [
+            "bundle-b7c7a89472",
+            "bundle-65fcee8ef4",
+            "bundle-ec5746ccc9"
+          ]
+        },
+        {
+          "article_id": "8fc21d01ee9c70d3f062831d73fb4a87",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Airbnb Inc (ABNB) Q4 2025 Earnings Call Highlights: Strong Revenue Growth and Strategic Expansions",
+          "summary_or_snippet": "Airbnb Inc (ABNB) reports a 12% revenue increase and outlines ambitious plans for AI integration and global market expansion.",
+          "url": "https://finnhub.io/api/news?id=0b8ef0ced33326d995e2d49c193d7e6d48fa84a1d87bb16a8eb6bc10967155e6",
+          "published_at": "2026-02-13",
+          "rank_score": 0.6089825630187988,
+          "rank_position": 2,
+          "supporting_bundle_ids": [
+            "bundle-29dff6009c",
+            "bundle-4801bd9727"
+          ]
+        },
+        {
+          "article_id": "1af0e3c5e558ca1e570a27c2df587de1",
+          "provider": "GoogleRSS",
+          "publisher": "AOL.com",
+          "scope_tag": "company",
+          "headline": "Airbnb (ABNB) Q4 2025 Earnings Call Transcript - AOL.com",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE56Nk00cnpWd21aNFZIbzMwS1JmV19OblAyNEVsYjFkUnZMMkFyYUZEZmhmUmVJRDRhQUgtUWF2b0tsM2FWdGRBMXBsZHV3ak5yYTdINWxTNVB0cVQ3TkstSGkxckUyNTc4ZVpYMjFwMEtZc2VrZTRSOWJycVg?oc=5\" target=\"_blank\">Airbnb (ABNB) Q4 2025 Earnings Call Transcript</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AOL.com</font>",
+          "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE56Nk00cnpWd21aNFZIbzMwS1JmV19OblAyNEVsYjFkUnZMMkFyYUZEZmhmUmVJRDRhQUgtUWF2b0tsM2FWdGRBMXBsZHV3ak5yYTdINWxTNVB0cVQ3TkstSGkxckUyNTc4ZVpYMjFwMEtZc2VrZTRSOWJycVg?oc=5",
+          "published_at": "2026-02-13",
+          "rank_score": 0.5734385251998901,
+          "rank_position": 3,
+          "supporting_bundle_ids": [
+            "bundle-22370cb6c8"
+          ]
+        },
+        {
+          "article_id": "3ea3ab0a4d19945c029164abd6ab633f",
+          "provider": "StockNewsAPI",
+          "publisher": "Zacks Investment Research",
+          "scope_tag": "company",
+          "headline": "Airbnb (ABNB) Reports Q4 Earnings: What Key Metrics Have to Say",
+          "summary_or_snippet": "While the top- and bottom-line numbers for Airbnb (ABNB) give a sense of how the business performed in the quarter ended December 2025, it could be worth looking at how some of its key metrics compare to Wall Street estimates and year-ago values.",
+          "url": "https://www.zacks.com/stock/news/2865039/airbnb-abnb-reports-q4-earnings-what-key-metrics-have-to-say?cid=CS-STOCKNEWSAPI-FT-fundamental_analysis|nfm-2865039",
+          "published_at": "2026-02-12",
+          "rank_score": 0.5679184198379517,
+          "rank_position": 4,
+          "supporting_bundle_ids": [
+            "bundle-b7c7a89472"
+          ]
+        },
+        {
+          "article_id": "684c52b082d244dd8f5157d5affeaca4",
+          "provider": "StockNewsAPI",
+          "publisher": "PRNewsWire",
+          "scope_tag": "company",
+          "headline": "Airbnb Announces Fourth Quarter and Full Year 2025 Results",
+          "summary_or_snippet": "SAN FRANCISCO, Feb. 12, 2026 /PRNewswire/ -- Airbnb, Inc. (NASDAQ: ABNB) has posted a shareholder letter containing its fourth quarter and full year 2025 financial results on its Investor Relations website at https://investors.airbnb.com . Airbnb will host an audio webcast to discuss its results at 2:00 p.m.",
+          "url": "https://www.prnewswire.com/news-releases/airbnb-announces-fourth-quarter-and-full-year-2025-results-302685316.html",
+          "published_at": "2026-02-12",
+          "rank_score": 0.4844529330730438,
+          "rank_position": 5,
+          "supporting_bundle_ids": [
+            "bundle-ca2406e5c5"
+          ]
+        },
+        {
+          "article_id": "a4b7b04a88e92c2baa482d27d5c5afa6",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Airbnb Q4 Earnings Call Highlights",
+          "summary_or_snippet": "Airbnb (NASDAQ:ABNB) executives highlighted accelerating growth and a slate of product changes aimed at reducing friction for guests and hosts during the company’s fourth-quarter 2025 earnings call, while also outlining an early view of 2026 that calls for low double-digit revenue growth and stable",
+          "url": "https://finnhub.io/api/news?id=725fb89d6aeed92f995f3fd86ead2154130def308d02b143ea09430bb6976379",
+          "published_at": "2026-02-13",
+          "rank_score": 0.4179081916809082,
+          "rank_position": 6,
+          "supporting_bundle_ids": [
+            "bundle-22370cb6c8",
+            "bundle-b1e1a34406"
+          ]
+        },
+        {
+          "article_id": "1bf0c7038906ef08a677354c341a6d07",
+          "provider": "StockNewsAPI",
+          "publisher": "Seeking Alpha",
+          "scope_tag": "company",
+          "headline": "Airbnb, Inc. (ABNB) Q4 2025 Earnings Call Transcript",
+          "summary_or_snippet": "Airbnb, Inc. (ABNB) Q4 2025 Earnings Call Transcript",
+          "url": "https://seekingalpha.com/article/4869847-airbnb-inc-abnb-q4-2025-earnings-call-transcript",
+          "published_at": "2026-02-12",
+          "rank_score": 0.2040029913187027,
+          "rank_position": 8,
+          "supporting_bundle_ids": [
+            "bundle-ca2406e5c5"
+          ]
+        },
+        {
+          "article_id": "9637f69220b2c174cef96d2685e17853",
+          "provider": "GoogleRSS",
+          "publisher": "CoinCentral",
+          "scope_tag": "company",
+          "headline": "Airbnb (ABNB) Stock Rises on Revenue Beat Despite Earnings Miss - CoinCentral",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQQVpJcmxUbVFvanItTURFUkdqTzd0YnFzNnd5V0lmdzdLc0RjUjVVbEN3MFc4d2s3ZGJVSDNEVGNiblZ2dHRkNnA0UXBtVzNnN01ZYmJVYzFNOHVNUUYyWWZLemdkT3NTX0tHZmg3VlVibkFLS1AwWkhmZUN0RExDeXpjblp5YXZzNmUwSEdRRQ?oc=5\" target=\"_blank\">Airbnb (ABNB) Stock Rises on Revenue Beat Despite Earnings Miss</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CoinCentral</font>",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQQVpJcmxUbVFvanItTURFUkdqTzd0YnFzNnd5V0lmdzdLc0RjUjVVbEN3MFc4d2s3ZGJVSDNEVGNiblZ2dHRkNnA0UXBtVzNnN01ZYmJVYzFNOHVNUUYyWWZLemdkT3NTX0tHZmg3VlVibkFLS1AwWkhmZUN0RExDeXpjblp5YXZzNmUwSEdRRQ?oc=5",
+          "published_at": "2026-02-13",
+          "rank_score": 0.004488026257604361,
+          "rank_position": 9,
+          "supporting_bundle_ids": [
+            "bundle-22370cb6c8"
+          ]
+        }
+      ],
+      "routing_mode": "dominant"
+    },
+    "attribution": {
+      "driver_hypothesis": "firm_dominant",
+      "firm_ratio": 0.7239858776060428,
+      "industry_ratio": 0.015094004704779573,
+      "market_ratio": 0.17150948806499217,
+      "quality_status": "PASS",
+      "reason": null,
+      "reason_code": "pass",
+      "adj_r2": 0.25342936559849216,
+      "beta_mkt_t_stat": 13.796277805565818,
+      "beta_ind_t_stat": 8.24338869399279,
+      "f_stat": 129.1453905431531,
+      "f_pvalue": 0.0,
+      "fit_quality_note": null,
+      "market_share": -0.358686574560917,
+      "industry_share": 0.03156686493001572,
+      "firm_share": 1.5141087376494624,
+      "alpha_share": -0.18698902801856113,
+      "near_zero_episode_return": false,
+      "episode_return_total": 0.04018527583616127,
+      "industry_proxy_ticker": "XLY",
+      "industry_proxy_source": "sector",
+      "vix_estimation_p50": 16.324999809265137,
+      "vix_estimation_p95": 24.105000019073486,
+      "vix_episode_max": 20.81999969482422,
+      "vix_episode_avg": 20.570000330607098,
+      "macro_shock_suspected": false
+    },
+    "decision": {
+      "outward_status": "SUPPORTED",
+      "manual_review": false,
+      "degraded_reason_codes": [],
+      "capability_boundary_notice": null,
+      "outward_notes": [
+        "A primary evidence-backed explanation is available.",
+        "The explanation is within the current bounded system scope."
+      ],
+      "driver_hypothesis": "firm_dominant",
+      "headline_explanation": "This episode appears primarily company-specific, with the strongest evidence pointing to earnings results.",
+      "explanation_confidence": "high"
+    },
+    "branch_plan": {
+      "routing_mode": "dominant",
+      "primary_mode": "firm",
+      "default_modes": [
+        "firm"
+      ],
+      "lazy_modes": [
+        "market",
+        "industry"
+      ]
+    }
+  },
+  "_meta": {
+    "episode_id": "209",
+    "saved_at": "2026-04-27T03:31:32.912769"
+  }
+}

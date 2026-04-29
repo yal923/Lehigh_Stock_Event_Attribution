@@ -1,0 +1,921 @@
+{
+  "attribution_bundle": {
+    "ticker": "NVDA",
+    "market_ratio": 0.5254713566833663,
+    "industry_ratio": 0.21860632184101897,
+    "firm_ratio": 0.23489616698314505,
+    "alpha_total": 0.002004303536943769,
+    "market_total": 0.05009019120164401,
+    "industry_total": -0.020838495418700694,
+    "firm_total": 0.022391313564611437,
+    "episode_return_total": 0.05364731288449853,
+    "adj_r2": 0.6686147177158608,
+    "recon_error_bps": 1.3877787807814457e-13,
+    "quality_status": "PASS",
+    "reason": null,
+    "reason_code": "pass",
+    "beta_mkt_t_stat": 40.05073341786505,
+    "beta_ind_t_stat": 13.776622135676973,
+    "f_stat": 762.6574103653788,
+    "f_pvalue": 0.0,
+    "fit_quality_note": null,
+    "market_share": 0.9336943177282164,
+    "industry_share": -0.3884350268123496,
+    "firm_share": 0.4173799648235772,
+    "alpha_share": 0.03736074426055579,
+    "near_zero_episode_return": false,
+    "industry_proxy_ticker": "SMH",
+    "industry_proxy_source": "sub_industry",
+    "vix_estimation_p50": 16.324999809265137,
+    "vix_estimation_p95": 24.97000026702881,
+    "vix_episode_max": 19.1200008392334,
+    "vix_episode_avg": 18.5500005086263,
+    "macro_shock_suspected": false
+  },
+  "analysis_v2_bundle": {
+    "episode_id": 10,
+    "analysis": {
+      "routing_mode": "mixed",
+      "aggregate_outward": {
+        "outward_status": "LIMITED_EVIDENCE",
+        "manual_review": true,
+        "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+        "degraded_reason_codes": [
+          "only_weak_support",
+          "limited_supporting_context"
+        ],
+        "outward_notes": [
+          "Mixed episodes are summarized conservatively from the most restrictive branch result.",
+          "A primary evidence-backed explanation is available.",
+          "Supporting context is limited.",
+          "Manual review is recommended.",
+          "Branch outward statuses: market=LIMITED_EVIDENCE, industry=LIMITED_EVIDENCE, firm=LIMITED_EVIDENCE."
+        ]
+      },
+      "aggregate_explanation": {
+        "driver_hypothesis": "mixed",
+        "headline_explanation": "This episode remains mixed across market, industry, and firm explanation branches. Review the branch-specific analyses below rather than relying on a single dominant narrative.",
+        "explanation_confidence": "low",
+        "default_visible_modes": [
+          "market",
+          "industry",
+          "firm"
+        ],
+        "branch_summaries": [
+          {
+            "branch_mode": "market",
+            "outward_status": "LIMITED_EVIDENCE",
+            "driver_hypothesis": "market_branch",
+            "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+            "explanation_confidence": "low"
+          },
+          {
+            "branch_mode": "industry",
+            "outward_status": "LIMITED_EVIDENCE",
+            "driver_hypothesis": "industry_branch",
+            "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to M&A activity.",
+            "explanation_confidence": "low"
+          },
+          {
+            "branch_mode": "firm",
+            "outward_status": "LIMITED_EVIDENCE",
+            "driver_hypothesis": "firm_branch",
+            "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to M&A activity.",
+            "explanation_confidence": "low"
+          }
+        ]
+      },
+      "attribution_summary": {
+        "driver_hypothesis": "mixed",
+        "firm_ratio": 0.23489616698314505,
+        "industry_ratio": 0.21860632184101897,
+        "market_ratio": 0.5254713566833663,
+        "quality_status": "PASS",
+        "reason": null,
+        "reason_code": "pass",
+        "adj_r2": 0.6686147177158608,
+        "beta_mkt_t_stat": 40.05073341786505,
+        "beta_ind_t_stat": 13.776622135676973,
+        "f_stat": 762.6574103653788,
+        "f_pvalue": 0.0,
+        "fit_quality_note": null,
+        "market_share": 0.9336943177282164,
+        "industry_share": -0.3884350268123496,
+        "firm_share": 0.4173799648235772,
+        "alpha_share": 0.03736074426055579,
+        "near_zero_episode_return": false,
+        "episode_return_total": 0.05364731288449853,
+        "industry_proxy_ticker": "SMH",
+        "industry_proxy_source": "sub_industry",
+        "vix_estimation_p50": 16.324999809265137,
+        "vix_estimation_p95": 24.97000026702881,
+        "vix_episode_max": 19.1200008392334,
+        "vix_episode_avg": 18.5500005086263,
+        "macro_shock_suspected": false
+      },
+      "branch_analyses": [
+        {
+          "branch_mode": "market",
+          "analysis": {
+            "outward": {
+              "outward_status": "LIMITED_EVIDENCE",
+              "manual_review": true,
+              "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+              "degraded_reason_codes": [
+                "only_weak_support",
+                "limited_supporting_context"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "Supporting context is limited.",
+                "Manual review is recommended."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "market_branch",
+              "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-0fa81d482f",
+                  "event_type": "macro_or_sector_shock",
+                  "summary": "Macro or sector developments is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                }
+              ],
+              "explanation_confidence": "low",
+              "manual_review": true,
+              "degraded_reason_codes": [
+                "only_weak_support",
+                "limited_supporting_context"
+              ],
+              "llm_enrichment_text": "Nvidia’s gains over the episode are mostly attributed to broader macro or sector developments, but supporting evidence for this view is limited. Analyst confidence in a purely market-driven explanation remains cautious due to weak event attribution."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "market_branch",
+              "firm_ratio": 0.23489616698314505,
+              "industry_ratio": 0.21860632184101897,
+              "market_ratio": 0.5254713566833663,
+              "quality_status": "PASS",
+              "reason": null,
+              "reason_code": "pass",
+              "adj_r2": 0.6686147177158608,
+              "beta_mkt_t_stat": 40.05073341786505,
+              "beta_ind_t_stat": 13.776622135676973,
+              "f_stat": 762.6574103653788,
+              "f_pvalue": 0.0,
+              "fit_quality_note": null,
+              "market_share": 0.9336943177282164,
+              "industry_share": -0.3884350268123496,
+              "firm_share": 0.4173799648235772,
+              "alpha_share": 0.03736074426055579,
+              "near_zero_episode_return": false,
+              "episode_return_total": 0.05364731288449853,
+              "industry_proxy_ticker": "SMH",
+              "industry_proxy_source": "sub_industry",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.97000026702881,
+              "vix_episode_max": 19.1200008392334,
+              "vix_episode_avg": 18.5500005086263,
+              "macro_shock_suspected": false
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-0fa81d482f",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "b9fe2bcb7f851adf6b727b5ff78944a7-claim-e5dd7c87-event-509d2ed9"
+                ],
+                "supporting_claim_ids": [
+                  "b9fe2bcb7f851adf6b727b5ff78944a7-claim-e5dd7c87"
+                ],
+                "supporting_article_ids": [
+                  "b9fe2bcb7f851adf6b727b5ff78944a7"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-39e4654273",
+                "canonical_event_type": "unknown",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "d7f04967405a082b9aadc638402a6251-claim-b6a4d1d9-event-9d3e32c0"
+                ],
+                "supporting_claim_ids": [
+                  "d7f04967405a082b9aadc638402a6251-claim-b6a4d1d9"
+                ],
+                "supporting_article_ids": [
+                  "d7f04967405a082b9aadc638402a6251"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "d7f04967405a082b9aadc638402a6251",
+                "provider": "GoogleRSS",
+                "publisher": "AD HOC NEWS",
+                "scope_tag": "market",
+                "headline": "S&P 500 Holds Near 6,817 Amid Fragile Recovery and Mixed Economic Signals as of April 2026 - AD HOC NEWS",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQY3pEX0paZzJFRi1reUFuTU8wM2dXcEZaSHk5YVlueHRZRHBYRFY5R0JKdlZCSzdDRlcybXlHMEpMM2lfdWZ5c0RZR0NDZkhndUU3b2c5Skw4SlJhQWhWeHBrSFlXZU9TeGdENnZmdEVUZUFmWFI0dHBqM2xLTk9vbklLNEVqWGJKQWhScXBsUWFzMFN0cVQ1Z1JPTGJrRzY2OXFGZC15OU90c0JGODBaWmFUZ3FDQ204NThOZFVKNXU?oc=5\" target=\"_blank\">S&P 500 Holds Near 6,817 Amid Fragile Recovery and Mixed Economic Signals as of April 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">AD HOC NEWS</font>",
+                "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQY3pEX0paZzJFRi1reUFuTU8wM2dXcEZaSHk5YVlueHRZRHBYRFY5R0JKdlZCSzdDRlcybXlHMEpMM2lfdWZ5c0RZR0NDZkhndUU3b2c5Skw4SlJhQWhWeHBrSFlXZU9TeGdENnZmdEVUZUFmWFI0dHBqM2xLTk9vbklLNEVqWGJKQWhScXBsUWFzMFN0cVQ1Z1JPTGJrRzY2OXFGZC15OU90c0JGODBaWmFUZ3FDQ204NThOZFVKNXU?oc=5",
+                "published_at": "2026-04-13",
+                "rank_score": -7.113455772399902,
+                "rank_position": 1,
+                "supporting_bundle_ids": [
+                  "bundle-39e4654273"
+                ]
+              },
+              {
+                "article_id": "b9fe2bcb7f851adf6b727b5ff78944a7",
+                "provider": "GoogleRSS",
+                "publisher": "Seeking Alpha",
+                "scope_tag": "market",
+                "headline": "Chicago Fed’s Goolsbee: Inflation shocks from the energy markets crisis will delay interest rates in 2026 - Seeking Alpha",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNYWZqM3JrNElWa3c3bmpQQWlvMl9FM0JnOVZFcXFKYWZNZmhoS1VFU1VLUDZHaDRfVDlEM1QtdzhJUnc5bkxQeEk5MHU2OW9DWXgybTZnaUd6NVl1MTZ6cURTWExFeWhZX2xFZElCVWR0dWtaR0ZQTF9ESUxLcjRPNnVKbWVDYUtSVTBDdGV6ckRCRHRxdWdGX01VYkR1TVhPOFlCYzNqdzNkcXpkZjB1cXNld2lIQ3pfLU9MaEVqMF9UWmptM3dJ?oc=5\" target=\"_blank\">Chicago Fed’s Goolsbee: Inflation shocks from the energy markets crisis will delay interest rates in 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Seeking Alpha</font>",
+                "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNYWZqM3JrNElWa3c3bmpQQWlvMl9FM0JnOVZFcXFKYWZNZmhoS1VFU1VLUDZHaDRfVDlEM1QtdzhJUnc5bkxQeEk5MHU2OW9DWXgybTZnaUd6NVl1MTZ6cURTWExFeWhZX2xFZElCVWR0dWtaR0ZQTF9ESUxLcjRPNnVKbWVDYUtSVTBDdGV6ckRCRHRxdWdGX01VYkR1TVhPOFlCYzNqdzNkcXpkZjB1cXNld2lIQ3pfLU9MaEVqMF9UWmptM3dJ?oc=5",
+                "published_at": "2026-04-14",
+                "rank_score": -7.609004974365234,
+                "rank_position": 3,
+                "supporting_bundle_ids": [
+                  "bundle-0fa81d482f"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "LIMITED_EVIDENCE",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "only_weak_support",
+              "limited_supporting_context"
+            ],
+            "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "Supporting context is limited.",
+              "Manual review is recommended."
+            ],
+            "driver_hypothesis": "market_branch",
+            "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+            "explanation_confidence": "low"
+          }
+        },
+        {
+          "branch_mode": "industry",
+          "analysis": {
+            "outward": {
+              "outward_status": "LIMITED_EVIDENCE",
+              "manual_review": true,
+              "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+              "degraded_reason_codes": [
+                "only_weak_support"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "Manual review is recommended."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "industry_branch",
+              "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to M&A activity.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-69531cfc52",
+                  "event_type": "mna_or_strategic_transaction",
+                  "summary": "M&A activity is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                },
+                {
+                  "role": "supporting",
+                  "bundle_id": "bundle-58d0911afc",
+                  "event_type": "macro_or_sector_shock",
+                  "summary": "Macro or sector developments provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                }
+              ],
+              "explanation_confidence": "low",
+              "manual_review": true,
+              "degraded_reason_codes": [
+                "only_weak_support"
+              ],
+              "llm_enrichment_text": "Industry attribution is most aligned with M&A activity but support is weak. Some weaker evidence of macro or sector developments also appears in the same window."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "industry_branch",
+              "firm_ratio": 0.23489616698314505,
+              "industry_ratio": 0.21860632184101897,
+              "market_ratio": 0.5254713566833663,
+              "quality_status": "PASS",
+              "reason": null,
+              "reason_code": "pass",
+              "adj_r2": 0.6686147177158608,
+              "beta_mkt_t_stat": 40.05073341786505,
+              "beta_ind_t_stat": 13.776622135676973,
+              "f_stat": 762.6574103653788,
+              "f_pvalue": 0.0,
+              "fit_quality_note": null,
+              "market_share": 0.9336943177282164,
+              "industry_share": -0.3884350268123496,
+              "firm_share": 0.4173799648235772,
+              "alpha_share": 0.03736074426055579,
+              "near_zero_episode_return": false,
+              "episode_return_total": 0.05364731288449853,
+              "industry_proxy_ticker": "SMH",
+              "industry_proxy_source": "sub_industry",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.97000026702881,
+              "vix_episode_max": 19.1200008392334,
+              "vix_episode_avg": 18.5500005086263,
+              "macro_shock_suspected": false
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-fc05f5ee77",
+                "canonical_event_type": "unknown",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5933,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "c271f56e8f004558f895ae25c24c569a-claim-0fe0d316-event-f659174e"
+                ],
+                "supporting_claim_ids": [
+                  "c271f56e8f004558f895ae25c24c569a-claim-0fe0d316"
+                ],
+                "supporting_article_ids": [
+                  "c271f56e8f004558f895ae25c24c569a"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-69531cfc52",
+                "canonical_event_type": "mna_or_strategic_transaction",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "c271f56e8f004558f895ae25c24c569a-claim-2ce959ff-event-5157949c"
+                ],
+                "supporting_claim_ids": [
+                  "c271f56e8f004558f895ae25c24c569a-claim-2ce959ff"
+                ],
+                "supporting_article_ids": [
+                  "c271f56e8f004558f895ae25c24c569a"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-8b73614673",
+                "canonical_event_type": "product_or_customer_event",
+                "bundle_status": "weak",
+                "bundle_score": 0.4733,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "7400e8d0147c7e69d4bf473eb2fec536-claim-56fbdb3d-event-014e5cb4"
+                ],
+                "supporting_claim_ids": [
+                  "7400e8d0147c7e69d4bf473eb2fec536-claim-56fbdb3d"
+                ],
+                "supporting_article_ids": [
+                  "7400e8d0147c7e69d4bf473eb2fec536"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-58d0911afc",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.4333,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "d93fb4d30d7b3efc3b4a5446215d11f2-claim-1df6f980-event-f2c15508"
+                ],
+                "supporting_claim_ids": [
+                  "d93fb4d30d7b3efc3b4a5446215d11f2-claim-1df6f980"
+                ],
+                "supporting_article_ids": [
+                  "d93fb4d30d7b3efc3b4a5446215d11f2"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-9e834d0038",
+                "canonical_event_type": "unknown",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "926c4626b0f9fa4ac035c0b40d705127-claim-6fd320a2-event-9b177048"
+                ],
+                "supporting_claim_ids": [
+                  "926c4626b0f9fa4ac035c0b40d705127-claim-6fd320a2"
+                ],
+                "supporting_article_ids": [
+                  "926c4626b0f9fa4ac035c0b40d705127"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "c271f56e8f004558f895ae25c24c569a",
+                "provider": "GoogleRSS",
+                "publisher": "TechStock²",
+                "scope_tag": "industry",
+                "headline": "Marvell Stock Hits Record High After Nvidia’s $2 Billion Move and Amazon AI Chip Push - TechStock²",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPYU9lakdoSXhUbjZMMlRSNlRTeGtsQzhQMF9uaFhpSmFXRVRBS181RlpYSXFNdUtYaGpIQWNiSG9mRGxVZUJ2aWF0anpSZHZNalRMNmg4YWt3ekt3ZmtHOE5QNGxLVVBUbGVSWmJEdWJKYTYyMXdDQlVBQUlkdUJzWkhLR3VSaUNFZVpFRFhHUGV2UVc3VEtNQXVtLWxKcEtKLUZuczBxNA?oc=5\" target=\"_blank\">Marvell Stock Hits Record High After Nvidia’s $2 Billion Move and Amazon AI Chip Push</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TechStock²</font>",
+                "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPYU9lakdoSXhUbjZMMlRSNlRTeGtsQzhQMF9uaFhpSmFXRVRBS181RlpYSXFNdUtYaGpIQWNiSG9mRGxVZUJ2aWF0anpSZHZNalRMNmg4YWt3ekt3ZmtHOE5QNGxLVVBUbGVSWmJEdWJKYTYyMXdDQlVBQUlkdUJzWkhLR3VSaUNFZVpFRFhHUGV2UVc3VEtNQXVtLWxKcEtKLUZuczBxNA?oc=5",
+                "published_at": "2026-04-13",
+                "rank_score": -5.415850639343262,
+                "rank_position": 2,
+                "supporting_bundle_ids": [
+                  "bundle-fc05f5ee77",
+                  "bundle-69531cfc52"
+                ]
+              },
+              {
+                "article_id": "d93fb4d30d7b3efc3b4a5446215d11f2",
+                "provider": "GoogleRSS",
+                "publisher": "Business Upturn",
+                "scope_tag": "industry",
+                "headline": "TCS, Wipro lead gains as Indian IT sector stocks advance broadly on April 15, 2026 - Business Upturn",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxPTkZPcW9mX1ppd1VnM29DbzJTUEhZQ1hQeGxtUW5Jby1FcWtlXzRtMDdkdVFQTW1RWEc3Z0ptUy1MSU1uT2p3a2ZXOVdaX3Q2N1BCSnNQb2ZyQUxJU1VTb1V1WUJ4eFVkSmhvU21aN0tQa0NwdG8zZ2V2MjFhbjJ1UEtZaEZLZVVhbnh5ZDhVWTNZeEpxcWFnZUcxSmNsbzJsU2RQc1pfSFRIbmhyblJESEtzNHFEYzY0ZEF6ZU5wb0JHQ21sc1JBMkNaSExERldGanRKTzFB?oc=5\" target=\"_blank\">TCS, Wipro lead gains as Indian IT sector stocks advance broadly on April 15, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Business Upturn</font>",
+                "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPTkZPcW9mX1ppd1VnM29DbzJTUEhZQ1hQeGxtUW5Jby1FcWtlXzRtMDdkdVFQTW1RWEc3Z0ptUy1MSU1uT2p3a2ZXOVdaX3Q2N1BCSnNQb2ZyQUxJU1VTb1V1WUJ4eFVkSmhvU21aN0tQa0NwdG8zZ2V2MjFhbjJ1UEtZaEZLZVVhbnh5ZDhVWTNZeEpxcWFnZUcxSmNsbzJsU2RQc1pfSFRIbmhyblJESEtzNHFEYzY0ZEF6ZU5wb0JHQ21sc1JBMkNaSExERldGanRKTzFB?oc=5",
+                "published_at": "2026-04-15",
+                "rank_score": -7.017800331115723,
+                "rank_position": 6,
+                "supporting_bundle_ids": [
+                  "bundle-58d0911afc"
+                ]
+              },
+              {
+                "article_id": "926c4626b0f9fa4ac035c0b40d705127",
+                "provider": "GoogleRSS",
+                "publisher": "financialexpress.com",
+                "scope_tag": "industry",
+                "headline": "This defence stock hit 52-week high today, up over 100% in 2026 so far: What’s driving the surge? - financialexpress.com",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcGl4WTFoV1AzLUh6czNoSHk5NWdGZWZmOUR2S1diSnYwTFRsR3VZdWpudG5HWXFlSXVYM1dHeGwwdFJ2aUl6M0xXYnV3cmxRa1RsMWhkblE0QkQ0ZUQ3RU1HU3J3bURKdS0zY2YtdFNsQmhONGFNOUlRVEZmT2IxWVN3TEptQXZKYXlZMy1KVU5IRFhlSkt2aExrbkk1c2VacW1ZVGh4bG5xN1BiOXRNakZPQXNjNFZWT0lZSEZrTFZ0Zlp0NDVhSVZsVFZwNzc0d1ZQTlpFdEvSAd8BQVVfeXFMT3dXUEZRaTlTcTVUNnFTSjJqblRDZGEzX09oYm9oUTR5SnRDUWdHMUhFc1VGSkVOV1dpN3JiMXR2dHM2U3dyU3RVeVk5ZTVVZ2ZndmVMVy1BM3Rmang0a2RIbm4wMVczekFfTzhObGVKd0VIN2pzTzVfd2V1TzY2WHRmUGtIUndRN2NXd1JNQjhBWE1UclozNXF2ZDVMaUhHSWU3QzFWSmNmMDU5aTlNVWhjdWFIVVdFSjh4UHg0Skg0Y2lfR3UxWDVOajdPeVlPNFJKaERTVG9HWE13Xzg0VQ?oc=5\" target=\"_blank\">This defence stock hit 52-week high today, up over 100% in 2026 so far: What’s driving the surge?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">financialexpress.com</font>",
+                "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcGl4WTFoV1AzLUh6czNoSHk5NWdGZWZmOUR2S1diSnYwTFRsR3VZdWpudG5HWXFlSXVYM1dHeGwwdFJ2aUl6M0xXYnV3cmxRa1RsMWhkblE0QkQ0ZUQ3RU1HU3J3bURKdS0zY2YtdFNsQmhONGFNOUlRVEZmT2IxWVN3TEptQXZKYXlZMy1KVU5IRFhlSkt2aExrbkk1c2VacW1ZVGh4bG5xN1BiOXRNakZPQXNjNFZWT0lZSEZrTFZ0Zlp0NDVhSVZsVFZwNzc0d1ZQTlpFdEvSAd8BQVVfeXFMT3dXUEZRaTlTcTVUNnFTSjJqblRDZGEzX09oYm9oUTR5SnRDUWdHMUhFc1VGSkVOV1dpN3JiMXR2dHM2U3dyU3RVeVk5ZTVVZ2ZndmVMVy1BM3Rmang0a2RIbm4wMVczekFfTzhObGVKd0VIN2pzTzVfd2V1TzY2WHRmUGtIUndRN2NXd1JNQjhBWE1UclozNXF2ZDVMaUhHSWU3QzFWSmNmMDU5aTlNVWhjdWFIVVdFSjh4UHg0Skg0Y2lfR3UxWDVOajdPeVlPNFJKaERTVG9HWE13Xzg0VQ?oc=5",
+                "published_at": "2026-04-15",
+                "rank_score": -7.8034443855285645,
+                "rank_position": 9,
+                "supporting_bundle_ids": [
+                  "bundle-9e834d0038"
+                ]
+              },
+              {
+                "article_id": "7400e8d0147c7e69d4bf473eb2fec536",
+                "provider": "GoogleRSS",
+                "publisher": "simplywall.st",
+                "scope_tag": "industry",
+                "headline": "Assessing NXP Semiconductors (NXPI) Valuation After New Edge AI Processor And Peridio Partnership - simplywall.st",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQS0ttUmNZY1BPOGZUeVI1Ykt1aGN1MEs1eEZ1WDN4ZnBOdFVfYWlHajFYOV9PZnAwZDU5b2toMDBRcDh4eVY4dERmQmRtOEhxM2YzeW1vQ1dQVUhmQVFuWFJnRUV2ZDh6MUhWNEt5VmxFNml1cldCdjBBMkMzY2NjTEo2ZkZtcmpuWVpxZXBEWlkwWmJWR05mZTN1cWVvR25oZUd6emRJVHBCSGd5clVjSE1yS014SnhzTHRDZGVqeHJ4MXRvZnU0TU1pOV81a0R2MGJjYmdFclpNczTSAeABQVVfeXFMTm9tbzFoWjNULWgyVGw2c0F4SzZmSTVKNTk4RUt4YUd5T0ZScDJ5WlRBSS1kbDVfM2hoaWhpdXNPLXViMzNNbDVmSndEX3VreXZCOXd0bzYxUEpZbHlGM040aTNBYWtrNzI5Q0FWc0JMVDBPbHhvM1JEb2d6RExDaU95Rk1hdUR1MnFoeEpqdDZwdHpJVXI4d2czYjY3OHdHQTJqNE5SaG8wQ2EwWWxWb3U0dU5XR1FhdHhlbThnQ3BQeXNLajZnS2RyalhNblpETk9kSklmOFc4RTJPMldBU0Y?oc=5\" target=\"_blank\">Assessing NXP Semiconductors (NXPI) Valuation After New Edge AI Processor And Peridio Partnership</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">simplywall.st</font>",
+                "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQS0ttUmNZY1BPOGZUeVI1Ykt1aGN1MEs1eEZ1WDN4ZnBOdFVfYWlHajFYOV9PZnAwZDU5b2toMDBRcDh4eVY4dERmQmRtOEhxM2YzeW1vQ1dQVUhmQVFuWFJnRUV2ZDh6MUhWNEt5VmxFNml1cldCdjBBMkMzY2NjTEo2ZkZtcmpuWVpxZXBEWlkwWmJWR05mZTN1cWVvR25oZUd6emRJVHBCSGd5clVjSE1yS014SnhzTHRDZGVqeHJ4MXRvZnU0TU1pOV81a0R2MGJjYmdFclpNczTSAeABQVVfeXFMTm9tbzFoWjNULWgyVGw2c0F4SzZmSTVKNTk4RUt4YUd5T0ZScDJ5WlRBSS1kbDVfM2hoaWhpdXNPLXViMzNNbDVmSndEX3VreXZCOXd0bzYxUEpZbHlGM040aTNBYWtrNzI5Q0FWc0JMVDBPbHhvM1JEb2d6RExDaU95Rk1hdUR1MnFoeEpqdDZwdHpJVXI4d2czYjY3OHdHQTJqNE5SaG8wQ2EwWWxWb3U0dU5XR1FhdHhlbThnQ3BQeXNLajZnS2RyalhNblpETk9kSklmOFc4RTJPMldBU0Y?oc=5",
+                "published_at": "2026-04-14",
+                "rank_score": -8.042978286743164,
+                "rank_position": 10,
+                "supporting_bundle_ids": [
+                  "bundle-8b73614673"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "LIMITED_EVIDENCE",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "only_weak_support"
+            ],
+            "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "Manual review is recommended."
+            ],
+            "driver_hypothesis": "industry_branch",
+            "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to M&A activity.",
+            "explanation_confidence": "low"
+          }
+        },
+        {
+          "branch_mode": "firm",
+          "analysis": {
+            "outward": {
+              "outward_status": "LIMITED_EVIDENCE",
+              "manual_review": true,
+              "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+              "degraded_reason_codes": [
+                "only_weak_support",
+                "limited_supporting_context"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "Supporting context is limited.",
+                "Manual review is recommended."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "firm_branch",
+              "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to M&A activity.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-cb930fabdc",
+                  "event_type": "mna_or_strategic_transaction",
+                  "summary": "M&A activity is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                }
+              ],
+              "explanation_confidence": "low",
+              "manual_review": true,
+              "degraded_reason_codes": [
+                "only_weak_support",
+                "limited_supporting_context"
+              ],
+              "llm_enrichment_text": "M&A activity is the primary company-specific catalyst, but supporting evidence is limited and weak. The attribution indicates a modest firm-driven return within this event window."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "firm_branch",
+              "firm_ratio": 0.23489616698314505,
+              "industry_ratio": 0.21860632184101897,
+              "market_ratio": 0.5254713566833663,
+              "quality_status": "PASS",
+              "reason": null,
+              "reason_code": "pass",
+              "adj_r2": 0.6686147177158608,
+              "beta_mkt_t_stat": 40.05073341786505,
+              "beta_ind_t_stat": 13.776622135676973,
+              "f_stat": 762.6574103653788,
+              "f_pvalue": 0.0,
+              "fit_quality_note": null,
+              "market_share": 0.9336943177282164,
+              "industry_share": -0.3884350268123496,
+              "firm_share": 0.4173799648235772,
+              "alpha_share": 0.03736074426055579,
+              "near_zero_episode_return": false,
+              "episode_return_total": 0.05364731288449853,
+              "industry_proxy_ticker": "SMH",
+              "industry_proxy_source": "sub_industry",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.97000026702881,
+              "vix_episode_max": 19.1200008392334,
+              "vix_episode_avg": 18.5500005086263,
+              "macro_shock_suspected": false
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-e9b2dabb91",
+                "canonical_event_type": "unknown",
+                "bundle_status": "strong",
+                "bundle_score": 0.8,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "bd3d6b3b52c9dafe20227ab0053e7edf-claim-74a733fb-event-05d78569",
+                  "c91fbe9e9bcbd1637dd4807bdb442629-claim-458c8f25-event-0a2921d0",
+                  "ed9bc1ca88689efa502ae9407d059130-claim-cd924f02-event-1c70fa66"
+                ],
+                "supporting_claim_ids": [
+                  "bd3d6b3b52c9dafe20227ab0053e7edf-claim-74a733fb",
+                  "c91fbe9e9bcbd1637dd4807bdb442629-claim-458c8f25",
+                  "ed9bc1ca88689efa502ae9407d059130-claim-cd924f02"
+                ],
+                "supporting_article_ids": [
+                  "bd3d6b3b52c9dafe20227ab0053e7edf",
+                  "c91fbe9e9bcbd1637dd4807bdb442629",
+                  "ed9bc1ca88689efa502ae9407d059130"
+                ],
+                "score_breakdown": {
+                  "corroboration": 1.0,
+                  "source_diversity": 1.0,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.5,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-730bd09d2b",
+                "canonical_event_type": "unknown",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5533,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "43f282da902c291eef695c5dcd97c8ef-claim-fbb1b0f9-event-fab0137e"
+                ],
+                "supporting_claim_ids": [
+                  "43f282da902c291eef695c5dcd97c8ef-claim-fbb1b0f9"
+                ],
+                "supporting_article_ids": [
+                  "43f282da902c291eef695c5dcd97c8ef"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-cb930fabdc",
+                "canonical_event_type": "mna_or_strategic_transaction",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "cce7419db0ad1b7c51a6d9e4a80c86ce-claim-104d461d-event-49396ff0"
+                ],
+                "supporting_claim_ids": [
+                  "cce7419db0ad1b7c51a6d9e4a80c86ce-claim-104d461d"
+                ],
+                "supporting_article_ids": [
+                  "cce7419db0ad1b7c51a6d9e4a80c86ce"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-920a18fab5",
+                "canonical_event_type": "product_or_customer_event",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "89d63f7073db455ffc39de81ac131545-claim-5f6235e4-event-d98f8f20"
+                ],
+                "supporting_claim_ids": [
+                  "89d63f7073db455ffc39de81ac131545-claim-5f6235e4"
+                ],
+                "supporting_article_ids": [
+                  "89d63f7073db455ffc39de81ac131545"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-b930b10fe5",
+                "canonical_event_type": "other",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "de37fddc0da5965426e824fb309464df-claim-5bfe918d-event-a9704771"
+                ],
+                "supporting_claim_ids": [
+                  "de37fddc0da5965426e824fb309464df-claim-5bfe918d"
+                ],
+                "supporting_article_ids": [
+                  "de37fddc0da5965426e824fb309464df"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "ed9bc1ca88689efa502ae9407d059130",
+                "provider": "GoogleRSS",
+                "publisher": "The Chronicle-Journal",
+                "scope_tag": "company",
+                "headline": "NVIDIA (NVDA) Marks Longest Winning Streak Since 2023 with 10 Consecutive Gains - The Chronicle-Journal",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPSG0yb1RHbEN3VXlEQ2RKaXRmWG9fTF85dEJiVTJQdFp4Zl8zY1gtWDJSMGFubkN1bUJIT2tkdGxqb2tqSUJILVJ0aWNWbzFYdWU1RmRqX3poUVd2QU5nM0RrQmp1RjZsN1lxN3owUXFEWTVzWDNnOWJnME1GVVlpWmYtdml0LU83eGdqcU5EZzlkbjVOc2xlNXk3VEdvNVhZT01QZ1lZYkgzMDFkT19lazVxTmNIeFNaY294c0pjSlVyX1BrYnBGLTN3anUyc3JPZjRFWHFIMmxEbWhnaGpTcUhSeE5WQ1FkR2wtOGVNYzFUZFk?oc=5\" target=\"_blank\">NVIDIA (NVDA) Marks Longest Winning Streak Since 2023 with 10 Consecutive Gains</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Chronicle-Journal</font>",
+                "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPSG0yb1RHbEN3VXlEQ2RKaXRmWG9fTF85dEJiVTJQdFp4Zl8zY1gtWDJSMGFubkN1bUJIT2tkdGxqb2tqSUJILVJ0aWNWbzFYdWU1RmRqX3poUVd2QU5nM0RrQmp1RjZsN1lxN3owUXFEWTVzWDNnOWJnME1GVVlpWmYtdml0LU83eGdqcU5EZzlkbjVOc2xlNXk3VEdvNVhZT01QZ1lZYkgzMDFkT19lazVxTmNIeFNaY294c0pjSlVyX1BrYnBGLTN3anUyc3JPZjRFWHFIMmxEbWhnaGpTcUhSeE5WQ1FkR2wtOGVNYzFUZFk?oc=5",
+                "published_at": "2026-04-14",
+                "rank_score": -0.7266612648963928,
+                "rank_position": 1,
+                "supporting_bundle_ids": [
+                  "bundle-e9b2dabb91"
+                ]
+              },
+              {
+                "article_id": "43f282da902c291eef695c5dcd97c8ef",
+                "provider": "Finnhub",
+                "publisher": "Yahoo",
+                "scope_tag": "company",
+                "headline": "Nvidia (NVDA) Outperforms Broader Market: What You Need to Know",
+                "summary_or_snippet": "Nvidia (NVDA) concluded the recent trading session at $198.87, signifying a +1.2% move from its prior day's close.",
+                "url": "https://finnhub.io/api/news?id=b4b82217349c4c1ea823c7c54d0a15de64c34bc814c334bfb23ec6e883381b01",
+                "published_at": "2026-04-15",
+                "rank_score": -1.0895206928253174,
+                "rank_position": 3,
+                "supporting_bundle_ids": [
+                  "bundle-730bd09d2b"
+                ]
+              },
+              {
+                "article_id": "89d63f7073db455ffc39de81ac131545",
+                "provider": "Finnhub",
+                "publisher": "Yahoo",
+                "scope_tag": "company",
+                "headline": "Assessing Nvidia (NVDA) Valuation After Ising Quantum AI Launch And Strong Recent Shareholder Returns",
+                "summary_or_snippet": "NVIDIA (NVDA) just expanded beyond its core GPU franchise with Ising, an open family of quantum AI models already in use at labs like EeroQ, Conductor, IQM and leading universities. See our latest analysis for NVIDIA. The Ising launch comes after a period where the stock has moved higher again, with a 7.93% 7 day share price return and a 7.25% 30 day share price return. The 1 year total shareholder return of 88.11% and very large 5 year total shareholder return underline how strong long term...",
+                "url": "https://finnhub.io/api/news?id=0f2ef9eef9d1a56ffa9129574c5bc6dc8ae091095e0498b8eacffdadd585b107",
+                "published_at": "2026-04-15",
+                "rank_score": -1.55569326877594,
+                "rank_position": 4,
+                "supporting_bundle_ids": [
+                  "bundle-920a18fab5"
+                ]
+              },
+              {
+                "article_id": "cce7419db0ad1b7c51a6d9e4a80c86ce",
+                "provider": "GoogleRSS",
+                "publisher": "GuruFocus",
+                "scope_tag": "company",
+                "headline": "NVIDIA (NVDA) Stock Rises Amid Acquisition Clarifications - GuruFocus",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNNEdkTlh0XzhYUjVNUlZ5VDRsUjh3V1FfZnYwVDkwajhhZGFzNGJza0h4MGl5eDF4NWVWZWh0aWpPblpEMnB4REl5VGF0YmZuMG9KLWd0NDc3U0hsdUR1ZFpCWjg4R3VKVGpkRmNNNUREck5RcUhReHFScE54MGtfTzhhT2E2bi1qYklUNG5JN2NMRVBCZjdOaTJJWlU1XzRaTmg3LWV3UGZEUQ?oc=5\" target=\"_blank\">NVIDIA (NVDA) Stock Rises Amid Acquisition Clarifications</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">GuruFocus</font>",
+                "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNNEdkTlh0XzhYUjVNUlZ5VDRsUjh3V1FfZnYwVDkwajhhZGFzNGJza0h4MGl5eDF4NWVWZWh0aWpPblpEMnB4REl5VGF0YmZuMG9KLWd0NDc3U0hsdUR1ZFpCWjg4R3VKVGpkRmNNNUREck5RcUhReHFScE54MGtfTzhhT2E2bi1qYklUNG5JN2NMRVBCZjdOaTJJWlU1XzRaTmg3LWV3UGZEUQ?oc=5",
+                "published_at": "2026-04-13",
+                "rank_score": -1.6952875852584839,
+                "rank_position": 5,
+                "supporting_bundle_ids": [
+                  "bundle-cb930fabdc"
+                ]
+              },
+              {
+                "article_id": "c91fbe9e9bcbd1637dd4807bdb442629",
+                "provider": "Finnhub",
+                "publisher": "Yahoo",
+                "scope_tag": "company",
+                "headline": "NVIDIA Rises Even as Quantum Computing Threat Looms and Insider Selling Sparks Debate",
+                "summary_or_snippet": "NVIDIA (NASDAQ:NVDA) shares are up 3% today, rising from $189.31 to $195 as of midday Tuesday. The move adds to a strong run, with NVDA stock up 76% over the past year. That’s a remarkable climb for a stock that’s now sitting on a market cap of roughly $4.73 trillion. Today’s session brings a mix ... NVIDIA Rises Even as Quantum Computing Threat Looms and Insider Selling Sparks Debate",
+                "url": "https://finnhub.io/api/news?id=1046c8a9c0ab11a8882fd481a3a3d5ec2d795e41743a41421b8a5e875487781b",
+                "published_at": "2026-04-14",
+                "rank_score": -1.752594232559204,
+                "rank_position": 7,
+                "supporting_bundle_ids": [
+                  "bundle-e9b2dabb91"
+                ]
+              },
+              {
+                "article_id": "de37fddc0da5965426e824fb309464df",
+                "provider": "Finnhub",
+                "publisher": "SeekingAlpha",
+                "scope_tag": "company",
+                "headline": "Nvidia's Moat Vulnerable As Anthropic And Elon Musk Build Chips",
+                "summary_or_snippet": "Nvidia (NVDA) faces mounting competitive threats as major tech firms and Elon Musk pursue in-house AI chip development, undermining NVDAâs moat.",
+                "url": "https://finnhub.io/api/news?id=13e0b3dbe8452143cb8a4d81e384585d4f25fa79587206da7aef74c3d13b9187",
+                "published_at": "2026-04-15",
+                "rank_score": -1.808725118637085,
+                "rank_position": 8,
+                "supporting_bundle_ids": [
+                  "bundle-b930b10fe5"
+                ]
+              },
+              {
+                "article_id": "bd3d6b3b52c9dafe20227ab0053e7edf",
+                "provider": "GoogleRSS",
+                "publisher": "GuruFocus",
+                "scope_tag": "company",
+                "headline": "NVIDIA (NVDA) Sees 10-Day Stock Surge Amid AI Demand - GuruFocus",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNXzY5N3VtcE1URXBmNm4yLW11WUhseS1HTG1sZ292bGo2dWJicDNmQTdDQ0wtYTRaT09hTGRqOWpNaHExRFE3S0pOaW5hMWd3OUlvZ185Vmt1NFViRk9yNHlMQmlNM2xBSGw2eVRRQ1RkR0xIUC13eXNqZUtiWWhJMnJxWFdMaEtLZEQ2QVNuczlmS0VRc01sYmZLYTYzWWtfWUE?oc=5\" target=\"_blank\">NVIDIA (NVDA) Sees 10-Day Stock Surge Amid AI Demand</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">GuruFocus</font>",
+                "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNXzY5N3VtcE1URXBmNm4yLW11WUhseS1HTG1sZ292bGo2dWJicDNmQTdDQ0wtYTRaT09hTGRqOWpNaHExRFE3S0pOaW5hMWd3OUlvZ185Vmt1NFViRk9yNHlMQmlNM2xBSGw2eVRRQ1RkR0xIUC13eXNqZUtiWWhJMnJxWFdMaEtLZEQ2QVNuczlmS0VRc01sYmZLYTYzWWtfWUE?oc=5",
+                "published_at": "2026-04-14",
+                "rank_score": -2.032341718673706,
+                "rank_position": 10,
+                "supporting_bundle_ids": [
+                  "bundle-e9b2dabb91"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "LIMITED_EVIDENCE",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "only_weak_support",
+              "limited_supporting_context"
+            ],
+            "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "Supporting context is limited.",
+              "Manual review is recommended."
+            ],
+            "driver_hypothesis": "firm_branch",
+            "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to M&A activity.",
+            "explanation_confidence": "low"
+          }
+        }
+      ]
+    },
+    "attribution": {
+      "driver_hypothesis": "mixed",
+      "firm_ratio": 0.23489616698314505,
+      "industry_ratio": 0.21860632184101897,
+      "market_ratio": 0.5254713566833663,
+      "quality_status": "PASS",
+      "reason": null,
+      "reason_code": "pass",
+      "adj_r2": 0.6686147177158608,
+      "beta_mkt_t_stat": 40.05073341786505,
+      "beta_ind_t_stat": 13.776622135676973,
+      "f_stat": 762.6574103653788,
+      "f_pvalue": 0.0,
+      "fit_quality_note": null,
+      "market_share": 0.9336943177282164,
+      "industry_share": -0.3884350268123496,
+      "firm_share": 0.4173799648235772,
+      "alpha_share": 0.03736074426055579,
+      "near_zero_episode_return": false,
+      "episode_return_total": 0.05364731288449853,
+      "industry_proxy_ticker": "SMH",
+      "industry_proxy_source": "sub_industry",
+      "vix_estimation_p50": 16.324999809265137,
+      "vix_estimation_p95": 24.97000026702881,
+      "vix_episode_max": 19.1200008392334,
+      "vix_episode_avg": 18.5500005086263,
+      "macro_shock_suspected": false
+    },
+    "decision": {
+      "outward_status": "LIMITED_EVIDENCE",
+      "manual_review": true,
+      "degraded_reason_codes": [
+        "only_weak_support",
+        "limited_supporting_context"
+      ],
+      "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+      "outward_notes": [
+        "Mixed episodes are summarized conservatively from the most restrictive branch result.",
+        "A primary evidence-backed explanation is available.",
+        "Supporting context is limited.",
+        "Manual review is recommended.",
+        "Branch outward statuses: market=LIMITED_EVIDENCE, industry=LIMITED_EVIDENCE, firm=LIMITED_EVIDENCE."
+      ],
+      "driver_hypothesis": "mixed",
+      "headline_explanation": "This episode remains mixed across market, industry, and firm explanation branches. Review the branch-specific analyses below rather than relying on a single dominant narrative.",
+      "explanation_confidence": "low"
+    },
+    "branch_plan": {
+      "routing_mode": "mixed",
+      "primary_mode": "market",
+      "default_modes": [
+        "market",
+        "industry",
+        "firm"
+      ],
+      "lazy_modes": []
+    }
+  },
+  "_meta": {
+    "episode_id": "10",
+    "saved_at": "2026-04-26T21:04:31.029932"
+  }
+}

@@ -1,0 +1,1025 @@
+{
+  "attribution_bundle": {
+    "ticker": "LLY",
+    "market_ratio": 0.1728553064555412,
+    "industry_ratio": 0.07527888873536161,
+    "firm_ratio": 0.6809543489068363,
+    "alpha_total": -0.006999772206664317,
+    "market_total": 0.01706279689941272,
+    "industry_total": 0.0074308878080947514,
+    "firm_total": 0.06721798706340325,
+    "episode_return_total": 0.0847118995642464,
+    "adj_r2": 0.07456411792648143,
+    "recon_error_bps": 0.0,
+    "quality_status": "POOR_FIT",
+    "reason": null,
+    "reason_code": "poor_fit",
+    "beta_mkt_t_stat": 7.232852568662349,
+    "beta_ind_t_stat": 4.332954797125068,
+    "f_stat": 31.41588840728637,
+    "f_pvalue": 7.860379014346108e-14,
+    "fit_quality_note": "The regression model has very low explanatory power (adj. R² = 0.075). Although the market factor is statistically significant, the overall model fit is too weak for the attribution ratios to reliably reflect the actual drivers of this episode.",
+    "market_share": 0.2014214884471114,
+    "industry_share": 0.08771952755538302,
+    "firm_share": 0.7934893138882385,
+    "alpha_share": -0.08263032989073295,
+    "near_zero_episode_return": false,
+    "industry_proxy_ticker": "XPH",
+    "industry_proxy_source": "sub_industry",
+    "vix_estimation_p50": 16.324999809265137,
+    "vix_estimation_p95": 24.78000020980835,
+    "vix_episode_max": 30.610000610351562,
+    "vix_episode_avg": 26.8000005086263,
+    "macro_shock_suspected": true
+  },
+  "analysis_v2_bundle": {
+    "episode_id": 44,
+    "analysis": {
+      "routing_mode": "mixed",
+      "aggregate_outward": {
+        "outward_status": "LIMITED_EVIDENCE",
+        "manual_review": true,
+        "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+        "degraded_reason_codes": [
+          "only_weak_support",
+          "macro_shock_suspected"
+        ],
+        "outward_notes": [
+          "Mixed episodes are summarized conservatively from the most restrictive branch result.",
+          "A primary evidence-backed explanation is available.",
+          "Manual review is recommended.",
+          "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture.",
+          "The explanation is within the current bounded system scope.",
+          "Branch outward statuses: market=LIMITED_EVIDENCE, industry=SUPPORTED, firm=LIMITED_EVIDENCE."
+        ]
+      },
+      "aggregate_explanation": {
+        "driver_hypothesis": "mixed",
+        "headline_explanation": "This episode remains mixed across market, industry, and firm explanation branches. Review the branch-specific analyses below rather than relying on a single dominant narrative.",
+        "explanation_confidence": "low",
+        "default_visible_modes": [
+          "market",
+          "industry",
+          "firm"
+        ],
+        "branch_summaries": [
+          {
+            "branch_mode": "market",
+            "outward_status": "LIMITED_EVIDENCE",
+            "driver_hypothesis": "market_branch",
+            "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+            "explanation_confidence": "low"
+          },
+          {
+            "branch_mode": "industry",
+            "outward_status": "SUPPORTED",
+            "driver_hypothesis": "industry_branch",
+            "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to balance-sheet or financing actions.",
+            "explanation_confidence": "medium"
+          },
+          {
+            "branch_mode": "firm",
+            "outward_status": "LIMITED_EVIDENCE",
+            "driver_hypothesis": "firm_branch",
+            "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to M&A activity.",
+            "explanation_confidence": "low"
+          }
+        ]
+      },
+      "attribution_summary": {
+        "driver_hypothesis": "mixed",
+        "firm_ratio": 0.6809543489068363,
+        "industry_ratio": 0.07527888873536161,
+        "market_ratio": 0.1728553064555412,
+        "quality_status": "POOR_FIT",
+        "reason": null,
+        "reason_code": "poor_fit",
+        "adj_r2": 0.07456411792648143,
+        "beta_mkt_t_stat": 7.232852568662349,
+        "beta_ind_t_stat": 4.332954797125068,
+        "f_stat": 31.41588840728637,
+        "f_pvalue": 7.860379014346108e-14,
+        "fit_quality_note": "The regression model has very low explanatory power (adj. R² = 0.075). Although the market factor is statistically significant, the overall model fit is too weak for the attribution ratios to reliably reflect the actual drivers of this episode.",
+        "market_share": 0.2014214884471114,
+        "industry_share": 0.08771952755538302,
+        "firm_share": 0.7934893138882385,
+        "alpha_share": -0.08263032989073295,
+        "near_zero_episode_return": false,
+        "episode_return_total": 0.0847118995642464,
+        "industry_proxy_ticker": "XPH",
+        "industry_proxy_source": "sub_industry",
+        "vix_estimation_p50": 16.324999809265137,
+        "vix_estimation_p95": 24.78000020980835,
+        "vix_episode_max": 30.610000610351562,
+        "vix_episode_avg": 26.8000005086263,
+        "macro_shock_suspected": true
+      },
+      "branch_analyses": [
+        {
+          "branch_mode": "market",
+          "analysis": {
+            "outward": {
+              "outward_status": "LIMITED_EVIDENCE",
+              "manual_review": true,
+              "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+              "degraded_reason_codes": [
+                "only_weak_support",
+                "macro_shock_suspected"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "Manual review is recommended.",
+                "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "market_branch",
+              "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-14eae0aa27",
+                  "event_type": "macro_or_sector_shock",
+                  "summary": "Macro or sector developments is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                },
+                {
+                  "role": "supporting",
+                  "bundle_id": "bundle-44dc1d54f8",
+                  "event_type": "macro_or_sector_shock",
+                  "summary": "Macro or sector developments provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                }
+              ],
+              "explanation_confidence": "low",
+              "manual_review": true,
+              "degraded_reason_codes": [
+                "only_weak_support"
+              ],
+              "llm_enrichment_text": "Weak evidence points to macro or sector developments as the primary driver during the episode window. Attribution confidence is low given model fit and limited direct support."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "market_branch",
+              "firm_ratio": 0.6809543489068363,
+              "industry_ratio": 0.07527888873536161,
+              "market_ratio": 0.1728553064555412,
+              "quality_status": "POOR_FIT",
+              "reason": null,
+              "reason_code": "poor_fit",
+              "adj_r2": 0.07456411792648143,
+              "beta_mkt_t_stat": 7.232852568662349,
+              "beta_ind_t_stat": 4.332954797125068,
+              "f_stat": 31.41588840728637,
+              "f_pvalue": 7.860379014346108e-14,
+              "fit_quality_note": "The regression model has very low explanatory power (adj. R² = 0.075). Although the market factor is statistically significant, the overall model fit is too weak for the attribution ratios to reliably reflect the actual drivers of this episode.",
+              "market_share": 0.2014214884471114,
+              "industry_share": 0.08771952755538302,
+              "firm_share": 0.7934893138882385,
+              "alpha_share": -0.08263032989073295,
+              "near_zero_episode_return": false,
+              "episode_return_total": 0.0847118995642464,
+              "industry_proxy_ticker": "XPH",
+              "industry_proxy_source": "sub_industry",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.78000020980835,
+              "vix_episode_max": 30.610000610351562,
+              "vix_episode_avg": 26.8000005086263,
+              "macro_shock_suspected": true
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-ca15b0190c",
+                "canonical_event_type": "unknown",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5733,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "b87a02582cfbba91cfc9627bbf685e86-claim-68932fec-event-9c72fd3c"
+                ],
+                "supporting_claim_ids": [
+                  "b87a02582cfbba91cfc9627bbf685e86-claim-68932fec"
+                ],
+                "supporting_article_ids": [
+                  "b87a02582cfbba91cfc9627bbf685e86"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 1.0,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-14eae0aa27",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "d007184a37a4fe34c2cecc8d0a93d14e-claim-9b09c18e-event-0eb5fcc9"
+                ],
+                "supporting_claim_ids": [
+                  "d007184a37a4fe34c2cecc8d0a93d14e-claim-9b09c18e"
+                ],
+                "supporting_article_ids": [
+                  "d007184a37a4fe34c2cecc8d0a93d14e"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-44dc1d54f8",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "64fb9a71ea7d6cd8915fefef33a4a9f6-claim-b52c7889-event-6914f125"
+                ],
+                "supporting_claim_ids": [
+                  "64fb9a71ea7d6cd8915fefef33a4a9f6-claim-b52c7889"
+                ],
+                "supporting_article_ids": [
+                  "64fb9a71ea7d6cd8915fefef33a4a9f6"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-1bd89c5995",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "5638f65b5c60e8d64ba7e69ade39f34d-claim-61359011-event-36226146"
+                ],
+                "supporting_claim_ids": [
+                  "5638f65b5c60e8d64ba7e69ade39f34d-claim-61359011"
+                ],
+                "supporting_article_ids": [
+                  "5638f65b5c60e8d64ba7e69ade39f34d"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "64fb9a71ea7d6cd8915fefef33a4a9f6",
+                "provider": "GoogleRSS",
+                "publisher": "Metrobank",
+                "scope_tag": "market",
+                "headline": "S&P 500 heads for worst quarter since 2022 as Iran war, rate worries rattle Wall Street - Metrobank",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQWm1ENVdTdVVwUnBxQWxZdlZzeGgzYll0c1pESXNQTUFSRXJDQTNNeTNTZnZsVWhLRUphM1RrQWo0NURsU21admctbEZxR1ZZanNUeHpDS0Fqa2t5dXQ1RXJLQzZqSHBmS053UDhzdkhWWi0xUmE4LXY4OTNGSXBiRGFGM0pfOGZmVUV1d04tVDRyaEs5VGVfQVljdXlNcnk4bWJGalRXZzJrWXdaWlc1MU9VUjBSX3pZWkkwYmNJOXpkakx0NDRkZEtR?oc=5\" target=\"_blank\">S&P 500 heads for worst quarter since 2022 as Iran war, rate worries rattle Wall Street</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Metrobank</font>",
+                "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWm1ENVdTdVVwUnBxQWxZdlZzeGgzYll0c1pESXNQTUFSRXJDQTNNeTNTZnZsVWhLRUphM1RrQWo0NURsU21admctbEZxR1ZZanNUeHpDS0Fqa2t5dXQ1RXJLQzZqSHBmS053UDhzdkhWWi0xUmE4LXY4OTNGSXBiRGFGM0pfOGZmVUV1d04tVDRyaEs5VGVfQVljdXlNcnk4bWJGalRXZzJrWXdaWlc1MU9VUjBSX3pZWkkwYmNJOXpkakx0NDRkZEtR?oc=5",
+                "published_at": "2026-04-01",
+                "rank_score": -8.324222564697266,
+                "rank_position": 1,
+                "supporting_bundle_ids": [
+                  "bundle-44dc1d54f8"
+                ]
+              },
+              {
+                "article_id": "d007184a37a4fe34c2cecc8d0a93d14e",
+                "provider": "GoogleRSS",
+                "publisher": "The Economic Times",
+                "scope_tag": "market",
+                "headline": "Sensex, Nifty to open in green tomorrow? GIFT Nifty rises over 100 points on Trump’s reported plans to end - The Economic Times",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMikAJBVV95cUxQNVVpTzhDV0lYMm9TRWQtYTdUcTExRU9WdDk0SEsxRzlxS0NCX3k1bW1mVmRQaEdyR3FQaWV1MzJSSmZjWDRtb1dYVjE4MWtjajQ0UjQ3UGljQnhQMG91ZzhKclhuaTNUNVF3ZTlfd3ZQUlJfRUc0Vk0tdHo2YXU1VUo5ZnZ5bDY3R2hSZ1gzS0NKQksyQmN0LWV6UXZ0cXNsWTA1OG5rVlY3aGd5dC1fVXF5Uy05bFNVMmk0ZmtYcW1RWlFuemowUjQ2czlSc1NMYmRvckF4UV9DWkZNXzFFZ1dsdFV3UTdDU0QxMmxNUzh5NGM5SnJuWUdoNlFxdnJhQ2pTTElUVkFrUmRqXzNzVtIBlgJBVV95cUxQSXhBLWNkRzFaajJQUExiNkR3MkZqdTJwc0gwcGFOazcwR0QzS25nYkRwMW1iYzRyTV9MRFZnQmoxV09vWFh4SndQSndiOWp2Z2taeWlyT0hfZmJSZlVJZUY1MmxmNU5VWjRIdmQ1Y1FDcTVJeGRCYml0VkxwSG40alp3ekd1bElDTklHM2hrRmNGRUpvenlSY3Awc1c3Y0tmY210SDEtVi1OMFJmNUZrMUR4YzJVSE1LZmR0QzB6X09RWWJVWmZsWGxGN0xFVkc5NzZYZTZCN1JwLThXanNiZFdWX3ZXcGxNUm51R1Q1S1dQV1ByTTNXSHFldGdZb2xTQlpHSFR2dHh1VmlDM05XemE5ajZaZw?oc=5\" target=\"_blank\">Sensex, Nifty to open in green tomorrow? GIFT Nifty rises over 100 points on Trump’s reported plans to end</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Economic Times</font>",
+                "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQNVVpTzhDV0lYMm9TRWQtYTdUcTExRU9WdDk0SEsxRzlxS0NCX3k1bW1mVmRQaEdyR3FQaWV1MzJSSmZjWDRtb1dYVjE4MWtjajQ0UjQ3UGljQnhQMG91ZzhKclhuaTNUNVF3ZTlfd3ZQUlJfRUc0Vk0tdHo2YXU1VUo5ZnZ5bDY3R2hSZ1gzS0NKQksyQmN0LWV6UXZ0cXNsWTA1OG5rVlY3aGd5dC1fVXF5Uy05bFNVMmk0ZmtYcW1RWlFuemowUjQ2czlSc1NMYmRvckF4UV9DWkZNXzFFZ1dsdFV3UTdDU0QxMmxNUzh5NGM5SnJuWUdoNlFxdnJhQ2pTTElUVkFrUmRqXzNzVtIBlgJBVV95cUxQSXhBLWNkRzFaajJQUExiNkR3MkZqdTJwc0gwcGFOazcwR0QzS25nYkRwMW1iYzRyTV9MRFZnQmoxV09vWFh4SndQSndiOWp2Z2taeWlyT0hfZmJSZlVJZUY1MmxmNU5VWjRIdmQ1Y1FDcTVJeGRCYml0VkxwSG40alp3ekd1bElDTklHM2hrRmNGRUpvenlSY3Awc1c3Y0tmY210SDEtVi1OMFJmNUZrMUR4YzJVSE1LZmR0QzB6X09RWWJVWmZsWGxGN0xFVkc5NzZYZTZCN1JwLThXanNiZFdWX3ZXcGxNUm51R1Q1S1dQV1ByTTNXSHFldGdZb2xTQlpHSFR2dHh1VmlDM05XemE5ajZaZw?oc=5",
+                "published_at": "2026-03-31",
+                "rank_score": -9.640174865722656,
+                "rank_position": 2,
+                "supporting_bundle_ids": [
+                  "bundle-14eae0aa27"
+                ]
+              },
+              {
+                "article_id": "b87a02582cfbba91cfc9627bbf685e86",
+                "provider": "GoogleRSS",
+                "publisher": "Reuters",
+                "scope_tag": "market",
+                "headline": "Oil heads toward record monthly gain, equities mixed - Reuters",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxNa051RXp2bjRya0M2X2tSTFp6eE4zWjJDYjlwTDZZS3RkV3gyVEVOdzNPejlhaW5abm54UHV3a21rWnpNM19QRWs0QnJ2MGs4RHNZQ1NySC1uOXJmQWZpSlNCZ2ZQS2xDOGdnTi1LcFgzMENMRmdiMlg1Y0tjTjdvOWhFaw?oc=5\" target=\"_blank\">Oil heads toward record monthly gain, equities mixed</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+                "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNa051RXp2bjRya0M2X2tSTFp6eE4zWjJDYjlwTDZZS3RkV3gyVEVOdzNPejlhaW5abm54UHV3a21rWnpNM19QRWs0QnJ2MGs4RHNZQ1NySC1uOXJmQWZpSlNCZ2ZQS2xDOGdnTi1LcFgzMENMRmdiMlg1Y0tjTjdvOWhFaw?oc=5",
+                "published_at": "2026-03-30",
+                "rank_score": -9.820904731750488,
+                "rank_position": 4,
+                "supporting_bundle_ids": [
+                  "bundle-ca15b0190c"
+                ]
+              },
+              {
+                "article_id": "5638f65b5c60e8d64ba7e69ade39f34d",
+                "provider": "GoogleRSS",
+                "publisher": "Seeking Alpha",
+                "scope_tag": "market",
+                "headline": "IMF warns Middle East war creating 'global, yet asymmetric' economic shock (SP500:) - Seeking Alpha",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxOTDhRSkZMMzJVOTlHamhrNWIwdnFQeEVrcVRMNWI3TWlkaU50NjVRQnkzeUh1a3VBODFHWUx4cDdueU56YS02MWlRSEkzOVdIYnVyX0Zib29WRXF6aTJ6anJNYXB0LW5lNl9MZVBKSDZDTVFOcHhVeWp2Y3VUNGI0UlRRZmUwQVIwaGFyR2w0LUV4R3pERVFqNy1LWDVKQXUtTVh5cmVmeU9wU3FJQVE?oc=5\" target=\"_blank\">IMF warns Middle East war creating 'global, yet asymmetric' economic shock (SP500:)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Seeking Alpha</font>",
+                "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOTDhRSkZMMzJVOTlHamhrNWIwdnFQeEVrcVRMNWI3TWlkaU50NjVRQnkzeUh1a3VBODFHWUx4cDdueU56YS02MWlRSEkzOVdIYnVyX0Zib29WRXF6aTJ6anJNYXB0LW5lNl9MZVBKSDZDTVFOcHhVeWp2Y3VUNGI0UlRRZmUwQVIwaGFyR2w0LUV4R3pERVFqNy1LWDVKQXUtTVh5cmVmeU9wU3FJQVE?oc=5",
+                "published_at": "2026-03-30",
+                "rank_score": -9.918347358703613,
+                "rank_position": 7,
+                "supporting_bundle_ids": [
+                  "bundle-1bd89c5995"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "LIMITED_EVIDENCE",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "only_weak_support",
+              "macro_shock_suspected"
+            ],
+            "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "Manual review is recommended.",
+              "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+            ],
+            "driver_hypothesis": "market_branch",
+            "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+            "explanation_confidence": "low"
+          }
+        },
+        {
+          "branch_mode": "industry",
+          "analysis": {
+            "outward": {
+              "outward_status": "SUPPORTED",
+              "manual_review": true,
+              "capability_boundary_notice": null,
+              "degraded_reason_codes": [
+                "macro_shock_suspected"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "The explanation is within the current bounded system scope.",
+                "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "industry_branch",
+              "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to balance-sheet or financing actions.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-7f42311eab",
+                  "event_type": "capital_raise_or_balance_sheet_action",
+                  "summary": "Balance-sheet or financing actions is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: moderate)."
+                },
+                {
+                  "role": "supporting",
+                  "bundle_id": "bundle-59c4b685e8",
+                  "event_type": "mna_or_strategic_transaction",
+                  "summary": "M&A activity provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: moderate)."
+                }
+              ],
+              "explanation_confidence": "medium",
+              "manual_review": false,
+              "degraded_reason_codes": [],
+              "llm_enrichment_text": "Balance-sheet or financing actions appear as the primary driver for LLY during this period, with additional support from reported acquisition activity. Attribution confidence is moderate due to overall weak model fit."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "industry_branch",
+              "firm_ratio": 0.6809543489068363,
+              "industry_ratio": 0.07527888873536161,
+              "market_ratio": 0.1728553064555412,
+              "quality_status": "POOR_FIT",
+              "reason": null,
+              "reason_code": "poor_fit",
+              "adj_r2": 0.07456411792648143,
+              "beta_mkt_t_stat": 7.232852568662349,
+              "beta_ind_t_stat": 4.332954797125068,
+              "f_stat": 31.41588840728637,
+              "f_pvalue": 7.860379014346108e-14,
+              "fit_quality_note": "The regression model has very low explanatory power (adj. R² = 0.075). Although the market factor is statistically significant, the overall model fit is too weak for the attribution ratios to reliably reflect the actual drivers of this episode.",
+              "market_share": 0.2014214884471114,
+              "industry_share": 0.08771952755538302,
+              "firm_share": 0.7934893138882385,
+              "alpha_share": -0.08263032989073295,
+              "near_zero_episode_return": false,
+              "episode_return_total": 0.0847118995642464,
+              "industry_proxy_ticker": "XPH",
+              "industry_proxy_source": "sub_industry",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.78000020980835,
+              "vix_episode_max": 30.610000610351562,
+              "vix_episode_avg": 26.8000005086263,
+              "macro_shock_suspected": true
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-7f42311eab",
+                "canonical_event_type": "capital_raise_or_balance_sheet_action",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "98e2e512eae5a7b947ab9725c87e6b80-claim-cdd5683c-event-ce38d5fe"
+                ],
+                "supporting_claim_ids": [
+                  "98e2e512eae5a7b947ab9725c87e6b80-claim-cdd5683c"
+                ],
+                "supporting_article_ids": [
+                  "98e2e512eae5a7b947ab9725c87e6b80"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-59c4b685e8",
+                "canonical_event_type": "mna_or_strategic_transaction",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "a7173387da25b4c1a8c506bfece69985-claim-2516a0af-event-bdf7a406"
+                ],
+                "supporting_claim_ids": [
+                  "a7173387da25b4c1a8c506bfece69985-claim-2516a0af"
+                ],
+                "supporting_article_ids": [
+                  "a7173387da25b4c1a8c506bfece69985"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-c366aee848",
+                "canonical_event_type": "other",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "39155ceadcf07b5e29686544b3a5e968-claim-e3481fa1-event-1d07f153"
+                ],
+                "supporting_claim_ids": [
+                  "39155ceadcf07b5e29686544b3a5e968-claim-e3481fa1"
+                ],
+                "supporting_article_ids": [
+                  "39155ceadcf07b5e29686544b3a5e968"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-4325c3d936",
+                "canonical_event_type": "unknown",
+                "bundle_status": "weak",
+                "bundle_score": 0.4733,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "9884a104cf1e7487f5e595c10b83d47e-claim-d6eca551-event-eb0dda5f"
+                ],
+                "supporting_claim_ids": [
+                  "9884a104cf1e7487f5e595c10b83d47e-claim-d6eca551"
+                ],
+                "supporting_article_ids": [
+                  "9884a104cf1e7487f5e595c10b83d47e"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-8503ef22e5",
+                "canonical_event_type": "earnings_result",
+                "bundle_status": "weak",
+                "bundle_score": 0.4333,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "278a0d4d8ce555a6c264ac2ec51176f4-claim-67599a65-event-229fcdeb"
+                ],
+                "supporting_claim_ids": [
+                  "278a0d4d8ce555a6c264ac2ec51176f4-claim-67599a65"
+                ],
+                "supporting_article_ids": [
+                  "278a0d4d8ce555a6c264ac2ec51176f4"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-17fb02577c",
+                "canonical_event_type": "unknown",
+                "bundle_status": "weak",
+                "bundle_score": 0.4333,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "bd88690f74e9745d04aaff9a3f8d1594-claim-854e2b45-event-c7b1ba87"
+                ],
+                "supporting_claim_ids": [
+                  "bd88690f74e9745d04aaff9a3f8d1594-claim-854e2b45"
+                ],
+                "supporting_article_ids": [
+                  "bd88690f74e9745d04aaff9a3f8d1594"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-5b29085530",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "951865944554eb8e2befca0e52613257-claim-40f85c57-event-2c4abae4"
+                ],
+                "supporting_claim_ids": [
+                  "951865944554eb8e2befca0e52613257-claim-40f85c57"
+                ],
+                "supporting_article_ids": [
+                  "951865944554eb8e2befca0e52613257"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "39155ceadcf07b5e29686544b3a5e968",
+                "provider": "GoogleRSS",
+                "publisher": "Seeking Alpha",
+                "scope_tag": "industry",
+                "headline": "SCHD Vs. SPY: 2026 Reconstitution Sets Up Next Stage Of Value-Growth Rotation - Seeking Alpha",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOWFpqUzA5cW9GWTFCWGRIWXVPWEt0Mk16NkNxdEpYQXBzeXBVZkRxNXRlRVZ3ZmJQMGtBbjVIcTdqdTlxS3FObDVJYVhUYm1ncW1XY2tHa2FqUVVKLTV5VGl6VzNPRnpJYXgzb2NqbG51TGVQYm1UckpqM2JnWElxRzRwR1NlYUNPLVQzUm1JZzhlcVR2dmJkU093eE9XZXNJSUlieDc4azgyalZhWkZtaGU1Y1NvbnM?oc=5\" target=\"_blank\">SCHD Vs. SPY: 2026 Reconstitution Sets Up Next Stage Of Value-Growth Rotation</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Seeking Alpha</font>",
+                "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWFpqUzA5cW9GWTFCWGRIWXVPWEt0Mk16NkNxdEpYQXBzeXBVZkRxNXRlRVZ3ZmJQMGtBbjVIcTdqdTlxS3FObDVJYVhUYm1ncW1XY2tHa2FqUVVKLTV5VGl6VzNPRnpJYXgzb2NqbG51TGVQYm1UckpqM2JnWElxRzRwR1NlYUNPLVQzUm1JZzhlcVR2dmJkU093eE9XZXNJSUlieDc4azgyalZhWkZtaGU1Y1NvbnM?oc=5",
+                "published_at": "2026-03-31",
+                "rank_score": -7.230571746826172,
+                "rank_position": 1,
+                "supporting_bundle_ids": [
+                  "bundle-c366aee848"
+                ]
+              },
+              {
+                "article_id": "98e2e512eae5a7b947ab9725c87e6b80",
+                "provider": "GoogleRSS",
+                "publisher": "Stock Titan",
+                "scope_tag": "industry",
+                "headline": "Tonix Pharmaceuticals (NASDAQ: TNXP) puts reverse split and 2026 equity plan to vote - Stock Titan",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxQYjRjam42RkluaTFpWlU4WUIzYnE0NDJhQk5PeFVsdVZnQ2E2MDRCV0piR3ZDYW9DN0toZzA3QVBTVklTQWVyeWZNbXZHdDUzOHp1VW1rXy1ZUUxoRVBLbGpmYVR4aXRmT20zWWJLUS00Mm10MjBwMmFrREJvUlp0SFNub21lRVJ1ak1qYzI0N3YxajdKbTdZWHRPWU5DWGlUU1h4eUJ5ZFVtY2M1R1ZZTHNteG5qSU4wVkNFc1pkM1BNQ0xvSGJmNlZLbw?oc=5\" target=\"_blank\">Tonix Pharmaceuticals (NASDAQ: TNXP) puts reverse split and 2026 equity plan to vote</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Stock Titan</font>",
+                "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQYjRjam42RkluaTFpWlU4WUIzYnE0NDJhQk5PeFVsdVZnQ2E2MDRCV0piR3ZDYW9DN0toZzA3QVBTVklTQWVyeWZNbXZHdDUzOHp1VW1rXy1ZUUxoRVBLbGpmYVR4aXRmT20zWWJLUS00Mm10MjBwMmFrREJvUlp0SFNub21lRVJ1ak1qYzI0N3YxajdKbTdZWHRPWU5DWGlUU1h4eUJ5ZFVtY2M1R1ZZTHNteG5qSU4wVkNFc1pkM1BNQ0xvSGJmNlZLbw?oc=5",
+                "published_at": "2026-03-30",
+                "rank_score": -7.923796653747559,
+                "rank_position": 2,
+                "supporting_bundle_ids": [
+                  "bundle-7f42311eab"
+                ]
+              },
+              {
+                "article_id": "278a0d4d8ce555a6c264ac2ec51176f4",
+                "provider": "GoogleRSS",
+                "publisher": "Stock Titan",
+                "scope_tag": "industry",
+                "headline": "Sales jumped 65%, but 60 Degrees Pharma still lost $7.4M in 2025 - Stock Titan",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPV1FHN0RPTjI2NU1aX2RlNFU4NGlTWkxOVk1rODBBTVlEN1A5eDRObmxpTXpvT2pXR3E2MG05Z2JZbTZzOVdVYi1ZV0tMRUk2N1I1V1dXWVJ0aXI3NENHZC1LeThBVFBpQTBfcTBLazdoQjJxZ1JtZXBXTWg0bnNMVW1BZU03NkFYUXJYdTBuamRkU29mZkdVdVB6d215QVFxeC1EZzNn?oc=5\" target=\"_blank\">Sales jumped 65%, but 60 Degrees Pharma still lost $7.4M in 2025</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Stock Titan</font>",
+                "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPV1FHN0RPTjI2NU1aX2RlNFU4NGlTWkxOVk1rODBBTVlEN1A5eDRObmxpTXpvT2pXR3E2MG05Z2JZbTZzOVdVYi1ZV0tMRUk2N1I1V1dXWVJ0aXI3NENHZC1LeThBVFBpQTBfcTBLazdoQjJxZ1JtZXBXTWg0bnNMVW1BZU03NkFYUXJYdTBuamRkU29mZkdVdVB6d215QVFxeC1EZzNn?oc=5",
+                "published_at": "2026-03-31",
+                "rank_score": -8.588522911071777,
+                "rank_position": 5,
+                "supporting_bundle_ids": [
+                  "bundle-8503ef22e5"
+                ]
+              },
+              {
+                "article_id": "a7173387da25b4c1a8c506bfece69985",
+                "provider": "GoogleRSS",
+                "publisher": "Yahoo Finance",
+                "scope_tag": "industry",
+                "headline": "How The Apellis Pharmaceuticals (APLS) Investment Story Is Shifting With New Deals And Analyst Revisions - Yahoo Finance",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNRkdHMzlmVlJ0TEJMQ3NEdjRWZ2pienJ2MFEtYjFvUVJXdmlxVTBOYVdZcWZBTlM4VzFKUEdMcGM2MVE0blJ5bUV1Z3NDN0VzbjItUVRjZHdKMzMzUVUyUnZiRVZVd1FqWXl6Zm02c3FfbFJ5aVNyUVVlOGdCRnkzOUFDRlpMVkJ1U0xGd0w0V1pULUFENWg5TXMtcUN5S3pfc3lvakE2TFM2X21pU21n?oc=5\" target=\"_blank\">How The Apellis Pharmaceuticals (APLS) Investment Story Is Shifting With New Deals And Analyst Revisions</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Yahoo Finance</font>",
+                "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRkdHMzlmVlJ0TEJMQ3NEdjRWZ2pienJ2MFEtYjFvUVJXdmlxVTBOYVdZcWZBTlM4VzFKUEdMcGM2MVE0blJ5bUV1Z3NDN0VzbjItUVRjZHdKMzMzUVUyUnZiRVZVd1FqWXl6Zm02c3FfbFJ5aVNyUVVlOGdCRnkzOUFDRlpMVkJ1U0xGd0w0V1pULUFENWg5TXMtcUN5S3pfc3lvakE2TFM2X21pU21n?oc=5",
+                "published_at": "2026-04-01",
+                "rank_score": -8.937419891357422,
+                "rank_position": 6,
+                "supporting_bundle_ids": [
+                  "bundle-59c4b685e8"
+                ]
+              },
+              {
+                "article_id": "bd88690f74e9745d04aaff9a3f8d1594",
+                "provider": "GoogleRSS",
+                "publisher": "Yahoo Finance",
+                "scope_tag": "industry",
+                "headline": "Acumen Pharmaceuticals (ABOS) Loses 33.6% in 4 Weeks, Here's Why a Trend Reversal May be Around the Corner - Yahoo Finance",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPZzI4SEhkWm4xc3g2NnJBdWRiMHBXRGNyOGsxcE5kT2p0ZUVnM1BROVZvbG1LMWpsMy1RckVteGxJcDRmUTlyRXNIQW56cHpwX1VCQ2J1QnhfT1pnTl85NWx1eVZMYldMYnQtS0ZHcEVlcWVLbWRpR3ZzQVc3MmdFbFVtYi11WTF1ck1vNEhOSXdUMnlPQXFHckFpdG91T0Qxaks0?oc=5\" target=\"_blank\">Acumen Pharmaceuticals (ABOS) Loses 33.6% in 4 Weeks, Here's Why a Trend Reversal May be Around the Corner</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Yahoo Finance</font>",
+                "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZzI4SEhkWm4xc3g2NnJBdWRiMHBXRGNyOGsxcE5kT2p0ZUVnM1BROVZvbG1LMWpsMy1RckVteGxJcDRmUTlyRXNIQW56cHpwX1VCQ2J1QnhfT1pnTl85NWx1eVZMYldMYnQtS0ZHcEVlcWVLbWRpR3ZzQVc3MmdFbFVtYi11WTF1ck1vNEhOSXdUMnlPQXFHckFpdG91T0Qxaks0?oc=5",
+                "published_at": "2026-03-31",
+                "rank_score": -9.060465812683105,
+                "rank_position": 7,
+                "supporting_bundle_ids": [
+                  "bundle-17fb02577c"
+                ]
+              },
+              {
+                "article_id": "9884a104cf1e7487f5e595c10b83d47e",
+                "provider": "GoogleRSS",
+                "publisher": "MarketBeat",
+                "scope_tag": "industry",
+                "headline": "Lexicon Pharmaceuticals (NASDAQ:LXRX) Trading 8.7% Higher - Time to Buy? - MarketBeat",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQZlZJYVA0MHNQYjcwenNrUXNDNldaRnBoY1lHc1JJTHdHWVY5dV9vM1F1UDFKemZPOHVOZy1rbGNYdDloYWs1NTRHYTlvZ2d0X1lFTUNqQjhZQXRoVWs4TWpFMllzOFhSZ2hBUnA0UFp0THg2cTlBMUUwclBHZmFiNXNjdGpsaWIyTlZoU2w1UmhPbzB0NDVhdU1zZVFNbTZkZlVmbVdJcEJsYlNRVllBR2hlLW5fQkw1S3c?oc=5\" target=\"_blank\">Lexicon Pharmaceuticals (NASDAQ:LXRX) Trading 8.7% Higher - Time to Buy?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MarketBeat</font>",
+                "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZlZJYVA0MHNQYjcwenNrUXNDNldaRnBoY1lHc1JJTHdHWVY5dV9vM1F1UDFKemZPOHVOZy1rbGNYdDloYWs1NTRHYTlvZ2d0X1lFTUNqQjhZQXRoVWs4TWpFMllzOFhSZ2hBUnA0UFp0THg2cTlBMUUwclBHZmFiNXNjdGpsaWIyTlZoU2w1UmhPbzB0NDVhdU1zZVFNbTZkZlVmbVdJcEJsYlNRVllBR2hlLW5fQkw1S3c?oc=5",
+                "published_at": "2026-04-01",
+                "rank_score": -9.180486679077148,
+                "rank_position": 8,
+                "supporting_bundle_ids": [
+                  "bundle-4325c3d936"
+                ]
+              },
+              {
+                "article_id": "951865944554eb8e2befca0e52613257",
+                "provider": "GoogleRSS",
+                "publisher": "Seeking Alpha",
+                "scope_tag": "industry",
+                "headline": "Healthcare among laggards in Q1; MRNA and DVA lead gainers while HUM drags - Seeking Alpha",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOYW1pRlgzS3Nua3M2dTMzaDhwMzVqTGhEMVFTTVV4WE1DTWhMV29xeU5CZFRENTNuVV9UUWluS0FqY0F1NEp3ajBUV3pIU0tVclNkT1d3alRVdXdhSHljazhUbm5keUJQSHEtQWF5S0xDYUx3bFVxTWtQbXZHOVd4a09QQmIxQnptUUMzUzRhWHBmb3ZpS2FVcmlFcUdJaUNKR3hrTFptOGItS1hHR3J6ZA?oc=5\" target=\"_blank\">Healthcare among laggards in Q1; MRNA and DVA lead gainers while HUM drags</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Seeking Alpha</font>",
+                "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOYW1pRlgzS3Nua3M2dTMzaDhwMzVqTGhEMVFTTVV4WE1DTWhMV29xeU5CZFRENTNuVV9UUWluS0FqY0F1NEp3ajBUV3pIU0tVclNkT1d3alRVdXdhSHljazhUbm5keUJQSHEtQWF5S0xDYUx3bFVxTWtQbXZHOVd4a09QQmIxQnptUUMzUzRhWHBmb3ZpS2FVcmlFcUdJaUNKR3hrTFptOGItS1hHR3J6ZA?oc=5",
+                "published_at": "2026-04-01",
+                "rank_score": -9.364763259887695,
+                "rank_position": 10,
+                "supporting_bundle_ids": [
+                  "bundle-5b29085530"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "SUPPORTED",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "macro_shock_suspected"
+            ],
+            "capability_boundary_notice": null,
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "The explanation is within the current bounded system scope.",
+              "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+            ],
+            "driver_hypothesis": "industry_branch",
+            "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to balance-sheet or financing actions.",
+            "explanation_confidence": "medium"
+          }
+        },
+        {
+          "branch_mode": "firm",
+          "analysis": {
+            "outward": {
+              "outward_status": "LIMITED_EVIDENCE",
+              "manual_review": true,
+              "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+              "degraded_reason_codes": [
+                "only_weak_support",
+                "macro_shock_suspected"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "Manual review is recommended.",
+                "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "firm_branch",
+              "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to M&A activity.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-f7c0f4ce0e",
+                  "event_type": "mna_or_strategic_transaction",
+                  "summary": "M&A activity is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                },
+                {
+                  "role": "supporting",
+                  "bundle_id": "bundle-4f6534b25c",
+                  "event_type": "mna_or_strategic_transaction",
+                  "summary": "M&A activity provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                }
+              ],
+              "explanation_confidence": "low",
+              "manual_review": true,
+              "degraded_reason_codes": [
+                "only_weak_support"
+              ],
+              "llm_enrichment_text": "Acquisition activity is the leading company-level factor, but available evidence is limited and the signal remains weak. Analysts should treat the attribution with caution due to the lack of robust supporting detail."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "firm_branch",
+              "firm_ratio": 0.6809543489068363,
+              "industry_ratio": 0.07527888873536161,
+              "market_ratio": 0.1728553064555412,
+              "quality_status": "POOR_FIT",
+              "reason": null,
+              "reason_code": "poor_fit",
+              "adj_r2": 0.07456411792648143,
+              "beta_mkt_t_stat": 7.232852568662349,
+              "beta_ind_t_stat": 4.332954797125068,
+              "f_stat": 31.41588840728637,
+              "f_pvalue": 7.860379014346108e-14,
+              "fit_quality_note": "The regression model has very low explanatory power (adj. R² = 0.075). Although the market factor is statistically significant, the overall model fit is too weak for the attribution ratios to reliably reflect the actual drivers of this episode.",
+              "market_share": 0.2014214884471114,
+              "industry_share": 0.08771952755538302,
+              "firm_share": 0.7934893138882385,
+              "alpha_share": -0.08263032989073295,
+              "near_zero_episode_return": false,
+              "episode_return_total": 0.0847118995642464,
+              "industry_proxy_ticker": "XPH",
+              "industry_proxy_source": "sub_industry",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.78000020980835,
+              "vix_episode_max": 30.610000610351562,
+              "vix_episode_avg": 26.8000005086263,
+              "macro_shock_suspected": true
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-4759d85675",
+                "canonical_event_type": "product_or_customer_event",
+                "bundle_status": "weak",
+                "bundle_score": 0.5333,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "506335d472bdc5859bc7b42fe094e0a4-claim-46a0b645-event-5e5ad48d"
+                ],
+                "supporting_claim_ids": [
+                  "506335d472bdc5859bc7b42fe094e0a4-claim-46a0b645"
+                ],
+                "supporting_article_ids": [
+                  "506335d472bdc5859bc7b42fe094e0a4"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-e1ab71d337",
+                "canonical_event_type": "unknown",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "582688e817c68f1df66bae36a8eb840a-claim-32a2dadb-event-bc1b73f8"
+                ],
+                "supporting_claim_ids": [
+                  "582688e817c68f1df66bae36a8eb840a-claim-32a2dadb"
+                ],
+                "supporting_article_ids": [
+                  "582688e817c68f1df66bae36a8eb840a"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-f7c0f4ce0e",
+                "canonical_event_type": "mna_or_strategic_transaction",
+                "bundle_status": "weak",
+                "bundle_score": 0.4333,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "def9310f35dd593efb8476f4568aacd2-claim-07ac869d-event-9fa7db33"
+                ],
+                "supporting_claim_ids": [
+                  "def9310f35dd593efb8476f4568aacd2-claim-07ac869d"
+                ],
+                "supporting_article_ids": [
+                  "def9310f35dd593efb8476f4568aacd2"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-4f6534b25c",
+                "canonical_event_type": "mna_or_strategic_transaction",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "79b9bbe8ee465cddd1c7c4ebded10237-claim-6ef02a57-event-6a45e05e"
+                ],
+                "supporting_claim_ids": [
+                  "79b9bbe8ee465cddd1c7c4ebded10237-claim-6ef02a57"
+                ],
+                "supporting_article_ids": [
+                  "79b9bbe8ee465cddd1c7c4ebded10237"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "506335d472bdc5859bc7b42fe094e0a4",
+                "provider": "GoogleRSS",
+                "publisher": "Insider Monkey",
+                "scope_tag": "company",
+                "headline": "Eli Lilly and Company (LLY) Continued to Gain from Its Incretin Portfolio - Insider Monkey",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNWGt6Z2RjQ0Jna2czWmRWaGs2Y0Vha1lBWTZZZ1FqYmh2d3JkVW4yQ1RpTGo3b0RZREFWeTNjX0NQam95RGhHcGhfdTRpNDNWaUVQUzJ5SUFlYVNUY3FqYTVQMkRSb0lTX3ozMWVjRWhKVHBqSTZ0Rm1vTHFzeE9YazJmVFRZWVQ5MW0wc01yS2xrZXZaUklnUlN2R1hpakJ3bndDdnNIVVRCZGNVS0JYZ0RlYkxxUdIBvgFBVV95cUxOOWp3YXBxUlF2NjNwZFYwbHZYcXp0a05FZU02czBDbGxuS0daVnM5Z2c0Umo5ZXVEcm0xRjMtY0lXVWpXY1NiN2xkTDVkSjlJOU5DNnN1dFhpc2pXV1FkME05cDNZY09fU254c3UyQm9WOFJ3ay1IR3ZRekhmXzRjTjRULUhYUlFaX1Naa0U5REV1eWJwbGdxSXcwb1lOVW9MT2VyMTRNcnRkUlpuR25qd1U0R3ozYU1RdjFVR3VR?oc=5\" target=\"_blank\">Eli Lilly and Company (LLY) Continued to Gain from Its Incretin Portfolio</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Insider Monkey</font>",
+                "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWGt6Z2RjQ0Jna2czWmRWaGs2Y0Vha1lBWTZZZ1FqYmh2d3JkVW4yQ1RpTGo3b0RZREFWeTNjX0NQam95RGhHcGhfdTRpNDNWaUVQUzJ5SUFlYVNUY3FqYTVQMkRSb0lTX3ozMWVjRWhKVHBqSTZ0Rm1vTHFzeE9YazJmVFRZWVQ5MW0wc01yS2xrZXZaUklnUlN2R1hpakJ3bndDdnNIVVRCZGNVS0JYZ0RlYkxxUdIBvgFBVV95cUxOOWp3YXBxUlF2NjNwZFYwbHZYcXp0a05FZU02czBDbGxuS0daVnM5Z2c0Umo5ZXVEcm0xRjMtY0lXVWpXY1NiN2xkTDVkSjlJOU5DNnN1dFhpc2pXV1FkME05cDNZY09fU254c3UyQm9WOFJ3ay1IR3ZRekhmXzRjTjRULUhYUlFaX1Naa0U5REV1eWJwbGdxSXcwb1lOVW9MT2VyMTRNcnRkUlpuR25qd1U0R3ozYU1RdjFVR3VR?oc=5",
+                "published_at": "2026-03-30",
+                "rank_score": 0.12956662476062775,
+                "rank_position": 4,
+                "supporting_bundle_ids": [
+                  "bundle-4759d85675"
+                ]
+              },
+              {
+                "article_id": "582688e817c68f1df66bae36a8eb840a",
+                "provider": "GoogleRSS",
+                "publisher": "Yahoo Finance",
+                "scope_tag": "company",
+                "headline": "Eli Lilly and Company (LLY) Continued to Gain from Its Incretin Portfolio - Yahoo Finance",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxQVXRwUUhkQU1MTXJhUzlGaFBUdnl4MUV5Vng3M25fd1Ftc3JGc21Ja2Z2VXdqMjJ3UDExLTRKM1l3aGJZLWJUVE1FckpEcm9hcVp0UDhiU09vem9OcHd6bkpDX2pEVkQtODFMMEtUM1I4NC1sMFpDWHFKTkRDd2UtYjh1WVg1dC1JcGMxQlN6c0d1ZUVaUDdkbEdwU3VsQUROV2c?oc=5\" target=\"_blank\">Eli Lilly and Company (LLY) Continued to Gain from Its Incretin Portfolio</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Yahoo Finance</font>",
+                "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVXRwUUhkQU1MTXJhUzlGaFBUdnl4MUV5Vng3M25fd1Ftc3JGc21Ja2Z2VXdqMjJ3UDExLTRKM1l3aGJZLWJUVE1FckpEcm9hcVp0UDhiU09vem9OcHd6bkpDX2pEVkQtODFMMEtUM1I4NC1sMFpDWHFKTkRDd2UtYjh1WVg1dC1JcGMxQlN6c0d1ZUVaUDdkbEdwU3VsQUROV2c?oc=5",
+                "published_at": "2026-03-30",
+                "rank_score": 0.12388297915458679,
+                "rank_position": 5,
+                "supporting_bundle_ids": [
+                  "bundle-e1ab71d337"
+                ]
+              },
+              {
+                "article_id": "79b9bbe8ee465cddd1c7c4ebded10237",
+                "provider": "GoogleRSS",
+                "publisher": "MarketBeat",
+                "scope_tag": "company",
+                "headline": "Eli Lilly and Company $LLY Shares Acquired by Worth Asset Management LLC - MarketBeat",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxQcVNHN0phSjBjUWdSbWxWVVZJWlI1RHd1eE1mY011NWVsWE1DN0F3aWdJNC1WUklBaUNFSlFoa1FNYy1LMW1aYWJ0OXV4SEpqbXRrdEFCQTF4OXNwUi1CY2hBcFA3M19JYzRxTnFqNTNDRTBLNm51Z192TlF4ZnZtVGstMUV6NnN3RGhZOE9lSGJNRnlUbjVmdnhwV3gyY01MTjJpYUVnR3pycGl0ZmxyTUI2UDQxc1otZ2gzMnNmN1BIeWxsNGlXWnpvUGs?oc=5\" target=\"_blank\">Eli Lilly and Company $LLY Shares Acquired by Worth Asset Management LLC</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MarketBeat</font>",
+                "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcVNHN0phSjBjUWdSbWxWVVZJWlI1RHd1eE1mY011NWVsWE1DN0F3aWdJNC1WUklBaUNFSlFoa1FNYy1LMW1aYWJ0OXV4SEpqbXRrdEFCQTF4OXNwUi1CY2hBcFA3M19JYzRxTnFqNTNDRTBLNm51Z192TlF4ZnZtVGstMUV6NnN3RGhZOE9lSGJNRnlUbjVmdnhwV3gyY01MTjJpYUVnR3pycGl0ZmxyTUI2UDQxc1otZ2gzMnNmN1BIeWxsNGlXWnpvUGs?oc=5",
+                "published_at": "2026-03-31",
+                "rank_score": -0.2606756389141083,
+                "rank_position": 8,
+                "supporting_bundle_ids": [
+                  "bundle-4f6534b25c"
+                ]
+              },
+              {
+                "article_id": "def9310f35dd593efb8476f4568aacd2",
+                "provider": "Finnhub",
+                "publisher": "Yahoo",
+                "scope_tag": "company",
+                "headline": "Eli Lilly teams up with Insilico to accelerate AI-powered drug development",
+                "summary_or_snippet": "Eli Lilly and Co (NYSE:LLY) has entered into a drug discovery collaboration with Insilico Medicine, a clinical-stage biotechnology firm focused on generative artificial intelligence, to advance the development of new therapeutics across multiple disease areas, it was announced over the...",
+                "url": "https://finnhub.io/api/news?id=32413909b0d2f66061841640bc3e3ad5c060aedc0d6cb7377eca8ae08c6b6261",
+                "published_at": "2026-03-30",
+                "rank_score": -0.4511680603027344,
+                "rank_position": 10,
+                "supporting_bundle_ids": [
+                  "bundle-f7c0f4ce0e"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "LIMITED_EVIDENCE",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "only_weak_support",
+              "macro_shock_suspected"
+            ],
+            "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "Manual review is recommended.",
+              "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+            ],
+            "driver_hypothesis": "firm_branch",
+            "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to M&A activity.",
+            "explanation_confidence": "low"
+          }
+        }
+      ]
+    },
+    "attribution": {
+      "driver_hypothesis": "mixed",
+      "firm_ratio": 0.6809543489068363,
+      "industry_ratio": 0.07527888873536161,
+      "market_ratio": 0.1728553064555412,
+      "quality_status": "POOR_FIT",
+      "reason": null,
+      "reason_code": "poor_fit",
+      "adj_r2": 0.07456411792648143,
+      "beta_mkt_t_stat": 7.232852568662349,
+      "beta_ind_t_stat": 4.332954797125068,
+      "f_stat": 31.41588840728637,
+      "f_pvalue": 7.860379014346108e-14,
+      "fit_quality_note": "The regression model has very low explanatory power (adj. R² = 0.075). Although the market factor is statistically significant, the overall model fit is too weak for the attribution ratios to reliably reflect the actual drivers of this episode.",
+      "market_share": 0.2014214884471114,
+      "industry_share": 0.08771952755538302,
+      "firm_share": 0.7934893138882385,
+      "alpha_share": -0.08263032989073295,
+      "near_zero_episode_return": false,
+      "episode_return_total": 0.0847118995642464,
+      "industry_proxy_ticker": "XPH",
+      "industry_proxy_source": "sub_industry",
+      "vix_estimation_p50": 16.324999809265137,
+      "vix_estimation_p95": 24.78000020980835,
+      "vix_episode_max": 30.610000610351562,
+      "vix_episode_avg": 26.8000005086263,
+      "macro_shock_suspected": true
+    },
+    "decision": {
+      "outward_status": "LIMITED_EVIDENCE",
+      "manual_review": true,
+      "degraded_reason_codes": [
+        "only_weak_support",
+        "macro_shock_suspected"
+      ],
+      "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+      "outward_notes": [
+        "Mixed episodes are summarized conservatively from the most restrictive branch result.",
+        "A primary evidence-backed explanation is available.",
+        "Manual review is recommended.",
+        "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture.",
+        "The explanation is within the current bounded system scope.",
+        "Branch outward statuses: market=LIMITED_EVIDENCE, industry=SUPPORTED, firm=LIMITED_EVIDENCE."
+      ],
+      "driver_hypothesis": "mixed",
+      "headline_explanation": "This episode remains mixed across market, industry, and firm explanation branches. Review the branch-specific analyses below rather than relying on a single dominant narrative.",
+      "explanation_confidence": "low"
+    },
+    "branch_plan": {
+      "routing_mode": "mixed",
+      "primary_mode": "firm",
+      "default_modes": [
+        "market",
+        "industry",
+        "firm"
+      ],
+      "lazy_modes": []
+    }
+  },
+  "_meta": {
+    "episode_id": "44",
+    "saved_at": "2026-04-27T03:29:17.389148"
+  }
+}

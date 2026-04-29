@@ -1,0 +1,513 @@
+{
+  "attribution_bundle": {
+    "ticker": "AAPL",
+    "market_ratio": 0.14208299777363567,
+    "industry_ratio": 0.06268968582764267,
+    "firm_ratio": 0.7568344058273907,
+    "alpha_total": 0.002747391368379211,
+    "market_total": -0.010167439661847879,
+    "industry_total": -0.004486065243979735,
+    "firm_total": -0.054158965364174985,
+    "episode_return_total": -0.06606507890162339,
+    "adj_r2": 0.23059068425641394,
+    "recon_error_bps": 0.0,
+    "quality_status": "PASS",
+    "reason": null,
+    "reason_code": "pass",
+    "beta_mkt_t_stat": 12.032867813649487,
+    "beta_ind_t_stat": -9.136864513247371,
+    "f_stat": 114.13611822163834,
+    "f_pvalue": 0.0,
+    "fit_quality_note": null,
+    "market_share": 0.15390036356405593,
+    "industry_share": 0.06790372945228558,
+    "firm_share": 0.8197820431702256,
+    "alpha_share": -0.0415861361865671,
+    "near_zero_episode_return": false,
+    "industry_proxy_ticker": "XLK",
+    "industry_proxy_source": "sector",
+    "vix_estimation_p50": 16.324999809265137,
+    "vix_estimation_p95": 24.105000019073486,
+    "vix_episode_max": 20.81999969482422,
+    "vix_episode_avg": 19.68999989827474,
+    "macro_shock_suspected": false
+  },
+  "analysis_v2_bundle": {
+    "episode_id": 1,
+    "analysis": {
+      "outward": {
+        "outward_status": "SUPPORTED",
+        "manual_review": false,
+        "capability_boundary_notice": null,
+        "degraded_reason_codes": [],
+        "outward_notes": [
+          "A primary evidence-backed explanation is available.",
+          "The explanation is within the current bounded system scope."
+        ]
+      },
+      "explanation": {
+        "driver_hypothesis": "firm_dominant",
+        "headline_explanation": "This episode appears primarily company-specific, with the strongest evidence pointing to capital return actions.",
+        "key_event_summaries": [
+          {
+            "role": "primary",
+            "bundle_id": "bundle-899efec202",
+            "event_type": "capital_return_action",
+            "summary": "Capital return actions is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: moderate)."
+          },
+          {
+            "role": "supporting",
+            "bundle_id": "bundle-a085757e78",
+            "event_type": "management_or_governance_change",
+            "summary": "Management or governance changes provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: moderate)."
+          }
+        ],
+        "explanation_confidence": "medium",
+        "manual_review": false,
+        "degraded_reason_codes": [],
+        "llm_enrichment_text": "Capital return activity is the primary supported factor behind this episode, with moderate evidence. Management or governance changes provide additional context but are supported at a similar, moderate level."
+      },
+      "attribution_summary": {
+        "driver_hypothesis": "firm_dominant",
+        "firm_ratio": 0.7568344058273907,
+        "industry_ratio": 0.06268968582764267,
+        "market_ratio": 0.14208299777363567,
+        "quality_status": "PASS",
+        "reason": null,
+        "reason_code": "pass",
+        "adj_r2": 0.23059068425641394,
+        "beta_mkt_t_stat": 12.032867813649487,
+        "beta_ind_t_stat": -9.136864513247371,
+        "f_stat": 114.13611822163834,
+        "f_pvalue": 0.0,
+        "fit_quality_note": null,
+        "market_share": 0.15390036356405593,
+        "industry_share": 0.06790372945228558,
+        "firm_share": 0.8197820431702256,
+        "alpha_share": -0.0415861361865671,
+        "near_zero_episode_return": false,
+        "episode_return_total": -0.06606507890162339,
+        "industry_proxy_ticker": "XLK",
+        "industry_proxy_source": "sector",
+        "vix_estimation_p50": 16.324999809265137,
+        "vix_estimation_p95": 24.105000019073486,
+        "vix_episode_max": 20.81999969482422,
+        "vix_episode_avg": 19.68999989827474,
+        "macro_shock_suspected": false
+      },
+      "evidence_bundles": [
+        {
+          "bundle_id": "bundle-eda9426ce9",
+          "canonical_event_type": "unknown",
+          "bundle_status": "moderate",
+          "bundle_score": 0.7233,
+          "eligible_for_explanation": false,
+          "supporting_event_ids": [
+            "6fc4a675db4055cf9900f2507e69f75d-claim-e7084318-event-6231ec33",
+            "6fc4a675db4055cf9900f2507e69f75d-claim-fb6f584f-event-6577a48e",
+            "fb790f2637f3761bb09496e55274c2cf-claim-4bf423b2-event-a714f3da"
+          ],
+          "supporting_claim_ids": [
+            "6fc4a675db4055cf9900f2507e69f75d-claim-e7084318",
+            "6fc4a675db4055cf9900f2507e69f75d-claim-fb6f584f",
+            "fb790f2637f3761bb09496e55274c2cf-claim-4bf423b2"
+          ],
+          "supporting_article_ids": [
+            "6fc4a675db4055cf9900f2507e69f75d",
+            "fb790f2637f3761bb09496e55274c2cf"
+          ],
+          "score_breakdown": {
+            "corroboration": 1.0,
+            "source_diversity": 0.6667,
+            "time_alignment": 0.5,
+            "source_quality": 0.45,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-899efec202",
+          "canonical_event_type": "capital_return_action",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "a25f4af1870815516c005e7f1de0ea2b-claim-9ae53f4d-event-6dafb605"
+          ],
+          "supporting_claim_ids": [
+            "a25f4af1870815516c005e7f1de0ea2b-claim-9ae53f4d"
+          ],
+          "supporting_article_ids": [
+            "a25f4af1870815516c005e7f1de0ea2b"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-a085757e78",
+          "canonical_event_type": "management_or_governance_change",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "6fc4a675db4055cf9900f2507e69f75d-claim-517c12de-event-b51f365f"
+          ],
+          "supporting_claim_ids": [
+            "6fc4a675db4055cf9900f2507e69f75d-claim-517c12de"
+          ],
+          "supporting_article_ids": [
+            "6fc4a675db4055cf9900f2507e69f75d"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-491eb46ae1",
+          "canonical_event_type": "product_or_customer_event",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "b5d61ffa5a690ee7df9af1c9b67ff1d3-claim-d87bed63-event-ca3a1a97"
+          ],
+          "supporting_claim_ids": [
+            "b5d61ffa5a690ee7df9af1c9b67ff1d3-claim-d87bed63"
+          ],
+          "supporting_article_ids": [
+            "b5d61ffa5a690ee7df9af1c9b67ff1d3"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-765f5700d6",
+          "canonical_event_type": "product_or_customer_event",
+          "bundle_status": "weak",
+          "bundle_score": 0.4933,
+          "eligible_for_explanation": false,
+          "supporting_event_ids": [
+            "2bb3cbb95e88b7cbd3ac7dfaf2748e08-claim-563be1ed-event-8dbf2f43"
+          ],
+          "supporting_claim_ids": [
+            "2bb3cbb95e88b7cbd3ac7dfaf2748e08-claim-563be1ed"
+          ],
+          "supporting_article_ids": [
+            "2bb3cbb95e88b7cbd3ac7dfaf2748e08"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.7
+          }
+        },
+        {
+          "bundle_id": "bundle-88fe5b0777",
+          "canonical_event_type": "unknown",
+          "bundle_status": "weak",
+          "bundle_score": 0.4733,
+          "eligible_for_explanation": false,
+          "supporting_event_ids": [
+            "9439c4bdee7a2d6f79f5cc7cc26e7d5b-claim-cd08aba8-event-67325732"
+          ],
+          "supporting_claim_ids": [
+            "9439c4bdee7a2d6f79f5cc7cc26e7d5b-claim-cd08aba8"
+          ],
+          "supporting_article_ids": [
+            "9439c4bdee7a2d6f79f5cc7cc26e7d5b"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 1.0,
+            "source_quality": 0.3,
+            "episode_relevance": 0.4
+          }
+        },
+        {
+          "bundle_id": "bundle-e5f7f9315f",
+          "canonical_event_type": "regulatory_or_legal_action",
+          "bundle_status": "weak",
+          "bundle_score": 0.44,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "3bd1dc829e66204518b9aa2273c94b2e-claim-bb7ae787-event-735701a4",
+            "f59e1f9131e0ec9f03c663f78982b346-claim-7ffc5b56-event-08eb70b7"
+          ],
+          "supporting_claim_ids": [
+            "3bd1dc829e66204518b9aa2273c94b2e-claim-bb7ae787",
+            "f59e1f9131e0ec9f03c663f78982b346-claim-7ffc5b56"
+          ],
+          "supporting_article_ids": [
+            "3bd1dc829e66204518b9aa2273c94b2e",
+            "f59e1f9131e0ec9f03c663f78982b346"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.6667,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.3,
+            "episode_relevance": 0.4
+          }
+        },
+        {
+          "bundle_id": "bundle-256e0bbab7",
+          "canonical_event_type": "product_or_customer_event",
+          "bundle_status": "weak",
+          "bundle_score": 0.4333,
+          "eligible_for_explanation": false,
+          "supporting_event_ids": [
+            "c67a7fb25fb7f5cbc4c579f60e355e9a-claim-a938b8ba-event-a4e0853e"
+          ],
+          "supporting_claim_ids": [
+            "c67a7fb25fb7f5cbc4c579f60e355e9a-claim-a938b8ba"
+          ],
+          "supporting_article_ids": [
+            "c67a7fb25fb7f5cbc4c579f60e355e9a"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.4
+          }
+        },
+        {
+          "bundle_id": "bundle-3ba697e2a7",
+          "canonical_event_type": "product_or_customer_event",
+          "bundle_status": "weak",
+          "bundle_score": 0.4333,
+          "eligible_for_explanation": false,
+          "supporting_event_ids": [
+            "c67a7fb25fb7f5cbc4c579f60e355e9a-claim-7e5e64d9-event-69a910f6"
+          ],
+          "supporting_claim_ids": [
+            "c67a7fb25fb7f5cbc4c579f60e355e9a-claim-7e5e64d9"
+          ],
+          "supporting_article_ids": [
+            "c67a7fb25fb7f5cbc4c579f60e355e9a"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.4
+          }
+        }
+      ],
+      "supporting_articles": [
+        {
+          "article_id": "b5d61ffa5a690ee7df9af1c9b67ff1d3",
+          "provider": "Finnhub",
+          "publisher": "Benzinga",
+          "scope_tag": "company",
+          "headline": "Apple Stock To Rise Despite Memory Chip Crunch, Says Top Analyst— Hints At 'Bigger Story' Unfolding In 2026",
+          "summary_or_snippet": "Despite the ongoing global memory shortage, Apple Inc. (NASDAQ: AAPL) stock could see a rise, propelled by the imminent launch of Apple Intelligence, said a Bernstein analyst.",
+          "url": "https://finnhub.io/api/news?id=ad6ee62df875e1033e7f30712f0d0807d1b8568808a327c670f1d42f765b4042",
+          "published_at": "2026-02-11",
+          "rank_score": -0.5839126706123352,
+          "rank_position": 1,
+          "supporting_bundle_ids": [
+            "bundle-491eb46ae1"
+          ]
+        },
+        {
+          "article_id": "a25f4af1870815516c005e7f1de0ea2b",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Apple Just Paid Investors And This Is AAPL’s Dividend Grade",
+          "summary_or_snippet": "Apple (Nasdaq: AAPL) just distributed $0.26 per share to shareholders on February 12, 2026, marking another quarterly payment in the company’s uninterrupted dividend streak spanning over a decade. With a current yield of 0.38% and shares trading at $279.72, Apple’s dividend profile reflects a company prioritizing capital appreciation and share buybacks over income generation. Here’s ... Apple Just Paid Investors And This Is AAPL’s Dividend Grade",
+          "url": "https://finnhub.io/api/news?id=7674e5f02316bbfd7a5e8206a2a93078d9325ef29ad11c6061f8b26854be51a1",
+          "published_at": "2026-02-11",
+          "rank_score": -0.6476322412490845,
+          "rank_position": 2,
+          "supporting_bundle_ids": [
+            "bundle-899efec202"
+          ]
+        },
+        {
+          "article_id": "6fc4a675db4055cf9900f2507e69f75d",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Apple CEO Tim Cook Says Company Doesn't Usually Look Back, But Will Celebrate 50th Anniversary: 'I Promise'",
+          "summary_or_snippet": "Apple Inc (NASDAQ:AAPL) could be in for an exciting 2026 with the release of new smartphones and celebrating record financial results. The company will also reach a half century in business in 2026. Here's what CEO Tim Cook said about the potential to celebrate the company's 50th anniversary. Apples' 50th Anniversary Apple memorabilia is hitting auction records in early 2026 as auction houses and collectors search for pieces of history of the technology company ahead of its 50th anniversary. The",
+          "url": "https://finnhub.io/api/news?id=261256aa2616f85e450fee781e463a4cda8a87862c69e65b4d1c065b37dc75a7",
+          "published_at": "2026-02-13",
+          "rank_score": -0.674527645111084,
+          "rank_position": 3,
+          "supporting_bundle_ids": [
+            "bundle-eda9426ce9",
+            "bundle-a085757e78"
+          ]
+        },
+        {
+          "article_id": "2bb3cbb95e88b7cbd3ac7dfaf2748e08",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Apple is about to launch a 'game-changer' iPhone",
+          "summary_or_snippet": "Apple (AAPL) is ramping up for an eventful spring. It's the kind of “quietly huge” setup that AAPL stock investors love. It plans several launches. One big narrative will dominate. And the scoreboard couldn't be clearer. For me, the narrative unfolds with the latest Apple earnings. CEO Tim Cook was ...",
+          "url": "https://finnhub.io/api/news?id=80f066560e16aa027dedf27474142b24001c3371c7532164f190791d26cb2542",
+          "published_at": "2026-02-11",
+          "rank_score": -1.8299903869628906,
+          "rank_position": 5,
+          "supporting_bundle_ids": [
+            "bundle-765f5700d6"
+          ]
+        },
+        {
+          "article_id": "fb790f2637f3761bb09496e55274c2cf",
+          "provider": "GoogleRSS",
+          "publisher": "parameter.io",
+          "scope_tag": "company",
+          "headline": "Apple (AAPL) Stock: Shares Slip After-Hours as AI Ambitions Take Spotlight - parameter.io",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNdTZnZFpSM19ybS1RYlpvUDExVVVzeFBQbUNhc2E4Y3JwSlRkdHBpNjdaM2ctSl9KanlxSFRsWThacmFxNGhUYk9jeFNnbmhOSXVYVXBnNVdJb2VmdV9KbDlheUtfYllxMTRCMlVHaUYxZ1NrT0dIYmRLbFN1ZGpkRHBVNlNUei10WXlOc25yM2thVElkWDMtSg?oc=5\" target=\"_blank\">Apple (AAPL) Stock: Shares Slip After-Hours as AI Ambitions Take Spotlight</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">parameter.io</font>",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNdTZnZFpSM19ybS1RYlpvUDExVVVzeFBQbUNhc2E4Y3JwSlRkdHBpNjdaM2ctSl9KanlxSFRsWThacmFxNGhUYk9jeFNnbmhOSXVYVXBnNVdJb2VmdV9KbDlheUtfYllxMTRCMlVHaUYxZ1NrT0dIYmRLbFN1ZGpkRHBVNlNUei10WXlOc25yM2thVElkWDMtSg?oc=5",
+          "published_at": "2026-02-11",
+          "rank_score": -2.246216297149658,
+          "rank_position": 6,
+          "supporting_bundle_ids": [
+            "bundle-eda9426ce9"
+          ]
+        },
+        {
+          "article_id": "9439c4bdee7a2d6f79f5cc7cc26e7d5b",
+          "provider": "GoogleRSS",
+          "publisher": "CoinCentral",
+          "scope_tag": "company",
+          "headline": "Apple (AAPL) Stock Gets Slammed 5% on Double Dose of Bad News - CoinCentral",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxPN1FZY1J1QW9mUWU1UUh4OEkyeDJSeks1UzV5M25xTUQ3eW1heTVKcURyLVRMNTRDZ0tJeXdoenVNZENnWGVzbVJUUGxVRTZjOGFiMHUtTzlrMU82UE1ENzVzblgxdTJBNERVMWVVUGc4c28xOG9WUVcyZXF5djd6U0VXWlNQM0RZVDdV?oc=5\" target=\"_blank\">Apple (AAPL) Stock Gets Slammed 5% on Double Dose of Bad News</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CoinCentral</font>",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPN1FZY1J1QW9mUWU1UUh4OEkyeDJSeks1UzV5M25xTUQ3eW1heTVKcURyLVRMNTRDZ0tJeXdoenVNZENnWGVzbVJUUGxVRTZjOGFiMHUtTzlrMU82UE1ENzVzblgxdTJBNERVMWVVUGc4c28xOG9WUVcyZXF5djd6U0VXWlNQM0RZVDdV?oc=5",
+          "published_at": "2026-02-13",
+          "rank_score": -2.260162353515625,
+          "rank_position": 7,
+          "supporting_bundle_ids": [
+            "bundle-88fe5b0777"
+          ]
+        },
+        {
+          "article_id": "3bd1dc829e66204518b9aa2273c94b2e",
+          "provider": "GoogleRSS",
+          "publisher": "TipRanks",
+          "scope_tag": "company",
+          "headline": "Apple (AAPL) Stock Under FTC Scrutiny Over Apple News Bias Claims - TipRanks",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPejFlc3RBS2lKUmd1V0RrN3Y1cklzUExGUDI3cUhXZHRnM0RCb3h1QS1zRjBoUTVuWGEyZjFYdVQtOUkyazd2dkdwb3BPRlZ6aWt0QVlzTTEwM1JtVUphd1JyTWFvTEsybWdiQUFWbjlNWmQwcTJzSk1TclFuS3U3ZGpkMC15bVVHb01jVTJ1dDR5TFA2cUJHOA?oc=5\" target=\"_blank\">Apple (AAPL) Stock Under FTC Scrutiny Over Apple News Bias Claims</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TipRanks</font>",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPejFlc3RBS2lKUmd1V0RrN3Y1cklzUExGUDI3cUhXZHRnM0RCb3h1QS1zRjBoUTVuWGEyZjFYdVQtOUkyazd2dkdwb3BPRlZ6aWt0QVlzTTEwM1JtVUphd1JyTWFvTEsybWdiQUFWbjlNWmQwcTJzSk1TclFuS3U3ZGpkMC15bVVHb01jVTJ1dDR5TFA2cUJHOA?oc=5",
+          "published_at": "2026-02-12",
+          "rank_score": -2.2645907402038574,
+          "rank_position": 8,
+          "supporting_bundle_ids": [
+            "bundle-e5f7f9315f"
+          ]
+        },
+        {
+          "article_id": "c67a7fb25fb7f5cbc4c579f60e355e9a",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Apple Inc. (AAPL)’s Upcoming Hardware and AI Updates Keep Street Optimistic",
+          "summary_or_snippet": "Apple Inc. (NASDAQ:AAPL) is among the most profitable mega cap stocks to buy. On February 9, TheFly disclosed that Apple Inc. (NASDAQ:AAPL) iPhone 17e with MagSafe is launching “soon,” according to Bloomberg’s Mark Gurman report. The report added that the iOS 26.4 beta with updated Siri is expected in the week of February 23, with […]",
+          "url": "https://finnhub.io/api/news?id=7c35d4b769a5bb28a63c0523f393d4462e6c8d6bd074ca4954b156552991eca5",
+          "published_at": "2026-02-13",
+          "rank_score": -2.3523733615875244,
+          "rank_position": 9,
+          "supporting_bundle_ids": [
+            "bundle-256e0bbab7",
+            "bundle-3ba697e2a7"
+          ]
+        },
+        {
+          "article_id": "f59e1f9131e0ec9f03c663f78982b346",
+          "provider": "GoogleRSS",
+          "publisher": "TipRanks",
+          "scope_tag": "company",
+          "headline": "Apple (AAPL) Accused of ‘Censoring Conservatives’ in News Feed - TipRanks",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNOFN1VWQtUW5Hd3NSS2FfVHEzMG9GNTExRVdhSDd5VTQ5aDNZV1J3M0RVVDRYc2VKVVZia29Fd3IwbWJDT3ZkOFFtNUhOaUhGWm9mUWRNS3A5RlBhaWZBVlAxX3MyWVMxT0JSSHZkdEFHRG5ld1pCUGRPcGZVbFhmRzdGVVA3UVNDVERyZnZJeXc3Zw?oc=5\" target=\"_blank\">Apple (AAPL) Accused of ‘Censoring Conservatives’ in News Feed</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TipRanks</font>",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNOFN1VWQtUW5Hd3NSS2FfVHEzMG9GNTExRVdhSDd5VTQ5aDNZV1J3M0RVVDRYc2VKVVZia29Fd3IwbWJDT3ZkOFFtNUhOaUhGWm9mUWRNS3A5RlBhaWZBVlAxX3MyWVMxT0JSSHZkdEFHRG5ld1pCUGRPcGZVbFhmRzdGVVA3UVNDVERyZnZJeXc3Zw?oc=5",
+          "published_at": "2026-02-12",
+          "rank_score": -2.5572361946105957,
+          "rank_position": 10,
+          "supporting_bundle_ids": [
+            "bundle-e5f7f9315f"
+          ]
+        }
+      ],
+      "routing_mode": "dominant"
+    },
+    "attribution": {
+      "driver_hypothesis": "firm_dominant",
+      "firm_ratio": 0.7568344058273907,
+      "industry_ratio": 0.06268968582764267,
+      "market_ratio": 0.14208299777363567,
+      "quality_status": "PASS",
+      "reason": null,
+      "reason_code": "pass",
+      "adj_r2": 0.23059068425641394,
+      "beta_mkt_t_stat": 12.032867813649487,
+      "beta_ind_t_stat": -9.136864513247371,
+      "f_stat": 114.13611822163834,
+      "f_pvalue": 0.0,
+      "fit_quality_note": null,
+      "market_share": 0.15390036356405593,
+      "industry_share": 0.06790372945228558,
+      "firm_share": 0.8197820431702256,
+      "alpha_share": -0.0415861361865671,
+      "near_zero_episode_return": false,
+      "episode_return_total": -0.06606507890162339,
+      "industry_proxy_ticker": "XLK",
+      "industry_proxy_source": "sector",
+      "vix_estimation_p50": 16.324999809265137,
+      "vix_estimation_p95": 24.105000019073486,
+      "vix_episode_max": 20.81999969482422,
+      "vix_episode_avg": 19.68999989827474,
+      "macro_shock_suspected": false
+    },
+    "decision": {
+      "outward_status": "SUPPORTED",
+      "manual_review": false,
+      "degraded_reason_codes": [],
+      "capability_boundary_notice": null,
+      "outward_notes": [
+        "A primary evidence-backed explanation is available.",
+        "The explanation is within the current bounded system scope."
+      ],
+      "driver_hypothesis": "firm_dominant",
+      "headline_explanation": "This episode appears primarily company-specific, with the strongest evidence pointing to capital return actions.",
+      "explanation_confidence": "medium"
+    },
+    "branch_plan": {
+      "routing_mode": "dominant",
+      "primary_mode": "firm",
+      "default_modes": [
+        "firm"
+      ],
+      "lazy_modes": [
+        "market",
+        "industry"
+      ]
+    }
+  },
+  "_meta": {
+    "episode_id": "1",
+    "saved_at": "2026-04-26T21:17:58.698544"
+  }
+}

@@ -1,0 +1,537 @@
+{
+  "attribution_bundle": {
+    "ticker": "AMZN",
+    "market_ratio": 0.07667717071279145,
+    "industry_ratio": 0.15369741379572024,
+    "firm_ratio": 0.7639206179168413,
+    "alpha_total": 0.0008148890919367378,
+    "market_total": -0.010952779515282264,
+    "industry_total": -0.021954564438471068,
+    "firm_total": -0.10912053767035432,
+    "episode_return_total": -0.1412129925321709,
+    "adj_r2": 0.5396593831527053,
+    "recon_error_bps": 0.0,
+    "quality_status": "PASS",
+    "reason": null,
+    "reason_code": "pass",
+    "beta_mkt_t_stat": 26.132179872046784,
+    "beta_ind_t_stat": 14.289812849973579,
+    "f_stat": 443.54495407196544,
+    "f_pvalue": 0.0,
+    "fit_quality_note": null,
+    "market_share": 0.0775621231367009,
+    "industry_share": 0.15547127813660216,
+    "firm_share": 0.7727372369471929,
+    "alpha_share": -0.0057706382204958315,
+    "near_zero_episode_return": false,
+    "industry_proxy_ticker": "XLY",
+    "industry_proxy_source": "sector",
+    "vix_estimation_p50": 16.324999809265137,
+    "vix_estimation_p95": 24.105000019073486,
+    "vix_episode_max": 21.770000457763672,
+    "vix_episode_avg": 19.695000171661377,
+    "macro_shock_suspected": false
+  },
+  "analysis_v2_bundle": {
+    "episode_id": 69,
+    "analysis": {
+      "outward": {
+        "outward_status": "SUPPORTED",
+        "manual_review": false,
+        "capability_boundary_notice": null,
+        "degraded_reason_codes": [],
+        "outward_notes": [
+          "A primary evidence-backed explanation is available.",
+          "The explanation is within the current bounded system scope."
+        ]
+      },
+      "explanation": {
+        "driver_hypothesis": "firm_dominant",
+        "headline_explanation": "This episode appears primarily company-specific, with the strongest evidence pointing to earnings results.",
+        "key_event_summaries": [
+          {
+            "role": "primary",
+            "bundle_id": "bundle-b487352828",
+            "event_type": "earnings_result",
+            "summary": "Earnings results is the primary evidence-backed driver, supported by 2 claim(s) across 2 publisher(s) (bundle status: moderate)."
+          },
+          {
+            "role": "supporting",
+            "bundle_id": "bundle-ab3c858806",
+            "event_type": "earnings_result",
+            "summary": "Earnings results provides supporting context, supported by 2 claim(s) across 1 publisher(s) (bundle status: moderate)."
+          }
+        ],
+        "explanation_confidence": "medium",
+        "manual_review": false,
+        "degraded_reason_codes": [],
+        "llm_enrichment_text": "Company-specific factors, chiefly earnings results, account for most of the episode return. Attribution metrics confirm a firm-dominant pattern, with only modest market and sector influences."
+      },
+      "attribution_summary": {
+        "driver_hypothesis": "firm_dominant",
+        "firm_ratio": 0.7639206179168413,
+        "industry_ratio": 0.15369741379572024,
+        "market_ratio": 0.07667717071279145,
+        "quality_status": "PASS",
+        "reason": null,
+        "reason_code": "pass",
+        "adj_r2": 0.5396593831527053,
+        "beta_mkt_t_stat": 26.132179872046784,
+        "beta_ind_t_stat": 14.289812849973579,
+        "f_stat": 443.54495407196544,
+        "f_pvalue": 0.0,
+        "fit_quality_note": null,
+        "market_share": 0.0775621231367009,
+        "industry_share": 0.15547127813660216,
+        "firm_share": 0.7727372369471929,
+        "alpha_share": -0.0057706382204958315,
+        "near_zero_episode_return": false,
+        "episode_return_total": -0.1412129925321709,
+        "industry_proxy_ticker": "XLY",
+        "industry_proxy_source": "sector",
+        "vix_estimation_p50": 16.324999809265137,
+        "vix_estimation_p95": 24.105000019073486,
+        "vix_episode_max": 21.770000457763672,
+        "vix_episode_avg": 19.695000171661377,
+        "macro_shock_suspected": false
+      },
+      "evidence_bundles": [
+        {
+          "bundle_id": "bundle-b487352828",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.6267,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "d16c8d6f8064294b38cb50522c040076-claim-9688b899-event-833fca4e",
+            "dcd3fa72db581130907c1297c388128c-claim-d927ab1b-event-b6e69473"
+          ],
+          "supporting_claim_ids": [
+            "d16c8d6f8064294b38cb50522c040076-claim-9688b899",
+            "dcd3fa72db581130907c1297c388128c-claim-d927ab1b"
+          ],
+          "supporting_article_ids": [
+            "d16c8d6f8064294b38cb50522c040076",
+            "dcd3fa72db581130907c1297c388128c"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.6667,
+            "source_diversity": 0.6667,
+            "time_alignment": 0.5,
+            "source_quality": 0.3,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-ab3c858806",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.62,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "2aac9838658f5b097577a88168bf8ae9-claim-8b58ffaa-event-3d1cf0c7",
+            "7d0292c112f6a5061d28d5d864cc9c71-claim-f477dbaf-event-9ca35f1f"
+          ],
+          "supporting_claim_ids": [
+            "2aac9838658f5b097577a88168bf8ae9-claim-8b58ffaa",
+            "7d0292c112f6a5061d28d5d864cc9c71-claim-f477dbaf"
+          ],
+          "supporting_article_ids": [
+            "2aac9838658f5b097577a88168bf8ae9",
+            "7d0292c112f6a5061d28d5d864cc9c71"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.6667,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-91bd514922",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "7d0292c112f6a5061d28d5d864cc9c71-claim-61081502-event-b7f3e716"
+          ],
+          "supporting_claim_ids": [
+            "7d0292c112f6a5061d28d5d864cc9c71-claim-61081502"
+          ],
+          "supporting_article_ids": [
+            "7d0292c112f6a5061d28d5d864cc9c71"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-d6643d10df",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.5533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "c286299018d770808e844f1b1b72e0e1-claim-7896831b-event-4f79f8ae"
+          ],
+          "supporting_claim_ids": [
+            "c286299018d770808e844f1b1b72e0e1-claim-7896831b"
+          ],
+          "supporting_article_ids": [
+            "c286299018d770808e844f1b1b72e0e1"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-d9a68f4d55",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "weak",
+          "bundle_score": 0.5,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "833dd5f405f9458cb6bd4b936f94f429-claim-86526206-event-719d6686",
+            "833dd5f405f9458cb6bd4b936f94f429-claim-9ef43909-event-41b11bbe"
+          ],
+          "supporting_claim_ids": [
+            "833dd5f405f9458cb6bd4b936f94f429-claim-86526206",
+            "833dd5f405f9458cb6bd4b936f94f429-claim-9ef43909"
+          ],
+          "supporting_article_ids": [
+            "833dd5f405f9458cb6bd4b936f94f429"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.6667,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.4
+          }
+        },
+        {
+          "bundle_id": "bundle-835f497b76",
+          "canonical_event_type": "capital_raise_or_balance_sheet_action",
+          "bundle_status": "weak",
+          "bundle_score": 0.4933,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "2aac9838658f5b097577a88168bf8ae9-claim-00b5fd81-event-392abf66"
+          ],
+          "supporting_claim_ids": [
+            "2aac9838658f5b097577a88168bf8ae9-claim-00b5fd81"
+          ],
+          "supporting_article_ids": [
+            "2aac9838658f5b097577a88168bf8ae9"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.7
+          }
+        },
+        {
+          "bundle_id": "bundle-9bd2753cae",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "weak",
+          "bundle_score": 0.4933,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "e5a3fe857a674a3f3abb7fc26c909b20-claim-77c46aa9-event-81220ad7"
+          ],
+          "supporting_claim_ids": [
+            "e5a3fe857a674a3f3abb7fc26c909b20-claim-77c46aa9"
+          ],
+          "supporting_article_ids": [
+            "e5a3fe857a674a3f3abb7fc26c909b20"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.7
+          }
+        },
+        {
+          "bundle_id": "bundle-89455abfbb",
+          "canonical_event_type": "guidance_update",
+          "bundle_status": "weak",
+          "bundle_score": 0.4933,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "2aac9838658f5b097577a88168bf8ae9-claim-67ca0aeb-event-8f38f61f"
+          ],
+          "supporting_claim_ids": [
+            "2aac9838658f5b097577a88168bf8ae9-claim-67ca0aeb"
+          ],
+          "supporting_article_ids": [
+            "2aac9838658f5b097577a88168bf8ae9"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.7
+          }
+        },
+        {
+          "bundle_id": "bundle-37dded123a",
+          "canonical_event_type": "analyst_or_investor_view_change",
+          "bundle_status": "weak",
+          "bundle_score": 0.3733,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "b84a931d7d619d1e5fd3716b018cd0f6-claim-4ebcc5ae-event-baaf3afa"
+          ],
+          "supporting_claim_ids": [
+            "b84a931d7d619d1e5fd3716b018cd0f6-claim-4ebcc5ae"
+          ],
+          "supporting_article_ids": [
+            "b84a931d7d619d1e5fd3716b018cd0f6"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.3,
+            "episode_relevance": 0.4
+          }
+        },
+        {
+          "bundle_id": "bundle-ac94ec1567",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "weak",
+          "bundle_score": 0.3733,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "5b63fb84b089428231dc6dd89d252a24-claim-61f3f4c8-event-788d0200"
+          ],
+          "supporting_claim_ids": [
+            "5b63fb84b089428231dc6dd89d252a24-claim-61f3f4c8"
+          ],
+          "supporting_article_ids": [
+            "5b63fb84b089428231dc6dd89d252a24"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.3,
+            "episode_relevance": 0.4
+          }
+        }
+      ],
+      "supporting_articles": [
+        {
+          "article_id": "d16c8d6f8064294b38cb50522c040076",
+          "provider": "GoogleRSS",
+          "publisher": "Seeking Alpha",
+          "scope_tag": "company",
+          "headline": "Amazon.com, Inc. 2025 Q4 - Results - Earnings Call Presentation (NASDAQ:AMZN) 2026-02-05 - Seeking Alpha",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNdWJBLXBmbHhtZ3NtMnpfSVhNT1ZyUGRIV3RmN0NFQ0dZeEhrLXd6ZzA1amVzYTNvQ3Z3NVNnZ2JiYy1SRmx6ZWRlS2tlRktkZHhKR0hVT3kxdnQ0VVlEOHBNTzYwdThlbF9hWDRYYzlDMVllcm1DTUN3dzZhZndCU1ZsczJOdWVlNk1rd2JnbjBmNUJ4bGFxdXFEWlBweWc?oc=5\" target=\"_blank\">Amazon.com, Inc. 2025 Q4 - Results - Earnings Call Presentation (NASDAQ:AMZN) 2026-02-05</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Seeking Alpha</font>",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdWJBLXBmbHhtZ3NtMnpfSVhNT1ZyUGRIV3RmN0NFQ0dZeEhrLXd6ZzA1amVzYTNvQ3Z3NVNnZ2JiYy1SRmx6ZWRlS2tlRktkZHhKR0hVT3kxdnQ0VVlEOHBNTzYwdThlbF9hWDRYYzlDMVllcm1DTUN3dzZhZndCU1ZsczJOdWVlNk1rd2JnbjBmNUJ4bGFxdXFEWlBweWc?oc=5",
+          "published_at": "2026-02-05",
+          "rank_score": 0.45730170607566833,
+          "rank_position": 1,
+          "supporting_bundle_ids": [
+            "bundle-b487352828"
+          ]
+        },
+        {
+          "article_id": "7d0292c112f6a5061d28d5d864cc9c71",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Amazon.com Q4 Earnings Call Highlights",
+          "summary_or_snippet": "Amazon.com (NASDAQ:AMZN) executives highlighted accelerating AWS growth, expanding retail and advertising momentum, and heavy capital investment plans during the company’s fourth-quarter 2025 earnings call on February 5, 2026. Management reported $213.4 billion in quarterly revenue and pointed to de",
+          "url": "https://finnhub.io/api/news?id=f5948d61bd07a44766aedbebb1b15bc875882a31f5324a24af2394d59dd0c23e",
+          "published_at": "2026-02-06",
+          "rank_score": 0.20929783582687378,
+          "rank_position": 2,
+          "supporting_bundle_ids": [
+            "bundle-ab3c858806",
+            "bundle-91bd514922"
+          ]
+        },
+        {
+          "article_id": "c286299018d770808e844f1b1b72e0e1",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Amazon.com Inc (AMZN) Q4 2025 Earnings Call Highlights: Strong Revenue Growth and AI Expansion",
+          "summary_or_snippet": "Amazon.com Inc (AMZN) reports a 12% revenue increase and accelerated AWS growth, while navigating special charges and capital expenditure demands.",
+          "url": "https://finnhub.io/api/news?id=25cc0cd24c8926fece28920ee3567516cffa8ca661a0b95b196720ef7a57ea81",
+          "published_at": "2026-02-06",
+          "rank_score": -0.1655462086200714,
+          "rank_position": 3,
+          "supporting_bundle_ids": [
+            "bundle-d6643d10df"
+          ]
+        },
+        {
+          "article_id": "e5a3fe857a674a3f3abb7fc26c909b20",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Here's What Key Metrics Tell Us About Amazon (AMZN) Q4 Earnings",
+          "summary_or_snippet": "While the top- and bottom-line numbers for Amazon (AMZN) give a sense of how the business performed in the quarter ended December 2025, it could be worth looking at how some of its key metrics compare to Wall Street estimates and year-ago values.",
+          "url": "https://finnhub.io/api/news?id=c45abffafca806a677199e6faf5c7a47ceb3d5e15b345b8afc2cc5f4b0a8f95b",
+          "published_at": "2026-02-05",
+          "rank_score": -0.7395562529563904,
+          "rank_position": 5,
+          "supporting_bundle_ids": [
+            "bundle-9bd2753cae"
+          ]
+        },
+        {
+          "article_id": "2aac9838658f5b097577a88168bf8ae9",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Amazon.com (AMZN) Is Down 7.9% After Unveiling Massive 2026 AI Capex Plan And Softer Guidance - What's Changed",
+          "summary_or_snippet": "In early February 2026, Amazon reported fourth-quarter 2025 results showing revenue of US$213.39 billion and full-year 2025 revenue of US$716.92 billion, while also guiding first-quarter 2026 net sales to US$173.5–178.5 billion and announcing plans for up to US$200 billion of 2026 capital expenditures focused on AI, cloud, robotics, and infrastructure. The company paired accelerating AWS growth and higher annual net income of US$77.67 billion with markedly higher spending plans that could...",
+          "url": "https://finnhub.io/api/news?id=e17ab20157c30da0a0e955dba8bc45f982655b0ed962b1f67ab073aa8b4ba8b3",
+          "published_at": "2026-02-06",
+          "rank_score": -0.836334228515625,
+          "rank_position": 6,
+          "supporting_bundle_ids": [
+            "bundle-ab3c858806",
+            "bundle-835f497b76",
+            "bundle-89455abfbb"
+          ]
+        },
+        {
+          "article_id": "5b63fb84b089428231dc6dd89d252a24",
+          "provider": "GoogleRSS",
+          "publisher": "Investing.com Canada",
+          "scope_tag": "company",
+          "headline": "Amazon.com Inc (AMZN) Q4 2025 Earnings Call Highlights: Strong Revenue Growth and AI Expansion By GuruFocus - Investing.com Canada",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdE00Z1M5QWxyYlJQYnI5ZmVCVXVWTUFOb2hKcTYzVWJndUdWa0tGMU1sVW5vaFFLMFBRUGpKR3lvQlBEV0lKWW9yZUVtNHBZLW5yUjZ1NExrRXNRYm96NzFlU29wQ3J4YzJqR1NrWVhvanBTVFpQU1pjSzlqRVQ5TGFka2xIY0Jrb2pjaEhLaThOcnZ6Q2JCTDlXN0c2NG1MYTJoc25SdXpkaGozWGJjYnMwT0Nwa3M5R1VRQWFkSVJyd2VwZzBfZC1jRGFFVFNwZzRRWkdDUWk?oc=5\" target=\"_blank\">Amazon.com Inc (AMZN) Q4 2025 Earnings Call Highlights: Strong Revenue Growth and AI Expansion By GuruFocus</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Investing.com Canada</font>",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdE00Z1M5QWxyYlJQYnI5ZmVCVXVWTUFOb2hKcTYzVWJndUdWa0tGMU1sVW5vaFFLMFBRUGpKR3lvQlBEV0lKWW9yZUVtNHBZLW5yUjZ1NExrRXNRYm96NzFlU29wQ3J4YzJqR1NrWVhvanBTVFpQU1pjSzlqRVQ5TGFka2xIY0Jrb2pjaEhLaThOcnZ6Q2JCTDlXN0c2NG1MYTJoc25SdXpkaGozWGJjYnMwT0Nwa3M5R1VRQWFkSVJyd2VwZzBfZC1jRGFFVFNwZzRRWkdDUWk?oc=5",
+          "published_at": "2026-02-05",
+          "rank_score": -0.8683450818061829,
+          "rank_position": 7,
+          "supporting_bundle_ids": [
+            "bundle-ac94ec1567"
+          ]
+        },
+        {
+          "article_id": "b84a931d7d619d1e5fd3716b018cd0f6",
+          "provider": "GoogleRSS",
+          "publisher": "Meyka",
+          "scope_tag": "company",
+          "headline": "UBS Maintains Buy on Amazon.com, Inc. (AMZN) Feb 02, 2026 - Meyka",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxPa2U2bTZEaVNHOTBsWm1xWlJib3lPeDdtOXR5d2E1WGFRa205eGI1aUJmMjNuRUk2Y1ZZUzVhWnprLVFBV3dzeDRGUkExa3cwNFNmSUtxeFVoQUp2NVRkNzlXZzZicHZ5cm54elFHbjN0NDBmeEt0MXczYkRDbmZqbGFNZnRfUVU?oc=5\" target=\"_blank\">UBS Maintains Buy on Amazon.com, Inc. (AMZN) Feb 02, 2026</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Meyka</font>",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPa2U2bTZEaVNHOTBsWm1xWlJib3lPeDdtOXR5d2E1WGFRa205eGI1aUJmMjNuRUk2Y1ZZUzVhWnprLVFBV3dzeDRGUkExa3cwNFNmSUtxeFVoQUp2NVRkNzlXZzZicHZ5cm54elFHbjN0NDBmeEt0MXczYkRDbmZqbGFNZnRfUVU?oc=5",
+          "published_at": "2026-02-03",
+          "rank_score": -0.929275631904602,
+          "rank_position": 8,
+          "supporting_bundle_ids": [
+            "bundle-37dded123a"
+          ]
+        },
+        {
+          "article_id": "dcd3fa72db581130907c1297c388128c",
+          "provider": "GoogleRSS",
+          "publisher": "Meyka",
+          "scope_tag": "company",
+          "headline": "AMZN Amazon.com, Inc. (NASDAQ) 05 Feb 2026 earnings close: AWS margin outlook key - Meyka",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQSDE1MHRpdEdhNTFuSnV3Z010aVROTmRCLTZqMjJBNUQ0eS1Ba0dFUU1DTEFrVUNXN0E0TmptU0tobEZfdjl4T1B5eFNOdEJSQVJIX1UzYmJMWlBWcl9raktEblJDNjJDdFZCbmF5ZnE1UmxpTXZMMUF6Y2xDek1xSXlVQjNRYWY2cERtNVYwYkNINDVkbWVNSjZSR2JZZDhwNmpIU0ZiTQ?oc=5\" target=\"_blank\">AMZN Amazon.com, Inc. (NASDAQ) 05 Feb 2026 earnings close: AWS margin outlook key</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Meyka</font>",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSDE1MHRpdEdhNTFuSnV3Z010aVROTmRCLTZqMjJBNUQ0eS1Ba0dFUU1DTEFrVUNXN0E0TmptU0tobEZfdjl4T1B5eFNOdEJSQVJIX1UzYmJMWlBWcl9raktEblJDNjJDdFZCbmF5ZnE1UmxpTXZMMUF6Y2xDek1xSXlVQjNRYWY2cERtNVYwYkNINDVkbWVNSjZSR2JZZDhwNmpIU0ZiTQ?oc=5",
+          "published_at": "2026-02-05",
+          "rank_score": -0.976949155330658,
+          "rank_position": 9,
+          "supporting_bundle_ids": [
+            "bundle-b487352828"
+          ]
+        },
+        {
+          "article_id": "833dd5f405f9458cb6bd4b936f94f429",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Amazon (AMZN) Lags Q4 Earnings Estimates",
+          "summary_or_snippet": "Amazon (AMZN) delivered earnings and revenue surprises of -1.52% and +0.91%, respectively, for the quarter ended December 2025. Do the numbers hold clues to what lies ahead for the stock?",
+          "url": "https://finnhub.io/api/news?id=ecc6a57df56a008d74eb40816613f4113c49d8050af7b528c91a6f33746dcbff",
+          "published_at": "2026-02-05",
+          "rank_score": -0.9927574396133423,
+          "rank_position": 10,
+          "supporting_bundle_ids": [
+            "bundle-d9a68f4d55"
+          ]
+        }
+      ],
+      "routing_mode": "dominant"
+    },
+    "attribution": {
+      "driver_hypothesis": "firm_dominant",
+      "firm_ratio": 0.7639206179168413,
+      "industry_ratio": 0.15369741379572024,
+      "market_ratio": 0.07667717071279145,
+      "quality_status": "PASS",
+      "reason": null,
+      "reason_code": "pass",
+      "adj_r2": 0.5396593831527053,
+      "beta_mkt_t_stat": 26.132179872046784,
+      "beta_ind_t_stat": 14.289812849973579,
+      "f_stat": 443.54495407196544,
+      "f_pvalue": 0.0,
+      "fit_quality_note": null,
+      "market_share": 0.0775621231367009,
+      "industry_share": 0.15547127813660216,
+      "firm_share": 0.7727372369471929,
+      "alpha_share": -0.0057706382204958315,
+      "near_zero_episode_return": false,
+      "episode_return_total": -0.1412129925321709,
+      "industry_proxy_ticker": "XLY",
+      "industry_proxy_source": "sector",
+      "vix_estimation_p50": 16.324999809265137,
+      "vix_estimation_p95": 24.105000019073486,
+      "vix_episode_max": 21.770000457763672,
+      "vix_episode_avg": 19.695000171661377,
+      "macro_shock_suspected": false
+    },
+    "decision": {
+      "outward_status": "SUPPORTED",
+      "manual_review": false,
+      "degraded_reason_codes": [],
+      "capability_boundary_notice": null,
+      "outward_notes": [
+        "A primary evidence-backed explanation is available.",
+        "The explanation is within the current bounded system scope."
+      ],
+      "driver_hypothesis": "firm_dominant",
+      "headline_explanation": "This episode appears primarily company-specific, with the strongest evidence pointing to earnings results.",
+      "explanation_confidence": "medium"
+    },
+    "branch_plan": {
+      "routing_mode": "dominant",
+      "primary_mode": "firm",
+      "default_modes": [
+        "firm"
+      ],
+      "lazy_modes": [
+        "industry",
+        "market"
+      ]
+    }
+  },
+  "_meta": {
+    "episode_id": "69",
+    "saved_at": "2026-04-27T03:21:09.384949"
+  }
+}
