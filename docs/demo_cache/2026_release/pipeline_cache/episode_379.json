@@ -1,0 +1,467 @@
+{
+  "attribution_bundle": {
+    "ticker": "ADBE",
+    "market_ratio": 0.07211589063645991,
+    "industry_ratio": 0.11406482669029237,
+    "firm_ratio": 0.7744561471740254,
+    "alpha_total": -0.0048630319314246565,
+    "market_total": -0.008909398971409757,
+    "industry_total": 0.014091887940641116,
+    "firm_total": -0.09567848001513549,
+    "episode_return_total": -0.09535902297732879,
+    "adj_r2": 0.41993054527866347,
+    "recon_error_bps": 0.0,
+    "quality_status": "PASS",
+    "reason": null,
+    "reason_code": "pass",
+    "beta_mkt_t_stat": 11.923574505212011,
+    "beta_ind_t_stat": 9.615427748941823,
+    "f_stat": 274.2841378776783,
+    "f_pvalue": 0.0,
+    "fit_quality_note": null,
+    "market_share": 0.09343005720106769,
+    "industry_share": -0.14777718458788533,
+    "firm_share": 1.0033500452063424,
+    "alpha_share": 0.05099708218047517,
+    "near_zero_episode_return": false,
+    "industry_proxy_ticker": "IGV",
+    "industry_proxy_source": "sub_industry",
+    "vix_estimation_p50": 16.324999809265137,
+    "vix_estimation_p95": 24.322499752044678,
+    "vix_episode_max": 27.290000915527344,
+    "vix_episode_avg": 26.236666997273762,
+    "macro_shock_suspected": true
+  },
+  "analysis_v2_bundle": {
+    "episode_id": 379,
+    "analysis": {
+      "outward": {
+        "outward_status": "SUPPORTED",
+        "manual_review": true,
+        "capability_boundary_notice": null,
+        "degraded_reason_codes": [
+          "macro_shock_suspected"
+        ],
+        "outward_notes": [
+          "A primary evidence-backed explanation is available.",
+          "The explanation is within the current bounded system scope.",
+          "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+        ]
+      },
+      "explanation": {
+        "driver_hypothesis": "firm_dominant",
+        "headline_explanation": "This episode appears primarily company-specific, with the strongest evidence pointing to earnings results.",
+        "key_event_summaries": [
+          {
+            "role": "primary",
+            "bundle_id": "bundle-ce25663c97",
+            "event_type": "earnings_result",
+            "summary": "Earnings results is the primary evidence-backed driver, supported by 4 claim(s) across 3 publisher(s) (bundle status: strong)."
+          },
+          {
+            "role": "supporting",
+            "bundle_id": "bundle-33d44e8005",
+            "event_type": "earnings_result",
+            "summary": "Earnings results provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: moderate)."
+          }
+        ],
+        "explanation_confidence": "high",
+        "manual_review": false,
+        "degraded_reason_codes": [],
+        "llm_enrichment_text": "The evidence indicates company-specific downside primarily linked to earnings results, with strong and consistent backing from multiple publishers. Broader market and industry moves appear less influential during the episode window."
+      },
+      "attribution_summary": {
+        "driver_hypothesis": "firm_dominant",
+        "firm_ratio": 0.7744561471740254,
+        "industry_ratio": 0.11406482669029237,
+        "market_ratio": 0.07211589063645991,
+        "quality_status": "PASS",
+        "reason": null,
+        "reason_code": "pass",
+        "adj_r2": 0.41993054527866347,
+        "beta_mkt_t_stat": 11.923574505212011,
+        "beta_ind_t_stat": 9.615427748941823,
+        "f_stat": 274.2841378776783,
+        "f_pvalue": 0.0,
+        "fit_quality_note": null,
+        "market_share": 0.09343005720106769,
+        "industry_share": -0.14777718458788533,
+        "firm_share": 1.0033500452063424,
+        "alpha_share": 0.05099708218047517,
+        "near_zero_episode_return": false,
+        "episode_return_total": -0.09535902297732879,
+        "industry_proxy_ticker": "IGV",
+        "industry_proxy_source": "sub_industry",
+        "vix_estimation_p50": 16.324999809265137,
+        "vix_estimation_p95": 24.322499752044678,
+        "vix_episode_max": 27.290000915527344,
+        "vix_episode_avg": 26.236666997273762,
+        "macro_shock_suspected": true
+      },
+      "evidence_bundles": [
+        {
+          "bundle_id": "bundle-ce25663c97",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "strong",
+          "bundle_score": 0.79,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "44776f96ea2efe81a90fed91f190f89c-claim-4ddf07d8-event-1a04e4e2",
+            "511a2199e2ca6d16f1bf6c2f46ec1491-claim-49504aa3-event-64f89737",
+            "86200a50f4ff79fbe3870e5054660e9e-claim-154b5fb4-event-af2819ea",
+            "9cb273fba15d8c578ddd79fe4fd0cc1d-claim-f5252cb8-event-f2046135"
+          ],
+          "supporting_claim_ids": [
+            "44776f96ea2efe81a90fed91f190f89c-claim-4ddf07d8",
+            "511a2199e2ca6d16f1bf6c2f46ec1491-claim-49504aa3",
+            "86200a50f4ff79fbe3870e5054660e9e-claim-154b5fb4",
+            "9cb273fba15d8c578ddd79fe4fd0cc1d-claim-f5252cb8"
+          ],
+          "supporting_article_ids": [
+            "44776f96ea2efe81a90fed91f190f89c",
+            "511a2199e2ca6d16f1bf6c2f46ec1491",
+            "86200a50f4ff79fbe3870e5054660e9e",
+            "9cb273fba15d8c578ddd79fe4fd0cc1d"
+          ],
+          "score_breakdown": {
+            "corroboration": 1.0,
+            "source_diversity": 1.0,
+            "time_alignment": 0.5,
+            "source_quality": 0.45,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-33d44e8005",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.6533,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "be92113507644171337e4cb923fa7eaf-claim-7de547b0-event-0cb905d6"
+          ],
+          "supporting_claim_ids": [
+            "be92113507644171337e4cb923fa7eaf-claim-7de547b0"
+          ],
+          "supporting_article_ids": [
+            "be92113507644171337e4cb923fa7eaf"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 1.0,
+            "source_quality": 0.6,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-021f3d8a7e",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "moderate",
+          "bundle_score": 0.6267,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "1bd6a9c6f55cf0a3a02b5217aa899491-claim-f840d226-event-51b00cbc",
+            "b3e0e5aab8f829321ecda98089a95798-claim-d1933ef6-event-812c07f3"
+          ],
+          "supporting_claim_ids": [
+            "1bd6a9c6f55cf0a3a02b5217aa899491-claim-f840d226",
+            "b3e0e5aab8f829321ecda98089a95798-claim-d1933ef6"
+          ],
+          "supporting_article_ids": [
+            "1bd6a9c6f55cf0a3a02b5217aa899491",
+            "b3e0e5aab8f829321ecda98089a95798"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.6667,
+            "source_diversity": 0.6667,
+            "time_alignment": 0.5,
+            "source_quality": 0.3,
+            "episode_relevance": 1.0
+          }
+        },
+        {
+          "bundle_id": "bundle-1ea97668f8",
+          "canonical_event_type": "management_or_governance_change",
+          "bundle_status": "weak",
+          "bundle_score": 0.4933,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "a0cdb126fce8a1c10b2e2008bc0b1e4e-claim-7e2d9e8b-event-d3b43338"
+          ],
+          "supporting_claim_ids": [
+            "a0cdb126fce8a1c10b2e2008bc0b1e4e-claim-7e2d9e8b"
+          ],
+          "supporting_article_ids": [
+            "a0cdb126fce8a1c10b2e2008bc0b1e4e"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.6,
+            "episode_relevance": 0.7
+          }
+        },
+        {
+          "bundle_id": "bundle-7548b4934a",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "weak",
+          "bundle_score": 0.4333,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "04dac86593b43bd074edc6b3b31a368d-claim-4c6aa956-event-9b05d33a"
+          ],
+          "supporting_claim_ids": [
+            "04dac86593b43bd074edc6b3b31a368d-claim-4c6aa956"
+          ],
+          "supporting_article_ids": [
+            "04dac86593b43bd074edc6b3b31a368d"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.3,
+            "episode_relevance": 0.7
+          }
+        },
+        {
+          "bundle_id": "bundle-295f759afc",
+          "canonical_event_type": "earnings_result",
+          "bundle_status": "weak",
+          "bundle_score": 0.3733,
+          "eligible_for_explanation": true,
+          "supporting_event_ids": [
+            "718bc12bc30fec67d8b348c95bb1f4a4-claim-12dddb38-event-20000ba7"
+          ],
+          "supporting_claim_ids": [
+            "718bc12bc30fec67d8b348c95bb1f4a4-claim-12dddb38"
+          ],
+          "supporting_article_ids": [
+            "718bc12bc30fec67d8b348c95bb1f4a4"
+          ],
+          "score_breakdown": {
+            "corroboration": 0.3333,
+            "source_diversity": 0.3333,
+            "time_alignment": 0.5,
+            "source_quality": 0.3,
+            "episode_relevance": 0.4
+          }
+        }
+      ],
+      "supporting_articles": [
+        {
+          "article_id": "be92113507644171337e4cb923fa7eaf",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Adobe Delivers Record Q1 Results",
+          "summary_or_snippet": "SAN JOSE, Calif., March 12, 2026--Adobe (Nasdaq:ADBE), the global technology leader that unleashes creativity and productivity for individuals and businesses through innovative platforms and tools, today reported financial results for its first quarter FY2026 ended Feb. 27, 2026.",
+          "url": "https://finnhub.io/api/news?id=a0640b2251540487ced231131c3f7934f0af326f3bd72b3c18424b83ca142d93",
+          "published_at": "2026-03-12",
+          "rank_score": 1.0592535734176636,
+          "rank_position": 1,
+          "supporting_bundle_ids": [
+            "bundle-33d44e8005"
+          ]
+        },
+        {
+          "article_id": "b3e0e5aab8f829321ecda98089a95798",
+          "provider": "GoogleRSS",
+          "publisher": "Seeking Alpha",
+          "scope_tag": "company",
+          "headline": "Adobe Inc. 2026 Q1 - Results - Earnings Call Presentation (NASDAQ:ADBE) 2026-03-12 - Seeking Alpha",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPUjFxOERwQ1dyRzRLZEJJMHZPeGtiRk1xSmc3TXB1Rk1yVlhnU0RaOHl3Zlh0X0xEZ1d1TlRIUlF6THMtWHp3X1JPOXdWNU5nNVVlSFBQVWxnTUtmSk44Zk1fZTU2aXpGaWZCLTQyd0htZWxRaWlXM2d1eHpXNVJqOWYwbXh3aktUWTVENXpWaHBQX2xja1c1Xw?oc=5\" target=\"_blank\">Adobe Inc. 2026 Q1 - Results - Earnings Call Presentation (NASDAQ:ADBE) 2026-03-12</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Seeking Alpha</font>",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUjFxOERwQ1dyRzRLZEJJMHZPeGtiRk1xSmc3TXB1Rk1yVlhnU0RaOHl3Zlh0X0xEZ1d1TlRIUlF6THMtWHp3X1JPOXdWNU5nNVVlSFBQVWxnTUtmSk44Zk1fZTU2aXpGaWZCLTQyd0htZWxRaWlXM2d1eHpXNVJqOWYwbXh3aktUWTVENXpWaHBQX2xja1c1Xw?oc=5",
+          "published_at": "2026-03-12",
+          "rank_score": 0.9927439093589783,
+          "rank_position": 2,
+          "supporting_bundle_ids": [
+            "bundle-021f3d8a7e"
+          ]
+        },
+        {
+          "article_id": "44776f96ea2efe81a90fed91f190f89c",
+          "provider": "GoogleRSS",
+          "publisher": "MarketBeat",
+          "scope_tag": "company",
+          "headline": "Adobe (NASDAQ:ADBE) Releases Q2 2026 Earnings Guidance - MarketBeat",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQczU4TWttVmJ1Y2tEelA2RlB4V0FkUzNwYjRpUWx2Vl8tdXRKa1VLUnF3cy1iS3BxcWt2Rmh1cV9FRGtHbWdGSjZySGdVb1NObFVKMmtWbWZrRlliNTVzS1lBUXJKc1hsdWZwUnVYQThGYWJuekF2cU8yWHdhYl9iVXlueENlcmRvSl9ONWx1UHhYUmNhdXBDN3JKU0NoMzVMVkVRYkRQOGM?oc=5\" target=\"_blank\">Adobe (NASDAQ:ADBE) Releases Q2 2026 Earnings Guidance</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">MarketBeat</font>",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQczU4TWttVmJ1Y2tEelA2RlB4V0FkUzNwYjRpUWx2Vl8tdXRKa1VLUnF3cy1iS3BxcWt2Rmh1cV9FRGtHbWdGSjZySGdVb1NObFVKMmtWbWZrRlliNTVzS1lBUXJKc1hsdWZwUnVYQThGYWJuekF2cU8yWHdhYl9iVXlueENlcmRvSl9ONWx1UHhYUmNhdXBDN3JKU0NoMzVMVkVRYkRQOGM?oc=5",
+          "published_at": "2026-03-12",
+          "rank_score": 0.21677465736865997,
+          "rank_position": 3,
+          "supporting_bundle_ids": [
+            "bundle-ce25663c97"
+          ]
+        },
+        {
+          "article_id": "9cb273fba15d8c578ddd79fe4fd0cc1d",
+          "provider": "GoogleRSS",
+          "publisher": "The Globe and Mail",
+          "scope_tag": "company",
+          "headline": "Adobe (ADBE) Q1 2026 Earnings Call Transcript - The Globe and Mail",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOWTlaOUZMeVVfMzkwMTgtTnRuLUVFV2wyN1h4ZDlDaHdvbXM1R0c5UVRFQVlhZk9waWotR0xNSkdTckZqOWdid2RIN29vc09LVXJGTl9KdVJXYnpCM1RjXzdxVm8zSFpuTXVNM05ERU5idjlSVWMxQlphc0NnVy1KMnNqY3NtYkxJVnZENHRHcnVsTUhUdks5MEVwck4wVXlBejc1WXpBa0k2a1pvN2E0X0c2VUhiQVVCaUpVQTBn?oc=5\" target=\"_blank\">Adobe (ADBE) Q1 2026 Earnings Call Transcript</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Globe and Mail</font>",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOWTlaOUZMeVVfMzkwMTgtTnRuLUVFV2wyN1h4ZDlDaHdvbXM1R0c5UVRFQVlhZk9waWotR0xNSkdTckZqOWdid2RIN29vc09LVXJGTl9KdVJXYnpCM1RjXzdxVm8zSFpuTXVNM05ERU5idjlSVWMxQlphc0NnVy1KMnNqY3NtYkxJVnZENHRHcnVsTUhUdks5MEVwck4wVXlBejc1WXpBa0k2a1pvN2E0X0c2VUhiQVVCaUpVQTBn?oc=5",
+          "published_at": "2026-03-12",
+          "rank_score": -0.015597760677337646,
+          "rank_position": 4,
+          "supporting_bundle_ids": [
+            "bundle-ce25663c97"
+          ]
+        },
+        {
+          "article_id": "a0cdb126fce8a1c10b2e2008bc0b1e4e",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Adobe Inc (ADBE) Q1 2026 Earnings Call Highlights: Strong Revenue Growth and AI Expansion Amid ...",
+          "summary_or_snippet": "Adobe Inc (ADBE) reports robust financial performance with significant AI-driven growth, while navigating CEO transition and evolving market dynamics.",
+          "url": "https://finnhub.io/api/news?id=a25fd1c9695d1ecd9093db980f2166102811b0a7cfca6c0ea6f7ac3a654f9163",
+          "published_at": "2026-03-13",
+          "rank_score": -0.10678532719612122,
+          "rank_position": 5,
+          "supporting_bundle_ids": [
+            "bundle-1ea97668f8"
+          ]
+        },
+        {
+          "article_id": "04dac86593b43bd074edc6b3b31a368d",
+          "provider": "GoogleRSS",
+          "publisher": "Insider Monkey",
+          "scope_tag": "company",
+          "headline": "Adobe Inc. (NASDAQ:ADBE) Q1 2026 Earnings Call Transcript - Insider Monkey",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNaTRqcm5JQlJQclI1SEdaNm1SWE9BMEFJWjEtc0lCdzFIUUxKX21QdWtFNkg0c3EwTU9mZ21hUTlKU2hSLTdGaEZqS2gyNTBHNkMyMVFHQlp2M1RHZnJsZ0FfcFJwQ0JxZkpIOG9aN0g1S3N2NVU4eE9EZHM1MXJXaVltX1QxVWV2Qm5PbVYtR01WUWRxeHhELVY3SHZCZw?oc=5\" target=\"_blank\">Adobe Inc. (NASDAQ:ADBE) Q1 2026 Earnings Call Transcript</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Insider Monkey</font>",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaTRqcm5JQlJQclI1SEdaNm1SWE9BMEFJWjEtc0lCdzFIUUxKX21QdWtFNkg0c3EwTU9mZ21hUTlKU2hSLTdGaEZqS2gyNTBHNkMyMVFHQlp2M1RHZnJsZ0FfcFJwQ0JxZkpIOG9aN0g1S3N2NVU4eE9EZHM1MXJXaVltX1QxVWV2Qm5PbVYtR01WUWRxeHhELVY3SHZCZw?oc=5",
+          "published_at": "2026-03-13",
+          "rank_score": -0.35294806957244873,
+          "rank_position": 6,
+          "supporting_bundle_ids": [
+            "bundle-7548b4934a"
+          ]
+        },
+        {
+          "article_id": "86200a50f4ff79fbe3870e5054660e9e",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Adobe Q1 Earnings Call Highlights",
+          "summary_or_snippet": "Adobe (NASDAQ:ADBE) executives used the company’s fiscal first-quarter 2026 earnings call to highlight an AI-driven product transition that management said is expanding user adoption and enterprise demand, while also acknowledging a faster-than-expected decline in its traditional standalone stock bu",
+          "url": "https://finnhub.io/api/news?id=a4cddf30025b570aefefc1e926fbc542bd3a38356f7f8d2accb7445b44d357ef",
+          "published_at": "2026-03-12",
+          "rank_score": -0.53367018699646,
+          "rank_position": 7,
+          "supporting_bundle_ids": [
+            "bundle-ce25663c97"
+          ]
+        },
+        {
+          "article_id": "1bd6a9c6f55cf0a3a02b5217aa899491",
+          "provider": "GoogleRSS",
+          "publisher": "Quiver Quantitative",
+          "scope_tag": "company",
+          "headline": "Adobe Inc. (ADBE) Releases Q1 2026 Earnings: Revenue and EPS Miss, Strong Cash Flow - Quiver Quantitative",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTklWZlVNMGtlbm1RYjZQMnRUbmV0YXpfM29yWjdFNmM4Y1pIUXZpT3FXV3l5cDZWNUdoUUhjLWVJQzVJV1VlRHdiYnl2TUFzLTFIZ2QwakVEZmZEM01zRDdNRnl0MEFuQjRWQkk1Ym5VNjB5dlBKSUk4eG5DQ3VCNlo3U2tvRjhmU2JlRG5mc3pIalhkaDBoeF9XRlh4dFc3S0p1ZE5WaWlQUnQtbE50WF9qQjRoNF9hUU5GMTNtaExIQQ?oc=5\" target=\"_blank\">Adobe Inc. (ADBE) Releases Q1 2026 Earnings: Revenue and EPS Miss, Strong Cash Flow</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Quiver Quantitative</font>",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTklWZlVNMGtlbm1RYjZQMnRUbmV0YXpfM29yWjdFNmM4Y1pIUXZpT3FXV3l5cDZWNUdoUUhjLWVJQzVJV1VlRHdiYnl2TUFzLTFIZ2QwakVEZmZEM01zRDdNRnl0MEFuQjRWQkk1Ym5VNjB5dlBKSUk4eG5DQ3VCNlo3U2tvRjhmU2JlRG5mc3pIalhkaDBoeF9XRlh4dFc3S0p1ZE5WaWlQUnQtbE50WF9qQjRoNF9hUU5GMTNtaExIQQ?oc=5",
+          "published_at": "2026-03-12",
+          "rank_score": -0.5387141704559326,
+          "rank_position": 8,
+          "supporting_bundle_ids": [
+            "bundle-021f3d8a7e"
+          ]
+        },
+        {
+          "article_id": "511a2199e2ca6d16f1bf6c2f46ec1491",
+          "provider": "Finnhub",
+          "publisher": "Yahoo",
+          "scope_tag": "company",
+          "headline": "Adobe Systems (ADBE) Q1 Earnings and Revenues Top Estimates",
+          "summary_or_snippet": "Adobe (ADBE) delivered earnings and revenue surprises of +3.10% and +1.86%, respectively, for the quarter ended February 2026. Do the numbers hold clues to what lies ahead for the stock?",
+          "url": "https://finnhub.io/api/news?id=ea3194e63b5d1941a1c81939039ee1dea841da600c1b43707d8b9e1bb37e752a",
+          "published_at": "2026-03-12",
+          "rank_score": -0.5547917485237122,
+          "rank_position": 9,
+          "supporting_bundle_ids": [
+            "bundle-ce25663c97"
+          ]
+        },
+        {
+          "article_id": "718bc12bc30fec67d8b348c95bb1f4a4",
+          "provider": "GoogleRSS",
+          "publisher": "Investing.com Canada",
+          "scope_tag": "company",
+          "headline": "Adobe Inc (ADBE) Q1 2026 Earnings Call Highlights: Strong Revenue Growth and AI Expansion Amid ... By GuruFocus - Investing.com Canada",
+          "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxOR0RaWUtrNUl6al9vVHkwZ0lpNml6cmxXczRMVERtdC00U3dHcnJkcmo0X1dOU3A0YWtlRnJ6ZmhTSkc1RzA2RHlMa0ZfeEVCTHluZTdNN1NTeHFhdEZ3RjBtcWtBNFVYLUdaX3NXdDFGUEpwNFkzUTZmMUFBQjNSN2ktQS0welR2Mi1HdzhYVVl0NUt6UndISlNuQ1RLc2lkTkFLcW1wdEZiOHJYcVBxanEwWGVoejkyZ1BZTnBjc2gxX0kyTzV4NmFyVWhkckdRT1RtVlc5bzZmclU?oc=5\" target=\"_blank\">Adobe Inc (ADBE) Q1 2026 Earnings Call Highlights: Strong Revenue Growth and AI Expansion Amid ... By GuruFocus</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Investing.com Canada</font>",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOR0RaWUtrNUl6al9vVHkwZ0lpNml6cmxXczRMVERtdC00U3dHcnJkcmo0X1dOU3A0YWtlRnJ6ZmhTSkc1RzA2RHlMa0ZfeEVCTHluZTdNN1NTeHFhdEZ3RjBtcWtBNFVYLUdaX3NXdDFGUEpwNFkzUTZmMUFBQjNSN2ktQS0welR2Mi1HdzhYVVl0NUt6UndISlNuQ1RLc2lkTkFLcW1wdEZiOHJYcVBxanEwWGVoejkyZ1BZTnBjc2gxX0kyTzV4NmFyVWhkckdRT1RtVlc5bzZmclU?oc=5",
+          "published_at": "2026-03-12",
+          "rank_score": -0.5965324640274048,
+          "rank_position": 10,
+          "supporting_bundle_ids": [
+            "bundle-295f759afc"
+          ]
+        }
+      ],
+      "routing_mode": "dominant"
+    },
+    "attribution": {
+      "driver_hypothesis": "firm_dominant",
+      "firm_ratio": 0.7744561471740254,
+      "industry_ratio": 0.11406482669029237,
+      "market_ratio": 0.07211589063645991,
+      "quality_status": "PASS",
+      "reason": null,
+      "reason_code": "pass",
+      "adj_r2": 0.41993054527866347,
+      "beta_mkt_t_stat": 11.923574505212011,
+      "beta_ind_t_stat": 9.615427748941823,
+      "f_stat": 274.2841378776783,
+      "f_pvalue": 0.0,
+      "fit_quality_note": null,
+      "market_share": 0.09343005720106769,
+      "industry_share": -0.14777718458788533,
+      "firm_share": 1.0033500452063424,
+      "alpha_share": 0.05099708218047517,
+      "near_zero_episode_return": false,
+      "episode_return_total": -0.09535902297732879,
+      "industry_proxy_ticker": "IGV",
+      "industry_proxy_source": "sub_industry",
+      "vix_estimation_p50": 16.324999809265137,
+      "vix_estimation_p95": 24.322499752044678,
+      "vix_episode_max": 27.290000915527344,
+      "vix_episode_avg": 26.236666997273762,
+      "macro_shock_suspected": true
+    },
+    "decision": {
+      "outward_status": "SUPPORTED",
+      "manual_review": true,
+      "degraded_reason_codes": [
+        "macro_shock_suspected"
+      ],
+      "capability_boundary_notice": null,
+      "outward_notes": [
+        "A primary evidence-backed explanation is available.",
+        "The explanation is within the current bounded system scope.",
+        "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+      ],
+      "driver_hypothesis": "firm_dominant",
+      "headline_explanation": "This episode appears primarily company-specific, with the strongest evidence pointing to earnings results.",
+      "explanation_confidence": "high"
+    },
+    "branch_plan": {
+      "routing_mode": "dominant",
+      "primary_mode": "firm",
+      "default_modes": [
+        "firm"
+      ],
+      "lazy_modes": [
+        "industry",
+        "market"
+      ]
+    }
+  },
+  "_meta": {
+    "episode_id": "379",
+    "saved_at": "2026-04-27T03:25:27.386759"
+  }
+}

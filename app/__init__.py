@@ -42,5 +42,11 @@ def create_app():
     with app.app_context():
         db.create_all()
         _ensure_startup_company_data()
+        try:
+            from app.demo_seed import install_demo_seed
+
+            install_demo_seed(app, verbose=True)
+        except Exception as exc:  # noqa: BLE001
+            print(f"[startup] Demo seed install failed; server will still start: {exc}")
 
     return app

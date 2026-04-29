@@ -1,0 +1,1309 @@
+{
+  "attribution_bundle": {
+    "ticker": "XOM",
+    "market_ratio": 0.21067657490776373,
+    "industry_ratio": 0.6487483472425439,
+    "firm_ratio": 8.057992421935146e-05,
+    "alpha_total": 0.009997441813343656,
+    "market_total": -0.014991525149918524,
+    "industry_total": -0.046164255176033175,
+    "firm_total": -5.7339832918862355e-06,
+    "episode_return_total": -0.05116407249589994,
+    "adj_r2": 0.816553803604205,
+    "recon_error_bps": 6.938893903907228e-14,
+    "quality_status": "PASS",
+    "reason": null,
+    "reason_code": "pass",
+    "beta_mkt_t_stat": -22.875945988685114,
+    "beta_ind_t_stat": 40.20777409340601,
+    "f_stat": 1681.3240782137752,
+    "f_pvalue": 0.0,
+    "fit_quality_note": null,
+    "market_share": 0.29300883253810334,
+    "industry_share": 0.902278746081688,
+    "firm_share": 0.00011207050205680424,
+    "alpha_share": -0.19539964912184826,
+    "near_zero_episode_return": false,
+    "industry_proxy_ticker": "XLE",
+    "industry_proxy_source": "sector",
+    "vix_estimation_p50": 16.324999809265137,
+    "vix_estimation_p95": 24.885000705718994,
+    "vix_episode_max": 25.780000686645508,
+    "vix_episode_avg": 22.103333791097004,
+    "macro_shock_suspected": true
+  },
+  "analysis_v2_bundle": {
+    "episode_id": 119,
+    "analysis": {
+      "routing_mode": "mixed",
+      "aggregate_outward": {
+        "outward_status": "LIMITED_EVIDENCE",
+        "manual_review": true,
+        "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+        "degraded_reason_codes": [
+          "macro_shock_suspected",
+          "only_weak_support"
+        ],
+        "outward_notes": [
+          "Mixed episodes are summarized conservatively from the most restrictive branch result.",
+          "A primary evidence-backed explanation is available.",
+          "The explanation is within the current bounded system scope.",
+          "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture.",
+          "Manual review is recommended.",
+          "Branch outward statuses: market=SUPPORTED, industry=LIMITED_EVIDENCE, firm=SUPPORTED."
+        ]
+      },
+      "aggregate_explanation": {
+        "driver_hypothesis": "mixed",
+        "headline_explanation": "This episode remains mixed across market, industry, and firm explanation branches. Review the branch-specific analyses below rather than relying on a single dominant narrative.",
+        "explanation_confidence": "low",
+        "default_visible_modes": [
+          "market",
+          "industry",
+          "firm"
+        ],
+        "branch_summaries": [
+          {
+            "branch_mode": "market",
+            "outward_status": "SUPPORTED",
+            "driver_hypothesis": "market_branch",
+            "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to analyst or investor view changes.",
+            "explanation_confidence": "medium"
+          },
+          {
+            "branch_mode": "industry",
+            "outward_status": "LIMITED_EVIDENCE",
+            "driver_hypothesis": "industry_branch",
+            "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+            "explanation_confidence": "low"
+          },
+          {
+            "branch_mode": "firm",
+            "outward_status": "SUPPORTED",
+            "driver_hypothesis": "firm_branch",
+            "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to earnings results.",
+            "explanation_confidence": "medium"
+          }
+        ]
+      },
+      "attribution_summary": {
+        "driver_hypothesis": "mixed",
+        "firm_ratio": 8.057992421935146e-05,
+        "industry_ratio": 0.6487483472425439,
+        "market_ratio": 0.21067657490776373,
+        "quality_status": "PASS",
+        "reason": null,
+        "reason_code": "pass",
+        "adj_r2": 0.816553803604205,
+        "beta_mkt_t_stat": -22.875945988685114,
+        "beta_ind_t_stat": 40.20777409340601,
+        "f_stat": 1681.3240782137752,
+        "f_pvalue": 0.0,
+        "fit_quality_note": null,
+        "market_share": 0.29300883253810334,
+        "industry_share": 0.902278746081688,
+        "firm_share": 0.00011207050205680424,
+        "alpha_share": -0.19539964912184826,
+        "near_zero_episode_return": false,
+        "episode_return_total": -0.05116407249589994,
+        "industry_proxy_ticker": "XLE",
+        "industry_proxy_source": "sector",
+        "vix_estimation_p50": 16.324999809265137,
+        "vix_estimation_p95": 24.885000705718994,
+        "vix_episode_max": 25.780000686645508,
+        "vix_episode_avg": 22.103333791097004,
+        "macro_shock_suspected": true
+      },
+      "branch_analyses": [
+        {
+          "branch_mode": "market",
+          "analysis": {
+            "outward": {
+              "outward_status": "SUPPORTED",
+              "manual_review": true,
+              "capability_boundary_notice": null,
+              "degraded_reason_codes": [
+                "macro_shock_suspected"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "The explanation is within the current bounded system scope.",
+                "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "market_branch",
+              "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to analyst or investor view changes.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-20b89c2fc6",
+                  "event_type": "analyst_or_investor_view_change",
+                  "summary": "Analyst or investor view changes is the primary evidence-backed driver, supported by 2 claim(s) across 2 publisher(s) (bundle status: moderate)."
+                },
+                {
+                  "role": "supporting",
+                  "bundle_id": "bundle-928474f1c3",
+                  "event_type": "macro_or_sector_shock",
+                  "summary": "Macro or sector developments provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                }
+              ],
+              "explanation_confidence": "medium",
+              "manual_review": false,
+              "degraded_reason_codes": [],
+              "llm_enrichment_text": "The episode is primarily attributed to shifts in analyst or investor sentiment, with moderate supporting evidence. Weak additional context notes potential macro or sector developments, but direct impact is less strongly supported."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "market_branch",
+              "firm_ratio": 8.057992421935146e-05,
+              "industry_ratio": 0.6487483472425439,
+              "market_ratio": 0.21067657490776373,
+              "quality_status": "PASS",
+              "reason": null,
+              "reason_code": "pass",
+              "adj_r2": 0.816553803604205,
+              "beta_mkt_t_stat": -22.875945988685114,
+              "beta_ind_t_stat": 40.20777409340601,
+              "f_stat": 1681.3240782137752,
+              "f_pvalue": 0.0,
+              "fit_quality_note": null,
+              "market_share": 0.29300883253810334,
+              "industry_share": 0.902278746081688,
+              "firm_share": 0.00011207050205680424,
+              "alpha_share": -0.19539964912184826,
+              "near_zero_episode_return": false,
+              "episode_return_total": -0.05116407249589994,
+              "industry_proxy_ticker": "XLE",
+              "industry_proxy_source": "sector",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.885000705718994,
+              "vix_episode_max": 25.780000686645508,
+              "vix_episode_avg": 22.103333791097004,
+              "macro_shock_suspected": true
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-20b89c2fc6",
+                "canonical_event_type": "analyst_or_investor_view_change",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5667,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "49ac71182dbf434cfcc462c30f58b1d6-claim-b7e8ba0f-event-5e536296",
+                  "5beaaf391201e66821f14f2f0db0721d-claim-49e45c87-event-3d715fe4"
+                ],
+                "supporting_claim_ids": [
+                  "49ac71182dbf434cfcc462c30f58b1d6-claim-b7e8ba0f",
+                  "5beaaf391201e66821f14f2f0db0721d-claim-49e45c87"
+                ],
+                "supporting_article_ids": [
+                  "49ac71182dbf434cfcc462c30f58b1d6",
+                  "5beaaf391201e66821f14f2f0db0721d"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.6667,
+                  "source_diversity": 0.6667,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-928474f1c3",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "a9fd29bfcbf1288a72c94f6afe089d93-claim-69d45aaa-event-3ddbd44c"
+                ],
+                "supporting_claim_ids": [
+                  "a9fd29bfcbf1288a72c94f6afe089d93-claim-69d45aaa"
+                ],
+                "supporting_article_ids": [
+                  "a9fd29bfcbf1288a72c94f6afe089d93"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-478e1de414",
+                "canonical_event_type": "analyst_or_investor_view_change",
+                "bundle_status": "weak",
+                "bundle_score": 0.4733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "75f8a23c8576726a7b9bf1881ee03c07-claim-416fde78-event-12fabcab"
+                ],
+                "supporting_claim_ids": [
+                  "75f8a23c8576726a7b9bf1881ee03c07-claim-416fde78"
+                ],
+                "supporting_article_ids": [
+                  "75f8a23c8576726a7b9bf1881ee03c07"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-4f1e3c3a1e",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "685ac0355941532d217638e090f55c1a-claim-3f79c05e-event-a9e58dd4"
+                ],
+                "supporting_claim_ids": [
+                  "685ac0355941532d217638e090f55c1a-claim-3f79c05e"
+                ],
+                "supporting_article_ids": [
+                  "685ac0355941532d217638e090f55c1a"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-ce4ca8ee78",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "e9c595bb8b5d22f748950b69745289e5-claim-e6da120e-event-61165ba6"
+                ],
+                "supporting_claim_ids": [
+                  "e9c595bb8b5d22f748950b69745289e5-claim-e6da120e"
+                ],
+                "supporting_article_ids": [
+                  "e9c595bb8b5d22f748950b69745289e5"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "a9fd29bfcbf1288a72c94f6afe089d93",
+                "provider": "GoogleRSS",
+                "publisher": "Sunlife",
+                "scope_tag": "market",
+                "headline": "Q1 2026 market update: Inflation concerns reemerge - Sunlife",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTE13NmNUdTlyVVV5YUVXWC1TdkMtVTJZOFI0b1dUOFJBMnBhYllUMW1VcUpmTWdPVFBURERrakV3dWRHaXUzTWhfWlJTUWt4RVAwMXk0U1lXMUNRYTd5WVRBMTZKaDdXQnFxVDJ0LVc2TQ?oc=5\" target=\"_blank\">Q1 2026 market update: Inflation concerns reemerge</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Sunlife</font>",
+                "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE13NmNUdTlyVVV5YUVXWC1TdkMtVTJZOFI0b1dUOFJBMnBhYllUMW1VcUpmTWdPVFBURERrakV3dWRHaXUzTWhfWlJTUWt4RVAwMXk0U1lXMUNRYTd5WVRBMTZKaDdXQnFxVDJ0LVc2TQ?oc=5",
+                "published_at": "2026-04-07",
+                "rank_score": -6.666006565093994,
+                "rank_position": 1,
+                "supporting_bundle_ids": [
+                  "bundle-928474f1c3"
+                ]
+              },
+              {
+                "article_id": "5beaaf391201e66821f14f2f0db0721d",
+                "provider": "GoogleRSS",
+                "publisher": "Invezz",
+                "scope_tag": "market",
+                "headline": "UBS cuts S&P 500 2026 targets amid rising oil prices - Invezz",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxOcVlyMzVVOTJDQUxWTVk2ckI5ZG53a0NlSWNaUl83NDlodzV6SVNTSEpRbVVla1lVRzRHdmluUkVaWGwtdGRMWFRmVlNpeFQ1VWNDVGpiY2ZOWVhvRDhxWlVfWEF1aUg3NE05RkZmM3NWbDc5Tm5QdGVqdVVsS2dnOGdQUWY5Zy03dzBaM0ZXU3g3Wkt3TVMtQ0JRdFo?oc=5\" target=\"_blank\">UBS cuts S&P 500 2026 targets amid rising oil prices</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Invezz</font>",
+                "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOcVlyMzVVOTJDQUxWTVk2ckI5ZG53a0NlSWNaUl83NDlodzV6SVNTSEpRbVVla1lVRzRHdmluUkVaWGwtdGRMWFRmVlNpeFQ1VWNDVGpiY2ZOWVhvRDhxWlVfWEF1aUg3NE05RkZmM3NWbDc5Tm5QdGVqdVVsS2dnOGdQUWY5Zy03dzBaM0ZXU3g3Wkt3TVMtQ0JRdFo?oc=5",
+                "published_at": "2026-04-07",
+                "rank_score": -7.29438591003418,
+                "rank_position": 4,
+                "supporting_bundle_ids": [
+                  "bundle-20b89c2fc6"
+                ]
+              },
+              {
+                "article_id": "49ac71182dbf434cfcc462c30f58b1d6",
+                "provider": "GoogleRSS",
+                "publisher": "Global Banking & Finance Review",
+                "scope_tag": "market",
+                "headline": "UBS Lowers 2026 S&P 500 Target Amid Middle East Conflict, Oil Risk - Global Banking & Finance Review",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ3ZZOEFvRmd0VXFRVjJuYTBfNFlFWlRNVHdEY3ZUT2NZU1R3c1JCbjJyMXFFb3F1TnhBQW5iTVUyMDl3ZDk3WlRyOWtROWVkSDViTmRldXBlMV9hZXh6MVUza1VCVG9xUU1kN01Gb09DT1IxU0pPU0x0R3ltdEtBdXhRNEoyMElzY0o1bFBWYVpOMWptV3FqNlBZaHo?oc=5\" target=\"_blank\">UBS Lowers 2026 S&P 500 Target Amid Middle East Conflict, Oil Risk</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Global Banking & Finance Review</font>",
+                "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZ3ZZOEFvRmd0VXFRVjJuYTBfNFlFWlRNVHdEY3ZUT2NZU1R3c1JCbjJyMXFFb3F1TnhBQW5iTVUyMDl3ZDk3WlRyOWtROWVkSDViTmRldXBlMV9hZXh6MVUza1VCVG9xUU1kN01Gb09DT1IxU0pPU0x0R3ltdEtBdXhRNEoyMElzY0o1bFBWYVpOMWptV3FqNlBZaHo?oc=5",
+                "published_at": "2026-04-07",
+                "rank_score": -7.539865016937256,
+                "rank_position": 5,
+                "supporting_bundle_ids": [
+                  "bundle-20b89c2fc6"
+                ]
+              },
+              {
+                "article_id": "e9c595bb8b5d22f748950b69745289e5",
+                "provider": "GoogleRSS",
+                "publisher": "Discovery Alert",
+                "scope_tag": "market",
+                "headline": "US-Iran Ceasefire: Oil Price & Stock Market Impact - Discovery Alert",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxONGhFRDNIWV9iVEtmSmxPaU9oUjFnbHpDZWFnUTA4ejVGeVYzQ0hDQkJEN2xXeEUzVlVHaGtaZ0RGdFBMLXdCeXFrN3lNcTc3bzBUY3pBTzJpa1dsMlFvc0RjaEZ0SmJJSHVlYkJqeUFESmJUWHA3aGw0djdtdHZvaWJiOGFZUQ?oc=5\" target=\"_blank\">US-Iran Ceasefire: Oil Price & Stock Market Impact</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Discovery Alert</font>",
+                "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONGhFRDNIWV9iVEtmSmxPaU9oUjFnbHpDZWFnUTA4ejVGeVYzQ0hDQkJEN2xXeEUzVlVHaGtaZ0RGdFBMLXdCeXFrN3lNcTc3bzBUY3pBTzJpa1dsMlFvc0RjaEZ0SmJJSHVlYkJqeUFESmJUWHA3aGw0djdtdHZvaWJiOGFZUQ?oc=5",
+                "published_at": "2026-04-08",
+                "rank_score": -8.85350513458252,
+                "rank_position": 7,
+                "supporting_bundle_ids": [
+                  "bundle-ce4ca8ee78"
+                ]
+              },
+              {
+                "article_id": "75f8a23c8576726a7b9bf1881ee03c07",
+                "provider": "GoogleRSS",
+                "publisher": "TradingView",
+                "scope_tag": "market",
+                "headline": "US-Iran truce sparks global rally, but uncertainity keeps analysts cautious - TradingView",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPZFVOdkJ3U0RlenVnUTNCRHBvMVdUdWxCdTAxcEtPbHBTZGtJdkZZcGpIWVZEZlRkUXRpZFlKX19NaFo1Z2R1SVdTUW0takh0RG9NM3NYRFdNMy02NldZN2lMWFRvNnNNQzczdHBPb09kX295aXlIY1pIcFdsWlVyaFJSNVJrMVY1UUx5Rzc5ZWJTUFVRZmtLdDlXN3BBT01ZYlBueXdiZFh1MWMzQXBOUk5DMHBNT3p4SHptTWNYZFpoUGJRc2ZJeHQyUQ?oc=5\" target=\"_blank\">US-Iran truce sparks global rally, but uncertainity keeps analysts cautious</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TradingView</font>",
+                "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZFVOdkJ3U0RlenVnUTNCRHBvMVdUdWxCdTAxcEtPbHBTZGtJdkZZcGpIWVZEZlRkUXRpZFlKX19NaFo1Z2R1SVdTUW0takh0RG9NM3NYRFdNMy02NldZN2lMWFRvNnNNQzczdHBPb09kX295aXlIY1pIcFdsWlVyaFJSNVJrMVY1UUx5Rzc5ZWJTUFVRZmtLdDlXN3BBT01ZYlBueXdiZFh1MWMzQXBOUk5DMHBNT3p4SHptTWNYZFpoUGJRc2ZJeHQyUQ?oc=5",
+                "published_at": "2026-04-08",
+                "rank_score": -9.157132148742676,
+                "rank_position": 8,
+                "supporting_bundle_ids": [
+                  "bundle-478e1de414"
+                ]
+              },
+              {
+                "article_id": "685ac0355941532d217638e090f55c1a",
+                "provider": "GoogleRSS",
+                "publisher": "KITCO",
+                "scope_tag": "market",
+                "headline": "FOMC minutes show a Fed worried about the impacts of Iran and viewing a rate hike as likely as a cut as risks become increasingly two-sided - KITCO",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPeEJGaWZROWYxT25Xbkp3am03RXl0dzRnU2RYWURoTHRmVGtrSk02X1hHWVAxb0JBcl9VVkh0TzlLbGNYVjA5MERZR3QwU2JFRXBlWHh2anNzT0Z3OXd1dnZIajI5RkFSMzRZTlUtdlpmREVaeFVabGN0dkxjckNwenBJeW16LUZtbW10bmtIcEdtMVhNMy1jb3M0SWpaajluMmJscXlKZWJoWFRjU3QxNHk3dVB6NDg?oc=5\" target=\"_blank\">FOMC minutes show a Fed worried about the impacts of Iran and viewing a rate hike as likely as a cut as risks become increasingly two-sided</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">KITCO</font>",
+                "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeEJGaWZROWYxT25Xbkp3am03RXl0dzRnU2RYWURoTHRmVGtrSk02X1hHWVAxb0JBcl9VVkh0TzlLbGNYVjA5MERZR3QwU2JFRXBlWHh2anNzT0Z3OXd1dnZIajI5RkFSMzRZTlUtdlpmREVaeFVabGN0dkxjckNwenBJeW16LUZtbW10bmtIcEdtMVhNMy1jb3M0SWpaajluMmJscXlKZWJoWFRjU3QxNHk3dVB6NDg?oc=5",
+                "published_at": "2026-04-08",
+                "rank_score": -9.233970642089844,
+                "rank_position": 9,
+                "supporting_bundle_ids": [
+                  "bundle-4f1e3c3a1e"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "SUPPORTED",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "macro_shock_suspected"
+            ],
+            "capability_boundary_notice": null,
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "The explanation is within the current bounded system scope.",
+              "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+            ],
+            "driver_hypothesis": "market_branch",
+            "headline_explanation": "Within the market-focused explanation branch, the strongest retained evidence points to analyst or investor view changes.",
+            "explanation_confidence": "medium"
+          }
+        },
+        {
+          "branch_mode": "industry",
+          "analysis": {
+            "outward": {
+              "outward_status": "LIMITED_EVIDENCE",
+              "manual_review": true,
+              "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+              "degraded_reason_codes": [
+                "only_weak_support",
+                "macro_shock_suspected"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "Manual review is recommended.",
+                "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "industry_branch",
+              "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-7b04606ed7",
+                  "event_type": "macro_or_sector_shock",
+                  "summary": "Macro or sector developments is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                },
+                {
+                  "role": "supporting",
+                  "bundle_id": "bundle-bf74e531d6",
+                  "event_type": "macro_or_sector_shock",
+                  "summary": "Macro or sector developments provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: weak)."
+                }
+              ],
+              "explanation_confidence": "low",
+              "manual_review": true,
+              "degraded_reason_codes": [
+                "only_weak_support"
+              ],
+              "llm_enrichment_text": "Macro or sector developments are the most relevant influence for XOM during this window, though evidence is limited and support is weak. No strong company-specific or industry-specific drivers are indicated."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "industry_branch",
+              "firm_ratio": 8.057992421935146e-05,
+              "industry_ratio": 0.6487483472425439,
+              "market_ratio": 0.21067657490776373,
+              "quality_status": "PASS",
+              "reason": null,
+              "reason_code": "pass",
+              "adj_r2": 0.816553803604205,
+              "beta_mkt_t_stat": -22.875945988685114,
+              "beta_ind_t_stat": 40.20777409340601,
+              "f_stat": 1681.3240782137752,
+              "f_pvalue": 0.0,
+              "fit_quality_note": null,
+              "market_share": 0.29300883253810334,
+              "industry_share": 0.902278746081688,
+              "firm_share": 0.00011207050205680424,
+              "alpha_share": -0.19539964912184826,
+              "near_zero_episode_return": false,
+              "episode_return_total": -0.05116407249589994,
+              "industry_proxy_ticker": "XLE",
+              "industry_proxy_source": "sector",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.885000705718994,
+              "vix_episode_max": 25.780000686645508,
+              "vix_episode_avg": 22.103333791097004,
+              "macro_shock_suspected": true
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-7b04606ed7",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "9e11bd38d99199e89e5a5df5d431d0d3-claim-566f0b61-event-33e959ae"
+                ],
+                "supporting_claim_ids": [
+                  "9e11bd38d99199e89e5a5df5d431d0d3-claim-566f0b61"
+                ],
+                "supporting_article_ids": [
+                  "9e11bd38d99199e89e5a5df5d431d0d3"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-e66517eb04",
+                "canonical_event_type": "unknown",
+                "bundle_status": "weak",
+                "bundle_score": 0.4733,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "3d56db8a9413ba097714a7beb088dd53-claim-a8b7bfbc-event-de758fce"
+                ],
+                "supporting_claim_ids": [
+                  "3d56db8a9413ba097714a7beb088dd53-claim-a8b7bfbc"
+                ],
+                "supporting_article_ids": [
+                  "3d56db8a9413ba097714a7beb088dd53"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-e786b81b65",
+                "canonical_event_type": "unknown",
+                "bundle_status": "weak",
+                "bundle_score": 0.4733,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "c37326fb1163ba5a833575e5e106af4f-claim-aa775cec-event-71c3ad24"
+                ],
+                "supporting_claim_ids": [
+                  "c37326fb1163ba5a833575e5e106af4f-claim-aa775cec"
+                ],
+                "supporting_article_ids": [
+                  "c37326fb1163ba5a833575e5e106af4f"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-bf74e531d6",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "658401041f5e74f339de4b9a5c2cdf22-claim-e1c64386-event-1aae571a"
+                ],
+                "supporting_claim_ids": [
+                  "658401041f5e74f339de4b9a5c2cdf22-claim-e1c64386"
+                ],
+                "supporting_article_ids": [
+                  "658401041f5e74f339de4b9a5c2cdf22"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-6702c39159",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "c37326fb1163ba5a833575e5e106af4f-claim-6ff20243-event-d93df86e"
+                ],
+                "supporting_claim_ids": [
+                  "c37326fb1163ba5a833575e5e106af4f-claim-6ff20243"
+                ],
+                "supporting_article_ids": [
+                  "c37326fb1163ba5a833575e5e106af4f"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "9e11bd38d99199e89e5a5df5d431d0d3",
+                "provider": "GoogleRSS",
+                "publisher": "IndexBox",
+                "scope_tag": "industry",
+                "headline": "Oil Stocks Drop: Market Reaction to Iran Ceasefire & Sanctions Talks | 2026 - News and Statistics - IndexBox",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxNQkwwUnEtQzFlSjZnemlBYUtZVDhvLXZ0dkJ2V0E2RTFkMlo2QVVlSzhaTDE1VzBXaHRsLWdrY2I1XzdKdVJ1NkFDbFBGWFpqeUd6SlNtb0JwaXRVeXJrblhqeVY2eGxSUDN4WUVPWTJpbWF5Nzc4UWVweWptWmxpVHNpZ3RVdVVMeGNnczJ4TTZ1blJQ?oc=5\" target=\"_blank\">Oil Stocks Drop: Market Reaction to Iran Ceasefire & Sanctions Talks | 2026 - News and Statistics</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">IndexBox</font>",
+                "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQkwwUnEtQzFlSjZnemlBYUtZVDhvLXZ0dkJ2V0E2RTFkMlo2QVVlSzhaTDE1VzBXaHRsLWdrY2I1XzdKdVJ1NkFDbFBGWFpqeUd6SlNtb0JwaXRVeXJrblhqeVY2eGxSUDN4WUVPWTJpbWF5Nzc4UWVweWptWmxpVHNpZ3RVdVVMeGNnczJ4TTZ1blJQ?oc=5",
+                "published_at": "2026-04-09",
+                "rank_score": -6.948181629180908,
+                "rank_position": 3,
+                "supporting_bundle_ids": [
+                  "bundle-7b04606ed7"
+                ]
+              },
+              {
+                "article_id": "658401041f5e74f339de4b9a5c2cdf22",
+                "provider": "GoogleRSS",
+                "publisher": "XTB.com",
+                "scope_tag": "industry",
+                "headline": "US Open: Wall Street surges amid the Middle East ceasefire 📈Technology stocks rise, energy sector in panic - XTB.com",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxNWG9OYjN2SEFQZkVVTjR1TXN2dlRQVGxvczl1cndtVG5WWXFyaE01dzhIbk90cnJLbW0wdVpvUW02VVNpYkZKMmlqV25zNnZ6WjlNd2NNZW1raW51eHJ3WDZ0aU9GcnZ5MkJ5UGtfUDVyZzlSUC13TXJLN19XUk1MX3JObHB2RlBfeU5CeWVOQk01ZjJsMEZGQUFSSGFtMEZqQlBuaVZ2WEMzZkJTb01FWUppUFVuTXZvMXo1OEFQWXZ2TEJCR0M0ZTJrMS1WYnlxeWVHUFRIUTM1RGNhX1pJX2d6RkJ0WTBiUFdmcU9wWmh5cm8?oc=5\" target=\"_blank\">US Open: Wall Street surges amid the Middle East ceasefire 📈Technology stocks rise, energy sector in panic</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">XTB.com</font>",
+                "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNWG9OYjN2SEFQZkVVTjR1TXN2dlRQVGxvczl1cndtVG5WWXFyaE01dzhIbk90cnJLbW0wdVpvUW02VVNpYkZKMmlqV25zNnZ6WjlNd2NNZW1raW51eHJ3WDZ0aU9GcnZ5MkJ5UGtfUDVyZzlSUC13TXJLN19XUk1MX3JObHB2RlBfeU5CeWVOQk01ZjJsMEZGQUFSSGFtMEZqQlBuaVZ2WEMzZkJTb01FWUppUFVuTXZvMXo1OEFQWXZ2TEJCR0M0ZTJrMS1WYnlxeWVHUFRIUTM1RGNhX1pJX2d6RkJ0WTBiUFdmcU9wWmh5cm8?oc=5",
+                "published_at": "2026-04-08",
+                "rank_score": -8.10069751739502,
+                "rank_position": 8,
+                "supporting_bundle_ids": [
+                  "bundle-bf74e531d6"
+                ]
+              },
+              {
+                "article_id": "3d56db8a9413ba097714a7beb088dd53",
+                "provider": "GoogleRSS",
+                "publisher": "Dailyhunt",
+                "scope_tag": "industry",
+                "headline": "Energy sector stocks rally today, April 8: BPCL surge 6.70%, Petronet LNG up 4.87%, Chennai Petroleum jumps 3.69% - Dailyhunt",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMinwJBVV95cUxPc1JVdEhzcENUekx6Tlg0SmZ5emNtZEhDS0kyMUE0bzRDSGt3WmhIeXJWWS00cWRXZVRFQVh0NjRZZUVWU0xvSWhkZW5ZR3ZHWG42NGh0YW81RDhLZ3Jid1NTTWR0dEVXMjJubGE1Q3kzY1N1b0s4Y2tvdnFwZmlrN18yb2lrZHZneWx2YnpNOWJBdGhFLVFORWk1ZXNLU3pCOFFuZVlKeGt0TGZqcDFOMmpVM0pGYjZ1TW5fOFFTV2ZQUGxUVkxTOXZxT0U2R1BwUkcta2x4NGNpOGZvUGhJLURMaUItTHJkSmQxY1VldDFITUwzcnNzcGJDUzlOb3dheWxvcUR1djNQV2RlakdnVDBRSjhORUY3T0plQ2NIRQ?oc=5\" target=\"_blank\">Energy sector stocks rally today, April 8: BPCL surge 6.70%, Petronet LNG up 4.87%, Chennai Petroleum jumps 3.69%</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Dailyhunt</font>",
+                "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPc1JVdEhzcENUekx6Tlg0SmZ5emNtZEhDS0kyMUE0bzRDSGt3WmhIeXJWWS00cWRXZVRFQVh0NjRZZUVWU0xvSWhkZW5ZR3ZHWG42NGh0YW81RDhLZ3Jid1NTTWR0dEVXMjJubGE1Q3kzY1N1b0s4Y2tvdnFwZmlrN18yb2lrZHZneWx2YnpNOWJBdGhFLVFORWk1ZXNLU3pCOFFuZVlKeGt0TGZqcDFOMmpVM0pGYjZ1TW5fOFFTV2ZQUGxUVkxTOXZxT0U2R1BwUkcta2x4NGNpOGZvUGhJLURMaUItTHJkSmQxY1VldDFITUwzcnNzcGJDUzlOb3dheWxvcUR1djNQV2RlakdnVDBRSjhORUY3T0plQ2NIRQ?oc=5",
+                "published_at": "2026-04-08",
+                "rank_score": -8.775226593017578,
+                "rank_position": 9,
+                "supporting_bundle_ids": [
+                  "bundle-e66517eb04"
+                ]
+              },
+              {
+                "article_id": "c37326fb1163ba5a833575e5e106af4f",
+                "provider": "GoogleRSS",
+                "publisher": "Meyka",
+                "scope_tag": "industry",
+                "headline": "ASX Midday Update: Energy Stocks Rally, IT Sector Slips - Meyka",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxQdGtJbTlPVG90dHdxWGpTczR6LU41ajJYVWh1OVV1QTRQWjlNTHdRQWU2VF8za1VBM3gtdTlaYkM5bGtTRUllTGN6TWxsMFpQUjFxVDNEY0prMS1kV1lHR0RCZDBIZEU4cnJWSVZSUVJZeGNhelRxUXhOWXh2dmpfV2ExZw?oc=5\" target=\"_blank\">ASX Midday Update: Energy Stocks Rally, IT Sector Slips</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Meyka</font>",
+                "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQdGtJbTlPVG90dHdxWGpTczR6LU41ajJYVWh1OVV1QTRQWjlNTHdRQWU2VF8za1VBM3gtdTlaYkM5bGtTRUllTGN6TWxsMFpQUjFxVDNEY0prMS1kV1lHR0RCZDBIZEU4cnJWSVZSUVJZeGNhelRxUXhOWXh2dmpfV2ExZw?oc=5",
+                "published_at": "2026-04-09",
+                "rank_score": -8.785036087036133,
+                "rank_position": 10,
+                "supporting_bundle_ids": [
+                  "bundle-e786b81b65",
+                  "bundle-6702c39159"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "LIMITED_EVIDENCE",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "only_weak_support",
+              "macro_shock_suspected"
+            ],
+            "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "Manual review is recommended.",
+              "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+            ],
+            "driver_hypothesis": "industry_branch",
+            "headline_explanation": "Within the industry-focused explanation branch, the strongest retained evidence points to macro or sector developments.",
+            "explanation_confidence": "low"
+          }
+        },
+        {
+          "branch_mode": "firm",
+          "analysis": {
+            "outward": {
+              "outward_status": "SUPPORTED",
+              "manual_review": true,
+              "capability_boundary_notice": null,
+              "degraded_reason_codes": [
+                "macro_shock_suspected"
+              ],
+              "outward_notes": [
+                "A primary evidence-backed explanation is available.",
+                "The explanation is within the current bounded system scope.",
+                "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+              ]
+            },
+            "explanation": {
+              "driver_hypothesis": "firm_branch",
+              "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to earnings results.",
+              "key_event_summaries": [
+                {
+                  "role": "primary",
+                  "bundle_id": "bundle-1721408042",
+                  "event_type": "earnings_result",
+                  "summary": "Earnings results is the primary evidence-backed driver, supported by 1 claim(s) across 1 publisher(s) (bundle status: moderate)."
+                },
+                {
+                  "role": "supporting",
+                  "bundle_id": "bundle-6e39e8077a",
+                  "event_type": "capital_raise_or_balance_sheet_action",
+                  "summary": "Balance-sheet or financing actions provides supporting context, supported by 1 claim(s) across 1 publisher(s) (bundle status: moderate)."
+                }
+              ],
+              "explanation_confidence": "medium",
+              "manual_review": false,
+              "degraded_reason_codes": [],
+              "llm_enrichment_text": "Earnings results form the main evidence-backed explanation for Exxon Mobil’s episode return, with balance-sheet or financing actions providing additional context. Overall evidence strength is moderate."
+            },
+            "attribution_summary": {
+              "driver_hypothesis": "firm_branch",
+              "firm_ratio": 8.057992421935146e-05,
+              "industry_ratio": 0.6487483472425439,
+              "market_ratio": 0.21067657490776373,
+              "quality_status": "PASS",
+              "reason": null,
+              "reason_code": "pass",
+              "adj_r2": 0.816553803604205,
+              "beta_mkt_t_stat": -22.875945988685114,
+              "beta_ind_t_stat": 40.20777409340601,
+              "f_stat": 1681.3240782137752,
+              "f_pvalue": 0.0,
+              "fit_quality_note": null,
+              "market_share": 0.29300883253810334,
+              "industry_share": 0.902278746081688,
+              "firm_share": 0.00011207050205680424,
+              "alpha_share": -0.19539964912184826,
+              "near_zero_episode_return": false,
+              "episode_return_total": -0.05116407249589994,
+              "industry_proxy_ticker": "XLE",
+              "industry_proxy_source": "sector",
+              "vix_estimation_p50": 16.324999809265137,
+              "vix_estimation_p95": 24.885000705718994,
+              "vix_episode_max": 25.780000686645508,
+              "vix_episode_avg": 22.103333791097004,
+              "macro_shock_suspected": true
+            },
+            "evidence_bundles": [
+              {
+                "bundle_id": "bundle-1721408042",
+                "canonical_event_type": "earnings_result",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096-claim-9b9e5945-event-e340b7be"
+                ],
+                "supporting_claim_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096-claim-9b9e5945"
+                ],
+                "supporting_article_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 1.0,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-6e39e8077a",
+                "canonical_event_type": "capital_raise_or_balance_sheet_action",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5533,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61-claim-75395582-event-c398b435"
+                ],
+                "supporting_claim_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61-claim-75395582"
+                ],
+                "supporting_article_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-ed13e90923",
+                "canonical_event_type": "mna_or_strategic_transaction",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5533,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61-claim-dee939d0-event-cad2776b"
+                ],
+                "supporting_claim_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61-claim-dee939d0"
+                ],
+                "supporting_article_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-e10a758ad9",
+                "canonical_event_type": "product_or_customer_event",
+                "bundle_status": "moderate",
+                "bundle_score": 0.5533,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61-claim-74cef03d-event-7f88bc21"
+                ],
+                "supporting_claim_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61-claim-74cef03d"
+                ],
+                "supporting_article_ids": [
+                  "d7c0db429da7f9f9b4e826ac604c3d61"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-9b92773ae7",
+                "canonical_event_type": "analyst_or_investor_view_change",
+                "bundle_status": "weak",
+                "bundle_score": 0.5,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "d2e6e1a354d62c454d27eb815c52e8d7-claim-5a9fc165-event-f1be2a9c",
+                  "d2e6e1a354d62c454d27eb815c52e8d7-claim-cd606dcf-event-cd47bba2"
+                ],
+                "supporting_claim_ids": [
+                  "d2e6e1a354d62c454d27eb815c52e8d7-claim-5a9fc165",
+                  "d2e6e1a354d62c454d27eb815c52e8d7-claim-cd606dcf"
+                ],
+                "supporting_article_ids": [
+                  "d2e6e1a354d62c454d27eb815c52e8d7"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.6667,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-730065148d",
+                "canonical_event_type": "earnings_result",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056-claim-8261decc-event-b81a63ba"
+                ],
+                "supporting_claim_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056-claim-8261decc"
+                ],
+                "supporting_article_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-b5d96a4c24",
+                "canonical_event_type": "management_or_governance_change",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056-claim-1ce3fed5-event-6a699e92"
+                ],
+                "supporting_claim_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056-claim-1ce3fed5"
+                ],
+                "supporting_article_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-9defab23d8",
+                "canonical_event_type": "operations_or_security_incident",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096-claim-e98a2cbf-event-ca6d6a35"
+                ],
+                "supporting_claim_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096-claim-e98a2cbf"
+                ],
+                "supporting_article_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-33978825d5",
+                "canonical_event_type": "product_or_customer_event",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096-claim-ce772888-event-3cb923a3"
+                ],
+                "supporting_claim_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096-claim-ce772888"
+                ],
+                "supporting_article_ids": [
+                  "14d83d3cbd4dc91df2367199ce38b096"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-f07491f5df",
+                "canonical_event_type": "product_or_customer_event",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056-claim-13d28761-event-4b3196a9"
+                ],
+                "supporting_claim_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056-claim-13d28761"
+                ],
+                "supporting_article_ids": [
+                  "ccc5a6260ff2e4984548237a1e1d5056"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-a7a0e3756b",
+                "canonical_event_type": "product_or_customer_event",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": false,
+                "supporting_event_ids": [
+                  "fbdfe85af50260f19f5d61433de37ba4-claim-cc053382-event-5eebe570"
+                ],
+                "supporting_claim_ids": [
+                  "fbdfe85af50260f19f5d61433de37ba4-claim-cc053382"
+                ],
+                "supporting_article_ids": [
+                  "fbdfe85af50260f19f5d61433de37ba4"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-2d15e523b2",
+                "canonical_event_type": "regulatory_or_legal_action",
+                "bundle_status": "weak",
+                "bundle_score": 0.4933,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "fbdfe85af50260f19f5d61433de37ba4-claim-b0ae0266-event-f525853c"
+                ],
+                "supporting_claim_ids": [
+                  "fbdfe85af50260f19f5d61433de37ba4-claim-b0ae0266"
+                ],
+                "supporting_article_ids": [
+                  "fbdfe85af50260f19f5d61433de37ba4"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 1.0
+                }
+              },
+              {
+                "bundle_id": "bundle-f175321206",
+                "canonical_event_type": "macro_or_sector_shock",
+                "bundle_status": "weak",
+                "bundle_score": 0.4333,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "2c5362df1791de82d828b6ebf2e222b0-claim-4431b6ff-event-ec6c0d02"
+                ],
+                "supporting_claim_ids": [
+                  "2c5362df1791de82d828b6ebf2e222b0-claim-4431b6ff"
+                ],
+                "supporting_article_ids": [
+                  "2c5362df1791de82d828b6ebf2e222b0"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.6,
+                  "episode_relevance": 0.4
+                }
+              },
+              {
+                "bundle_id": "bundle-bc294df452",
+                "canonical_event_type": "operations_or_security_incident",
+                "bundle_status": "weak",
+                "bundle_score": 0.4333,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "b93824b2ee87515ce003de7fcada34c4-claim-764a5a6d-event-bf883807"
+                ],
+                "supporting_claim_ids": [
+                  "b93824b2ee87515ce003de7fcada34c4-claim-764a5a6d"
+                ],
+                "supporting_article_ids": [
+                  "b93824b2ee87515ce003de7fcada34c4"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.7
+                }
+              },
+              {
+                "bundle_id": "bundle-d0621f76bd",
+                "canonical_event_type": "guidance_update",
+                "bundle_status": "weak",
+                "bundle_score": 0.3733,
+                "eligible_for_explanation": true,
+                "supporting_event_ids": [
+                  "9a9a1f717d880b2b605d9e39473fd540-claim-2090ee02-event-63cbdca1"
+                ],
+                "supporting_claim_ids": [
+                  "9a9a1f717d880b2b605d9e39473fd540-claim-2090ee02"
+                ],
+                "supporting_article_ids": [
+                  "9a9a1f717d880b2b605d9e39473fd540"
+                ],
+                "score_breakdown": {
+                  "corroboration": 0.3333,
+                  "source_diversity": 0.3333,
+                  "time_alignment": 0.5,
+                  "source_quality": 0.3,
+                  "episode_relevance": 0.4
+                }
+              }
+            ],
+            "supporting_articles": [
+              {
+                "article_id": "d7c0db429da7f9f9b4e826ac604c3d61",
+                "provider": "Finnhub",
+                "publisher": "Yahoo",
+                "scope_tag": "company",
+                "headline": "What Exxon Mobil (XOM)'s Helium Edge and New Debt Deal Mean For Shareholders",
+                "summary_or_snippet": "In late March 2026, Exxon Mobil completed a US$169.312 million offering of unsecured, unsubordinated floating rate notes due 2076, while also featuring its circular products business at the World Chemical Forum 2026 and reportedly exploring a breakup sale of its New Zealand operations. At the same time, Exxon Mobil has been benefiting from global oil and helium supply disruptions, with its LaBarge facility helping address the helium shortage. We’ll now examine how Exxon's strengthened...",
+                "url": "https://finnhub.io/api/news?id=7a2a4845bced29f3ca47caef8f7a1edfd2203f34b4d50065f0f3d759fbd69bc2",
+                "published_at": "2026-04-07",
+                "rank_score": 0.5762855410575867,
+                "rank_position": 1,
+                "supporting_bundle_ids": [
+                  "bundle-6e39e8077a",
+                  "bundle-ed13e90923",
+                  "bundle-e10a758ad9"
+                ]
+              },
+              {
+                "article_id": "fbdfe85af50260f19f5d61433de37ba4",
+                "provider": "StockNewsAPI",
+                "publisher": "Proactive Investors",
+                "scope_tag": "company",
+                "headline": "ExxonMobil shares fall as Middle East production setbacks weigh on outlook",
+                "summary_or_snippet": "Exxon Mobil Corp (NYSE:XOM, XETRA:XONA) shares fell 7.5% in early trade on Wednesday after the oil company disclosed the expected impact of the ongoing conflict in the Middle East on its production during the first quarter. In a regulatory filing, ExxonMobil said the disruptions affected assets in Qatar and the United Arab Emirates, reducing global oil-equivalent production by an estimated 6% compared with the fourth quarter of 2025.",
+                "url": "https://www.proactiveinvestors.com/companies/news/1090203?SNAPI",
+                "published_at": "2026-04-08",
+                "rank_score": -0.22794994711875916,
+                "rank_position": 2,
+                "supporting_bundle_ids": [
+                  "bundle-a7a0e3756b",
+                  "bundle-2d15e523b2"
+                ]
+              },
+              {
+                "article_id": "14d83d3cbd4dc91df2367199ce38b096",
+                "provider": "StockNewsAPI",
+                "publisher": "Seeking Alpha",
+                "scope_tag": "company",
+                "headline": "Exxon Mobil: War Effect On Earnings",
+                "summary_or_snippet": "Exxon Mobil faces a 6% production impact from Middle East disruptions starting in March. XOM's Middle East operations account for 20% of production but contribute less to overall earnings. Production losses may weigh more heavily on Q2 results, depending on the restoration pace and timing of resumed output.",
+                "url": "https://seekingalpha.com/article/4889385-exxon-mobil-war-effect-on-earnings",
+                "published_at": "2026-04-08",
+                "rank_score": -0.4061642587184906,
+                "rank_position": 3,
+                "supporting_bundle_ids": [
+                  "bundle-1721408042",
+                  "bundle-9defab23d8",
+                  "bundle-33978825d5"
+                ]
+              },
+              {
+                "article_id": "ccc5a6260ff2e4984548237a1e1d5056",
+                "provider": "Finnhub",
+                "publisher": "Yahoo",
+                "scope_tag": "company",
+                "headline": "Exxon Mobil Weighs Conflict Disruption And Governance Push Against Strong Returns",
+                "summary_or_snippet": "Exxon Mobil, ticker NYSE:XOM, is reporting a 6% hit to production after attacks on assets in Qatar and the UAE linked to Middle East conflict. The disruption is affecting first quarter earnings, with extended repair work at key LNG facilities and sizable derivatives related charges. At the same time, new shareholder proposals are targeting a split between the Chair and CEO roles and changes to retail shareholder voting policies ahead of the annual meeting. For investors tracking Exxon Mobil...",
+                "url": "https://finnhub.io/api/news?id=216bcadc504c53ef074f0b36e2d98cc29dfc862301e12c875b174c3aead9add0",
+                "published_at": "2026-04-09",
+                "rank_score": -0.4338028132915497,
+                "rank_position": 4,
+                "supporting_bundle_ids": [
+                  "bundle-730065148d",
+                  "bundle-b5d96a4c24",
+                  "bundle-f07491f5df"
+                ]
+              },
+              {
+                "article_id": "b93824b2ee87515ce003de7fcada34c4",
+                "provider": "Finnhub",
+                "publisher": "SeekingAlpha",
+                "scope_tag": "company",
+                "headline": "Exxon Mobil: Options Become Lucrative Amid Unusual Volatilities",
+                "summary_or_snippet": "Exxon Mobil faces a 6% production hit in Q1 due to Middle East disruptions, with oil prices already exceeding prior targets. Learn more about XOM stock here.",
+                "url": "https://finnhub.io/api/news?id=aecc7ab8e2c9aa7b4c64cd2d78971ddbe032f671eb69200523ef5ee676adb994",
+                "published_at": "2026-04-09",
+                "rank_score": -0.4470205307006836,
+                "rank_position": 5,
+                "supporting_bundle_ids": [
+                  "bundle-bc294df452"
+                ]
+              },
+              {
+                "article_id": "9a9a1f717d880b2b605d9e39473fd540",
+                "provider": "GoogleRSS",
+                "publisher": "The Globe and Mail",
+                "scope_tag": "company",
+                "headline": "Exxon Mobil Updates Q1 2026 Outlook Amid Disruptions - The Globe and Mail",
+                "summary_or_snippet": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxPUFRqaWVKdk5ScjhlTHdUQWlFRk1sUld4dlNyTDdUdmZlOEVNeWxqeFEwSVBTQmVTMzRFTEM4bHdEd0laajJkc3dacU1lY1d5bW01UGNtTFZPMUM2VjRuYmZlYTk4bXpaSEdFOHJlYUYxY0E4c1FBMUhXTVBBV3BzcV83ekhFdGx4THdIeHhFQzRCcWNqb0FYZzBYelFyQ1lycGI0MXktSjh1M2FBR0plLWJEUFdxcHNmM2plRTBTR0NvcWFEZktLWlRqZEtVTEI5aGc?oc=5\" target=\"_blank\">Exxon Mobil Updates Q1 2026 Outlook Amid Disruptions</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Globe and Mail</font>",
+                "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPUFRqaWVKdk5ScjhlTHdUQWlFRk1sUld4dlNyTDdUdmZlOEVNeWxqeFEwSVBTQmVTMzRFTEM4bHdEd0laajJkc3dacU1lY1d5bW01UGNtTFZPMUM2VjRuYmZlYTk4bXpaSEdFOHJlYUYxY0E4c1FBMUhXTVBBV3BzcV83ekhFdGx4THdIeHhFQzRCcWNqb0FYZzBYelFyQ1lycGI0MXktSjh1M2FBR0plLWJEUFdxcHNmM2plRTBTR0NvcWFEZktLWlRqZEtVTEI5aGc?oc=5",
+                "published_at": "2026-04-09",
+                "rank_score": -0.5329409241676331,
+                "rank_position": 7,
+                "supporting_bundle_ids": [
+                  "bundle-d0621f76bd"
+                ]
+              },
+              {
+                "article_id": "d2e6e1a354d62c454d27eb815c52e8d7",
+                "provider": "Finnhub",
+                "publisher": "Yahoo",
+                "scope_tag": "company",
+                "headline": "Citi Raises Exxon Mobil (XOM) Price Target on Middle East-Driven Energy Repricing",
+                "summary_or_snippet": "Exxon Mobil Corporation’s (NYSE:XOM) is included among the 15 Best Consistent Dividend Stocks to Buy Right Now. On April 2, Citi analyst Alastair Syme raised Exxon Mobil Corporation’s (NYSE:XOM) price recommendation to $175 from $150. It reiterated a Neutral rating on the shares. The firm pointed to the Middle East conflict as a key factor. […]",
+                "url": "https://finnhub.io/api/news?id=1481062e0f8dd61f6a0c5922f5c233d6b72572d3b1c072bad5b136b8e95aad68",
+                "published_at": "2026-04-07",
+                "rank_score": -0.5675476789474487,
+                "rank_position": 8,
+                "supporting_bundle_ids": [
+                  "bundle-9b92773ae7"
+                ]
+              },
+              {
+                "article_id": "2c5362df1791de82d828b6ebf2e222b0",
+                "provider": "Finnhub",
+                "publisher": "Yahoo",
+                "scope_tag": "company",
+                "headline": "Why ExxonMobil (XOM) Shares Are Falling Today",
+                "summary_or_snippet": "Shares of integrated energy company ExxonMobil (NYSE:XOM) fell 5.5% in the afternoon session after President Donald Trump announced a two-week suspension of attacks on Iran, leading to a massive collapse in crude oil prices.",
+                "url": "https://finnhub.io/api/news?id=dafc08a4214be0277f81d2185bc758689600d2a92907ced0721baf449cd43687",
+                "published_at": "2026-04-09",
+                "rank_score": -0.6124317646026611,
+                "rank_position": 9,
+                "supporting_bundle_ids": [
+                  "bundle-f175321206"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "outward_status": "SUPPORTED",
+            "manual_review": true,
+            "degraded_reason_codes": [
+              "macro_shock_suspected"
+            ],
+            "capability_boundary_notice": null,
+            "outward_notes": [
+              "A primary evidence-backed explanation is available.",
+              "The explanation is within the current bounded system scope.",
+              "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture."
+            ],
+            "driver_hypothesis": "firm_branch",
+            "headline_explanation": "Within the company-focused explanation branch, the strongest retained evidence points to earnings results.",
+            "explanation_confidence": "medium"
+          }
+        }
+      ]
+    },
+    "attribution": {
+      "driver_hypothesis": "mixed",
+      "firm_ratio": 8.057992421935146e-05,
+      "industry_ratio": 0.6487483472425439,
+      "market_ratio": 0.21067657490776373,
+      "quality_status": "PASS",
+      "reason": null,
+      "reason_code": "pass",
+      "adj_r2": 0.816553803604205,
+      "beta_mkt_t_stat": -22.875945988685114,
+      "beta_ind_t_stat": 40.20777409340601,
+      "f_stat": 1681.3240782137752,
+      "f_pvalue": 0.0,
+      "fit_quality_note": null,
+      "market_share": 0.29300883253810334,
+      "industry_share": 0.902278746081688,
+      "firm_share": 0.00011207050205680424,
+      "alpha_share": -0.19539964912184826,
+      "near_zero_episode_return": false,
+      "episode_return_total": -0.05116407249589994,
+      "industry_proxy_ticker": "XLE",
+      "industry_proxy_source": "sector",
+      "vix_estimation_p50": 16.324999809265137,
+      "vix_estimation_p95": 24.885000705718994,
+      "vix_episode_max": 25.780000686645508,
+      "vix_episode_avg": 22.103333791097004,
+      "macro_shock_suspected": true
+    },
+    "decision": {
+      "outward_status": "LIMITED_EVIDENCE",
+      "manual_review": true,
+      "degraded_reason_codes": [
+        "macro_shock_suspected",
+        "only_weak_support"
+      ],
+      "capability_boundary_notice": "Only weak supporting evidence was available for this explanation.",
+      "outward_notes": [
+        "Mixed episodes are summarized conservatively from the most restrictive branch result.",
+        "A primary evidence-backed explanation is available.",
+        "The explanation is within the current bounded system scope.",
+        "Macro shock period suspected (VIX elevated vs training regime) — attribution confidence is reduced; cross-asset correlation likely exceeds what training-window betas can capture.",
+        "Manual review is recommended.",
+        "Branch outward statuses: market=SUPPORTED, industry=LIMITED_EVIDENCE, firm=SUPPORTED."
+      ],
+      "driver_hypothesis": "mixed",
+      "headline_explanation": "This episode remains mixed across market, industry, and firm explanation branches. Review the branch-specific analyses below rather than relying on a single dominant narrative.",
+      "explanation_confidence": "low"
+    },
+    "branch_plan": {
+      "routing_mode": "mixed",
+      "primary_mode": "industry",
+      "default_modes": [
+        "market",
+        "industry",
+        "firm"
+      ],
+      "lazy_modes": []
+    }
+  },
+  "_meta": {
+    "episode_id": "119",
+    "saved_at": "2026-04-27T03:10:07.317263"
+  }
+}
